@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { cookies } from "next/headers";
 import "./globals.css";
 
 const sans = IBM_Plex_Sans({
@@ -19,9 +20,16 @@ export const metadata: Metadata = {
   description: "Read-only Zerodha analytics for NIFTY option scenario P&L and Greeks.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const theme = (await cookies()).get("nrl-theme")?.value;
+  const dark = theme !== "light";
+
   return (
-    <html lang="en" className={`dark ${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={[dark ? "dark" : "", sans.variable, mono.variable].filter(Boolean).join(" ")}
+      suppressHydrationWarning
+    >
       <body className="font-sans antialiased" suppressHydrationWarning>
         {children}
       </body>

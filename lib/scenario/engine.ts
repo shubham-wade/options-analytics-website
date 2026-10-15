@@ -59,6 +59,23 @@ export interface ScenarioColumn {
   tradeComplete: boolean;
 }
 
+export interface DecayPoint {
+  horizonDays: number;
+  spot: number;
+  incrementalPnl: number | null;
+  complete: boolean;
+}
+
+export interface Breakeven {
+  /** Index points from the starting spot. */
+  move: number;
+  spot: number;
+  fromMove: number;
+  toMove: number;
+}
+
+const DECAY_HORIZONS = [1, 3, 7] as const;
+
 export interface PositionGreeks {
   id: string;
   iv: number | null;
@@ -82,6 +99,15 @@ export interface PortfolioGreeks {
   valuedPositions: number;
 }
 
+export interface ScenarioRow {
+  id: string;
+  tradingSymbol: string;
+  side: "long" | "short";
+  /** Signed quantity in option units, matching the Positions table. */
+  quantity: number;
+  cells: ScenarioCell[];
+}
+
 export interface ScenarioResult {
   baseSpot: number;
   moves: number[];
@@ -91,12 +117,15 @@ export interface ScenarioResult {
   rate: number;
   dividendYield: number;
   columns: ScenarioColumn[];
-  rows: Array<{ id: string; tradingSymbol: string; cells: ScenarioCell[] }>;
+  rows: ScenarioRow[];
   currentGreeks: PortfolioGreeks;
   positionGreeks: PositionGreeks[];
   warnings: string[];
   settlementAssumption: string;
   disclaimer: string;
+  /** Unchanged spot and unchanged IV at 1, 3 and 7 calendar days. */
+  decay: DecayPoint[];
+  breakevens: Breakeven[];
 }
 
 export class ScenarioInputError extends Error {
@@ -173,7 +202,62 @@ function unavailableCell(warnings: string[]): ScenarioCell {
   };
 }
 
+export function findBreakevens(columns: ScenarioColumn[]): Breakeven[] {
+  const ordered = [...columns].sort((left, right) => left.move - right.move);
+  const found: Breakeven[] = [];
+  const seen = new Set<string>();
+  const add = (move: number, spot: number, fromMove: number, toMove: number) => {
+    const key = move.toFixed(6);
+    if (seen.has(key)) return;
+    seen.add(key);
+    found.push({ move, spot, fromMove, toMove });
+  };
+
+  for (const column of ordered) {
+    if (!column.incrementalComplete || column.portfolioIncrementalPnl !== 0) continue;
+    add(column.move, column.spot, column.move, column.move);
+  }
+
+  for (let index = 0; index < ordered.length - 1; index += 1) {
+    const left = ordered[index];
+    const right = ordered[index + 1];
+    const start = left.portfolioIncrementalPnl;
+    const end = right.portfolioIncrementalPnl;
+    if (!left.incrementalComplete || !right.incrementalComplete || start === null || end === null) continue;
+    if (start === 0 || end === 0 || start > 0 === end > 0) continue;
+    const weight = start / (start - end);
+    add(
+      left.move + weight * (right.move - left.move),
+      left.spot + weight * (right.spot - left.spot),
+      left.move,
+      right.move,
+    );
+  }
+
+  return found;
+}
+
+function unchangedSpotDecay(input: ScenarioRequest): DecayPoint[] {
+  return DECAY_HORIZONS.map((horizonDays) => {
+    const result = priceScenarios(
+      { ...input, moves: [0], horizonDays, ivMode: "constant", ivPoints: 0 },
+      false,
+    );
+    const column = result.columns[0];
+    return {
+      horizonDays,
+      spot: input.baseSpot,
+      incrementalPnl: column?.portfolioIncrementalPnl ?? null,
+      complete: column?.incrementalComplete ?? false,
+    };
+  });
+}
+
 export function runScenarios(input: ScenarioRequest): ScenarioResult {
+  return priceScenarios(input, true);
+}
+
+function priceScenarios(input: ScenarioRequest, withSideViews: boolean): ScenarioResult {
   validateScenarioRequest(input);
   const warnings: string[] = [];
   const positionGreeks: PositionGreeks[] = [];
@@ -332,7 +416,13 @@ export function runScenarios(input: ScenarioRequest): ScenarioResult {
         warnings: cellWarnings,
       };
     });
-    return { id: position.id, tradingSymbol: position.tradingSymbol, cells };
+    return {
+      id: position.id,
+      tradingSymbol: position.tradingSymbol,
+      side: position.quantity < 0 ? "short" : "long",
+      quantity: position.quantity,
+      cells,
+    };
   });
 
   const columns: ScenarioColumn[] = input.moves.map((move, index) => {
@@ -390,5 +480,7 @@ export function runScenarios(input: ScenarioRequest): ScenarioResult {
     warnings,
     settlementAssumption: SETTLEMENT_ASSUMPTION,
     disclaimer: MODEL_DISCLAIMER,
+    decay: withSideViews ? unchangedSpotDecay(input) : [],
+    breakevens: findBreakevens(columns),
   };
 }

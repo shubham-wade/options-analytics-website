@@ -3,7 +3,11 @@
 import { RefreshCw } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { ContributionChart, PortfolioPnlChart } from "@/components/dashboard/charts";
+import { DecayStrip } from "@/components/dashboard/decay-strip";
+import { DirectionMix } from "@/components/dashboard/direction-mix";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { PositionsTable, qualityLabel } from "@/components/dashboard/positions-table";
 import { ScenarioTable } from "@/components/dashboard/scenario-table";
 import { Badge } from "@/components/ui/badge";
@@ -51,6 +55,7 @@ export function Dashboard() {
   const [ratePct, setRatePct] = useState(String(DEFAULT_RISK_FREE_RATE * 100));
   const [divPct, setDivPct] = useState(String(DEFAULT_DIVIDEND_YIELD * 100));
   const [focusMove, setFocusMove] = useState(-100);
+  const [excluded, setExcluded] = useState<string[]>([]);
 
   const loadStatus = useCallback(async () => {
     const response = await fetch("/api/kite/status", { cache: "no-store" });
@@ -97,6 +102,15 @@ export function Dashboard() {
     return () => window.clearInterval(timer);
   }, [autoRefresh, includeFlat, loadPositions, status?.connected]);
 
+  useEffect(() => {
+    if (!portfolio) return;
+    const live = new Set(portfolio.positions.map((position) => position.id));
+    setExcluded((current) => {
+      const next = current.filter((id) => live.has(id));
+      return next.length === current.length ? current : next;
+    });
+  }, [portfolio]);
+
   const moves = useMemo(() => parseMoves(moveText), [moveText]);
   const horizonDays = horizon === "custom" ? Number(customDays) : Number(horizon);
 
@@ -120,6 +134,7 @@ export function Dashboard() {
               ivPoints: ivMode === "constant" ? 0 : Number(ivPoints),
               rate: Number(ratePct) / 100,
               dividendYield: Number(divPct) / 100,
+              excludeIds: excluded,
             }),
           });
           const body = await response.json();
@@ -137,28 +152,40 @@ export function Dashboard() {
       })();
     }, 300);
     return () => window.clearTimeout(handle);
-  }, [divPct, horizonDays, includeFlat, ivMode, ivPoints, moves, portfolio, ratePct, spotText, status?.connected]);
+  }, [divPct, excluded, horizonDays, includeFlat, ivMode, ivPoints, moves, portfolio, ratePct, spotText, status?.connected]);
 
   async function logout() {
     await fetch("/api/kite/logout", { method: "POST" });
     setPortfolio(null);
     setScenario(null);
+    setExcluded([]);
     await loadStatus();
   }
 
   const warnings = [...(portfolio?.warnings ?? []), ...(scenario?.warnings ?? [])];
   const greeks = scenario?.currentGreeks;
+  const exclusionNote = excluded.length > 0 ? `Excludes ${excluded.length}` : null;
+  const withScope = (detail: string) => (exclusionNote ? `${detail} · ${exclusionNote}` : detail);
+  const modeledPositions = portfolio?.positions.filter((position) => !excluded.includes(position.id)) ?? [];
+
+  function toggleExcluded(id: string) {
+    setExcluded((current) => (current.includes(id) ? current.filter((item) => item !== id) : [...current, id]));
+  }
 
   return (
     <TooltipProvider delayDuration={200}>
       <main className="mx-auto flex max-w-[1440px] flex-col gap-6 px-4 py-6 md:px-6">
-        <header className="flex flex-col gap-4 border-b border-white/10 pb-5 lg:flex-row lg:items-end lg:justify-between">
+        <header className="flex flex-col gap-4 border-b border-border pb-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-teal-300/80">Zerodha · read only</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-teal-800 dark:text-teal-300/80">Zerodha · read only</p>
             <h1 className="mt-1 text-3xl font-semibold tracking-tight">NIFTY Risk Lab</h1>
             <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{MODEL_DISCLAIMER}</p>
           </div>
           <div className="flex flex-wrap items-center gap-2">
+            <ThemeToggle />
+            <Button variant="outline" asChild>
+              <Link href="/manual">Manual book</Link>
+            </Button>
             <ConnectionStatus status={status} />
             {status?.connected ? (
               <>
@@ -212,11 +239,23 @@ export function Dashboard() {
               This is the broker field unrealised from the net positions response. It is not the model scenario P&L.
             </TooltipContent>
           </Tooltip>
-          <Metric label="Portfolio delta" value={formatNumber(greeks?.delta ?? null, 1)} detail={greeks && !greeks.complete ? "Partial" : "Model, per point"} />
-          <Metric label="Portfolio gamma" value={formatNumber(greeks?.gamma ?? null, 4)} detail="Per one index point" />
-          <Metric label="Theta / day" value={formatNumber(greeks?.thetaPerDay ?? null)} detail="Calendar day" className={pnlClass(greeks?.thetaPerDay)} />
-          <Metric label="Vega / point" value={formatNumber(greeks?.vegaPerPoint ?? null)} detail="Per 1 vol point" />
+          <Metric label="Portfolio delta" value={formatNumber(greeks?.delta ?? null, 1)} detail={withScope(greeks && !greeks.complete ? "Partial" : "Model, per point")} />
+          <Metric label="Portfolio gamma" value={formatNumber(greeks?.gamma ?? null, 4)} detail={withScope("Per one index point")} />
+          <Metric label="Theta / day" value={formatNumber(greeks?.thetaPerDay ?? null)} detail={withScope("Calendar day")} className={pnlClass(greeks?.thetaPerDay)} />
+          <Metric label="Vega / point" value={formatNumber(greeks?.vegaPerPoint ?? null)} detail={withScope("Per 1 vol point")} />
         </section>
+
+        {portfolio && (portfolio.openCount > 0 || (scenario?.decay?.length ?? 0) > 0) ? (
+          <section className="grid gap-4 xl:grid-cols-2">
+            {portfolio.openCount > 0 ? (
+              <DirectionMix
+                positions={modeledPositions}
+                greeks={scenario?.positionGreeks ?? []}
+              />
+            ) : null}
+            {scenario && (scenario.decay?.length ?? 0) > 0 ? <DecayStrip points={scenario.decay} /> : null}
+          </section>
+        ) : null}
 
         <section className="grid gap-4 xl:grid-cols-[280px_1fr]">
           <Card>
@@ -245,7 +284,12 @@ export function Dashboard() {
             </CardHeader>
             <CardContent>
               {portfolio ? (
-                <PositionsTable portfolio={portfolio} greeks={scenario?.positionGreeks ?? []} />
+                <PositionsTable
+                  portfolio={portfolio}
+                  greeks={scenario?.positionGreeks ?? []}
+                  excludedIds={excluded}
+                  onToggleExcluded={toggleExcluded}
+                />
               ) : (
                 <p className="text-sm text-muted-foreground">Connect Zerodha to load the net NIFTY option book.</p>
               )}
@@ -378,9 +422,9 @@ export function Dashboard() {
 
 function ConnectionStatus({ status }: { status: PublicSessionStatus | null }) {
   if (!status) return <Badge>Checking</Badge>;
-  if (!status.configured) return <Badge className="border-amber-500/40 text-amber-200">Credentials missing</Badge>;
-  if (status.connected) return <Badge className="border-emerald-500/40 text-emerald-300">Connected</Badge>;
-  if (status.expired) return <Badge className="border-rose-500/40 text-rose-300">Session expired</Badge>;
+  if (!status.configured) return <Badge className="border-amber-600/40 text-amber-800 dark:text-amber-200">Credentials missing</Badge>;
+  if (status.connected) return <Badge className="border-emerald-600/40 text-emerald-700 dark:text-emerald-300">Connected</Badge>;
+  if (status.expired) return <Badge className="border-rose-600/40 text-rose-700 dark:text-rose-300">Session expired</Badge>;
   return <Badge>Disconnected</Badge>;
 }
 
@@ -414,8 +458,8 @@ function Banner({ children, tone }: { children: ReactNode; tone: "warn" | "info"
       role="status"
       className={
         tone === "warn"
-          ? "rounded-md border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-sm text-amber-100"
-          : "rounded-md border border-sky-500/30 bg-sky-500/10 px-3 py-2 text-sm text-sky-100"
+          ? "rounded-md border border-amber-600/30 bg-amber-500/10 px-3 py-2 text-sm text-amber-950 dark:text-amber-100"
+          : "rounded-md border border-sky-600/30 bg-sky-500/10 px-3 py-2 text-sm text-sky-950 dark:text-sky-100"
       }
     >
       {children}

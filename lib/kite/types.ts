@@ -114,6 +114,10 @@ export interface ParsedNiftyOption {
   optionType: "CE" | "PE";
   expiry: Date | null;
   expiryPrecision: "day" | "month" | "unknown";
+  /** Four-digit year taken from the symbol. */
+  contractYear: number;
+  /** Calendar month index, January is 0. */
+  contractMonth: number;
 }
 
 export interface MappedOptionPosition {

@@ -16,6 +16,7 @@ interface ScenarioBody {
   ivPoints: number;
   rate: number;
   dividendYield: number;
+  excludeIds: string[];
 }
 
 function readBody(body: unknown): ScenarioBody {
@@ -36,6 +37,7 @@ function readBody(body: unknown): ScenarioBody {
         ? spotValue
         : Number.NaN;
   if (spot !== null && !Number.isFinite(spot)) throw new ScenarioInputError("Starting spot must be a number.");
+  const excludeIds = readExcludeIds(record.excludeIds);
   return {
     includeFlat: record.includeFlat === true,
     spot,
@@ -45,7 +47,19 @@ function readBody(body: unknown): ScenarioBody {
     ivPoints: Number(record.ivPoints ?? 0),
     rate: Number(record.rate ?? DEFAULT_RISK_FREE_RATE),
     dividendYield: Number(record.dividendYield ?? DEFAULT_DIVIDEND_YIELD),
+    excludeIds,
   };
+}
+
+function readExcludeIds(value: unknown): string[] {
+  if (value === undefined || value === null) return [];
+  if (!Array.isArray(value) || value.length > 100) {
+    throw new ScenarioInputError("excludeIds must be an array of at most 100 ids.");
+  }
+  if (value.some((id) => typeof id !== "string" || id.length < 1 || id.length > 120)) {
+    throw new ScenarioInputError("Each excluded id must be a short string.");
+  }
+  return value;
 }
 
 export async function POST(request: Request) {

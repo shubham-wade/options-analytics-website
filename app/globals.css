@@ -3,6 +3,38 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
+  --background: 210 33% 98%;
+  --foreground: 222 32% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 32% 12%;
+  --primary: 173 70% 28%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 24% 94%;
+  --secondary-foreground: 222 28% 16%;
+  --muted: 210 24% 95%;
+  --muted-foreground: 215 16% 38%;
+  --accent: 210 24% 94%;
+  --accent-foreground: 222 32% 12%;
+  --destructive: 351 72% 42%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 22% 86%;
+  --input: 214 22% 82%;
+  --ring: 173 70% 28%;
+  --radius: 0.8rem;
+  --chart-line: #0f766e;
+  --chart-axis: #64748b;
+  --chart-grid: rgba(15, 23, 42, 0.08);
+  --chart-zero: rgba(15, 23, 42, 0.22);
+  --chart-gain: #047857;
+  --chart-loss: #be123c;
+  --tooltip-bg: #ffffff;
+  --tooltip-border: #e2e8f0;
+  --tooltip-fg: #0f172a;
+}
+
+.dark {
+  color-scheme: dark;
   --background: 216 28% 6%;
   --foreground: 210 25% 96%;
   --card: 216 24% 9%;
@@ -20,7 +52,15 @@
   --border: 216 14% 18%;
   --input: 216 14% 20%;
   --ring: 168 62% 46%;
-  --radius: 0.8rem;
+  --chart-line: #2dd4bf;
+  --chart-axis: #94a3b8;
+  --chart-grid: rgba(255, 255, 255, 0.06);
+  --chart-zero: rgba(255, 255, 255, 0.25);
+  --chart-gain: #34d399;
+  --chart-loss: #fb7185;
+  --tooltip-bg: #10161d;
+  --tooltip-border: #243041;
+  --tooltip-fg: #f8fafc;
 }
 
 * {
@@ -30,10 +70,17 @@
 body {
   min-height: 100vh;
   background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(15, 118, 110, 0.08), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(14, 165, 233, 0.06), transparent 50%),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.dark body {
+  background:
     radial-gradient(1200px 500px at 10% -10%, rgba(45, 212, 191, 0.08), transparent 55%),
     radial-gradient(900px 420px at 100% 0%, rgba(56, 189, 248, 0.05), transparent 50%),
     hsl(var(--background));
-  color: hsl(var(--foreground));
 }
 
 .tabular {

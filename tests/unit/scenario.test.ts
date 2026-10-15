@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { priceEuropean } from "@/lib/pricing/black-scholes";
-import { runScenarios, ScenarioInputError, shiftedVolatility } from "@/lib/scenario/engine";
+import { findBreakevens, runScenarios, ScenarioInputError, shiftedVolatility } from "@/lib/scenario/engine";
 import { DEFAULT_SPOT_MOVES } from "@/lib/time";
 
 const rate = 0.065;
@@ -48,6 +48,7 @@ describe("scenario engine", () => {
     const flat = result.columns.find((column) => column.move === 0);
     expect(flat?.portfolioIncrementalPnl).toBeCloseTo(0, 1);
     expect(result.rows[0]?.cells.every((cell) => cell.pricing === "black-scholes")).toBe(true);
+    expect(result.rows[0]).toMatchObject({ side: "long", quantity: 75 });
   });
 
   it("raises premium when IV rises by three volatility points", () => {
@@ -82,6 +83,7 @@ describe("scenario engine", () => {
     expect(down?.pricing).toBe("expiry-payoff");
     expect(down?.theoreticalPremium).toBe(Math.max(0, 24100 - (24000 - 500)));
     expect(down?.incrementalPnl).toBe(-50 * ((down?.theoreticalPremium ?? 0) - 40));
+    expect(result.rows[0]).toMatchObject({ side: "short", quantity: -50 });
     expect(priceWouldRejectNegative()).toBe(true);
   });
 
@@ -118,7 +120,42 @@ describe("scenario engine", () => {
     expect(() => runScenarios(request({ baseSpot: 0 }))).toThrow(ScenarioInputError);
     expect(() => runScenarios(request({ horizonDays: -1 }))).toThrow(ScenarioInputError);
   });
+
+  it("prices unchanged-spot decay and keeps a short option collecting it", () => {
+    const long = runScenarios(request());
+    const priced = request();
+    const short = runScenarios({
+      ...priced,
+      positions: [{ ...priced.positions[0], quantity: -75 }],
+    });
+    expect(long.decay.map((point) => point.horizonDays)).toEqual([1, 3, 7]);
+    expect(long.decay.every((point) => point.complete)).toBe(true);
+    expect(long.decay[0]?.incrementalPnl ?? 0).toBeLessThan(0);
+    expect(short.decay[0]?.incrementalPnl ?? 0).toBeGreaterThan(0);
+    expect(long.decay[2]?.incrementalPnl ?? 0).toBeLessThan(long.decay[0]?.incrementalPnl ?? 0);
+  });
+
+  it("interpolates a breakeven between a loss and a gain", () => {
+    const points = findBreakevens([
+      column(-100, 23900, -50),
+      column(100, 24100, 50),
+    ]);
+    expect(points).toHaveLength(1);
+    expect(points[0]?.spot).toBeCloseTo(24000, 6);
+    expect(points[0]?.move).toBeCloseTo(0, 6);
+  });
 });
+
+function column(move: number, spot: number, pnl: number) {
+  return {
+    move,
+    spot,
+    portfolioIncrementalPnl: pnl,
+    portfolioTradePnl: pnl,
+    incrementalComplete: true,
+    tradeComplete: true,
+  };
+}
 
 function priceWouldRejectNegative() {
   try {

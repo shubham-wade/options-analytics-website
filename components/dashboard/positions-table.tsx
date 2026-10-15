@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
 import { formatInr, formatNumber, formatPercentPoints, pnlClass } from "@/lib/format";
 import type { PublicPortfolio } from "@/lib/kite/portfolio";
@@ -6,11 +7,11 @@ import type { PositionGreeks } from "@/lib/scenario/engine";
 import type { QuoteQuality } from "@/lib/kite/types";
 
 const qualityClass: Record<QuoteQuality, string> = {
-  live: "border-emerald-500/40 text-emerald-300",
-  delayed: "border-amber-500/40 text-amber-300",
-  stale: "border-orange-500/40 text-orange-300",
-  "market-closed": "border-slate-500/40 text-slate-300",
-  unavailable: "border-rose-500/40 text-rose-300",
+  live: "border-emerald-600/40 text-emerald-700 dark:text-emerald-300",
+  delayed: "border-amber-600/40 text-amber-800 dark:text-amber-300",
+  stale: "border-orange-600/40 text-orange-800 dark:text-orange-300",
+  "market-closed": "border-slate-500/40 text-slate-700 dark:text-slate-300",
+  unavailable: "border-rose-600/40 text-rose-700 dark:text-rose-300",
 };
 
 export function qualityLabel(quality: QuoteQuality): string {
@@ -31,11 +32,16 @@ export function qualityLabel(quality: QuoteQuality): string {
 export function PositionsTable({
   portfolio,
   greeks,
+  excludedIds,
+  onToggleExcluded,
 }: {
   portfolio: PublicPortfolio;
   greeks: PositionGreeks[];
+  excludedIds: string[];
+  onToggleExcluded: (id: string) => void;
 }) {
   const byId = new Map(greeks.map((row) => [row.id, row]));
+  const excluded = new Set(excludedIds);
   if (portfolio.positions.length === 0) {
     return (
       <div className="rounded-lg border border-dashed px-6 py-12 text-center">
@@ -52,7 +58,8 @@ export function PositionsTable({
     <Table>
       <TableCaption>
         Quantity is the signed net quantity from Kite, already in option units. Lot size is not applied again. Greeks
-        are model values, not broker fields.
+        are model values, not broker fields. Turning off “In model” leaves that contract out of the scenario, the mix,
+        and the model totals. The Zerodha position stays open.
       </TableCaption>
       <TableHeader>
         <TableRow>
@@ -70,13 +77,14 @@ export function PositionsTable({
           <TableHead className="text-right">Vega</TableHead>
           <TableHead className="text-right">Broker uPnL</TableHead>
           <TableHead className="text-right">Broker net</TableHead>
+          <TableHead>In model</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {portfolio.positions.map((position) => {
           const greek = byId.get(position.id);
           return (
-            <TableRow key={position.id}>
+            <TableRow key={position.id} className={excluded.has(position.id) ? "opacity-50" : undefined}>
               <TableCell>
                 <div className="font-medium">{position.tradingSymbol}</div>
                 <div className="text-xs text-muted-foreground">
@@ -84,7 +92,7 @@ export function PositionsTable({
                 </div>
               </TableCell>
               <TableCell>
-                <Badge className={position.side === "long" ? "border-emerald-500/40 text-emerald-300" : "border-rose-500/40 text-rose-300"}>
+                <Badge className={position.side === "long" ? "border-emerald-600/40 text-emerald-700 dark:text-emerald-300" : "border-rose-600/40 text-rose-700 dark:text-rose-300"}>
                   {position.side}
                 </Badge>
               </TableCell>
@@ -108,6 +116,13 @@ export function PositionsTable({
               </TableCell>
               <TableCell className={`text-right font-mono tabular ${pnlClass(position.brokerPnl)}`}>
                 {formatInr(position.brokerPnl)}
+              </TableCell>
+              <TableCell>
+                <Switch
+                  checked={!excluded.has(position.id)}
+                  onCheckedChange={() => onToggleExcluded(position.id)}
+                  aria-label={`Include ${position.tradingSymbol} in the model`}
+                />
               </TableCell>
             </TableRow>
           );

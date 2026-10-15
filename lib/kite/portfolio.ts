@@ -194,6 +194,7 @@ export function valueSnapshot(
     ivPoints: number;
     rate: number;
     dividendYield: number;
+    excludeIds?: string[];
   },
 ): ScenarioResult {
   const baseSpot = request.spot && request.spot > 0 ? request.spot : snapshot.spot.price;
@@ -202,6 +203,7 @@ export function valueSnapshot(
       "NIFTY spot is unavailable. Enter a starting spot or refresh while the quote is available.",
     );
   }
+  const excluded = new Set(request.excludeIds ?? []);
   return runScenarios({
     baseSpot,
     moves: request.moves.length > 0 ? request.moves : [...DEFAULT_SPOT_MOVES],
@@ -210,7 +212,7 @@ export function valueSnapshot(
     ivPoints: request.ivPoints,
     rate: request.rate,
     dividendYield: request.dividendYield,
-    positions: snapshot.scenarioInputs,
+    positions: snapshot.scenarioInputs.filter((position) => !excluded.has(position.id)),
   });
 }
 

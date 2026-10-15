@@ -46,6 +46,8 @@ export function parseNiftyOptionSymbol(symbol: string): ParsedNiftyOption | null
       optionType,
       expiry: null,
       expiryPrecision: "month",
+      contractYear: year,
+      contractMonth: month,
     };
   }
 
@@ -65,6 +67,8 @@ export function parseNiftyOptionSymbol(symbol: string): ParsedNiftyOption | null
     optionType,
     expiry,
     expiryPrecision: "day",
+    contractYear: year,
+    contractMonth: month,
   };
 }
 

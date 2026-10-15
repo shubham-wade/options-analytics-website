@@ -45,5 +45,5 @@ export function pnlClass(value: number | null | undefined): string {
   if (value === null || value === undefined || !Number.isFinite(value) || value === 0) {
     return "text-foreground";
   }
-  return value > 0 ? "text-emerald-400" : "text-rose-400";
+  return value > 0 ? "text-emerald-700 dark:text-emerald-400" : "text-rose-700 dark:text-rose-400";
 }
