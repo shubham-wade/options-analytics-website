@@ -7,6 +7,7 @@ export const SEASON_END = "2027-03-31";
  * NSE has not published the 2027 festival list, so those dates are not guessed.
  */
 export const NSE_HOLIDAYS: Record<string, string> = {
+  "2026-09-14": "Ganesh Chaturthi",
   "2026-10-02": "Mahatma Gandhi Jayanti",
   "2026-10-20": "Dussehra",
   "2026-11-10": "Diwali-Balipratipada",

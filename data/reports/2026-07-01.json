@@ -1,0 +1,227 @@
+{
+  "asOf": "2026-07-01",
+  "generatedAt": "2026-10-16T18:45:07.120Z",
+  "nifty": {
+    "name": "NIFTY 50",
+    "open": 23897.65,
+    "high": 24049.9,
+    "low": 23895.1,
+    "close": 24005.85,
+    "previousClose": 23865.75,
+    "change": 140.09999999999854,
+    "percentChange": 0.59,
+    "advances": null,
+    "declines": null,
+    "unchanged": null,
+    "closingLocation": 0.7154392764857747,
+    "gap": 31.900000000001455
+  },
+  "bankNifty": {
+    "name": "NIFTY BANK",
+    "open": 57573.35,
+    "high": 58134.15,
+    "low": 57487.85,
+    "close": 58033.05,
+    "previousClose": 57542.9,
+    "change": 490.15000000000146,
+    "percentChange": 0.85,
+    "advances": null,
+    "declines": null,
+    "unchanged": null,
+    "closingLocation": 0.8435710970137736,
+    "gap": 30.44999999999709
+  },
+  "vix": {
+    "close": 13.24,
+    "previousClose": 13.6,
+    "change": -0.35999999999999943,
+    "percentChange": -2.63,
+    "regime": "moderate",
+    "regimeRule": "Low is below 13, moderate is 13 up to 18, and elevated is 18 or higher. These cutoffs are local labels, not an exchange classification."
+  },
+  "sectors": [
+    {
+      "name": "NIFTY REALTY",
+      "percentChange": 3.58
+    },
+    {
+      "name": "NIFTY FMCG",
+      "percentChange": 2.08
+    },
+    {
+      "name": "NIFTY MEDIA",
+      "percentChange": 2.07
+    },
+    {
+      "name": "NIFTY AUTO",
+      "percentChange": 1.15
+    },
+    {
+      "name": "NIFTY PSU BANK",
+      "percentChange": 0.99
+    },
+    {
+      "name": "NIFTY FINANCIAL SERVICES",
+      "percentChange": 0.92
+    },
+    {
+      "name": "NIFTY INFRA",
+      "percentChange": 0.53
+    },
+    {
+      "name": "NIFTY ENERGY",
+      "percentChange": 0.06
+    },
+    {
+      "name": "NIFTY HEALTHCARE",
+      "percentChange": -0.49
+    },
+    {
+      "name": "NIFTY PHARMA",
+      "percentChange": -0.57
+    },
+    {
+      "name": "NIFTY METAL",
+      "percentChange": -0.99
+    },
+    {
+      "name": "NIFTY IT",
+      "percentChange": -2.01
+    }
+  ],
+  "contributors": null,
+  "cash": {
+    "today": {
+      "date": "2026-07-01",
+      "fii": -1140.5,
+      "dii": 3159.2,
+      "combined": 2018.6999999999998
+    },
+    "fiveDay": {
+      "sessions": 1,
+      "fii": -1140.5,
+      "dii": 3159.2,
+      "combined": 2018.6999999999998
+    },
+    "month": {
+      "label": "July 2026",
+      "sessions": 1,
+      "fii": -1140.5,
+      "dii": 3159.2,
+      "combined": 2018.6999999999998
+    }
+  },
+  "participants": [
+    {
+      "name": "FII",
+      "futureIndexLong": 32476,
+      "futureIndexShort": 292535,
+      "futureIndexLongChange": -1026,
+      "futureIndexShortChange": 2623,
+      "longRatio": 0.09992277184464526,
+      "longRatioChange": -0.0036658173939158323,
+      "indexCallLong": 424988,
+      "indexPutLong": 881237,
+      "indexCallShort": 674108,
+      "indexPutShort": 375453
+    },
+    {
+      "name": "DII",
+      "futureIndexLong": 72675,
+      "futureIndexShort": 11786,
+      "futureIndexLongChange": 8,
+      "futureIndexShortChange": 0,
+      "longRatio": 0.8604563052769918,
+      "longRatioChange": 0.000013218589721919471,
+      "indexCallLong": 3485,
+      "indexPutLong": 25675,
+      "indexCallShort": 0,
+      "indexPutShort": 179
+    },
+    {
+      "name": "Pro",
+      "futureIndexLong": 40082,
+      "futureIndexShort": 28435,
+      "futureIndexLongChange": 320,
+      "futureIndexShortChange": -1905,
+      "longRatio": 0.584993505261468,
+      "longRatioChange": 0.017791428287915134,
+      "indexCallLong": 736795,
+      "indexPutLong": 907476,
+      "indexCallShort": 626175,
+      "indexPutShort": 740987
+    },
+    {
+      "name": "Client",
+      "futureIndexLong": 251066,
+      "futureIndexShort": 63543,
+      "futureIndexLongChange": 3126,
+      "futureIndexShortChange": 1710,
+      "longRatio": 0.7980254856027641,
+      "longRatioChange": -0.002367059906366764,
+      "indexCallLong": 2163161,
+      "indexPutLong": 1888743,
+      "indexCallShort": 2028147,
+      "indexPutShort": 2586510
+    }
+  ],
+  "participantAsOf": "Jul 01, 2026",
+  "participantPrevious": "Jun 30, 2026",
+  "futures": {
+    "priceChange": 140.09999999999854,
+    "oi": 396299,
+    "oiChange": 2428,
+    "reading": "Possible long buildup: the index rose while index-futures open interest rose."
+  },
+  "chains": [],
+  "volatility": {
+    "daily": 0.00889743,
+    "note": "From the NSE futures volatility file for NIFTY. This is one day’s figure, not realised volatility over 5, 10 or 20 sessions."
+  },
+  "portfolio": null,
+  "evidence": {
+    "supportive": [
+      "NIFTY closed up 140.10 points.",
+      "NIFTY finished in the top third of the day’s range.",
+      "DII cash flow was net buying.",
+      "India VIX fell."
+    ],
+    "adverse": [
+      "FII cash flow was net selling.",
+      "The FII index-futures long ratio fell versus the previous session."
+    ],
+    "inferred": [
+      "Possible long buildup: the index rose while index-futures open interest rose.",
+      "FII index-futures contracts are mostly short. That describes the book, not the next session’s direction."
+    ]
+  },
+  "gaps": [
+    "NIFTY stock weights and the option chain are kept for the latest session. An older date uses the saved close, cash, and derivatives files."
+  ],
+  "sources": [
+    {
+      "name": "NSE index feed",
+      "detail": "NIFTY 50, BANK NIFTY, India VIX, advances and declines, sector moves. Unofficial site feed."
+    },
+    {
+      "name": "NSE NIFTY 50 constituents",
+      "detail": "Free-float weight at the previous close times today’s price change, scaled by the index divisor implied by those weights. The 50 estimates add up to the index move."
+    },
+    {
+      "name": "NSE participant-wise open interest",
+      "detail": "FII, DII, proprietary and client contracts. End-of-day file."
+    },
+    {
+      "name": "NSE option chain",
+      "detail": "Nearest two NIFTY expiries. Put-call ratio is put open interest divided by call open interest."
+    },
+    {
+      "name": "NSE futures volatility file",
+      "detail": "Daily underlying volatility for NIFTY. Not a 5-, 10- or 20-session realised figure."
+    },
+    {
+      "name": "Saved FII/DII cash file",
+      "detail": "Provisional combined cash-market nets. Five-day and month figures sum the saved sessions only."
+    }
+  ]
+}

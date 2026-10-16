@@ -31,6 +31,15 @@ export function formatLakh(value: number | null | undefined, digits = 2): string
   return `₹${formatted} L`;
 }
 
+/** `value` is already in crores. */
+export function formatCrore(value: number | null | undefined, digits = 2): string {
+  if (value === null || value === undefined || !Number.isFinite(value)) return "—";
+  const formatted = formatNumber(Math.abs(value), digits);
+  if (value < 0) return `−₹${formatted} Cr`;
+  if (value > 0) return `+₹${formatted} Cr`;
+  return `₹${formatted} Cr`;
+}
+
 export function formatRupee(value: number | null | undefined): string {
   if (value === null || value === undefined || !Number.isFinite(value)) return "—";
   return `₹${formatNumber(value)}`;

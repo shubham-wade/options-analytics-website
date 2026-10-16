@@ -1,0 +1,437 @@
+{
+  "asOf": "2026-10-16",
+  "generatedAt": "2026-10-16T18:40:54.266Z",
+  "nifty": {
+    "name": "NIFTY 50",
+    "open": 23065.1,
+    "high": 23149.85,
+    "low": 22913.8,
+    "close": 23146.15,
+    "previousClose": 22997.35,
+    "change": 148.8000000000029,
+    "percentChange": 0.65,
+    "advances": 26,
+    "declines": 24,
+    "unchanged": 0,
+    "closingLocation": 0.9843253547977246,
+    "gap": 67.75
+  },
+  "bankNifty": {
+    "name": "NIFTY BANK",
+    "open": 55927.15,
+    "high": 55989.55,
+    "low": 55526.3,
+    "close": 55844,
+    "previousClose": 55810.5,
+    "change": 33.5,
+    "percentChange": 0.06,
+    "advances": 8,
+    "declines": 6,
+    "unchanged": 0,
+    "closingLocation": 0.6858067997841275,
+    "gap": 116.65000000000146
+  },
+  "vix": {
+    "close": 14.08,
+    "previousClose": 14.03,
+    "change": 0.05000000000000071,
+    "percentChange": 0.35,
+    "regime": "moderate",
+    "regimeRule": "Low is below 13, moderate is 13 up to 18, and elevated is 18 or higher. These cutoffs are local labels, not an exchange classification."
+  },
+  "sectors": [
+    {
+      "name": "NIFTY IT",
+      "percentChange": 3.92
+    },
+    {
+      "name": "NIFTY MEDIA",
+      "percentChange": 1.92
+    },
+    {
+      "name": "NIFTY METAL",
+      "percentChange": 0.95
+    },
+    {
+      "name": "NIFTY AUTO",
+      "percentChange": 0.75
+    },
+    {
+      "name": "NIFTY PSU BANK",
+      "percentChange": 0.67
+    },
+    {
+      "name": "NIFTY FINANCIAL SERVICES",
+      "percentChange": 0.09
+    },
+    {
+      "name": "NIFTY ENERGY",
+      "percentChange": -0.06
+    },
+    {
+      "name": "NIFTY PHARMA",
+      "percentChange": -0.14
+    },
+    {
+      "name": "NIFTY REALTY",
+      "percentChange": -0.33
+    },
+    {
+      "name": "NIFTY FMCG",
+      "percentChange": -0.39
+    }
+  ],
+  "contributors": {
+    "points": 148.78367073801275,
+    "pullers": [
+      {
+        "symbol": "INFY",
+        "weight": 3.6838425810460116,
+        "percentChange": 4.612612612612617,
+        "points": 39.077416213318834
+      },
+      {
+        "symbol": "BHARTIARTL",
+        "weight": 5.298083215635458,
+        "percentChange": 2.750809061488673,
+        "points": 33.516373117550145
+      },
+      {
+        "symbol": "TCS",
+        "weight": 2.2544199437685695,
+        "percentChange": 4.8936170212765955,
+        "points": 25.37129241187233
+      },
+      {
+        "symbol": "TECHM",
+        "weight": 0.984877683547979,
+        "percentChange": 8.484848484848486,
+        "points": 19.217822735781187
+      },
+      {
+        "symbol": "ICICIBANK",
+        "weight": 9.359640908874576,
+        "percentChange": 0.5469987044767459,
+        "points": 11.77397961496582
+      },
+      {
+        "symbol": "M&M",
+        "weight": 2.402522702347096,
+        "percentChange": 2.0687004228256027,
+        "points": 11.429912303016605
+      },
+      {
+        "symbol": "BAJFINANCE",
+        "weight": 2.4749302447819486,
+        "percentChange": 1.745661745661748,
+        "points": 9.93575451481468
+      },
+      {
+        "symbol": "HDFCBANK",
+        "weight": 10.470204012015726,
+        "percentChange": 0.27515993671321454,
+        "points": 6.625492088758976
+      },
+      {
+        "symbol": "HCLTECH",
+        "weight": 1.346436967716792,
+        "percentChange": 1.4705882352941175,
+        "points": 4.553600323459102
+      },
+      {
+        "symbol": "HINDALCO",
+        "weight": 1.2160315753099953,
+        "percentChange": 1.5830396598981906,
+        "points": 4.427050154283633
+      }
+    ],
+    "draggers": [
+      {
+        "symbol": "BSE",
+        "weight": 1.3162156196152053,
+        "percentChange": -1.8961493582263713,
+        "points": -5.739543854096429
+      },
+      {
+        "symbol": "RELIANCE",
+        "weight": 7.633864387292745,
+        "percentChange": -0.3127572016460868,
+        "points": -5.490723246378627
+      },
+      {
+        "symbol": "INDIGO",
+        "weight": 1.0163669754119076,
+        "percentChange": -1.912814180775601,
+        "points": -4.470963483803481
+      },
+      {
+        "symbol": "BEL",
+        "weight": 1.2801854966537562,
+        "percentChange": -0.9332281808622384,
+        "points": -2.747505322206089
+      },
+      {
+        "symbol": "ONGC",
+        "weight": 0.8199047743893221,
+        "percentChange": -1.175213675213669,
+        "points": -2.215940253165852
+      },
+      {
+        "symbol": "JIOFIN",
+        "weight": 0.6754689103559152,
+        "percentChange": -1.2602164284735815,
+        "points": -1.9576195630237556
+      },
+      {
+        "symbol": "MAXHEALTH",
+        "weight": 0.6000349755220896,
+        "percentChange": -1.3986013986013985,
+        "points": -1.929960048157051
+      },
+      {
+        "symbol": "ASIANPAINT",
+        "weight": 0.998038799017965,
+        "percentChange": -0.7702127659574429,
+        "points": -1.7678114089369412
+      },
+      {
+        "symbol": "TATACONSUM",
+        "weight": 0.6066732738613111,
+        "percentChange": -1.2658227848101333,
+        "points": -1.7660604575486742
+      },
+      {
+        "symbol": "TATASTEEL",
+        "weight": 1.3753256450773537,
+        "percentChange": -0.5102040816326562,
+        "points": -1.6137165930520068
+      }
+    ]
+  },
+  "cash": {
+    "today": {
+      "date": "2026-10-16",
+      "fii": 1165.92,
+      "dii": -3661.28,
+      "combined": -2495.36
+    },
+    "fiveDay": {
+      "sessions": 5,
+      "fii": -8990.5,
+      "dii": 7812.8099999999995,
+      "combined": -1177.6900000000005
+    },
+    "month": {
+      "label": "October 2026",
+      "sessions": 11,
+      "fii": -48769.01000000001,
+      "dii": 48168.13,
+      "combined": -600.8799999999992
+    }
+  },
+  "participants": [
+    {
+      "name": "FII",
+      "futureIndexLong": 39966,
+      "futureIndexShort": 312965,
+      "futureIndexLongChange": 1417,
+      "futureIndexShortChange": -5411,
+      "longRatio": 0.11324026509431022,
+      "longRatioChange": 0.00523718321436345,
+      "indexCallLong": 707527,
+      "indexPutLong": 1318296,
+      "indexCallShort": 981202,
+      "indexPutShort": 797059
+    },
+    {
+      "name": "DII",
+      "futureIndexLong": 51503,
+      "futureIndexShort": 14310,
+      "futureIndexLongChange": 752,
+      "futureIndexShortChange": 0,
+      "longRatio": 0.7825657544861957,
+      "longRatioChange": 0.0025131884327996845,
+      "indexCallLong": 10575,
+      "indexPutLong": 89881,
+      "indexCallShort": 1900,
+      "indexPutShort": 0
+    },
+    {
+      "name": "Pro",
+      "futureIndexLong": 45888,
+      "futureIndexShort": 29996,
+      "futureIndexLongChange": -5127,
+      "futureIndexShortChange": 3055,
+      "longRatio": 0.6047124558536714,
+      "longRatioChange": -0.04969515869812702,
+      "indexCallLong": 1223426,
+      "indexPutLong": 1247278,
+      "indexCallShort": 1014951,
+      "indexPutShort": 1366909
+    },
+    {
+      "name": "Client",
+      "futureIndexLong": 276618,
+      "futureIndexShort": 56704,
+      "futureIndexLongChange": 2253,
+      "futureIndexShortChange": 1651,
+      "longRatio": 0.8298822159953438,
+      "longRatioChange": -0.0029957688142293604,
+      "indexCallLong": 3823581,
+      "indexPutLong": 4191151,
+      "indexCallShort": 3767056,
+      "indexPutShort": 4682637
+    }
+  ],
+  "participantAsOf": "Oct 16, 2026",
+  "participantPrevious": "Oct 15, 2026",
+  "futures": {
+    "priceChange": 148.8000000000029,
+    "oi": 413975,
+    "oiChange": -705,
+    "reading": "Possible short covering: the index rose while index-futures open interest fell."
+  },
+  "chains": [
+    {
+      "expiry": "19-Oct-2026",
+      "callOi": 2739323,
+      "putOi": 3626600,
+      "pcr": 1.3239037528615647,
+      "callOiChange": 810478,
+      "putOiChange": 420205,
+      "atmStrike": 23150,
+      "atmIv": 10.935,
+      "lowerPutIv": 15.96,
+      "upperCallIv": 11.98,
+      "topCalls": [
+        {
+          "strike": 24000,
+          "oi": 217028,
+          "change": 63421
+        },
+        {
+          "strike": 23500,
+          "oi": 208554,
+          "change": 63909
+        },
+        {
+          "strike": 24500,
+          "oi": 144716,
+          "change": 110299
+        }
+      ],
+      "topPuts": [
+        {
+          "strike": 22000,
+          "oi": 281076,
+          "change": 92775
+        },
+        {
+          "strike": 22500,
+          "oi": 200627,
+          "change": 1596
+        },
+        {
+          "strike": 22700,
+          "oi": 183052,
+          "change": 12560
+        }
+      ]
+    },
+    {
+      "expiry": "27-Oct-2026",
+      "callOi": 1429118,
+      "putOi": 1539162,
+      "pcr": 1.0770013392875886,
+      "callOiChange": 195021,
+      "putOiChange": 173450,
+      "atmStrike": 23150,
+      "atmIv": 12.035,
+      "lowerPutIv": 14.92,
+      "upperCallIv": 10.05,
+      "topCalls": [
+        {
+          "strike": 23500,
+          "oi": 161390,
+          "change": 10913
+        },
+        {
+          "strike": 24000,
+          "oi": 128512,
+          "change": 15040
+        },
+        {
+          "strike": 23000,
+          "oi": 87522,
+          "change": -3672
+        }
+      ],
+      "topPuts": [
+        {
+          "strike": 22500,
+          "oi": 106656,
+          "change": 16001
+        },
+        {
+          "strike": 23000,
+          "oi": 92193,
+          "change": 19004
+        },
+        {
+          "strike": 22000,
+          "oi": 87258,
+          "change": -4542
+        }
+      ]
+    }
+  ],
+  "volatility": {
+    "daily": 0.00846927,
+    "note": "From the NSE futures volatility file for NIFTY. This is one day’s figure, not realised volatility over 5, 10 or 20 sessions."
+  },
+  "portfolio": null,
+  "evidence": {
+    "supportive": [
+      "NIFTY closed up 148.80 points.",
+      "NIFTY finished in the top third of the day’s range.",
+      "FII cash flow was net buying.",
+      "The FII index-futures long ratio rose versus the previous session."
+    ],
+    "adverse": [
+      "DII cash flow was net selling.",
+      "India VIX rose."
+    ],
+    "inferred": [
+      "Possible short covering: the index rose while index-futures open interest fell.",
+      "Nearest-expiry put-call ratio is 1.32, using put open interest divided by call open interest. A high or low ratio is context, not a signal by itself.",
+      "FII index-futures contracts are mostly short. That describes the book, not the next session’s direction."
+    ]
+  },
+  "gaps": [],
+  "sources": [
+    {
+      "name": "NSE index feed",
+      "detail": "NIFTY 50, BANK NIFTY, India VIX, advances and declines, sector moves. Unofficial site feed."
+    },
+    {
+      "name": "NSE NIFTY 50 constituents",
+      "detail": "Free-float weight at the previous close times today’s price change, scaled by the index divisor implied by those weights. The 50 estimates add up to the index move."
+    },
+    {
+      "name": "NSE participant-wise open interest",
+      "detail": "FII, DII, proprietary and client contracts. End-of-day file."
+    },
+    {
+      "name": "NSE option chain",
+      "detail": "Nearest two NIFTY expiries. Put-call ratio is put open interest divided by call open interest."
+    },
+    {
+      "name": "NSE futures volatility file",
+      "detail": "Daily underlying volatility for NIFTY. Not a 5-, 10- or 20-session realised figure."
+    },
+    {
+      "name": "Saved FII/DII cash file",
+      "detail": "Provisional combined cash-market nets. Five-day and month figures sum the saved sessions only."
+    }
+  ]
+}

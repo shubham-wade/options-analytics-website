@@ -6,6 +6,8 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ContributionChart, PortfolioPnlChart } from "@/components/dashboard/charts";
 import { DailyPnlChart } from "@/components/dashboard/daily-pnl";
+import { FiiDiiChart } from "@/components/dashboard/fii-dii";
+import { FlowNotices } from "@/components/dashboard/flow-notices";
 import { DecayStrip } from "@/components/dashboard/decay-strip";
 import { DirectionMix } from "@/components/dashboard/direction-mix";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
@@ -29,6 +31,7 @@ import { diffOrders, type PublicPendingOrder } from "@/lib/kite/orders";
 import type { PublicPortfolio } from "@/lib/kite/portfolio";
 import type { ScenarioResult } from "@/lib/scenario/engine";
 import type { PublicSessionStatus } from "@/lib/session/store";
+import type { FlowNotice } from "@/lib/flows/fii-dii";
 import { DEFAULT_DIVIDEND_YIELD, DEFAULT_RISK_FREE_RATE, DEFAULT_SPOT_MOVES, isNseRegularSession, MODEL_DISCLAIMER } from "@/lib/time";
 
 const selectClass =
@@ -50,6 +53,11 @@ export function Dashboard() {
   const [orders, setOrders] = useState<PublicPendingOrder[] | null>(null);
   const [ordersError, setOrdersError] = useState<string | null>(null);
   const [notices, setNotices] = useState<ShownOrderNotice[]>([]);
+  const [flowNotices, setFlowNotices] = useState<FlowNotice[]>([]);
+  const dismissedFlows = useRef(new Set<string>());
+  const acceptFlows = useCallback((incoming: FlowNotice[]) => {
+    setFlowNotices(incoming.filter((notice) => !dismissedFlows.current.has(notice.key)));
+  }, []);
   const orderBookRef = useRef<PublicPendingOrder[] | null>(null);
   const [scenario, setScenario] = useState<ScenarioResult | null>(null);
   const [includeFlat, setIncludeFlat] = useState(false);
@@ -160,6 +168,22 @@ export function Dashboard() {
     followSession();
     const timer = window.setInterval(followSession, 15_000);
     return () => window.clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const syncReport = () => {
+      void fetch("/api/report/sync");
+    };
+    syncReport();
+    const timer = window.setInterval(syncReport, 30 * 60 * 1000);
+    const onVisible = () => {
+      if (document.visibilityState === "visible") syncReport();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.clearInterval(timer);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
   }, []);
 
   useEffect(() => {
@@ -279,6 +303,9 @@ export function Dashboard() {
     <TooltipProvider delayDuration={200}>
       <LabHeader kicker="Zerodha" live={portfolio?.spot.quality === "live"} refreshing={refreshing}>
         <ThemeToggle />
+        <Button variant="outline" size="sm" asChild>
+          <Link href="/report">Report</Link>
+        </Button>
         <Button variant="outline" size="sm" asChild>
           <Link href="/manual">Manual book</Link>
         </Button>
@@ -554,6 +581,8 @@ export function Dashboard() {
 
         <DailyPnlChart />
 
+        <FiiDiiChart onNotices={acceptFlows} />
+
         <section className="grid gap-4 lg:grid-cols-2">
           <Section title="Model assumptions" contentClassName="space-y-2 text-sm text-muted-foreground">
               <p>European Black–Scholes–Merton. Forward = spot × exp((rate − dividend yield) × time).</p>
@@ -575,11 +604,27 @@ export function Dashboard() {
           </Section>
         </section>
       </main>
-      <OrderNotices
-        notices={notices}
-        onDismiss={(key) => setNotices((current) => current.filter((notice) => notice.key !== key))}
-        onDismissAll={() => setNotices([])}
-      />
+      {notices.length > 0 || flowNotices.length > 0 ? (
+        <div className="fixed right-4 top-28 z-50 flex w-[min(100vw-2rem,22rem)] flex-col gap-2" aria-live="assertive">
+          <OrderNotices
+            embedded
+            notices={notices}
+            onDismiss={(key) => setNotices((current) => current.filter((notice) => notice.key !== key))}
+            onDismissAll={() => setNotices([])}
+          />
+          <FlowNotices
+            notices={flowNotices}
+            onDismiss={(key) => {
+              dismissedFlows.current.add(key);
+              setFlowNotices((current) => current.filter((notice) => notice.key !== key));
+            }}
+            onDismissAll={() => {
+              for (const notice of flowNotices) dismissedFlows.current.add(notice.key);
+              setFlowNotices([]);
+            }}
+          />
+        </div>
+      ) : null}
     </TooltipProvider>
   );
 }

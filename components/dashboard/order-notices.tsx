@@ -19,14 +19,16 @@ export function OrderNotices({
   notices,
   onDismiss,
   onDismissAll,
+  embedded = false,
 }: {
   notices: ShownOrderNotice[];
   onDismiss: (key: string) => void;
   onDismissAll: () => void;
+  embedded?: boolean;
 }) {
   if (notices.length === 0) return null;
-  return (
-    <div className="fixed right-4 top-28 z-50 flex w-[min(100vw-2rem,22rem)] flex-col gap-2" aria-live="assertive">
+  const stack = (
+    <div className={embedded ? "flex flex-col gap-2" : "fixed right-4 top-28 z-50 flex w-[min(100vw-2rem,22rem)] flex-col gap-2"} aria-live="assertive">
       <div className="flex justify-end">
         <button type="button" className="text-xs text-muted-foreground underline-offset-2 hover:underline" onClick={onDismissAll}>
           Dismiss all
@@ -58,6 +60,7 @@ export function OrderNotices({
       ))}
     </div>
   );
+  return stack;
 }
 
 /** A short tone. Browsers may ignore it until the page has been clicked. */
