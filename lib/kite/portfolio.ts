@@ -1,6 +1,7 @@
 import type { ScenarioPosition } from "@/lib/scenario/engine";
 import { runScenarios, ScenarioInputError, type ScenarioResult } from "@/lib/scenario/engine";
 import { assessQuote } from "@/lib/kite/quotes";
+import { kiteDayPnl } from "@/lib/pricing/pnl";
 import {
   extractNetPositions,
   findNiftySpotInstrument,
@@ -75,6 +76,8 @@ export interface PortfolioSnapshot {
     key: string;
     symbol: "NIFTY 50";
     price: number | null;
+    /** Live level minus the previous close. Kite `net_change` is used when the close is missing. */
+    change: number | null;
     quality: QuoteQuality;
     exchangeTimestamp: string | null;
     instrumentFound: boolean;
@@ -85,16 +88,41 @@ export interface PortfolioSnapshot {
   brokerUnrealised: number | null;
   brokerRealised: number | null;
   brokerPnl: number | null;
+  brokerDayPnl: number | null;
+  brokerDayPnlComplete: boolean;
   instrumentCacheFetchedAt: string;
   instrumentCacheHit: boolean;
   warnings: string[];
   scenarioInputs: ScenarioPosition[];
 }
 
+function spotDayChange(price: number | null, previousClose: number | null, netChange: number | null): number | null {
+  if (price !== null && previousClose !== null) {
+    const change = price - previousClose;
+    return Number.isFinite(change) ? change : null;
+  }
+  return netChange;
+}
+
+function finiteNumber(value: unknown): number | null {
+  const number = typeof value === "number" ? value : typeof value === "string" ? Number(value) : Number.NaN;
+  return Number.isFinite(number) ? number : null;
+}
+
 function sumField(positions: PublicPosition[], field: "brokerUnrealised" | "brokerRealised" | "brokerPnl"): number | null {
   const values = positions.filter((position) => position.quantity !== 0).map((position) => position[field]);
   if (values.every((value) => value === null)) return null;
   return values.reduce<number>((total, value) => total + (value ?? 0), 0);
+}
+
+function sumDayPnl(positions: PublicPosition[]): { total: number | null; complete: boolean } {
+  if (positions.length === 0) return { total: 0, complete: true };
+  const values = positions.map((position) => position.brokerDayPnl);
+  if (values.every((value) => value === null)) return { total: null, complete: false };
+  return {
+    total: values.reduce<number>((total, value) => total + (value ?? 0), 0),
+    complete: values.every((value) => value !== null),
+  };
 }
 
 export async function loadPortfolio(
@@ -121,12 +149,13 @@ export async function loadPortfolio(
     warnings.push("The instrument master could not be loaded. Contract metadata will fall back to the trading symbol.");
   }
 
-  const selected = selectNiftyOptionPositions(net, instruments, { includeFlat: options.includeFlat });
+  const selected = selectNiftyOptionPositions(net, instruments, { includeFlat: true });
   const spotInstrument = findNiftySpotInstrument(nse);
   if (!spotInstrument) {
     warnings.push("NIFTY 50 was not found in the NSE instrument master. The documented quote key NSE:NIFTY 50 is still requested.");
   }
 
+  const netById = new Map(net.map((position) => [`${position.exchange}:${position.tradingsymbol}:${position.product}`, position]));
   const keys = [NIFTY_SPOT_KEY, ...selected.positions.map((position) => quoteKey(position.exchange, position.tradingSymbol))];
   let quotes: Record<string, KiteQuote | undefined> = {};
   try {
@@ -137,14 +166,34 @@ export async function loadPortfolio(
   }
 
   const spotQuote = assessQuote(quotes[NIFTY_SPOT_KEY], now);
-  const positions: PublicPosition[] = selected.positions.map((position) => {
+  const priced: PublicPosition[] = selected.positions.map((position) => {
     const key = quoteKey(position.exchange, position.tradingSymbol);
     const quote = assessQuote(quotes[key], now);
-    if (quote.quality === "unavailable") {
+    if (quote.quality === "unavailable" && position.quantity !== 0) {
       warnings.push(`${position.tradingSymbol} has no usable quote.`);
     }
-    return { ...position, quote, quoteKey: key, warnings: [...position.warnings, ...quote.warnings] };
+    const source = netById.get(position.id);
+    const multiplier = source && Number.isFinite(source.multiplier) && source.multiplier > 0 ? source.multiplier : position.multiplier;
+    return {
+      ...position,
+      quote,
+      quoteKey: key,
+      brokerDayPnl: source
+        ? kiteDayPnl({
+            quantity: source.quantity,
+            overnightQuantity: source.overnight_quantity,
+            multiplier,
+            closePrice: finiteNumber(source.close_price),
+            dayBuyValue: finiteNumber(source.day_buy_value),
+            daySellValue: finiteNumber(source.day_sell_value),
+            markPrice: quote.ltp ?? finiteNumber(source.last_price),
+          })
+        : null,
+      warnings: [...position.warnings, ...quote.warnings],
+    };
   });
+  const day = sumDayPnl(priced);
+  const positions = options.includeFlat ? priced : priced.filter((position) => position.quantity !== 0);
 
   const scenarioInputs: ScenarioPosition[] = positions
     .filter((position) => position.quantity !== 0)
@@ -167,6 +216,7 @@ export async function loadPortfolio(
       key: NIFTY_SPOT_KEY,
       symbol: "NIFTY 50",
       price: spotQuote.price,
+      change: spotDayChange(spotQuote.price, spotQuote.previousClose, finiteNumber(quotes[NIFTY_SPOT_KEY]?.net_change)),
       quality: spotQuote.quality,
       exchangeTimestamp: spotQuote.exchangeTimestamp,
       instrumentFound: Boolean(spotInstrument),
@@ -177,6 +227,8 @@ export async function loadPortfolio(
     brokerUnrealised: sumField(positions, "brokerUnrealised"),
     brokerRealised: sumField(positions, "brokerRealised"),
     brokerPnl: sumField(positions, "brokerPnl"),
+    brokerDayPnl: day.total,
+    brokerDayPnlComplete: day.complete,
     instrumentCacheFetchedAt: new Date(cacheFetchedAt).toISOString(),
     instrumentCacheHit: cacheHit,
     warnings: [...warnings, ...spotQuote.warnings],

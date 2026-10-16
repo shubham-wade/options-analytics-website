@@ -58,3 +58,20 @@ export function mapKiteError(error: unknown): PublicKiteError {
     publicMessage: "The Zerodha request failed. No order was sent.",
   };
 }
+
+/** A failed place, modify, or cancel may already have reached Zerodha, so this does not claim otherwise. */
+export function orderFailureMessage(error: unknown): { httpStatus: number; message: string } {
+  const mapped = mapKiteError(error);
+  if (mapped.code === "SESSION_EXPIRED" || mapped.code === "RATE_LIMIT") {
+    return { httpStatus: mapped.httpStatus, message: mapped.publicMessage };
+  }
+  const { message } = readError(error);
+  const clean = (typeof message === "string" ? message : "").replace(/\s+/g, " ").trim();
+  if (clean && clean.length <= 400 && !/api_key|access_token|api_secret/i.test(clean)) {
+    return { httpStatus: mapped.httpStatus === 502 ? 400 : mapped.httpStatus, message: clean.slice(0, 400) };
+  }
+  return {
+    httpStatus: mapped.httpStatus,
+    message: "Zerodha did not accept that order request. Check the order book before trying again.",
+  };
+}

@@ -1,5 +1,6 @@
 import "server-only";
 import { KiteConnect, type Connect } from "kiteconnect";
+import type { OrderCommand } from "@/lib/kite/order-actions";
 import type { KiteInstrument, KitePositionsResponse, KiteQuote, KiteSessionData } from "@/lib/kite/types";
 import type { KiteReader } from "@/lib/kite/portfolio";
 
@@ -62,4 +63,30 @@ export async function generateKiteSession(
 
 export async function invalidateKiteSession(client: Connect): Promise<void> {
   await client.invalidateAccessToken();
+}
+
+export async function sendKiteOrder(client: Connect, command: OrderCommand): Promise<string> {
+  if (command.action === "cancel") {
+    const result = await client.cancelOrder(command.variety, command.orderId);
+    return String(result.order_id);
+  }
+  const fields = {
+    order_type: command.orderType,
+    quantity: command.quantity,
+    validity: "DAY" as const,
+    ...(command.price != null ? { price: command.price } : {}),
+    ...(command.triggerPrice != null ? { trigger_price: command.triggerPrice } : {}),
+  };
+  if (command.action === "modify") {
+    const result = await client.modifyOrder(command.variety, command.orderId, fields);
+    return String(result.order_id);
+  }
+  const result = await client.placeOrder(command.variety, {
+    ...fields,
+    exchange: "NFO",
+    tradingsymbol: command.symbol,
+    transaction_type: command.side,
+    product: command.product,
+  });
+  return String(result.order_id);
 }

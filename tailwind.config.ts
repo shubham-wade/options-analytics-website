@@ -45,6 +45,15 @@ const config: Config = {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
+      keyframes: {
+        "live-ping": {
+          "0%": { transform: "scale(1)", opacity: "0.65" },
+          "80%, 100%": { transform: "scale(2.6)", opacity: "0" },
+        },
+      },
+      animation: {
+        "live-ping": "live-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite",
+      },
     },
   },
   plugins: [],

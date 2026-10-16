@@ -14,6 +14,7 @@ export interface ManualContractQuote {
   expiry: string | null;
   lotSize: number | null;
   price: number | null;
+  previousClose: number | null;
   source: "mid" | "ltp" | "none";
   quality: QuoteQuality;
   warnings: string[];
@@ -60,6 +61,7 @@ export async function lookupContracts(
         expiry: null,
         lotSize: null,
         price: null,
+        previousClose: null,
         source: "none" as const,
         quality: "unavailable" as const,
         warnings: ["This is not a NIFTY option symbol."],
@@ -75,6 +77,7 @@ export async function lookupContracts(
       expiry: expiryDate ? expiryDate.toISOString().slice(0, 10) : null,
       lotSize: Number.isFinite(lot) && lot > 0 ? lot : null,
       price: quote.price,
+      previousClose: quote.previousClose,
       source: quote.source,
       quality: quote.quality,
       warnings: quote.warnings,

@@ -11,7 +11,7 @@ export const SETTLEMENT_ASSUMPTION =
   "When a contract expires inside the selected horizon, it is valued at the European cash payoff max(0, spot − strike) for calls and max(0, strike − spot) for puts. The scenario NIFTY level is the settlement price. This is not the official exchange closing auction.";
 
 export const MODEL_DISCLAIMER =
-  "Hypothetical premiums and P&L are Black–Scholes–Merton estimates. They are not executable Zerodha prices and exclude brokerage, taxes, slippage and transaction costs. This application is an analytics tool and cannot place, modify or cancel orders.";
+  "Hypothetical premiums and P&L are Black–Scholes–Merton estimates. They are not executable Zerodha prices and exclude brokerage, taxes, slippage and transaction costs. A confirmed place, modify, or cancel on this page is a live Zerodha order.";
 
 export interface IstParts {
   year: number;

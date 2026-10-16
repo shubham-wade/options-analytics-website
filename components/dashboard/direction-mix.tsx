@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Section } from "@/components/dashboard/section";
 import { formatNumber } from "@/lib/format";
 import { directionMix, type DirectionPosition } from "@/lib/risk/direction";
 import type { PositionGreeks } from "@/lib/scenario/engine";
@@ -27,14 +27,7 @@ export function DirectionMix({
   const bearishWidth = `${(1 - (mix.bullishShare ?? 0)) * 100}%`;
 
   return (
-    <Card>
-      <CardHeader className="pb-2">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <CardTitle>Directional mix</CardTitle>
-          <p className={`text-sm font-medium ${stanceClass}`}>{stance}</p>
-        </div>
-      </CardHeader>
-      <CardContent>
+    <Section title="Directional mix" aside={<p className={`text-sm font-medium ${stanceClass}`}>{stance}</p>}>
         <div
           className="flex h-3 overflow-hidden rounded-full bg-muted"
           role="img"
@@ -58,7 +51,6 @@ export function DirectionMix({
         <p className="mt-1 text-xs text-muted-foreground">
           Long calls and short puts are bullish. Long puts and short calls are bearish. Each Delta figure is the model delta multiplied by quantity, so a larger quantity takes a larger share of the bar.
         </p>
-      </CardContent>
-    </Card>
+    </Section>
   );
 }

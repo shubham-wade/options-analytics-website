@@ -62,6 +62,45 @@ export function positionPnl(inputs: PnlInputs): PnlResult {
   };
 }
 
+/**
+ * Day's P&L for one Kite net position.
+ *
+ * Cash from today's sells and buys, plus the open quantity marked at the last
+ * traded price, minus the overnight quantity marked at the previous close.
+ * A round trip that is flat by the close is included. Lot size is not applied
+ * again: quantity is already in option units.
+ */
+export function kiteDayPnl(input: {
+  quantity: number;
+  overnightQuantity: number;
+  multiplier: number;
+  closePrice: number | null;
+  dayBuyValue: number | null;
+  daySellValue: number | null;
+  markPrice: number | null;
+}): number | null {
+  const { quantity, overnightQuantity, multiplier, closePrice, dayBuyValue, daySellValue, markPrice } = input;
+  if (!Number.isFinite(quantity) || !Number.isFinite(overnightQuantity) || !Number.isFinite(multiplier) || multiplier <= 0) {
+    return null;
+  }
+  if (dayBuyValue === null || daySellValue === null || !Number.isFinite(dayBuyValue) || !Number.isFinite(daySellValue)) {
+    return null;
+  }
+  if (quantity !== 0 && (markPrice === null || !Number.isFinite(markPrice) || markPrice <= 0)) return null;
+  if (overnightQuantity !== 0 && (closePrice === null || !Number.isFinite(closePrice) || closePrice <= 0)) return null;
+  const marked = quantity === 0 ? 0 : markPrice! * quantity * multiplier;
+  const previous = overnightQuantity === 0 ? 0 : closePrice! * overnightQuantity * multiplier;
+  return daySellValue - dayBuyValue + marked - previous;
+}
+
+/** Change from the previous close for a quantity held as typed. No intraday round-trip is known. */
+export function markedFromClosePnl(quantity: number, current: number | null, previousClose: number | null): number | null {
+  if (!Number.isFinite(quantity) || quantity === 0) return null;
+  if (current === null || previousClose === null || !Number.isFinite(current) || !Number.isFinite(previousClose)) return null;
+  if (current <= 0 || previousClose <= 0) return null;
+  return quantity * (current - previousClose);
+}
+
 export function sumNullable(values: Array<number | null>): { total: number | null; complete: boolean } {
   if (values.length === 0) return { total: 0, complete: true };
   let total = 0;

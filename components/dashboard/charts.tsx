@@ -58,7 +58,7 @@ function readChartColors(): ChartColors {
   };
 }
 
-function useChartColors() {
+export function useChartColors() {
   const [colors, setColors] = useState<ChartColors>(fallback);
   useEffect(() => {
     const read = () => setColors(readChartColors());

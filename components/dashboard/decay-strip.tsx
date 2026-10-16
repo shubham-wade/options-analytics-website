@@ -1,14 +1,10 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Section } from "@/components/dashboard/section";
 import { formatInr, pnlClass } from "@/lib/format";
 import type { DecayPoint } from "@/lib/scenario/engine";
 
 export function DecayStrip({ points }: { points: DecayPoint[] }) {
   return (
-    <Card>
-      <CardHeader className="pb-2">
-        <CardTitle>If NIFTY stays here</CardTitle>
-      </CardHeader>
-      <CardContent>
+    <Section title="If NIFTY stays here">
         <div className="grid grid-cols-3 gap-3">
           {points.map((point) => (
             <div key={point.horizonDays}>
@@ -23,7 +19,6 @@ export function DecayStrip({ points }: { points: DecayPoint[] }) {
         <p className="mt-3 text-xs text-muted-foreground">
           Incremental P&L if the spot and implied volatility stay where they are. This is a model view. No order is sent.
         </p>
-      </CardContent>
-    </Card>
+    </Section>
   );
 }

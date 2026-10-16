@@ -6,6 +6,7 @@ import { ContributionChart, PortfolioPnlChart } from "@/components/dashboard/cha
 import { DecayStrip } from "@/components/dashboard/decay-strip";
 import { DirectionMix } from "@/components/dashboard/direction-mix";
 import { ScenarioTable } from "@/components/dashboard/scenario-table";
+import { LabHeader } from "@/components/dashboard/lab-header";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -14,10 +15,17 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
-import { formatIst, formatNumber, formatPercentPoints, pnlClass } from "@/lib/format";
-import { includedScenarioPositions, isBlankManualDraft, prepareManualLeg, type ManualEntry } from "@/lib/manual/book";
+import { formatInr, formatIst, formatNumber, formatPercentPoints, pnlClass } from "@/lib/format";
+import {
+  includedScenarioPositions,
+  isBlankManualDraft,
+  prepareManualLeg,
+  type ManualEntry,
+  type PreparedManualLeg,
+} from "@/lib/manual/book";
 import type { ListedNiftyOption, ManualLookup } from "@/lib/kite/lookup";
 import { parseNiftyOptionSymbol } from "@/lib/kite/positions";
+import { markedFromClosePnl, sumNullable } from "@/lib/pricing/pnl";
 import { runScenarios, ScenarioInputError, type IvMode, type ScenarioResult } from "@/lib/scenario/engine";
 import type { PublicSessionStatus } from "@/lib/session/store";
 import { DEFAULT_DIVIDEND_YIELD, DEFAULT_RISK_FREE_RATE, DEFAULT_SPOT_MOVES, MODEL_DISCLAIMER } from "@/lib/time";
@@ -160,7 +168,7 @@ export function ManualLab() {
     return {
       ...row,
       expiry: row.expiry.trim() || quote?.expiry || "",
-      price: row.price.trim() || (quote?.price != null ? String(quote.price) : ""),
+      price: quote?.price != null ? String(quote.price) : "",
     };
   });
   const effectiveSpot = spotText.trim() || (live?.spot.price != null ? String(live.spot.price) : "");
@@ -194,6 +202,13 @@ export function ManualLab() {
   }, [divPct, effectiveRows, effectiveSpot, horizonDays, ivMode, ivPoints, moves, ratePct]);
 
   const legById = new Map(model.legs.map((leg) => [leg.id, leg]));
+  const dayCandidates = model.legs.flatMap((leg) => {
+    if (!leg.tradingSymbol || leg.quantity === null) return [];
+    const quote = liveBySymbol.get(leg.tradingSymbol);
+    return [{ id: leg.id, pnl: markedFromClosePnl(leg.quantity, leg.price, quote?.previousClose ?? null) }];
+  });
+  const dayBook = sumNullable(dayCandidates.map((candidate) => candidate.pnl));
+  const dayById = new Map(dayCandidates.map((candidate) => [candidate.id, candidate.pnl]));
   const greeks = model.scenario?.currentGreeks;
   const excludedCount = rows.filter((row) => !row.included && legById.get(row.id)?.position).length;
   const scope = excludedCount > 0 ? `Excludes ${excludedCount}` : null;
@@ -245,22 +260,17 @@ export function ManualLab() {
   }
 
   return (
+    <>
+    <LabHeader kicker="Manual book · read only" live={live?.spot.quality === "live"}>
+      <ThemeToggle />
+      <Button variant="outline" size="sm" asChild>
+        <Link href="/">Zerodha book</Link>
+      </Button>
+    </LabHeader>
     <main className="mx-auto flex max-w-[1440px] flex-col gap-6 px-4 py-6 md:px-6">
-      <header className="flex flex-col gap-4 border-b border-border pb-5 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <p className="text-xs uppercase tracking-[0.22em] text-teal-800 dark:text-teal-300/80">Manual book · read only</p>
-          <h1 className="mt-1 text-3xl font-semibold tracking-tight">NIFTY Risk Lab</h1>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Contracts you type stay in this browser until you edit or remove them. A refresh or server restart does not clear them. Nothing on this page places an order.
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <ThemeToggle />
-          <Button variant="outline" asChild>
-            <Link href="/">Zerodha book</Link>
-          </Button>
-        </div>
-      </header>
+      <p className="max-w-2xl text-sm text-muted-foreground">
+        Contracts you type stay in this browser until you edit or remove them. A refresh or server restart does not clear them. Nothing on this page places an order.
+      </p>
 
       <Card>
         <CardHeader>
@@ -274,7 +284,7 @@ export function ManualLab() {
             <Input value={spotText} onChange={(event) => setSpotText(event.target.value)} inputMode="decimal" placeholder={live?.spot.price ? String(live.spot.price) : "25200"} />
           </Field>
           <p className="text-xs text-muted-foreground">
-            Quantity is signed option units. A negative quantity is a short. Choose the contract from the Zerodha list. Leave current price blank to use the live quote.
+            Quantity is signed option units. A negative quantity is a short. Choose the contract from the Zerodha list. Current price always comes from the live Kite quote.
             {connected
               ? ` Zerodha is connected${live?.fetchedAt ? `, quotes as of ${formatIst(live.fetchedAt)}` : ""}.`
               : " Connect on the Zerodha page to fill those live fields. Typed values are kept either way."}
@@ -282,7 +292,6 @@ export function ManualLab() {
           {rows.map((row) => {
             const leg = legById.get(row.id);
             const quote = liveBySymbol.get(row.symbol.trim().toUpperCase());
-            const usingLivePrice = !row.price.trim() && quote?.price != null;
             const listed = catalog.find((contract) => contract.symbol === row.symbol.trim().toUpperCase());
             const pick = picks[row.id] ?? {
               expiry: listed?.expiry ?? "",
@@ -352,8 +361,8 @@ export function ManualLab() {
                 <Field label="Average">
                   <Input value={row.average} inputMode="decimal" placeholder="120" onChange={(event) => updateRow(row.id, { average: event.target.value })} />
                 </Field>
-                <Field label="Current price" hint={usingLivePrice ? `Blank is using the Kite quote ${formatNumber(quote?.price)}` : "Blank uses the Kite quote"}>
-                  <Input value={row.price} inputMode="decimal" placeholder="98" onChange={(event) => updateRow(row.id, { price: event.target.value })} />
+                <Field label="Current price" hint={quote ? `${quote.source === "mid" ? "Bid/ask mid" : quote.source === "ltp" ? "Last traded price" : "No price"} · ${qualityLabel(quote.quality)}` : "Live Kite quote"}>
+                  <Input value={quote?.price != null ? formatNumber(quote.price) : ""} readOnly placeholder="Waiting for Kite" />
                 </Field>
                 <div className="flex items-end justify-between gap-3">
                   <div className="flex items-center gap-2 pb-2">
@@ -382,6 +391,7 @@ export function ManualLab() {
                   </p>
                 ) : null}
                 {leg?.error ? <p className="text-sm text-rose-700 dark:text-rose-400 md:col-span-6">{leg.error}</p> : null}
+                {leg?.note ? <p className="text-xs text-amber-800 dark:text-amber-300 md:col-span-6">{leg.note}</p> : null}
               </div>
             );
           })}
@@ -433,8 +443,22 @@ export function ManualLab() {
       {!moves ? <p className="rounded-md border border-amber-600/30 bg-amber-500/10 px-3 py-2 text-sm text-amber-950 dark:text-amber-100">Enter 1 to 15 finite moves between -5000 and 5000, separated by commas.</p> : null}
       {model.modelError ? <p className="rounded-md border border-amber-600/30 bg-amber-500/10 px-3 py-2 text-sm text-amber-950 dark:text-amber-100">{model.modelError}</p> : null}
 
-      <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6">
+      <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         <Metric label="NIFTY spot" value={formatNumber(Number(effectiveSpot) > 0 ? Number(effectiveSpot) : null, 2)} detail={spotText.trim() ? "Entered" : live?.spot.price ? "Kite quote" : "Enter a spot or connect Zerodha"} />
+        <Metric
+          label="Day's P&L"
+          value={formatInr(dayCandidates.length > 0 ? dayBook.total : null)}
+          detail={
+            !live
+              ? "Connect Zerodha to read the previous close"
+              : dayCandidates.length === 0
+                ? "Add a contract to mark it from the previous close"
+                : dayBook.complete
+                  ? "Live price versus the previous close"
+                  : "Previous close is missing for a contract"
+          }
+          className={pnlClass(dayBook.total)}
+        />
         <Metric label="In model" value={String(modeledPositions.length)} detail={excludedCount > 0 ? `${excludedCount} left out` : "Typed contracts"} />
         <Metric label="Portfolio delta" value={formatNumber(greeks?.delta ?? null, 1)} detail={withScope(greeks && !greeks.complete ? "Partial" : "Model, per point")} />
         <Metric label="Portfolio gamma" value={formatNumber(greeks?.gamma ?? null, 4)} detail={withScope("Per one index point")} />
@@ -456,7 +480,7 @@ export function ManualLab() {
         <CardContent>
           <Table>
             <TableCaption>
-              A blank expiry or current price uses the latest Kite value when Zerodha is connected. A number you type is kept and is not replaced by the quote. Priced {formatIst(model.now.toISOString())}.
+              Current price is the latest Kite quote. A typed price is not used. Priced {formatIst(model.now.toISOString())}.
             </TableCaption>
             <TableHeader>
               <TableRow>
@@ -465,6 +489,7 @@ export function ManualLab() {
                 <TableHead className="text-right">Qty</TableHead>
                 <TableHead className="text-right">Avg</TableHead>
                 <TableHead className="text-right">Current</TableHead>
+                <TableHead className="text-right">Day P&L</TableHead>
                 <TableHead className="text-right">IV</TableHead>
                 <TableHead className="text-right">Delta</TableHead>
                 <TableHead className="text-right">Gamma</TableHead>
@@ -484,6 +509,16 @@ export function ManualLab() {
                       <div className="text-xs text-muted-foreground">
                         {leg.optionType ?? "—"} {leg.strike ?? "—"} · {leg.expiry ?? "expiry n/a"}
                       </div>
+                      {pricingReasons(leg, greek, model.modelError, Number(effectiveSpot) > 0).map((reason) => (
+                        <div key={reason} className="mt-1 max-w-xs text-[11px] text-amber-800 dark:text-amber-300">
+                          {reason}
+                        </div>
+                      ))}
+                      {dayById.has(row.id) && dayById.get(row.id) == null ? (
+                        <div className="mt-1 max-w-xs text-[11px] text-amber-800 dark:text-amber-300">
+                          {live ? "The Kite quote has no previous close, so day's P&L is unavailable." : "Connect Zerodha to read the previous close for day's P&L."}
+                        </div>
+                      ) : null}
                     </TableCell>
                     <TableCell>
                       {leg.side ? (
@@ -497,6 +532,7 @@ export function ManualLab() {
                     <TableCell className="text-right font-mono tabular">{formatNumber(leg.quantity, 0)}</TableCell>
                     <TableCell className="text-right font-mono tabular">{formatNumber(leg.average)}</TableCell>
                     <TableCell className="text-right font-mono tabular">{formatNumber(leg.price)}</TableCell>
+                    <TableCell className={`text-right font-mono tabular ${pnlClass(dayById.get(row.id))}`}>{formatInr(dayById.get(row.id) ?? null)}</TableCell>
                     <TableCell className="text-right font-mono tabular">{formatPercentPoints(greek?.iv)}</TableCell>
                     <TableCell className="text-right font-mono tabular">{formatNumber(greek?.delta, 2)}</TableCell>
                     <TableCell className="text-right font-mono tabular">{formatNumber(greek?.gamma, 4)}</TableCell>
@@ -560,13 +596,14 @@ export function ManualLab() {
         </CardHeader>
         <CardContent className="space-y-2 text-sm text-muted-foreground">
           <p>{MODEL_DISCLAIMER}</p>
-          <p>European Black–Scholes–Merton. IV is calibrated from the current price you entered.</p>
+          <p>European Black–Scholes–Merton. IV is calibrated from the live Kite quote.</p>
           <p>Day count is ACT/365. Theta is per calendar day. Vega is per one volatility point.</p>
           <p>{model.scenario?.settlementAssumption}</p>
           <p>Turning off “In model” removes that contract from the totals, the mix, and the scenario. It does not change a brokerage account.</p>
         </CardContent>
       </Card>
     </main>
+    </>
   );
 }
 
@@ -585,6 +622,19 @@ function formatExpiryLabel(iso: string): string {
   if (!match) return iso;
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   return `${Number(match[3])} ${months[Number(match[2]) - 1]} ${match[1]}`;
+}
+
+function pricingReasons(
+  leg: PreparedManualLeg,
+  greek: { iv: number | null; warnings: string[] } | undefined,
+  modelError: string | null,
+  spotReady: boolean,
+): string[] {
+  const reasons = [leg.error, leg.note].filter((reason): reason is string => Boolean(reason));
+  if (!greek || greek.iv == null) reasons.push(...(greek?.warnings ?? []));
+  if (leg.position && !greek && !spotReady) reasons.push("NIFTY spot is missing, so IV and Greeks were not calculated.");
+  if (leg.position && !greek && spotReady && modelError) reasons.push(modelError);
+  return [...new Set(reasons)];
 }
 
 function parseMoves(text: string): number[] | null {

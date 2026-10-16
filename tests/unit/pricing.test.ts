@@ -6,7 +6,7 @@ import {
   PricingInputError,
   undiscountedIntrinsic,
 } from "@/lib/pricing/black-scholes";
-import { positionPnl } from "@/lib/pricing/pnl";
+import { kiteDayPnl, markedFromClosePnl, positionPnl } from "@/lib/pricing/pnl";
 
 const base = {
   spot: 100,
@@ -85,5 +85,40 @@ describe("position P&L", () => {
     const result = positionPnl({ quantity: 75, multiplier: 1, entryPremium: null, exitPremium: 80, currentPremium: 90 });
     expect(result.tradePnl).toBeNull();
     expect(result.incrementalPnl).toBe(75 * (80 - 90));
+  });
+});
+
+describe("day P&L", () => {
+  it("marks an untouched overnight position from the previous close", () => {
+    expect(
+      kiteDayPnl({
+        quantity: 75,
+        overnightQuantity: 75,
+        multiplier: 1,
+        closePrice: 110,
+        dayBuyValue: 0,
+        daySellValue: 0,
+        markPrice: 130,
+      }),
+    ).toBe(1500);
+  });
+
+  it("includes a same-day round trip that is flat", () => {
+    expect(
+      kiteDayPnl({
+        quantity: 0,
+        overnightQuantity: 0,
+        multiplier: 1,
+        closePrice: 110,
+        dayBuyValue: 7500,
+        daySellValue: 8250,
+        markPrice: 130,
+      }),
+    ).toBe(750);
+  });
+
+  it("marks a manual quantity from the previous close to the live price", () => {
+    expect(markedFromClosePnl(-65, 98, 110)).toBe(-65 * (98 - 110));
+    expect(markedFromClosePnl(65, 98, null)).toBeNull();
   });
 });

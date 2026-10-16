@@ -295,10 +295,10 @@ function priceScenarios(input: ScenarioRequest, withSideViews: boolean): Scenari
       if (!iv) {
         rowWarnings.push(
           implied.status === "below-bounds"
-            ? "Market premium is below the model lower bound, so implied volatility was not fabricated."
+            ? `The live premium ${position.marketPremium?.toFixed(2)} is below the model minimum of ${implied.lowerBound.toFixed(2)} for this spot and strike, so IV and Greeks were not invented.`
             : implied.status === "above-bounds"
-              ? "Market premium is above the model upper bound, so implied volatility was not fabricated."
-              : "Implied volatility could not be calibrated from the observed premium.",
+              ? `The live premium ${position.marketPremium?.toFixed(2)} is above the model maximum of ${implied.upperBound.toFixed(2)} for this spot and strike, so IV and Greeks were not invented.`
+              : "Implied volatility could not be calibrated from the live premium, so Greeks were not calculated.",
         );
       }
     } else if (position.marketPremium === null) {

@@ -27,6 +27,8 @@ export interface PreparedManualLeg {
   expiry: string | null;
   expiryFromSymbol: boolean;
   error: string | null;
+  /** Shown with the row, without blocking IV and Greeks. */
+  note: string | null;
   position: ScenarioPosition | null;
 }
 
@@ -44,6 +46,7 @@ export function prepareManualLeg(entry: ManualEntry, now: Date): PreparedManualL
     expiry: null,
     expiryFromSymbol: false,
     error: null,
+    note: null,
     position: null,
   };
   const touched = Boolean(tradingSymbol || entry.quantity.trim() || entry.average.trim() || entry.price.trim() || entry.expiry.trim());
@@ -60,7 +63,8 @@ export function prepareManualLeg(entry: ManualEntry, now: Date): PreparedManualL
   const quantity = readNumber(entry.quantity);
   const average = readNumber(entry.average);
   const price = readNumber(entry.price);
-  const error = legError(expiryIso, expiry, quantity, average, price, parsed.contractYear, parsed.contractMonth);
+  const error = legError(expiryIso, expiry, quantity, price, parsed.contractYear, parsed.contractMonth);
+  const averageMissing = average === null || !Number.isFinite(average) || average <= 0;
 
   const prepared: PreparedManualLeg = {
     ...base,
@@ -73,8 +77,9 @@ export function prepareManualLeg(entry: ManualEntry, now: Date): PreparedManualL
     expiry: expiry ? expiryIso : null,
     expiryFromSymbol,
     error,
+    note: averageMissing && !error ? "Average price is missing, so trade P&L is unavailable. IV and Greeks use the live quote." : null,
   };
-  if (error || !expiry || quantity === null || average === null || price === null) return prepared;
+  if (error || !expiry || quantity === null || price === null) return prepared;
 
   prepared.position = {
     id: entry.id,
@@ -83,7 +88,7 @@ export function prepareManualLeg(entry: ManualEntry, now: Date): PreparedManualL
     strike: parsed.strike,
     quantity,
     multiplier: 1,
-    entryPremium: average,
+    entryPremium: averageMissing ? null : average,
     marketPremium: price,
     timeYears: timeToExpiryYears(niftySettlementInstant(expiry), now.getTime(), 0),
   };
@@ -113,7 +118,6 @@ function legError(
   expiryIso: string,
   expiry: Date | null,
   quantity: number | null,
-  average: number | null,
   price: number | null,
   year: number,
   month: number,
@@ -122,8 +126,7 @@ function legError(
   if (!expiry) return `Expiry must be a real day in ${MONTHS[month]} ${year}.`;
   if (quantity === null) return "Enter the signed quantity. A negative quantity is a short.";
   if (!Number.isFinite(quantity) || quantity === 0) return "Quantity must be a non-zero number of option units.";
-  if (average === null || !Number.isFinite(average) || average <= 0) return "Average price must be above zero.";
-  if (price === null || !Number.isFinite(price) || price <= 0) return "Current price must be above zero.";
+  if (price === null || !Number.isFinite(price) || price <= 0) return "The live Kite quote is not available yet.";
   return null;
 }
 

@@ -19,7 +19,7 @@ export function rememberSnapshot(sessionId: string, includeFlat: boolean, snapsh
   cache().set(sessionId, { at: Date.now(), includeFlat, snapshot });
 }
 
-export function recentSnapshot(sessionId: string, includeFlat: boolean, maxAgeMs = 20_000): PortfolioSnapshot | null {
+export function recentSnapshot(sessionId: string, includeFlat: boolean, maxAgeMs = 4_000): PortfolioSnapshot | null {
   const hit = cache().get(sessionId);
   if (!hit || hit.includeFlat !== includeFlat) return null;
   if (Date.now() - hit.at > maxAgeMs) return null;

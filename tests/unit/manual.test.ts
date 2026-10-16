@@ -56,6 +56,29 @@ describe("manual book", () => {
     expect(leg.side).toBe("long");
   });
 
+  it("calculates Greeks from the live price when average is blank", () => {
+    const leg = prepareManualLeg(entry({ symbol: "NIFTY26DEC26000PE", average: "", expiry: "2026-12-29", quantity: "-65", price: "1400" }), now);
+    expect(leg.error).toBeNull();
+    expect(leg.position?.entryPremium).toBeNull();
+    expect(leg.position?.marketPremium).toBe(1400);
+    const scenario = runScenarios({
+      baseSpot: 25200,
+      moves: [0],
+      horizonDays: 0,
+      ivMode: "constant",
+      ivPoints: 0,
+      rate: 0.065,
+      dividendYield: 0,
+      positions: [leg.position!],
+    });
+    const greeks = scenario.positionGreeks[0];
+    expect(greeks?.iv).not.toBeNull();
+    expect(greeks?.delta).not.toBeNull();
+    expect(greeks?.gamma).not.toBeNull();
+    expect(greeks?.thetaPerDay).not.toBeNull();
+    expect(greeks?.vegaPerPoint).not.toBeNull();
+  });
+
   it("recognises the empty opening form so a refresh cannot erase a saved book", () => {
     expect(isBlankManualDraft([entry()], "")).toBe(false);
     expect(

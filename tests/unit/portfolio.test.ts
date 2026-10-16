@@ -82,7 +82,7 @@ describe("portfolio assembly", () => {
         }),
         getInstruments: async (exchange) => (exchange === "NFO" ? nfo : nse),
         getQuote: async () => ({
-          "NSE:NIFTY 50": { timestamp: "2026-10-15 09:59:55", last_price: 24050 },
+          "NSE:NIFTY 50": { timestamp: "2026-10-15 09:59:55", last_price: 24050, ohlc: { close: 23927 } },
           "NFO:NIFTY25OCT24200CE": quote,
         }),
       },
@@ -94,7 +94,10 @@ describe("portfolio assembly", () => {
     expect(snapshot.positions[0]?.quote.price).not.toBe(1);
     expect(snapshot.positions[0]?.brokerLastPrice).toBe(999);
     expect(snapshot.spot.price).toBe(24050);
+    expect(snapshot.spot.change).toBe(123);
     expect(snapshot.brokerUnrealised).toBe(80);
+    expect(snapshot.brokerDayPnl).toBe(-150);
+    expect(snapshot.positions[0]?.brokerDayPnl).toBe(-150);
     expect(snapshot.scenarioInputs[0]?.marketPremium).toBe(150);
   });
 
@@ -106,12 +109,79 @@ describe("portfolio assembly", () => {
         getInstruments: async () => {
           throw new Error("master down");
         },
-        getQuote: async () => ({ "NSE:NIFTY 50": { timestamp: "2026-10-15 09:59:55", last_price: 24000 } }),
+        getQuote: async () => ({ "NSE:NIFTY 50": { timestamp: "2026-10-15 09:59:55", last_price: 24000, net_change: -98 } }),
       },
       { includeFlat: false, now },
     );
     expect(snapshot.positions[0]?.quote.quality).toBe("unavailable");
     expect(snapshot.positions[0]?.quote.price).toBeNull();
+    expect(snapshot.spot.change).toBe(-98);
     expect(snapshot.warnings.join(" ")).toMatch(/instrument master/i);
+  });
+
+  it("keeps a contract closed today in the day's total while hiding it from the open book", async () => {
+    const now = istWallTimeToUtc(2026, 9, 15, 10, 0, 0);
+    const closed = position({
+      tradingsymbol: "NIFTY25OCT24100PE",
+      instrument_token: 12,
+      quantity: 0,
+      overnight_quantity: 75,
+      close_price: 110,
+      last_price: 130,
+      day_buy_value: 0,
+      day_sell_quantity: 75,
+      day_sell_value: 9000,
+      pnl: 750,
+      unrealised: 0,
+      realised: 750,
+    });
+    const snapshot = await loadPortfolio(
+      {
+        getPositions: async () => ({ net: [position(), closed], day: [] }),
+        getInstruments: async (exchange) =>
+          exchange === "NFO"
+            ? [
+                {
+                  instrument_token: "11",
+                  tradingsymbol: "NIFTY25OCT24200CE",
+                  name: "NIFTY",
+                  expiry: new Date("2026-10-28"),
+                  strike: 24200,
+                  lot_size: 75,
+                  instrument_type: "CE",
+                  exchange: "NFO",
+                },
+                {
+                  instrument_token: "12",
+                  tradingsymbol: "NIFTY25OCT24100PE",
+                  name: "NIFTY",
+                  expiry: new Date("2026-10-28"),
+                  strike: 24100,
+                  lot_size: 75,
+                  instrument_type: "PE",
+                  exchange: "NFO",
+                },
+              ]
+            : [
+                {
+                  instrument_token: "256265",
+                  tradingsymbol: "NIFTY 50",
+                  name: "NIFTY 50",
+                  strike: 0,
+                  instrument_type: "EQ",
+                  exchange: "NSE",
+                },
+              ],
+        getQuote: async () => ({
+          "NSE:NIFTY 50": { timestamp: "2026-10-15 09:59:55", last_price: 24050 },
+          "NFO:NIFTY25OCT24200CE": { timestamp: "2026-10-15 09:59:55", last_price: 148 },
+          "NFO:NIFTY25OCT24100PE": { timestamp: "2026-10-15 09:59:55", last_price: 130 },
+        }),
+      },
+      { includeFlat: false, now },
+    );
+    expect(snapshot.positions.map((row) => row.tradingSymbol)).toEqual(["NIFTY25OCT24200CE"]);
+    expect(snapshot.flatCount).toBe(1);
+    expect(snapshot.brokerDayPnl).toBe(-150 + 750);
   });
 });

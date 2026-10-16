@@ -22,6 +22,20 @@ export function formatInr(value: number | null | undefined, digits = 2): string 
   return `₹${formatted}`;
 }
 
+/** `value` is already in lakhs (1 lakh = ₹1,00,000). */
+export function formatLakh(value: number | null | undefined, digits = 2): string {
+  if (value === null || value === undefined || !Number.isFinite(value)) return "—";
+  const formatted = formatNumber(Math.abs(value), digits);
+  if (value < 0) return `−₹${formatted} L`;
+  if (value > 0) return `+₹${formatted} L`;
+  return `₹${formatted} L`;
+}
+
+export function formatRupee(value: number | null | undefined): string {
+  if (value === null || value === undefined || !Number.isFinite(value)) return "—";
+  return `₹${formatNumber(value)}`;
+}
+
 export function formatPercentPoints(decimal: number | null | undefined): string {
   if (decimal === null || decimal === undefined || !Number.isFinite(decimal)) return "—";
   return `${(decimal * 100).toFixed(2)}%`;

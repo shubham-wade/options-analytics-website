@@ -1,7 +1,6 @@
 /**
  * Structural copies of the Kite Connect response fields this app reads.
  * Names match the official portfolio, instrument and quote schemas.
- * Order-placement fields are intentionally absent.
  */
 
 export interface KiteNetPosition {
@@ -103,6 +102,7 @@ export interface PremiumObservation {
   bid: number | null;
   ask: number | null;
   ltp: number | null;
+  previousClose: number | null;
   exchangeTimestamp: string | null;
   lastTradeTime: string | null;
   warnings: string[];
@@ -134,11 +134,14 @@ export interface MappedOptionPosition {
   side: "long" | "short";
   multiplier: number;
   lotSize: number | null;
+  tickSize: number | null;
   averagePrice: number | null;
   brokerLastPrice: number | null;
   brokerUnrealised: number | null;
   brokerRealised: number | null;
   brokerPnl: number | null;
+  /** P&L since the previous close, including today's buys and sells. */
+  brokerDayPnl: number | null;
   product: string;
   metadataSource: "instrument-master" | "symbol";
   warnings: string[];
