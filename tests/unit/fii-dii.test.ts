@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   atIst,
   buildFlowSeries,
+  expectedFlowDate,
   expectedPublishedDate,
   flowFrame,
   mergeFlowFetch,
@@ -46,9 +47,17 @@ describe("FII/DII cash flows", () => {
   });
 
   it("treats the latest session as published only after 16:00 IST", () => {
-    expect(expectedPublishedDate(atIst(2026, 10, 16, 18, 0))).toBe("2026-10-16");
-    expect(expectedPublishedDate(atIst(2026, 10, 16, 10, 0))).toBe("2026-10-15");
+    expect(expectedPublishedDate(atIst(2026, 10, 16, 16, 0))).toBe("2026-10-16");
+    expect(expectedPublishedDate(atIst(2026, 10, 16, 15, 59))).toBe("2026-10-15");
     expect(expectedPublishedDate(atIst(2026, 10, 17, 11, 0))).toBe("2026-10-16");
+  });
+
+  it("waits until 17:30 IST for the provisional FII/DII print", () => {
+    expect(expectedFlowDate(atIst(2026, 10, 16, 16, 0))).toBe("2026-10-15");
+    expect(expectedFlowDate(atIst(2026, 10, 16, 17, 29))).toBe("2026-10-15");
+    expect(expectedFlowDate(atIst(2026, 10, 16, 17, 30))).toBe("2026-10-16");
+    expect(expectedFlowDate(atIst(2026, 10, 16, 18, 30))).toBe("2026-10-16");
+    expect(expectedFlowDate(atIst(2026, 10, 17, 11, 0))).toBe("2026-10-16");
   });
 
   it("keeps a later session and records the trading days the feed skipped", () => {
@@ -62,5 +71,11 @@ describe("FII/DII cash flows", () => {
     const saved = mergeFlowFetch(book, null, atIst(2026, 10, 19, 18, 0));
     expect(saved.book.entries["2026-10-19"]).toBeUndefined();
     expect(saved.notices[0]?.title).toBe("FII/DII not fetched");
+    expect(saved.notices[0]?.detail).toContain("5:30 and 6:30 PM IST");
+  });
+
+  it("does not expect today's cash print before 17:30 IST", () => {
+    const saved = mergeFlowFetch(book, null, atIst(2026, 10, 19, 16, 30));
+    expect(saved.notices).toEqual([]);
   });
 });

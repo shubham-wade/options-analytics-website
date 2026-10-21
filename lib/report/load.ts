@@ -146,7 +146,7 @@ async function fetchMarketReport(asOf: string, live: boolean): Promise<MarketRep
   }
 
   const cash = summarizeCash(asOf, cashEntries);
-  if (!cash.today) gaps.push("Today’s FII and DII cash flow is not in the saved file.");
+  if (!cash.today) gaps.push(live ? "FII and DII cash is not saved yet. It often appears between 5:30 and 6:30 PM IST." : "FII and DII cash for this session is not in the saved file.");
 
   const fii = participants.find((row) => row.name === "FII");
   const evidence = evidenceFrom({

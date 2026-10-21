@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { ContributionChart, PortfolioPnlChart } from "@/components/dashboard/charts";
+import { ExpiryPayoffChart } from "@/components/dashboard/payoff-chart";
 import { DecayStrip } from "@/components/dashboard/decay-strip";
 import { DirectionMix } from "@/components/dashboard/direction-mix";
 import { ScenarioTable } from "@/components/dashboard/scenario-table";
@@ -545,6 +546,27 @@ export function ManualLab() {
           </Table>
         </CardContent>
       </Card>
+
+      {includedScenarioPositions(effectiveRows, model.legs).length > 0 ? (
+        <Card>
+          <CardHeader>
+            <CardTitle>Expiry profit and loss</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ExpiryPayoffChart
+              legs={includedScenarioPositions(effectiveRows, model.legs).map((position) => ({
+                right: position.right,
+                strike: position.strike,
+                quantity: position.quantity,
+                multiplier: position.multiplier,
+                entryPremium: position.entryPremium,
+                marketPremium: position.marketPremium,
+              }))}
+              spot={Number.isFinite(Number(effectiveSpot)) ? Number(effectiveSpot) : null}
+            />
+          </CardContent>
+        </Card>
+      ) : null}
 
       <section className="grid gap-4 xl:grid-cols-2">
         <Card>

@@ -1,20 +1,20 @@
 {
   "asOf": "2026-10-16",
-  "generatedAt": "2026-10-16T18:40:54.266Z",
+  "generatedAt": "2026-10-19T08:48:52.139Z",
   "nifty": {
     "name": "NIFTY 50",
     "open": 23065.1,
     "high": 23149.85,
     "low": 22913.8,
     "close": 23146.15,
-    "previousClose": 22997.35,
-    "change": 148.8000000000029,
+    "previousClose": 22997.350000000002,
+    "change": 148.79999999999927,
     "percentChange": 0.65,
-    "advances": 26,
-    "declines": 24,
-    "unchanged": 0,
+    "advances": null,
+    "declines": null,
+    "unchanged": null,
     "closingLocation": 0.9843253547977246,
-    "gap": 67.75
+    "gap": 67.74999999999636
   },
   "bankNifty": {
     "name": "NIFTY BANK",
@@ -25,17 +25,17 @@
     "previousClose": 55810.5,
     "change": 33.5,
     "percentChange": 0.06,
-    "advances": 8,
-    "declines": 6,
-    "unchanged": 0,
+    "advances": null,
+    "declines": null,
+    "unchanged": null,
     "closingLocation": 0.6858067997841275,
     "gap": 116.65000000000146
   },
   "vix": {
-    "close": 14.08,
-    "previousClose": 14.03,
-    "change": 0.05000000000000071,
-    "percentChange": 0.35,
+    "close": 14.06,
+    "previousClose": 14.020000000000001,
+    "change": 0.03999999999999915,
+    "percentChange": 0.27,
     "regime": "moderate",
     "regimeRule": "Low is below 13, moderate is 13 up to 18, and elevated is 18 or higher. These cutoffs are local labels, not an exchange classification."
   },
@@ -61,6 +61,10 @@
       "percentChange": 0.67
     },
     {
+      "name": "NIFTY INFRA",
+      "percentChange": 0.46
+    },
+    {
       "name": "NIFTY FINANCIAL SERVICES",
       "percentChange": 0.09
     },
@@ -71,6 +75,10 @@
     {
       "name": "NIFTY PHARMA",
       "percentChange": -0.14
+    },
+    {
+      "name": "NIFTY HEALTHCARE",
+      "percentChange": -0.26
     },
     {
       "name": "NIFTY REALTY",
@@ -286,7 +294,7 @@
   "participantAsOf": "Oct 16, 2026",
   "participantPrevious": "Oct 15, 2026",
   "futures": {
-    "priceChange": 148.8000000000029,
+    "priceChange": 148.79999999999927,
     "oi": 413975,
     "oiChange": -705,
     "reading": "Possible short covering: the index rose while index-futures open interest fell."
@@ -403,11 +411,12 @@
     ],
     "inferred": [
       "Possible short covering: the index rose while index-futures open interest fell.",
-      "Nearest-expiry put-call ratio is 1.32, using put open interest divided by call open interest. A high or low ratio is context, not a signal by itself.",
       "FII index-futures contracts are mostly short. That describes the book, not the next session’s direction."
     ]
   },
   "gaps": [],
+  "settled": true,
+  "lastAttemptAt": "2026-10-19T08:48:51.032Z",
   "sources": [
     {
       "name": "NSE index feed",

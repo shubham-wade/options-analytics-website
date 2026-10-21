@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import {
   buildFlowSeries,
-  expectedPublishedDate,
+  expectedFlowDate,
   mergeFlowFetch,
   noticesFor,
   parseNseFiiDii,
@@ -23,7 +23,7 @@ export interface FlowSnapshot {
 
 export async function refreshFlowBook(now = new Date()): Promise<FlowSnapshot> {
   const book = await readFlowBook();
-  const expected = expectedPublishedDate(now);
+  const expected = expectedFlowDate(now);
   if (book.entries[expected] && book.missed.length === 0) {
     return snapshot(book, []);
   }

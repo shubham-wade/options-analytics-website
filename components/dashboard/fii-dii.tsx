@@ -142,7 +142,7 @@ export function FiiDiiChart({ onNotices }: { onNotices: (notices: FlowNotice[]) 
         </div>
       </div>
       <p className="mt-3 text-xs text-muted-foreground">
-        Net cash flow in ₹ crore. Blue is FII and amber is DII. The frame opens on the last 90 days. Scroll sideways for July through March.
+        Net cash flow in ₹ crore. Blue is FII and amber is DII. NSE publishes the provisional print between 5:30 and 6:30 PM IST. The frame opens on the last 90 days. Scroll sideways for July through March.
         {note ? ` ${note}` : ""}
       </p>
     </Section>

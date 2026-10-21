@@ -56,12 +56,30 @@ export function isTradingDay(iso: string): boolean {
   return isWeekday(iso) && !NSE_HOLIDAYS[iso];
 }
 
-/** The session NSE should already have published. Today counts only after 16:00 IST. */
+/** Report sessions count as published after the cash close, 16:00 IST. */
+const REPORT_PUBLISH_MINUTES = 16 * 60;
+
+/**
+ * NSE publishes the provisional FII/DII cash print between 17:30 and 18:30 IST.
+ * Today’s session is due from the start of that window.
+ */
+export const FLOW_PUBLISH_MINUTES = 17 * 60 + 30;
+
+/** The session the market report should already have. Today counts only after 16:00 IST. */
 export function expectedPublishedDate(now: Date): string {
+  return publishedSession(now, REPORT_PUBLISH_MINUTES);
+}
+
+/** The cash session whose provisional FII/DII print should already be out. Today counts from 17:30 IST. */
+export function expectedFlowDate(now: Date): string {
+  return publishedSession(now, FLOW_PUBLISH_MINUTES);
+}
+
+function publishedSession(now: Date, afterMinutes: number): string {
   const today = istDateIso(now);
   const parts = istParts(now);
-  const afterClose = parts.hour > 16 || (parts.hour === 16 && parts.minute >= 0);
-  if (isTradingDay(today) && afterClose) return today;
+  const ready = parts.hour * 60 + parts.minute >= afterMinutes;
+  if (isTradingDay(today) && ready) return today;
   let date = addCalendarDays(today, -1);
   while (!isTradingDay(date)) date = addCalendarDays(date, -1);
   return date;
@@ -133,7 +151,7 @@ export function mergeFlowFetch(
   fetched: { date: string; fii: number; dii: number } | null,
   now: Date,
 ): { book: FlowBook; notices: FlowNotice[] } {
-  const expected = expectedPublishedDate(now);
+  const expected = expectedFlowDate(now);
   const previous = newestFlowDate(book.entries);
   const next: FlowBook = {
     updatedAt: book.updatedAt,
@@ -161,7 +179,7 @@ export function noticesFor(book: FlowBook, expected: string, fetchFailed: boolea
     notices.push({
       key: `fii-missing-${expected}`,
       title: "FII/DII not fetched",
-      detail: `${flowLabel(expected)} is still missing. NSE publishes only the latest session, after the close.`,
+      detail: `${flowLabel(expected)} is still missing. NSE publishes the provisional cash print between 5:30 and 6:30 PM IST, and only the latest session.`,
     });
   }
   if (book.missed.length > 0) {

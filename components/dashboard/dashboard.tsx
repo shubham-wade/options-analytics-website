@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ContributionChart, PortfolioPnlChart } from "@/components/dashboard/charts";
+import { ExpiryPayoffChart } from "@/components/dashboard/payoff-chart";
 import { DailyPnlChart } from "@/components/dashboard/daily-pnl";
 import { FiiDiiChart } from "@/components/dashboard/fii-dii";
 import { FlowNotices } from "@/components/dashboard/flow-notices";
@@ -545,6 +546,22 @@ export function Dashboard() {
         </Section>
 
         {!moves ? <Banner tone="warn">Enter 1 to 15 finite moves between -5000 and 5000, separated by commas.</Banner> : null}
+
+        {modeledPositions.some((position) => position.quantity !== 0) ? (
+          <Section title="Expiry profit and loss">
+            <ExpiryPayoffChart
+              legs={modeledPositions.filter((position) => position.quantity !== 0).map((position) => ({
+                right: position.optionType,
+                strike: position.strike ?? Number.NaN,
+                quantity: position.quantity,
+                multiplier: position.multiplier,
+                entryPremium: position.averagePrice,
+                marketPremium: position.quote.price,
+              }))}
+              spot={spotText.trim() ? Number(spotText) : portfolio?.spot.price ?? null}
+            />
+          </Section>
+        ) : null}
 
         <section className="grid gap-4 xl:grid-cols-2">
           <Section title={`Portfolio scenario P&L${scenarioLoading ? " · updating" : ""}`}>

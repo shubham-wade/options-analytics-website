@@ -29,6 +29,7 @@ export const SEEDED_DAILY_PNL: Record<string, number> = {
   "2026-10-14": -19.95,
   "2026-10-15": -19.85,
   "2026-10-16": -19.5,
+  "2026-10-19": -20,
 };
 
 export interface DailyPnlPoint {

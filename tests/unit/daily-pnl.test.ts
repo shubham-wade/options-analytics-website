@@ -24,12 +24,12 @@ describe("daily P&L season", () => {
     expect(series.find((point) => point.date === "2026-10-14")?.pnl).toBe(-19.95);
     expect(series.find((point) => point.date === "2026-10-15")?.pnl).toBe(-19.85);
     expect(series.find((point) => point.date === "2026-10-16")?.pnl).toBe(-19.5);
-    expect(series.find((point) => point.date === "2026-10-19")?.pnl).toBeNull();
+    expect(series.find((point) => point.date === "2026-10-19")?.pnl).toBe(-20);
     const progress = progressSummary(series);
-    expect(progress.latest).toBe(-19.5);
-    expect(progress.asOf).toBe("2026-10-16");
-    expect(progress.change).toBeCloseTo(1.45);
-    expect(progress.count).toBe(11);
+    expect(progress.latest).toBe(-20);
+    expect(progress.asOf).toBe("2026-10-19");
+    expect(progress.change).toBeCloseTo(0.95);
+    expect(progress.count).toBe(12);
   });
 
   it("keeps losses on the red series and gains on the green series", () => {

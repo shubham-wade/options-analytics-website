@@ -135,7 +135,7 @@ function ReportBody({ report, latest }: { report: MarketReport; latest: string |
         <Card>
           <CardHeader className="pb-2"><CardTitle className="text-xs uppercase tracking-wide text-muted-foreground">FII / DII cash</CardTitle></CardHeader>
           <CardContent>
-            <CashLines session={report.cash.today} />
+            <CashLines session={report.cash.today} pending={latest == null || report.asOf === latest} />
           </CardContent>
         </Card>
       </section>
@@ -166,7 +166,13 @@ function ReportBody({ report, latest }: { report: MarketReport; latest: string |
             {report.cash.fiveDay ? ` Last ${report.cash.fiveDay.sessions} saved sessions: FII ${formatCrore(report.cash.fiveDay.fii)}, DII ${formatCrore(report.cash.fiveDay.dii)}.` : ""}
             {report.cash.month ? ` ${report.cash.month.label}: FII ${formatCrore(report.cash.month.fii)}, DII ${formatCrore(report.cash.month.dii)} across ${report.cash.month.sessions} saved sessions.` : ""}
           </p>
-        ) : <p className="text-sm text-muted-foreground">Cash flow for this date is not in the saved file.</p>}
+        ) : (
+          <p className="text-sm text-muted-foreground">
+            {latest == null || report.asOf === latest
+              ? "Cash flow for this date is not saved yet. It often appears between 5:30 and 6:30 PM IST."
+              : "Cash flow for this date is not in the saved file."}
+          </p>
+        )}
         {report.participants.length > 0 ? <ParticipantTable rows={report.participants} asOf={report.participantAsOf} previous={report.participantPrevious} /> : null}
         {report.futures ? (
           <p className="text-sm">
@@ -238,8 +244,14 @@ function IndexCard({ print }: { print: IndexPrint | null }) {
   );
 }
 
-function CashLines({ session }: { session: CashSession | null }) {
-  if (!session) return <p className="text-sm text-muted-foreground">Not in the saved file</p>;
+function CashLines({ session, pending }: { session: CashSession | null; pending: boolean }) {
+  if (!session) {
+    return (
+      <p className="text-sm text-muted-foreground">
+        {pending ? "Not saved yet. It often appears between 5:30 and 6:30 PM IST." : "Not in the saved file."}
+      </p>
+    );
+  }
   return (
     <div className="space-y-1 font-mono text-sm">
       <p className={pnlClass(session.fii)}>FII {formatCrore(session.fii)}</p>
