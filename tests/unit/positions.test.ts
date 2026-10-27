@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { extractNetPositions, parseNiftyOptionSymbol, selectNiftyOptionPositions } from "@/lib/kite/positions";
+import { extractNetPositions, findNearNiftyFuture, parseNiftyOptionSymbol, selectNiftyOptionPositions } from "@/lib/kite/positions";
 import type { KiteInstrument, KiteNetPosition } from "@/lib/kite/types";
 
 function position(overrides: Partial<KiteNetPosition> = {}): KiteNetPosition {
@@ -126,5 +126,18 @@ describe("net position mapping", () => {
     });
     expect(parseNiftyOptionSymbol("NIFTY25OCT24200CE")?.expiry).toBeNull();
     expect(parseNiftyOptionSymbol("BANKNIFTY25OCT52000CE")).toBeNull();
+  });
+
+  it("picks the nearest unexpired NIFTY future", () => {
+    const chosen = findNearNiftyFuture(
+      [
+        instrument({ tradingsymbol: "NIFTY26OCTFUT", instrument_type: "FUT", expiry: new Date("2026-10-27T00:00:00Z") }),
+        instrument({ tradingsymbol: "NIFTY26NOVFUT", instrument_type: "FUT", expiry: new Date("2026-11-24T00:00:00Z") }),
+        instrument({ tradingsymbol: "NIFTY26SEPFUT", instrument_type: "FUT", expiry: new Date("2026-09-29T00:00:00Z") }),
+        instrument(),
+      ],
+      new Date("2026-10-21T10:00:00+05:30"),
+    );
+    expect(chosen?.tradingsymbol).toBe("NIFTY26OCTFUT");
   });
 });

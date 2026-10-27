@@ -2,10 +2,11 @@ import { assessQuote } from "@/lib/kite/quotes";
 import {
   indexInstruments,
   parseNiftyOptionSymbol,
+  findNearNiftyFuture,
   quoteKey,
   readInstrumentExpiry,
 } from "@/lib/kite/positions";
-import { NIFTY_SPOT_KEY, type InstrumentCache, type KiteReader } from "@/lib/kite/portfolio";
+import { INDIA_VIX_KEY, NIFTY_SPOT_KEY, type IndiaVixQuote, type InstrumentCache, type KiteReader, type NiftyFutureQuote } from "@/lib/kite/portfolio";
 import type { KiteInstrument, QuoteQuality } from "@/lib/kite/types";
 
 export interface ManualContractQuote {
@@ -14,6 +15,8 @@ export interface ManualContractQuote {
   expiry: string | null;
   lotSize: number | null;
   price: number | null;
+  /** Last traded price from the live quote. */
+  ltp: number | null;
   previousClose: number | null;
   source: "mid" | "ltp" | "none";
   quality: QuoteQuality;
@@ -21,8 +24,10 @@ export interface ManualContractQuote {
 }
 
 export interface ManualLookup {
-  spot: { price: number | null; quality: QuoteQuality };
+  spot: { price: number | null; change: number | null; quality: QuoteQuality };
+  vix: IndiaVixQuote;
   contracts: ManualContractQuote[];
+  future: NiftyFutureQuote | null;
   warnings: string[];
   fetchedAt: string;
 }
@@ -43,14 +48,26 @@ export async function lookupContracts(
     warnings.push("The instrument master could not be loaded.");
   }
 
-  const keys = [NIFTY_SPOT_KEY];
+  const futureInstrument = findNearNiftyFuture([...instruments.values()], now);
+  const futureKey = futureInstrument ? quoteKey(futureInstrument.exchange, futureInstrument.tradingsymbol) : null;
+  const keys = [NIFTY_SPOT_KEY, INDIA_VIX_KEY];
+  if (futureKey) keys.push(futureKey);
   for (const symbol of unique) {
     if (parseNiftyOptionSymbol(symbol)) keys.push(quoteKey("NFO", symbol));
   }
 
   const quotes = await reader.getQuote(keys);
   const spot = assessQuote(quotes[NIFTY_SPOT_KEY], now);
+  const vixQuote = assessQuote(quotes[INDIA_VIX_KEY], now);
   if (spot.price === null) warnings.push("NIFTY 50 quote was not available.");
+  const futurePrice = futureKey ? assessQuote(quotes[futureKey], now).price : null;
+  const future: NiftyFutureQuote | null = futureInstrument
+    ? {
+        symbol: futureInstrument.tradingsymbol,
+        price: futurePrice,
+        premium: futurePrice != null && spot.price != null ? futurePrice - spot.price : null,
+      }
+    : null;
 
   const contracts = unique.map((symbol) => {
     const parsed = parseNiftyOptionSymbol(symbol);
@@ -61,6 +78,7 @@ export async function lookupContracts(
         expiry: null,
         lotSize: null,
         price: null,
+        ltp: null,
         previousClose: null,
         source: "none" as const,
         quality: "unavailable" as const,
@@ -77,6 +95,7 @@ export async function lookupContracts(
       expiry: expiryDate ? expiryDate.toISOString().slice(0, 10) : null,
       lotSize: Number.isFinite(lot) && lot > 0 ? lot : null,
       price: quote.price,
+      ltp: quote.ltp,
       previousClose: quote.previousClose,
       source: quote.source,
       quality: quote.quality,
@@ -85,11 +104,32 @@ export async function lookupContracts(
   });
 
   return {
-    spot: { price: spot.price, quality: spot.quality },
+    spot: {
+      price: spot.price,
+      change: spotChange(spot.price, spot.previousClose, finiteNumber(quotes[NIFTY_SPOT_KEY]?.net_change)),
+      quality: spot.quality,
+    },
+    vix: {
+      price: vixQuote.price,
+      change: spotChange(vixQuote.price, vixQuote.previousClose, finiteNumber(quotes[INDIA_VIX_KEY]?.net_change)),
+    },
     contracts,
+    future,
     warnings,
     fetchedAt: now.toISOString(),
   };
+}
+
+function spotChange(price: number | null, previousClose: number | null, netChange: number | null): number | null {
+  if (price !== null && previousClose !== null) {
+    const change = price - previousClose;
+    return Number.isFinite(change) ? change : null;
+  }
+  return netChange;
+}
+
+function finiteNumber(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
 export interface ListedNiftyOption {

@@ -99,6 +99,51 @@ export function buildFlowSeries(entries: Record<string, FlowEntry>): FlowPoint[]
   return points;
 }
 
+export const FLOW_LOOKBACKS = [5, 20, 40] as const;
+
+export interface FlowLookback {
+  sessions: number;
+  /** Saved sessions inside the window. A blank day is not treated as zero. */
+  counted: number;
+  from: string;
+  to: string;
+  fii: number;
+  dii: number;
+}
+
+/** Sums of the last 5, 20 and 40 trading sessions, ending at the newest saved day. */
+export function flowLookbacks(points: FlowPoint[], sizes: readonly number[] = FLOW_LOOKBACKS): FlowLookback[] {
+  let end = -1;
+  for (let index = points.length - 1; index >= 0; index -= 1) {
+    if (points[index]?.fii != null || points[index]?.dii != null) {
+      end = index;
+      break;
+    }
+  }
+  if (end < 0) return [];
+  return sizes.map((sessions) => {
+    const start = Math.max(0, end - sessions + 1);
+    const slice = points.slice(start, end + 1);
+    let fii = 0;
+    let dii = 0;
+    let counted = 0;
+    for (const point of slice) {
+      if (point.fii == null && point.dii == null) continue;
+      counted += 1;
+      fii += point.fii ?? 0;
+      dii += point.dii ?? 0;
+    }
+    return {
+      sessions,
+      counted,
+      from: slice[0]?.date ?? points[end].date,
+      to: points[end].date,
+      fii,
+      dii,
+    };
+  });
+}
+
 /** Indexes of the sessions that fall in the last 90 calendar days of saved data. */
 export function flowFrame(points: FlowPoint[]): { start: number; count: number } {
   let end = -1;

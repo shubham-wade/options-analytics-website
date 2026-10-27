@@ -4,6 +4,7 @@ import { assessQuote } from "@/lib/kite/quotes";
 import { kiteDayPnl } from "@/lib/pricing/pnl";
 import {
   extractNetPositions,
+  findNearNiftyFuture,
   findNiftySpotInstrument,
   indexInstruments,
   quoteKey,
@@ -20,6 +21,7 @@ import type {
 import { DEFAULT_DIVIDEND_YIELD, DEFAULT_RISK_FREE_RATE, DEFAULT_SPOT_MOVES, timeToExpiryYears } from "@/lib/time";
 
 export const NIFTY_SPOT_KEY = "NSE:NIFTY 50";
+export const INDIA_VIX_KEY = "NSE:INDIA VIX";
 const INSTRUMENT_TTL_MS = 6 * 60 * 60 * 1000;
 
 export interface KiteReader {
@@ -63,6 +65,18 @@ export interface PublicPosition extends MappedOptionPosition {
   quoteKey: string;
 }
 
+export interface NiftyFutureQuote {
+  symbol: string;
+  price: number | null;
+  /** Future last price minus the NIFTY 50 spot. */
+  premium: number | null;
+}
+
+export interface IndiaVixQuote {
+  price: number | null;
+  change: number | null;
+}
+
 export type PublicPortfolio = Omit<PortfolioSnapshot, "scenarioInputs">;
 
 export function toPublicPortfolio(snapshot: PortfolioSnapshot): PublicPortfolio {
@@ -82,6 +96,8 @@ export interface PortfolioSnapshot {
     exchangeTimestamp: string | null;
     instrumentFound: boolean;
   };
+  future: NiftyFutureQuote | null;
+  vix: IndiaVixQuote;
   positions: PublicPosition[];
   flatCount: number;
   openCount: number;
@@ -156,7 +172,10 @@ export async function loadPortfolio(
   }
 
   const netById = new Map(net.map((position) => [`${position.exchange}:${position.tradingsymbol}:${position.product}`, position]));
-  const keys = [NIFTY_SPOT_KEY, ...selected.positions.map((position) => quoteKey(position.exchange, position.tradingSymbol))];
+  const futureInstrument = findNearNiftyFuture([...instruments.values()], now);
+  const futureKey = futureInstrument ? quoteKey(futureInstrument.exchange, futureInstrument.tradingsymbol) : null;
+  const keys = [NIFTY_SPOT_KEY, INDIA_VIX_KEY, ...selected.positions.map((position) => quoteKey(position.exchange, position.tradingSymbol))];
+  if (futureKey) keys.push(futureKey);
   let quotes: Record<string, KiteQuote | undefined> = {};
   try {
     quotes = await reader.getQuote(keys);
@@ -166,6 +185,19 @@ export async function loadPortfolio(
   }
 
   const spotQuote = assessQuote(quotes[NIFTY_SPOT_KEY], now);
+  const vixQuote = assessQuote(quotes[INDIA_VIX_KEY], now);
+  const vix: IndiaVixQuote = {
+    price: vixQuote.price,
+    change: spotDayChange(vixQuote.price, vixQuote.previousClose, finiteNumber(quotes[INDIA_VIX_KEY]?.net_change)),
+  };
+  const futurePrice = futureKey ? assessQuote(quotes[futureKey], now).price : null;
+  const future: NiftyFutureQuote | null = futureInstrument
+    ? {
+        symbol: futureInstrument.tradingsymbol,
+        price: futurePrice,
+        premium: futurePrice != null && spotQuote.price != null ? futurePrice - spotQuote.price : null,
+      }
+    : null;
   const priced: PublicPosition[] = selected.positions.map((position) => {
     const key = quoteKey(position.exchange, position.tradingSymbol);
     const quote = assessQuote(quotes[key], now);
@@ -221,6 +253,8 @@ export async function loadPortfolio(
       exchangeTimestamp: spotQuote.exchangeTimestamp,
       instrumentFound: Boolean(spotInstrument),
     },
+    future,
+    vix,
     positions,
     flatCount: selected.flatCount,
     openCount: positions.filter((position) => position.quantity !== 0).length,

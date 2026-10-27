@@ -6,10 +6,24 @@ import { useChartColors } from "@/components/dashboard/charts";
 import { formatInr, formatNumber, pnlClass } from "@/lib/format";
 import { expiryPayoff, signedPayoffSeries, type PayoffExtreme, type PayoffLeg, type SignedPayoffPoint } from "@/lib/pricing/payoff";
 
-export function ExpiryPayoffChart({ legs, spot }: { legs: PayoffLeg[]; spot: number | null }) {
+export interface PayoffLevel {
+  strike: number;
+  label: string;
+}
+
+export function ExpiryPayoffChart({
+  legs,
+  spot,
+  levels = [],
+}: {
+  legs: PayoffLeg[];
+  spot: number | null;
+  levels?: PayoffLevel[];
+}) {
   const colors = useChartColors();
   const profile = expiryPayoff(legs, spot);
   const signed = profile ? signedPayoffSeries(profile.points) : [];
+  const frame = chartFrame(signed, levels);
   const yDomain = profile ? pnlDomain(signed, profile.now?.pnl ?? null) : undefined;
   const [nowTip, setNowTip] = useState<{ x: number; y: number } | null>(null);
   if (!profile || profile.points.length === 0) {
@@ -35,7 +49,7 @@ export function ExpiryPayoffChart({ legs, spot }: { legs: PayoffLeg[]; spot: num
             <XAxis
               dataKey="spot"
               type="number"
-              domain={["dataMin", "dataMax"]}
+              domain={frame.domain}
               tickFormatter={(value) => formatNumber(Number(value), 0)}
               stroke={colors.axis}
               fontSize={12}
@@ -70,6 +84,15 @@ export function ExpiryPayoffChart({ legs, spot }: { legs: PayoffLeg[]; spot: num
             {profile.now ? (
               <ReferenceLine y={profile.now.pnl} stroke={colors.axis} strokeDasharray="4 4" />
             ) : null}
+            {frame.shown.map((level) => (
+              <ReferenceLine
+                key={level.label}
+                x={level.strike}
+                stroke={colors.axis}
+                strokeDasharray="1 3"
+                label={{ value: level.label, position: "insideTop", fill: colors.axis, fontSize: 11 }}
+              />
+            ))}
             {profile.now ? (
               <ReferenceDot
                 x={profile.now.spot}
@@ -111,9 +134,26 @@ export function ExpiryPayoffChart({ legs, spot }: { legs: PayoffLeg[]; spot: num
           ? " A wing that keeps rising or falling does not have a limit."
           : ""}
         {profile.omitted > 0 ? ` ${profile.omitted} ${profile.omitted === 1 ? "contract is" : "contracts are"} left out because the average price is missing.` : ""}
+        {frame.shown.length > 0
+          ? ` ${frame.shown.map((level) => level.label).join(" and ")} mark the strikes with the most open interest on the nearest chain. They describe positioning, not a forecast.`
+          : ""}
       </p>
     </div>
   );
+}
+
+function chartFrame(points: SignedPayoffPoint[], levels: PayoffLevel[]) {
+  const spots = points.map((point) => point.spot);
+  if (spots.length === 0) return { domain: ["dataMin", "dataMax"] as const, shown: [] as PayoffLevel[] };
+  let min = Math.min(...spots);
+  let max = Math.max(...spots);
+  const span = Math.max(max - min, 400);
+  const shown = levels.filter((level) => Number.isFinite(level.strike) && level.strike >= min - span && level.strike <= max + span);
+  if (shown.length > 0) {
+    min = Math.min(min, ...shown.map((level) => level.strike));
+    max = Math.max(max, ...shown.map((level) => level.strike));
+  }
+  return { domain: [min, max] as [number, number], shown };
 }
 
 function NowMarker({

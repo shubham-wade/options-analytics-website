@@ -93,6 +93,23 @@ export function indexInstruments(instruments: KiteInstrument[]): Map<string, Kit
   return map;
 }
 
+function istDay(date: Date): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata", year: "numeric", month: "2-digit", day: "2-digit" }).format(date);
+}
+
+/** The nearest NIFTY future that has not expired, in IST. */
+export function findNearNiftyFuture(instruments: KiteInstrument[], now = new Date()): KiteInstrument | null {
+  const today = istDay(now);
+  const dated = instruments.flatMap((instrument) => {
+    if (instrument.exchange !== "NFO" || instrument.name !== "NIFTY" || instrument.instrument_type !== "FUT") return [];
+    const expiry = readInstrumentExpiry(instrument.expiry);
+    if (!expiry || istDay(expiry) < today) return [];
+    return [{ instrument, expiry }];
+  });
+  dated.sort((left, right) => left.expiry.getTime() - right.expiry.getTime());
+  return dated[0]?.instrument ?? null;
+}
+
 export function findNiftySpotInstrument(instruments: KiteInstrument[]): KiteInstrument | null {
   return (
     instruments.find((instrument) => instrument.exchange === "NSE" && instrument.tradingsymbol === "NIFTY 50") ?? null

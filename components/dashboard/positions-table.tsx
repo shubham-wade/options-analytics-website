@@ -166,8 +166,7 @@ export function PositionsTable({
           <TableHead className="text-right">Qty</TableHead>
           <TableHead>Product</TableHead>
           <TableHead className="text-right">Avg</TableHead>
-          <TableHead className="text-right">Quote</TableHead>
-          <TableHead className="text-right">Broker LTP</TableHead>
+          <TableHead className="text-right">LTP</TableHead>
           <TableHead className="text-right">IV</TableHead>
           <TableHead className="text-right">Delta</TableHead>
           <TableHead className="text-right">Gamma</TableHead>
@@ -207,8 +206,7 @@ export function PositionsTable({
               <TableCell className="text-right font-mono tabular">{formatNumber(position.quantity, 0)}</TableCell>
               <TableCell>{position.product}</TableCell>
               <TableCell className="text-right font-mono tabular">{formatNumber(position.averagePrice)}</TableCell>
-              <TableCell className="text-right font-mono tabular">{formatNumber(position.quote.price)}</TableCell>
-              <TableCell className="text-right font-mono tabular">{formatNumber(position.brokerLastPrice)}</TableCell>
+              <TableCell className="text-right font-mono tabular">{formatNumber(position.quote.ltp ?? position.brokerLastPrice)}</TableCell>
               <TableCell className="text-right font-mono tabular">{formatPercentPoints(greek?.iv)}</TableCell>
               <TableCell className="text-right font-mono tabular">{formatNumber(greek?.delta, 2)}</TableCell>
               <TableCell className="text-right font-mono tabular">{formatNumber(greek?.gamma, 4)}</TableCell>
@@ -235,7 +233,7 @@ export function PositionsTable({
             </TableRow>
             {draft?.positionId === position.id ? (
               <TableRow>
-                <TableCell colSpan={16}>
+                <TableCell colSpan={15}>
                   <div className="sticky left-0 w-[min(100%,42rem)] space-y-3 rounded-md border border-amber-500/70 bg-amber-50 p-3 dark:bg-amber-950/40">
                     <p className="text-sm font-medium">
                       {draft.action === "exit" ? "Exit" : "Add"} {draft.symbol}

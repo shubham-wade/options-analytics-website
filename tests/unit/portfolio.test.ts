@@ -83,6 +83,7 @@ describe("portfolio assembly", () => {
         getInstruments: async (exchange) => (exchange === "NFO" ? nfo : nse),
         getQuote: async () => ({
           "NSE:NIFTY 50": { timestamp: "2026-10-15 09:59:55", last_price: 24050, ohlc: { close: 23927 } },
+          "NSE:INDIA VIX": { timestamp: "2026-10-15 09:59:55", last_price: 15.7, ohlc: { close: 14.77 } },
           "NFO:NIFTY25OCT24200CE": quote,
         }),
       },
@@ -95,6 +96,8 @@ describe("portfolio assembly", () => {
     expect(snapshot.positions[0]?.brokerLastPrice).toBe(999);
     expect(snapshot.spot.price).toBe(24050);
     expect(snapshot.spot.change).toBe(123);
+    expect(snapshot.vix.price).toBe(15.7);
+    expect(snapshot.vix.change).toBeCloseTo(0.93);
     expect(snapshot.brokerUnrealised).toBe(80);
     expect(snapshot.brokerDayPnl).toBe(-150);
     expect(snapshot.positions[0]?.brokerDayPnl).toBe(-150);

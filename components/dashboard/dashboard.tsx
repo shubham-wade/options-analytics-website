@@ -8,6 +8,7 @@ import { ContributionChart, PortfolioPnlChart } from "@/components/dashboard/cha
 import { ExpiryPayoffChart } from "@/components/dashboard/payoff-chart";
 import { DailyPnlChart } from "@/components/dashboard/daily-pnl";
 import { FiiDiiChart } from "@/components/dashboard/fii-dii";
+import { MarketContext, oiLevels, useMarketBrief } from "@/components/dashboard/market-context";
 import { FlowNotices } from "@/components/dashboard/flow-notices";
 import { DecayStrip } from "@/components/dashboard/decay-strip";
 import { DirectionMix } from "@/components/dashboard/direction-mix";
@@ -47,6 +48,7 @@ function parseMoves(text: string): number[] | null {
 }
 
 export function Dashboard() {
+  const brief = useMarketBrief();
   const params = useSearchParams();
   const authError = callbackErrorMessage(params.get("auth_error"));
   const [status, setStatus] = useState<PublicSessionStatus | null>(null);
@@ -379,7 +381,17 @@ export function Dashboard() {
               </div>
             </CardContent>
           </Card>
-          <Metric label="Open positions" value={portfolio ? String(portfolio.openCount) : "—"} detail={portfolio ? `${portfolio.flatCount} flat hidden or listed` : "Net NIFTY options"} />
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-xs uppercase tracking-wide text-muted-foreground">India VIX</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap items-baseline gap-x-2">
+                <span className={`font-mono text-xl tabular ${pnlClass(portfolio?.vix.change)}`}>{formatNumber(portfolio?.vix.price, 2)}</span>
+                <span className={`font-mono text-sm tabular ${pnlClass(portfolio?.vix.change)}`}>{formatSigned(portfolio?.vix.change, 2)}</span>
+              </div>
+            </CardContent>
+          </Card>
           <Tooltip>
             <TooltipTrigger asChild>
               <div>
@@ -443,6 +455,7 @@ export function Dashboard() {
           <Metric label="Portfolio gamma" value={formatNumber(greeks?.gamma ?? null, 4)} detail={withScope("Per one index point")} />
           <Metric label="Theta / day" value={formatNumber(greeks?.thetaPerDay ?? null)} detail={withScope("Calendar day")} className={pnlClass(greeks?.thetaPerDay)} />
           <Metric label="Vega / point" value={formatNumber(greeks?.vegaPerPoint ?? null)} detail={withScope("Per 1 vol point")} />
+          <Metric label="Open positions" value={portfolio ? String(portfolio.openCount) : "—"} detail={portfolio ? `${portfolio.flatCount} flat hidden or listed` : "Net NIFTY options"} />
         </div>
         </Section>
 
@@ -559,6 +572,7 @@ export function Dashboard() {
                 marketPremium: position.quote.price,
               }))}
               spot={spotText.trim() ? Number(spotText) : portfolio?.spot.price ?? null}
+              levels={oiLevels(brief)}
             />
           </Section>
         ) : null}
@@ -599,6 +613,8 @@ export function Dashboard() {
         <DailyPnlChart />
 
         <FiiDiiChart onNotices={acceptFlows} />
+
+        <MarketContext brief={brief} future={portfolio?.future} />
 
         <section className="grid gap-4 lg:grid-cols-2">
           <Section title="Model assumptions" contentClassName="space-y-2 text-sm text-muted-foreground">

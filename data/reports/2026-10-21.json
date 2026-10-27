@@ -1,6 +1,6 @@
 {
   "asOf": "2026-10-21",
-  "generatedAt": "2026-10-21T11:41:23.716Z",
+  "generatedAt": "2026-10-21T13:51:45.098Z",
   "nifty": {
     "name": "NIFTY 50",
     "open": 23016,
@@ -209,25 +209,88 @@
     ]
   },
   "cash": {
-    "today": null,
+    "today": {
+      "date": "2026-10-21",
+      "fii": 1022.32,
+      "dii": 1614.32,
+      "combined": 2636.64
+    },
     "fiveDay": {
       "sessions": 5,
-      "fii": -8430.66,
-      "dii": 7968.98,
-      "combined": -461.68000000000075
+      "fii": -6103.21,
+      "dii": 7144.0599999999995,
+      "combined": 1040.8499999999995
     },
     "month": {
       "label": "October 2026",
-      "sessions": 12,
-      "fii": -49917.65000000001,
-      "dii": 51369.32,
-      "combined": 1451.6700000000008
+      "sessions": 13,
+      "fii": -48895.33000000001,
+      "dii": 52983.64,
+      "combined": 4088.3100000000004
     }
   },
-  "participants": [],
-  "participantAsOf": null,
+  "participants": [
+    {
+      "name": "FII",
+      "futureIndexLong": 32598,
+      "futureIndexShort": 310226,
+      "futureIndexLongChange": -4063,
+      "futureIndexShortChange": -6365,
+      "longRatio": 0.0950866917135323,
+      "longRatioChange": -0.008694744768072901,
+      "indexCallLong": 766911,
+      "indexPutLong": 1159707,
+      "indexCallShort": 1108438,
+      "indexPutShort": 562487
+    },
+    {
+      "name": "DII",
+      "futureIndexLong": 51508,
+      "futureIndexShort": 13537,
+      "futureIndexLongChange": -77,
+      "futureIndexShortChange": -1194,
+      "longRatio": 0.7918825428549465,
+      "longRatioChange": 0.014015964653607438,
+      "indexCallLong": 9318,
+      "indexPutLong": 113541,
+      "indexCallShort": 1870,
+      "indexPutShort": 280
+    },
+    {
+      "name": "Pro",
+      "futureIndexLong": 45380,
+      "futureIndexShort": 29654,
+      "futureIndexLongChange": 1273,
+      "futureIndexShortChange": -2168,
+      "longRatio": 0.6047924940693552,
+      "longRatioChange": 0.023894549937337084,
+      "indexCallLong": 1230713,
+      "indexPutLong": 933635,
+      "indexCallShort": 1286552,
+      "indexPutShort": 817686
+    },
+    {
+      "name": "Client",
+      "futureIndexLong": 276578,
+      "futureIndexShort": 52647,
+      "futureIndexLongChange": -4819,
+      "futureIndexShortChange": 2041,
+      "longRatio": 0.8400880856557066,
+      "longRatioChange": -0.007485580847306994,
+      "indexCallLong": 3747441,
+      "indexPutLong": 2346543,
+      "indexCallShort": 3357523,
+      "indexPutShort": 3172974
+    }
+  ],
+  "participantAsOf": "Oct 21, 2026",
   "participantPrevious": "Oct 19, 2026",
-  "futures": null,
+  "futures": {
+    "priceChange": -77.60000000000218,
+    "oi": 406064,
+    "oiChange": -7686,
+    "reading": "Possible long unwinding: the index fell while index-futures open interest fell."
+  },
   "chains": [
     {
       "expiry": "27-Oct-2026",
@@ -328,21 +391,24 @@
   },
   "portfolio": null,
   "evidence": {
-    "supportive": [],
+    "supportive": [
+      "FII cash flow was net buying.",
+      "DII cash flow was net buying."
+    ],
     "adverse": [
       "NIFTY closed down 77.60 points.",
-      "India VIX rose."
+      "India VIX rose.",
+      "The FII index-futures long ratio fell versus the previous session."
     ],
     "inferred": [
-      "Nearest-expiry put-call ratio is 0.70, using put open interest divided by call open interest. A high or low ratio is context, not a signal by itself."
+      "Possible long unwinding: the index fell while index-futures open interest fell.",
+      "Nearest-expiry put-call ratio is 0.70, using put open interest divided by call open interest. A high or low ratio is context, not a signal by itself.",
+      "FII index-futures contracts are mostly short. That describes the book, not the next session’s direction."
     ]
   },
-  "gaps": [
-    "Participant-wise derivatives open interest was not available.",
-    "Today’s FII and DII cash flow is not in the saved file."
-  ],
-  "settled": false,
-  "lastAttemptAt": "2026-10-21T11:41:23.189Z",
+  "gaps": [],
+  "settled": true,
+  "lastAttemptAt": "2026-10-21T13:51:43.836Z",
   "sources": [
     {
       "name": "NSE index feed",

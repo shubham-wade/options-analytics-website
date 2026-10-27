@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { LabHeader } from "@/components/dashboard/lab-header";
+import { ReportReader } from "@/components/report/report-reader";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCrore, formatInr, formatIst, formatNumber, formatSigned, pnlClass } from "@/lib/format";
 import { flowLabel } from "@/lib/flows/fii-dii";
+import { narrateReport } from "@/lib/report/narrate";
 import type { CashSession, IndexContributor, IndexPrint, MarketReport, ParticipantRow } from "@/lib/report/types";
 
 type ReportResponse = MarketReport & { sessions?: string[]; latest?: string; error?: string };
@@ -120,16 +122,28 @@ export function MarketReportView() {
 }
 
 function ReportBody({ report, latest }: { report: MarketReport; latest: string | null }) {
+  const reading = narrateReport(report, { cashPending: latest == null || report.asOf === latest });
   return (
     <>
+      <ReportReader paragraphs={reading} sessionKey={report.asOf} />
+
       <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         <IndexCard print={report.nifty} />
         <IndexCard print={report.bankNifty} />
         <Card>
           <CardHeader className="pb-2"><CardTitle className="text-xs uppercase tracking-wide text-muted-foreground">India VIX</CardTitle></CardHeader>
           <CardContent>
-            <p className={`font-mono text-2xl ${pnlClass(report.vix ? -report.vix.change : null)}`}>{report.vix ? formatNumber(report.vix.close) : "—"}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{report.vix ? `${formatSigned(report.vix.change)} · ${formatSigned(report.vix.percentChange)}% · ${report.vix.regime}` : "Not available"}</p>
+            <p className={`font-mono text-2xl ${pnlClass(report.vix?.change)}`}>{report.vix ? formatNumber(report.vix.close) : "—"}</p>
+            <p className="mt-1 text-sm">
+              {report.vix ? (
+                <>
+                  <span className={pnlClass(report.vix.change)}>{formatSigned(report.vix.change)} · {formatSigned(report.vix.percentChange)}%</span>
+                  <span className="text-muted-foreground"> · {report.vix.regime}</span>
+                </>
+              ) : (
+                <span className="text-muted-foreground">Not available</span>
+              )}
+            </p>
           </CardContent>
         </Card>
         <Card>

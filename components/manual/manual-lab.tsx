@@ -1,12 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { ContributionChart, PortfolioPnlChart } from "@/components/dashboard/charts";
+import { DailyPnlChart } from "@/components/dashboard/daily-pnl";
+import { FiiDiiChart } from "@/components/dashboard/fii-dii";
+import { FlowNotices } from "@/components/dashboard/flow-notices";
 import { ExpiryPayoffChart } from "@/components/dashboard/payoff-chart";
+import { MarketContext, oiLevels, useMarketBrief } from "@/components/dashboard/market-context";
 import { DecayStrip } from "@/components/dashboard/decay-strip";
 import { DirectionMix } from "@/components/dashboard/direction-mix";
 import { ScenarioTable } from "@/components/dashboard/scenario-table";
+import { Section } from "@/components/dashboard/section";
 import { LabHeader } from "@/components/dashboard/lab-header";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Badge } from "@/components/ui/badge";
@@ -16,7 +21,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table";
-import { formatInr, formatIst, formatNumber, formatPercentPoints, pnlClass } from "@/lib/format";
+import { formatInr, formatIst, formatNumber, formatPercentPoints, formatSigned, pnlClass } from "@/lib/format";
+import type { FlowNotice } from "@/lib/flows/fii-dii";
 import {
   includedScenarioPositions,
   isBlankManualDraft,
@@ -26,7 +32,7 @@ import {
 } from "@/lib/manual/book";
 import type { ListedNiftyOption, ManualLookup } from "@/lib/kite/lookup";
 import { parseNiftyOptionSymbol } from "@/lib/kite/positions";
-import { markedFromClosePnl, sumNullable } from "@/lib/pricing/pnl";
+import { markedFromClosePnl, positionPnl, sumNullable } from "@/lib/pricing/pnl";
 import { runScenarios, ScenarioInputError, type IvMode, type ScenarioResult } from "@/lib/scenario/engine";
 import type { PublicSessionStatus } from "@/lib/session/store";
 import { DEFAULT_DIVIDEND_YIELD, DEFAULT_RISK_FREE_RATE, DEFAULT_SPOT_MOVES, MODEL_DISCLAIMER } from "@/lib/time";
@@ -59,6 +65,7 @@ const blankEntry = (): ManualEntry => ({
 });
 
 export function ManualLab() {
+  const brief = useMarketBrief();
   const [spotText, setSpotText] = useState("");
   const [rows, setRows] = useState<ManualEntry[]>([blankEntry()]);
   const [moveText, setMoveText] = useState(DEFAULT_SPOT_MOVES.join(", "));
@@ -74,6 +81,11 @@ export function ManualLab() {
   const [live, setLive] = useState<ManualLookup | null>(null);
   const [catalog, setCatalog] = useState<ListedNiftyOption[]>([]);
   const [picks, setPicks] = useState<Record<string, ContractPick>>({});
+  const [flowNotices, setFlowNotices] = useState<FlowNotice[]>([]);
+  const dismissedFlows = useRef(new Set<string>());
+  const acceptFlows = useCallback((incoming: FlowNotice[]) => {
+    setFlowNotices(incoming.filter((notice) => !dismissedFlows.current.has(notice.key)));
+  }, []);
 
   useEffect(() => {
     const stored = readStoredBook();
@@ -210,6 +222,27 @@ export function ManualLab() {
   });
   const dayBook = sumNullable(dayCandidates.map((candidate) => candidate.pnl));
   const dayById = new Map(dayCandidates.map((candidate) => [candidate.id, candidate.pnl]));
+  const tradeCandidates = model.legs.flatMap((leg) => {
+    if (!leg.position) return [];
+    const pnl = positionPnl({
+      quantity: leg.position.quantity,
+      multiplier: leg.position.multiplier,
+      entryPremium: leg.position.entryPremium,
+      exitPremium: leg.position.marketPremium,
+      currentPremium: leg.position.marketPremium,
+    }).tradePnl;
+    return [{ id: leg.id, pnl }];
+  });
+  const tradeBook = sumNullable(tradeCandidates.map((candidate) => candidate.pnl));
+  const tradeById = new Map(tradeCandidates.map((candidate) => [candidate.id, candidate.pnl]));
+  const qualityNotes = [
+    ...(live?.warnings ?? []),
+    ...model.legs.flatMap((leg) => {
+      const quote = leg.tradingSymbol ? liveBySymbol.get(leg.tradingSymbol) : undefined;
+      return (quote?.warnings ?? []).map((warning) => `${leg.tradingSymbol}: ${warning}`);
+    }),
+    ...(model.scenario?.warnings ?? []),
+  ].slice(0, 8);
   const greeks = model.scenario?.currentGreeks;
   const excludedCount = rows.filter((row) => !row.included && legById.get(row.id)?.position).length;
   const scope = excludedCount > 0 ? `Excludes ${excludedCount}` : null;
@@ -273,11 +306,56 @@ export function ManualLab() {
         Contracts you type stay in this browser until you edit or remove them. A refresh or server restart does not clear them. Nothing on this page places an order.
       </p>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Contracts</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
+      <Section title="Summary">
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          <Metric
+            label="NIFTY spot"
+            value={formatNumber(Number(effectiveSpot) > 0 ? Number(effectiveSpot) : null, 2)}
+            detail={
+              spotText.trim()
+                ? "Entered"
+                : live?.spot.price
+                  ? `Kite quote${live.spot.change != null ? ` · ${formatSigned(live.spot.change, 2)} today` : ""}`
+                  : "Enter a spot or connect Zerodha"
+            }
+          />
+          <Metric
+            label="India VIX"
+            value={formatNumber(live?.vix.price, 2)}
+            detail={live?.vix.change != null ? `${formatSigned(live.vix.change, 2)} today` : connected ? "Kite quote" : "Connect Zerodha"}
+            className={pnlClass(live?.vix.change)}
+          />
+          <Metric
+            label="Trade P&L"
+            value={formatInr(tradeCandidates.length > 0 ? tradeBook.total : null)}
+            detail={tradeCandidates.length === 0 ? "Needs an average and a live price" : "Live price versus the average. This is the model, not the broker."}
+            className={pnlClass(tradeBook.total)}
+          />
+          <Metric
+            label="Day's P&L"
+            value={formatInr(dayCandidates.length > 0 ? dayBook.total : null)}
+            detail={
+              !live
+                ? "Connect Zerodha to read the previous close"
+                : dayCandidates.length === 0
+                  ? "Add a contract to mark it from the previous close"
+                  : dayBook.complete
+                    ? "Live price versus the previous close"
+                    : "Previous close is missing for a contract"
+            }
+            className={pnlClass(dayBook.total)}
+          />
+          <Metric label="Portfolio delta" value={formatNumber(greeks?.delta ?? null, 1)} detail={withScope(greeks && !greeks.complete ? "Partial" : "Model, per point")} />
+          <Metric label="Portfolio gamma" value={formatNumber(greeks?.gamma ?? null, 4)} detail={withScope("Per one index point")} />
+          <Metric label="Theta / day" value={formatNumber(greeks?.thetaPerDay ?? null)} detail={withScope("Calendar day")} className={pnlClass(greeks?.thetaPerDay)} />
+          <Metric label="Vega / point" value={formatNumber(greeks?.vegaPerPoint ?? null)} detail={withScope("Per 1 vol point")} />
+          <Metric label="In model" value={String(modeledPositions.length)} detail={excludedCount > 0 ? `${excludedCount} left out` : "Typed contracts"} />
+        </div>
+      </Section>
+
+      <MarketContext brief={brief} future={connected ? live?.future : null} />
+
+      <Section title="Contracts" defaultOpen={false} contentClassName="space-y-4">
           <Field
             label="NIFTY spot"
             hint={spotText.trim() ? "The scenario moves start from this level" : "Blank uses the live NIFTY 50 quote when Zerodha is connected"}
@@ -399,8 +477,7 @@ export function ManualLab() {
           <Button type="button" variant="outline" onClick={() => setRows((current) => [...current, freshEntry()])}>
             Add contract
           </Button>
-        </CardContent>
-      </Card>
+      </Section>
 
       <Card>
         <CardHeader>
@@ -444,29 +521,6 @@ export function ManualLab() {
       {!moves ? <p className="rounded-md border border-amber-600/30 bg-amber-500/10 px-3 py-2 text-sm text-amber-950 dark:text-amber-100">Enter 1 to 15 finite moves between -5000 and 5000, separated by commas.</p> : null}
       {model.modelError ? <p className="rounded-md border border-amber-600/30 bg-amber-500/10 px-3 py-2 text-sm text-amber-950 dark:text-amber-100">{model.modelError}</p> : null}
 
-      <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        <Metric label="NIFTY spot" value={formatNumber(Number(effectiveSpot) > 0 ? Number(effectiveSpot) : null, 2)} detail={spotText.trim() ? "Entered" : live?.spot.price ? "Kite quote" : "Enter a spot or connect Zerodha"} />
-        <Metric
-          label="Day's P&L"
-          value={formatInr(dayCandidates.length > 0 ? dayBook.total : null)}
-          detail={
-            !live
-              ? "Connect Zerodha to read the previous close"
-              : dayCandidates.length === 0
-                ? "Add a contract to mark it from the previous close"
-                : dayBook.complete
-                  ? "Live price versus the previous close"
-                  : "Previous close is missing for a contract"
-          }
-          className={pnlClass(dayBook.total)}
-        />
-        <Metric label="In model" value={String(modeledPositions.length)} detail={excludedCount > 0 ? `${excludedCount} left out` : "Typed contracts"} />
-        <Metric label="Portfolio delta" value={formatNumber(greeks?.delta ?? null, 1)} detail={withScope(greeks && !greeks.complete ? "Partial" : "Model, per point")} />
-        <Metric label="Portfolio gamma" value={formatNumber(greeks?.gamma ?? null, 4)} detail={withScope("Per one index point")} />
-        <Metric label="Theta / day" value={formatNumber(greeks?.thetaPerDay ?? null)} detail={withScope("Calendar day")} className={pnlClass(greeks?.thetaPerDay)} />
-        <Metric label="Vega / point" value={formatNumber(greeks?.vegaPerPoint ?? null)} detail={withScope("Per 1 vol point")} />
-      </section>
-
       {modeledPositions.length > 0 || (model.scenario?.decay.length ?? 0) > 0 ? (
         <section className="grid gap-4 xl:grid-cols-2">
           {modeledPositions.length > 0 ? <DirectionMix positions={modeledPositions} greeks={model.scenario?.positionGreeks ?? []} /> : null}
@@ -481,7 +535,8 @@ export function ManualLab() {
         <CardContent>
           <Table>
             <TableCaption>
-              Current price is the latest Kite quote. A typed price is not used. Priced {formatIst(model.now.toISOString())}.
+              Current price is the latest Kite quote. A typed price is not used.
+              {ready ? ` Priced ${formatIst(model.now.toISOString())}.` : ""}
             </TableCaption>
             <TableHeader>
               <TableRow>
@@ -490,7 +545,9 @@ export function ManualLab() {
                 <TableHead className="text-right">Qty</TableHead>
                 <TableHead className="text-right">Avg</TableHead>
                 <TableHead className="text-right">Current</TableHead>
+                <TableHead className="text-right">LTP</TableHead>
                 <TableHead className="text-right">Day P&L</TableHead>
+                <TableHead className="text-right">Trade P&L</TableHead>
                 <TableHead className="text-right">IV</TableHead>
                 <TableHead className="text-right">Delta</TableHead>
                 <TableHead className="text-right">Gamma</TableHead>
@@ -533,7 +590,9 @@ export function ManualLab() {
                     <TableCell className="text-right font-mono tabular">{formatNumber(leg.quantity, 0)}</TableCell>
                     <TableCell className="text-right font-mono tabular">{formatNumber(leg.average)}</TableCell>
                     <TableCell className="text-right font-mono tabular">{formatNumber(leg.price)}</TableCell>
+                    <TableCell className="text-right font-mono tabular">{formatNumber(liveBySymbol.get(leg.tradingSymbol)?.ltp ?? null)}</TableCell>
                     <TableCell className={`text-right font-mono tabular ${pnlClass(dayById.get(row.id))}`}>{formatInr(dayById.get(row.id) ?? null)}</TableCell>
+                    <TableCell className={`text-right font-mono tabular ${pnlClass(tradeById.get(row.id))}`}>{formatInr(tradeById.get(row.id) ?? null)}</TableCell>
                     <TableCell className="text-right font-mono tabular">{formatPercentPoints(greek?.iv)}</TableCell>
                     <TableCell className="text-right font-mono tabular">{formatNumber(greek?.delta, 2)}</TableCell>
                     <TableCell className="text-right font-mono tabular">{formatNumber(greek?.gamma, 4)}</TableCell>
@@ -542,6 +601,19 @@ export function ManualLab() {
                   </TableRow>
                 );
               })}
+              {rows.some((row) => legById.get(row.id)?.tradingSymbol) ? (
+                <TableRow>
+                  <TableCell className="font-medium">Total</TableCell>
+                  <TableCell colSpan={5} />
+                  <TableCell className={`text-right font-mono tabular ${pnlClass(dayCandidates.length > 0 ? dayBook.total : null)}`}>
+                    {formatInr(dayCandidates.length > 0 ? dayBook.total : null)}
+                  </TableCell>
+                  <TableCell className={`text-right font-mono tabular ${pnlClass(tradeCandidates.length > 0 ? tradeBook.total : null)}`}>
+                    {formatInr(tradeCandidates.length > 0 ? tradeBook.total : null)}
+                  </TableCell>
+                  <TableCell colSpan={5} />
+                </TableRow>
+              ) : null}
             </TableBody>
           </Table>
         </CardContent>
@@ -563,6 +635,7 @@ export function ManualLab() {
                 marketPremium: position.marketPremium,
               }))}
               spot={Number.isFinite(Number(effectiveSpot)) ? Number(effectiveSpot) : null}
+              levels={oiLevels(brief)}
             />
           </CardContent>
         </Card>
@@ -612,6 +685,11 @@ export function ManualLab() {
         </CardContent>
       </Card>
 
+      <DailyPnlChart />
+
+      <FiiDiiChart onNotices={acceptFlows} />
+
+      <section className="grid gap-4 lg:grid-cols-2">
       <Card>
         <CardHeader>
           <CardTitle>Model assumptions</CardTitle>
@@ -622,9 +700,38 @@ export function ManualLab() {
           <p>Day count is ACT/365. Theta is per calendar day. Vega is per one volatility point.</p>
           <p>{model.scenario?.settlementAssumption}</p>
           <p>Turning off “In model” removes that contract from the totals, the mix, and the scenario. It does not change a brokerage account.</p>
+          <p>Trade P&L is signed quantity times the live price minus the average. It is not the broker’s unrealised figure, and this page does not place orders.</p>
         </CardContent>
       </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Data quality</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-2 text-sm text-muted-foreground">
+          {qualityNotes.length === 0 ? <p>{connected ? "No data-quality warnings on the latest quotes." : "Connect Zerodha to check live quote quality."}</p> : null}
+          {qualityNotes.map((warning) => (
+            <p key={warning}>{warning}</p>
+          ))}
+          {live?.fetchedAt ? <p>Quotes as of {formatIst(live.fetchedAt)}.</p> : null}
+        </CardContent>
+      </Card>
+      </section>
     </main>
+    {flowNotices.length > 0 ? (
+      <div className="fixed right-4 top-28 z-50 flex w-[min(100vw-2rem,22rem)] flex-col gap-2" aria-live="assertive">
+        <FlowNotices
+          notices={flowNotices}
+          onDismiss={(key) => {
+            dismissedFlows.current.add(key);
+            setFlowNotices((current) => current.filter((notice) => notice.key !== key));
+          }}
+          onDismissAll={() => {
+            for (const notice of flowNotices) dismissedFlows.current.add(notice.key);
+            setFlowNotices([]);
+          }}
+        />
+      </div>
+    ) : null}
     </>
   );
 }
