@@ -12,6 +12,7 @@ import {
   parseIndexClose,
   parseParticipantOi,
   participantRows,
+  applySavedCash,
   indexContributors,
   summarizeCash,
   summarizeChain,
@@ -67,10 +68,14 @@ export async function loadMarketReport(now = new Date(), refresh = false, reques
   const cachePath = path.join(process.cwd(), "data", "reports", `${asOf}.json`);
   const live = liveCaptureAllowed(now, asOf);
   const cached = await readCache(cachePath);
-  if (!refresh && cached?.asOf === asOf && keepCached(cached, live, now)) return cached;
+  if (!refresh && cached?.asOf === asOf && keepCached(cached, live, now)) {
+    const filled = applySavedCash(cached, await readCashEntries());
+    if (filled !== cached) await writeFile(cachePath, `${JSON.stringify(filled, null, 2)}\n`, "utf8");
+    return filled;
+  }
   if (asOf === latestReportDate(now)) {
     try {
-      await refreshFlowBook(now);
+      await refreshFlowBook(now, { force: refresh });
     } catch {
       // Cash stays on whatever was already saved.
     }

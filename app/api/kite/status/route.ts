@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
-import { readKiteConfig } from "@/lib/config";
+import { readKiteAccount, readKiteConfig } from "@/lib/config";
 import {
   SESSION_COOKIE,
+  accountsForStatus,
   getSessionSecret,
   readCookieValue,
-  sessionFromRequest,
+  requestDesk,
   toPublicStatus,
   verifySessionCookie,
 } from "@/lib/session/store";
@@ -16,11 +17,14 @@ export async function GET(request: Request) {
   const secret = getSessionSecret();
   const raw = readCookieValue(request.headers.get("cookie"), SESSION_COOKIE);
   const sessionId = raw ? verifySessionCookie(raw, secret.secret) : null;
-  const session = sessionFromRequest(request);
+  const resolved = requestDesk(request);
+  const session = resolved?.active ?? null;
   return NextResponse.json(
     toPublicStatus(session, {
       configured: Boolean(readKiteConfig()),
       expired: Boolean(sessionId && !session),
+      accounts: accountsForStatus(resolved),
+      secondAccountConfigured: Boolean(readKiteAccount(2)),
     }),
     { headers: { "Cache-Control": "no-store" } },
   );

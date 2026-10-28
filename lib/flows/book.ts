@@ -21,14 +21,15 @@ export interface FlowSnapshot {
   updatedAt: string | null;
 }
 
-export async function refreshFlowBook(now = new Date()): Promise<FlowSnapshot> {
+export async function refreshFlowBook(now = new Date(), options?: { force?: boolean }): Promise<FlowSnapshot> {
   const book = await readFlowBook();
   const expected = expectedFlowDate(now);
-  if (book.entries[expected] && book.missed.length === 0) {
+  const force = options?.force === true;
+  if (!force && book.entries[expected] && book.missed.length === 0) {
     return snapshot(book, []);
   }
   const attempted = book.lastAttemptAt ? Date.parse(book.lastAttemptAt) : Number.NaN;
-  if (book.entries[expected] || (Number.isFinite(attempted) && now.getTime() - attempted < RETRY_MS)) {
+  if (!force && (book.entries[expected] || (Number.isFinite(attempted) && now.getTime() - attempted < RETRY_MS))) {
     return snapshot(book, noticesFor(book, expected, !book.entries[expected]));
   }
   let fetched: ReturnType<typeof parseNseFiiDii> = null;

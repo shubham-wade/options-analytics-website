@@ -46,6 +46,28 @@ describe("manual contract lookup", () => {
     expect(lookup.contracts[0]?.price).toBe(98.5);
   });
 
+  it("uses the NIFTY last price when the index quote also has a bid and ask", async () => {
+    const cache = createInstrumentCache();
+    const lookup = await lookupContracts(
+      {
+        getPositions: async () => ({ net: [], day: [] }),
+        getInstruments: async () => [],
+        getQuote: async () => ({
+          "NSE:NIFTY 50": {
+            ...quote(26110),
+            ohlc: { close: 25980 },
+            depth: { buy: [{ price: 24000, quantity: 1, orders: 1 }], sell: [{ price: 24010, quantity: 1, orders: 1 }] },
+          },
+        }),
+      },
+      [],
+      cache,
+      now,
+    );
+    expect(lookup.spot.price).toBe(26110);
+    expect(lookup.spot.change).toBeCloseTo(130);
+  });
+
   it("lists only NIFTY calls and puts, sorted by expiry and strike", async () => {
     const { listNiftyOptions } = await import("@/lib/kite/lookup");
     const listed = await listNiftyOptions(

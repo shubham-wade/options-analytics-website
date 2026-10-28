@@ -1,24 +1,24 @@
 import { NextResponse } from "next/server";
-import { ConfigError, requireKiteConfig } from "@/lib/config";
+import { ConfigError, kiteApiKey, requireKiteConfig } from "@/lib/config";
 import { asReader, createReadClient } from "@/lib/kite/client";
 import { mapKiteError } from "@/lib/kite/errors";
 import { expiredResponse } from "@/lib/kite/guard";
 import { listNiftyOptions } from "@/lib/kite/lookup";
 import { sharedInstrumentCache } from "@/lib/kite/portfolio";
 import { forgetSnapshot } from "@/lib/kite/snapshot-cache";
-import { destroyMemorySession, sessionFromRequest } from "@/lib/session/store";
+import { destroyMemorySession, marketSessionFromRequest, requestDesk, sessionFromRequest } from "@/lib/session/store";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
-  const session = sessionFromRequest(request);
+  const session = marketSessionFromRequest(request) ?? sessionFromRequest(request);
   if (!session) return expiredResponse();
 
   try {
-    const config = requireKiteConfig();
+    requireKiteConfig();
     const contracts = await listNiftyOptions(
-      asReader(createReadClient(config.apiKey, session.accessToken)),
+      asReader(createReadClient(kiteApiKey(session), session.accessToken)),
       sharedInstrumentCache(),
     );
     return NextResponse.json({ contracts }, { headers: { "Cache-Control": "no-store" } });
@@ -31,7 +31,7 @@ export async function GET(request: Request) {
     if (mapped.code === "SESSION_EXPIRED") {
       destroyMemorySession(session.id);
       forgetSnapshot(session.id);
-      return expiredResponse();
+      return expiredResponse(!requestDesk(request));
     }
     return NextResponse.json({ error: mapped.publicMessage, code: mapped.code }, { status: mapped.httpStatus });
   }

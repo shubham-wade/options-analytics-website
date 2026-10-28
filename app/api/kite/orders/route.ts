@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { ConfigError, requireKiteConfig } from "@/lib/config";
+import { ConfigError, kiteApiKey, requireKiteConfig } from "@/lib/config";
 import { asReader, createReadClient, sendKiteOrder } from "@/lib/kite/client";
 import { mapKiteError, orderFailureMessage } from "@/lib/kite/errors";
 import { expiredResponse } from "@/lib/kite/guard";
@@ -9,7 +9,7 @@ import { isOpenOrder, mapOrders, withLiveMarks, type KiteOrderSnapshot } from "@
 import { sharedInstrumentCache } from "@/lib/kite/portfolio";
 import { assessQuote } from "@/lib/kite/quotes";
 import { forgetSnapshot } from "@/lib/kite/snapshot-cache";
-import { destroyMemorySession, sessionFromRequest } from "@/lib/session/store";
+import { destroyMemorySession, requestDesk, sessionFromRequest } from "@/lib/session/store";
 import type { Connect } from "kiteconnect";
 
 export const runtime = "nodejs";
@@ -20,8 +20,8 @@ export async function GET(request: Request) {
   if (!session) return expiredResponse();
 
   try {
-    const config = requireKiteConfig();
-    const client = createReadClient(config.apiKey, session.accessToken);
+    requireKiteConfig();
+    const client = createReadClient(kiteApiKey(session), session.accessToken);
     const orders = (await client.getOrders()) as KiteOrderSnapshot[];
     const mapped = mapOrders(Array.isArray(orders) ? orders : []);
     const keys = [...new Set(mapped.filter(isOpenOrder).map((order) => `${order.exchange}:${order.symbol}`))].slice(0, 40);
@@ -54,7 +54,7 @@ export async function GET(request: Request) {
     if (mapped.code === "SESSION_EXPIRED") {
       destroyMemorySession(session.id);
       forgetSnapshot(session.id);
-      return expiredResponse();
+      return expiredResponse(!requestDesk(request));
     }
     return NextResponse.json({ error: mapped.publicMessage, code: mapped.code }, { status: mapped.httpStatus });
   }
@@ -98,8 +98,8 @@ export async function POST(request: Request) {
   if (!parsed.ok) return NextResponse.json({ error: parsed.error }, { status: 400 });
 
   try {
-    const config = requireKiteConfig();
-    const client = createReadClient(config.apiKey, session.accessToken);
+    requireKiteConfig();
+    const client = createReadClient(kiteApiKey(session), session.accessToken);
     const requested = parsed.command;
     let command = requested;
     if (requested.action === "place") {
@@ -149,7 +149,7 @@ export async function POST(request: Request) {
     if (mapped.code === "SESSION_EXPIRED") {
       destroyMemorySession(session.id);
       forgetSnapshot(session.id);
-      return expiredResponse();
+      return expiredResponse(!requestDesk(request));
     }
     return NextResponse.json({ error: failure.message, code: mapped.code }, { status: failure.httpStatus });
   }

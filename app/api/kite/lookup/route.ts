@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
-import { ConfigError, requireKiteConfig } from "@/lib/config";
+import { ConfigError, kiteApiKey, requireKiteConfig } from "@/lib/config";
 import { asReader, createReadClient } from "@/lib/kite/client";
 import { mapKiteError } from "@/lib/kite/errors";
 import { expiredResponse } from "@/lib/kite/guard";
 import { lookupContracts } from "@/lib/kite/lookup";
 import { sharedInstrumentCache } from "@/lib/kite/portfolio";
-import { destroyMemorySession, sessionFromRequest } from "@/lib/session/store";
+import { destroyMemorySession, marketSessionFromRequest, requestDesk, sessionFromRequest } from "@/lib/session/store";
 import { forgetSnapshot } from "@/lib/kite/snapshot-cache";
 
 export const runtime = "nodejs";
@@ -27,16 +27,24 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Request could not be read.", code: "BAD_REQUEST" }, { status: 400 });
   }
 
-  const session = sessionFromRequest(request);
+  const market = marketSessionFromRequest(request);
+  const active = sessionFromRequest(request);
+  const session = market ?? active;
   if (!session) return expiredResponse();
+  let quoting = session;
 
   try {
-    const config = requireKiteConfig();
-    const lookup = await lookupContracts(
-      asReader(createReadClient(config.apiKey, session.accessToken)),
-      symbols,
-      sharedInstrumentCache(),
-    );
+    requireKiteConfig();
+    let lookup;
+    try {
+      lookup = await lookupContracts(readerFor(quoting), symbols, sharedInstrumentCache());
+    } catch (error) {
+      if (!market || !active || market.id === active.id || mapKiteError(error).code !== "SESSION_EXPIRED") throw error;
+      destroyMemorySession(market.id);
+      forgetSnapshot(market.id);
+      quoting = active;
+      lookup = await lookupContracts(readerFor(quoting), symbols, sharedInstrumentCache());
+    }
     return NextResponse.json(lookup, { headers: { "Cache-Control": "no-store" } });
   } catch (error) {
     if (error instanceof ConfigError) {
@@ -45,10 +53,14 @@ export async function POST(request: Request) {
     const mapped = mapKiteError(error);
     console.error(`Kite lookup failed: ${mapped.code}`);
     if (mapped.code === "SESSION_EXPIRED") {
-      destroyMemorySession(session.id);
-      forgetSnapshot(session.id);
-      return expiredResponse();
+      destroyMemorySession(quoting.id);
+      forgetSnapshot(quoting.id);
+      return expiredResponse(!requestDesk(request));
     }
     return NextResponse.json({ error: mapped.publicMessage, code: mapped.code }, { status: mapped.httpStatus });
   }
+}
+
+function readerFor(session: { apiKey?: string; accessToken: string }) {
+  return asReader(createReadClient(kiteApiKey(session), session.accessToken));
 }

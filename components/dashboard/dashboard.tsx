@@ -197,7 +197,7 @@ export function Dashboard() {
       return;
     }
     void refreshBook(false);
-  }, [includeFlat, status?.connected, refreshBook]);
+  }, [includeFlat, status?.connected, status?.accounts?.find((account) => account.active)?.id, refreshBook]);
 
   useEffect(() => {
     if (!autoRefresh || !status?.connected) return;
@@ -279,6 +279,23 @@ export function Dashboard() {
     };
   }, [notices.length]);
 
+  async function switchAccount(accountId: string) {
+    if (status?.accounts?.find((account) => account.id === accountId)?.active) return;
+    const response = await fetch("/api/kite/active", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ accountId }),
+    });
+    if (!response.ok) return;
+    setPortfolio(null);
+    setOrders(null);
+    setOrdersError(null);
+    orderBookRef.current = null;
+    setScenario(null);
+    setExcluded([]);
+    await loadStatus();
+  }
+
   async function logout() {
     await fetch("/api/kite/logout", { method: "POST" });
     setPortfolio(null);
@@ -313,6 +330,18 @@ export function Dashboard() {
           <Link href="/manual">Manual book</Link>
         </Button>
         <ConnectionStatus status={status} />
+        {status?.accounts?.map((account) => (
+          <Button
+            key={account.id}
+            size="sm"
+            variant={account.active ? "default" : "outline"}
+            aria-pressed={account.active}
+            title={account.market ? `User ${account.number} supplies NIFTY, India VIX, and option quotes` : `User ${account.number} · ${account.userId}`}
+            onClick={() => void switchAccount(account.id)}
+          >
+            {accountLabel(account)}
+          </Button>
+        ))}
         {status?.connected ? (
           <span
             className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium ${
@@ -334,6 +363,11 @@ export function Dashboard() {
               <RefreshCw className={refreshing ? "h-4 w-4 animate-spin" : "h-4 w-4"} />
               Refresh
             </Button>
+            {status.secondAccountConfigured && status.accounts.length < 2 ? (
+              <Button variant="outline" size="sm" asChild>
+                <a href={`/api/kite/login?account=${status.accounts.some((account) => account.number === 1) ? 2 : 1}`}>Add account</a>
+              </Button>
+            ) : null}
             <Button variant="ghost" size="sm" onClick={() => void logout()}>
               Log out
             </Button>
@@ -473,7 +507,15 @@ export function Dashboard() {
 
         <section className="grid gap-4 xl:grid-cols-[280px_1fr]">
           <Section title="Connection" contentClassName="space-y-3 text-sm text-muted-foreground">
-              <p>{status?.connected ? `Signed in as ${status.userName}` : "Not connected."}</p>
+              <p>{status?.connected ? `Positions for ${accountLabel(status.accounts.find((account) => account.active) ?? { number: 1, userName: status.userName ?? "account" })}` : "Not connected."}</p>
+              <p>
+                {status?.accounts?.find((account) => account.market)
+                  ? `Quotes use ${accountLabel(status.accounts.find((account) => account.market)!)}. Positions and orders come from the selected account.`
+                  : "Connect Zerodha to load a book."}
+              </p>
+              {status?.connected && status.accounts.length < 2 && !status.secondAccountConfigured ? (
+                <p>The second login needs its own Kite app: KITE_API_KEY_2 and KITE_API_SECRET_2.</p>
+              ) : null}
               <p>Session expires {status?.expiresAt ? formatIst(status.expiresAt) : "after the next Zerodha login"} IST.</p>
               <p className={refreshPulse ? "text-emerald-700 dark:text-emerald-300" : undefined}>
                 Last refresh {refreshedAt ? formatIst(refreshedAt) : portfolio ? formatIst(portfolio.fetchedAt) : "—"}.
@@ -660,6 +702,10 @@ export function Dashboard() {
       ) : null}
     </TooltipProvider>
   );
+}
+
+function accountLabel(account: { number: number; userName: string }): string {
+  return `User ${account.number} · ${account.userName}`;
 }
 
 function ConnectionStatus({ status }: { status: PublicSessionStatus | null }) {

@@ -143,9 +143,10 @@ function sumDayPnl(positions: PublicPosition[]): { total: number | null; complet
 
 export async function loadPortfolio(
   reader: KiteReader,
-  options: { includeFlat: boolean; now?: Date; cache?: InstrumentCache },
+  options: { includeFlat: boolean; now?: Date; cache?: InstrumentCache; market?: Pick<KiteReader, "getInstruments" | "getQuote"> },
 ): Promise<PortfolioSnapshot> {
   const now = options.now ?? new Date();
+  const market = options.market ?? reader;
   const warnings: string[] = [];
   const positionsResponse = await reader.getPositions();
   const net = extractNetPositions(positionsResponse);
@@ -156,7 +157,7 @@ export async function loadPortfolio(
   let cacheHit = false;
   const cache = options.cache ?? createInstrumentCache();
   try {
-    const cached = await cache.get((exchange) => reader.getInstruments(exchange), now.getTime());
+    const cached = await cache.get((exchange) => market.getInstruments(exchange), now.getTime());
     instruments = indexInstruments([...cached.nfo, ...cached.nse]);
     nse = cached.nse;
     cacheFetchedAt = cached.fetchedAt;
@@ -178,7 +179,7 @@ export async function loadPortfolio(
   if (futureKey) keys.push(futureKey);
   let quotes: Record<string, KiteQuote | undefined> = {};
   try {
-    quotes = await reader.getQuote(keys);
+    quotes = await market.getQuote(keys);
   } catch (error) {
     warnings.push("Market quotes could not be loaded.");
     throw error;

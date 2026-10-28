@@ -1,6 +1,6 @@
 {
   "asOf": "2026-10-27",
-  "generatedAt": "2026-10-27T13:36:25.918Z",
+  "generatedAt": "2026-10-28T07:43:57.481Z",
   "nifty": {
     "name": "NIFTY 50",
     "open": 22708.8,
@@ -10,9 +10,9 @@
     "previousClose": 22753.2,
     "change": -3.4500000000007276,
     "percentChange": -0.02,
-    "advances": 25,
-    "declines": 25,
-    "unchanged": 0,
+    "advances": null,
+    "declines": null,
+    "unchanged": null,
     "closingLocation": 0.5852773457750161,
     "gap": -44.400000000001455
   },
@@ -22,20 +22,20 @@
     "high": 54654.05,
     "low": 53951.2,
     "close": 53974.9,
-    "previousClose": 54366.7,
-    "change": -391.79999999999563,
+    "previousClose": 54366.700000000004,
+    "change": -391.8000000000029,
     "percentChange": -0.72,
-    "advances": 6,
-    "declines": 8,
-    "unchanged": 0,
+    "advances": null,
+    "declines": null,
+    "unchanged": null,
     "closingLocation": 0.03371985487657988,
-    "gap": 54
+    "gap": 53.999999999992724
   },
   "vix": {
-    "close": 16.53,
+    "close": 16.4,
     "previousClose": 17.16,
-    "change": -0.629999999999999,
-    "percentChange": -3.65,
+    "change": -0.7600000000000016,
+    "percentChange": -4.41,
     "regime": "moderate",
     "regimeRule": "Low is below 13, moderate is 13 up to 18, and elevated is 18 or higher. These cutoffs are local labels, not an exchange classification."
   },
@@ -53,8 +53,16 @@
       "percentChange": 1.91
     },
     {
+      "name": "NIFTY HEALTHCARE",
+      "percentChange": 1.65
+    },
+    {
       "name": "NIFTY AUTO",
       "percentChange": 1.48
+    },
+    {
+      "name": "NIFTY INFRA",
+      "percentChange": 0.76
     },
     {
       "name": "NIFTY FMCG",
@@ -209,25 +217,88 @@
     ]
   },
   "cash": {
-    "today": null,
+    "today": {
+      "date": "2026-10-27",
+      "fii": 4240.39,
+      "dii": -1250.03,
+      "combined": 2990.3600000000006
+    },
     "fiveDay": {
       "sessions": 5,
-      "fii": -4159.86,
-      "dii": 13551.76,
-      "combined": 9391.900000000001
+      "fii": 1229.170000000001,
+      "dii": 9100.539999999999,
+      "combined": 10329.710000000001
     },
     "month": {
       "label": "October 2026",
-      "sessions": 16,
-      "fii": -52928.87,
-      "dii": 61719.89,
-      "combined": 8791.02
+      "sessions": 17,
+      "fii": -48688.48,
+      "dii": 60469.86,
+      "combined": 11781.38
     }
   },
-  "participants": [],
-  "participantAsOf": null,
+  "participants": [
+    {
+      "name": "FII",
+      "futureIndexLong": 33588,
+      "futureIndexShort": 254645,
+      "futureIndexLongChange": -12934,
+      "futureIndexShortChange": -68982,
+      "longRatio": 0.11653072340779855,
+      "longRatioChange": -0.009153798230784826,
+      "indexCallLong": 400767,
+      "indexPutLong": 864775,
+      "indexCallShort": 693842,
+      "indexPutShort": 296849
+    },
+    {
+      "name": "DII",
+      "futureIndexLong": 47790,
+      "futureIndexShort": 8410,
+      "futureIndexLongChange": -1898,
+      "futureIndexShortChange": -766,
+      "longRatio": 0.850355871886121,
+      "longRatioChange": 0.006240623177232729,
+      "indexCallLong": 2738,
+      "indexPutLong": 102061,
+      "indexCallShort": 0,
+      "indexPutShort": 0
+    },
+    {
+      "name": "Pro",
+      "futureIndexLong": 25297,
+      "futureIndexShort": 38046,
+      "futureIndexLongChange": -48156,
+      "futureIndexShortChange": -6396,
+      "longRatio": 0.39936536002399636,
+      "longRatioChange": -0.22367208855312737,
+      "indexCallLong": 699038,
+      "indexPutLong": 614866,
+      "indexCallShort": 593433,
+      "indexPutShort": 655955
+    },
+    {
+      "name": "Client",
+      "futureIndexLong": 251789,
+      "futureIndexShort": 57363,
+      "futureIndexLongChange": -27305,
+      "futureIndexShortChange": -14149,
+      "longRatio": 0.8144504968429769,
+      "longRatioChange": 0.018417342818231153,
+      "indexCallLong": 1958249,
+      "indexPutLong": 1625054,
+      "indexCallShort": 1773516,
+      "indexPutShort": 2253953
+    }
+  ],
+  "participantAsOf": "Oct 27, 2026",
   "participantPrevious": "Oct 26, 2026",
-  "futures": null,
+  "futures": {
+    "priceChange": -3.4500000000007276,
+    "oi": 358464,
+    "oiChange": -90293,
+    "reading": "Possible long unwinding: the index fell while index-futures open interest fell."
+  },
   "chains": [
     {
       "expiry": "27-Oct-2026",
@@ -329,21 +400,22 @@
   "portfolio": null,
   "evidence": {
     "supportive": [
+      "FII cash flow was net buying.",
       "India VIX fell."
     ],
     "adverse": [
-      "NIFTY closed down 3.45 points."
+      "NIFTY closed down 3.45 points.",
+      "DII cash flow was net selling.",
+      "The FII index-futures long ratio fell versus the previous session."
     ],
     "inferred": [
-      "Nearest-expiry put-call ratio is 1.04, using put open interest divided by call open interest. A high or low ratio is context, not a signal by itself."
+      "Possible long unwinding: the index fell while index-futures open interest fell.",
+      "FII index-futures contracts are mostly short. That describes the book, not the next session’s direction."
     ]
   },
-  "gaps": [
-    "Participant-wise derivatives open interest was not available.",
-    "FII and DII cash is not saved yet. It often appears between 5:30 and 6:30 PM IST."
-  ],
-  "settled": false,
-  "lastAttemptAt": "2026-10-27T13:36:23.978Z",
+  "gaps": [],
+  "settled": true,
+  "lastAttemptAt": "2026-10-28T07:43:57.041Z",
   "sources": [
     {
       "name": "NSE index feed",

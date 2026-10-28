@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildFuturesRead, closingLocation, futuresReading, indexContributors, longRatio, parseIndexClose, parseParticipantOi, summarizeCash, summarizeChain, vixRegime } from "@/lib/report/parse";
+import { applySavedCash, buildFuturesRead, closingLocation, futuresReading, indexContributors, longRatio, parseIndexClose, parseParticipantOi, summarizeCash, summarizeChain, vixRegime } from "@/lib/report/parse";
 import { liveCaptureAllowed, pendingReportDates, reportReady, reportSessions, resolveReportDate } from "@/lib/report/sessions";
 import { atIst } from "@/lib/flows/fii-dii";
 
@@ -114,5 +114,24 @@ describe("post-market report figures", () => {
     expect(cash.today).toMatchObject({ fii: 2, dii: -1, combined: 1 });
     expect(cash.fiveDay?.sessions).toBe(3);
     expect(cash.month?.fii).toBe(-13);
+  });
+
+  it("puts a later cash print into a report that was saved without it", () => {
+    const saved = {
+      asOf: "2026-10-27",
+      cash: { today: null, fiveDay: null, month: null },
+      gaps: ["Participant-wise derivatives open interest was not available.", "FII and DII cash is not saved yet. It often appears between 5:30 and 6:30 PM IST."],
+      nifty: null,
+      vix: { change: -1 },
+      participants: [],
+      chains: [],
+      futures: null,
+      evidence: { supportive: ["India VIX fell."], adverse: [], inferred: [] },
+    };
+    const filled = applySavedCash(saved, { "2026-10-27": { fii: 10, dii: -4 } });
+    expect(filled.cash.today).toMatchObject({ fii: 10, dii: -4, combined: 6 });
+    expect(filled.gaps.some((gap) => gap.startsWith("FII and DII cash"))).toBe(false);
+    expect(filled.evidence.supportive).toContain("FII cash flow was net buying.");
+    expect(applySavedCash(filled, { "2026-10-27": { fii: 1, dii: 1 } })).toBe(filled);
   });
 });

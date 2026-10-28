@@ -277,6 +277,39 @@ export function buildFuturesRead(priceChange: number | null, todayOi: number | n
   };
 }
 
+/** Fills a saved report from the cash file without rebuilding the rest of the session. */
+export function applySavedCash<T extends {
+  asOf: string;
+  cash: CashSummary;
+  gaps: string[];
+  nifty: IndexPrint | null;
+  vix: { change: number } | null;
+  participants: ParticipantRow[];
+  chains: { pcr: number | null }[];
+  futures: { reading: string } | null;
+  evidence: { supportive: string[]; adverse: string[]; inferred: string[] };
+}>(report: T, entries: Record<string, { fii: number; dii: number }>): T {
+  if (report.cash.today) return report;
+  const cash = summarizeCash(report.asOf, entries);
+  if (!cash.today) return report;
+  const fii = report.participants.find((row) => row.name === "FII");
+  return {
+    ...report,
+    cash,
+    gaps: report.gaps.filter((gap) => !gap.startsWith("FII and DII cash")),
+    evidence: evidenceFrom({
+      nifty: report.nifty,
+      cashFii: cash.today.fii,
+      cashDii: cash.today.dii,
+      fiiLongRatio: fii?.longRatio ?? null,
+      fiiRatioChange: fii?.longRatioChange ?? null,
+      pcr: report.chains[0]?.pcr ?? null,
+      vixChange: report.vix?.change ?? null,
+      futuresReading: report.futures?.reading ?? null,
+    }),
+  };
+}
+
 export function summarizeCash(asOf: string, entries: Record<string, { fii: number; dii: number }>): CashSummary {
   const dated = Object.entries(entries)
     .filter(([date, row]) => date <= asOf && isTradingDay(date) && Number.isFinite(row.fii) && Number.isFinite(row.dii))

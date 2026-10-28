@@ -113,7 +113,7 @@ export function MarketReportView() {
               </p>
             </div>
             {error ? <p className="rounded-md border border-amber-600/40 bg-amber-500/10 px-3 py-2 text-sm">{error}</p> : null}
-            {report ? <ReportBody report={report} latest={latest} /> : loading ? <p className="text-sm text-muted-foreground">Collecting the session’s files…</p> : null}
+            {report ? <ReportBody report={report} latest={latest} refreshing={loading} onRefreshCash={() => void load(true)} /> : loading ? <p className="text-sm text-muted-foreground">Collecting the session’s files…</p> : null}
           </div>
         </div>
       </main>
@@ -121,7 +121,7 @@ export function MarketReportView() {
   );
 }
 
-function ReportBody({ report, latest }: { report: MarketReport; latest: string | null }) {
+function ReportBody({ report, latest, refreshing, onRefreshCash }: { report: MarketReport; latest: string | null; refreshing: boolean; onRefreshCash: () => void }) {
   const reading = narrateReport(report, { cashPending: latest == null || report.asOf === latest });
   return (
     <>
@@ -174,19 +174,26 @@ function ReportBody({ report, latest }: { report: MarketReport; latest: string |
       </SectionBlock>
 
       <SectionBlock title="2. What did institutions do?">
-        {report.cash.today ? (
-          <p className="text-sm">
-            Cash market, provisional. FII {formatCrore(report.cash.today.fii)}, DII {formatCrore(report.cash.today.dii)}, combined {formatCrore(report.cash.today.combined)}.
-            {report.cash.fiveDay ? ` Last ${report.cash.fiveDay.sessions} saved sessions: FII ${formatCrore(report.cash.fiveDay.fii)}, DII ${formatCrore(report.cash.fiveDay.dii)}.` : ""}
-            {report.cash.month ? ` ${report.cash.month.label}: FII ${formatCrore(report.cash.month.fii)}, DII ${formatCrore(report.cash.month.dii)} across ${report.cash.month.sessions} saved sessions.` : ""}
-          </p>
-        ) : (
-          <p className="text-sm text-muted-foreground">
-            {latest == null || report.asOf === latest
-              ? "Cash flow for this date is not saved yet. It often appears between 5:30 and 6:30 PM IST."
-              : "Cash flow for this date is not in the saved file."}
-          </p>
-        )}
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          {report.cash.today ? (
+            <p className="min-w-0 flex-1 text-sm">
+              Cash market, provisional. FII {formatCrore(report.cash.today.fii)}, DII {formatCrore(report.cash.today.dii)}, combined {formatCrore(report.cash.today.combined)}.
+              {report.cash.fiveDay ? ` Last ${report.cash.fiveDay.sessions} saved sessions: FII ${formatCrore(report.cash.fiveDay.fii)}, DII ${formatCrore(report.cash.fiveDay.dii)}.` : ""}
+              {report.cash.month ? ` ${report.cash.month.label}: FII ${formatCrore(report.cash.month.fii)}, DII ${formatCrore(report.cash.month.dii)} across ${report.cash.month.sessions} saved sessions.` : ""}
+            </p>
+          ) : (
+            <p className="min-w-0 flex-1 text-sm text-muted-foreground">
+              {latest == null || report.asOf === latest
+                ? "Cash flow for this date is not in the saved report yet. NSE usually publishes it between 5:30 and 6:30 PM IST."
+                : "Cash flow for this date is not in the saved file."}
+            </p>
+          )}
+          {latest == null || report.asOf === latest ? (
+            <Button size="sm" variant="outline" disabled={refreshing} onClick={onRefreshCash}>
+              Refresh cash
+            </Button>
+          ) : null}
+        </div>
         {report.participants.length > 0 ? <ParticipantTable rows={report.participants} asOf={report.participantAsOf} previous={report.participantPrevious} /> : null}
         {report.futures ? (
           <p className="text-sm">

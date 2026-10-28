@@ -28,9 +28,11 @@ Fill in:
 
 | Variable | Role |
 | --- | --- |
-| `KITE_API_KEY` | Public app key |
+| `KITE_API_KEY` | Public app key for the first Zerodha account |
 | `KITE_API_SECRET` | Server-only secret used for the checksum |
-| `KITE_REDIRECT_URL` | Registered callback, normally `http://localhost:3000/api/kite/callback` |
+| `KITE_API_KEY_2` | Public app key for the second Zerodha account |
+| `KITE_API_SECRET_2` | Server-only secret for that second app |
+| `KITE_REDIRECT_URL` | Registered callback on both apps, normally `http://localhost:3000/api/kite/callback` |
 | `SESSION_SECRET` | Signs the HTTP-only session id cookie |
 
 `.env.local` is listed in `.gitignore`. Do not prefix these names with `NEXT_PUBLIC_`.

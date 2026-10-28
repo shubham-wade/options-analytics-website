@@ -123,6 +123,7 @@ export function ManualLab() {
     const symbols = symbolKey ? symbolKey.split("|") : [];
 
     async function refreshLive() {
+      if (document.visibilityState === "hidden") return;
       try {
         const statusResponse = await fetch("/api/kite/status", { cache: "no-store" });
         const status = (await statusResponse.json()) as PublicSessionStatus;
@@ -135,25 +136,28 @@ export function ManualLab() {
         const response = await fetch("/api/kite/lookup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
+          cache: "no-store",
           body: JSON.stringify({ symbols }),
         });
-        if (!response.ok) {
-          if (!cancelled) setLive(null);
-          return;
-        }
+        if (!response.ok || cancelled) return;
         const body = (await response.json()) as ManualLookup;
         if (!cancelled) setLive(body);
       } catch {
-        if (!cancelled) setLive(null);
+        // Keep the last NIFTY quote when one poll fails.
       }
     }
 
     const start = window.setTimeout(() => void refreshLive(), 300);
-    const timer = window.setInterval(() => void refreshLive(), 20_000);
+    const timer = window.setInterval(() => void refreshLive(), 5_000);
+    const onVisible = () => {
+      if (document.visibilityState === "visible") void refreshLive();
+    };
+    document.addEventListener("visibilitychange", onVisible);
     return () => {
       cancelled = true;
       window.clearTimeout(start);
       window.clearInterval(timer);
+      document.removeEventListener("visibilitychange", onVisible);
     };
   }, [ready, symbolKey]);
 
@@ -185,6 +189,7 @@ export function ManualLab() {
     };
   });
   const effectiveSpot = spotText.trim() || (live?.spot.price != null ? String(live.spot.price) : "");
+  const summarySpot = live?.spot.price ?? (Number(spotText) > 0 ? Number(spotText) : null);
 
   const moves = useMemo(() => parseMoves(moveText), [moveText]);
   const horizonDays = horizon === "custom" ? Number(customDays) : Number(horizon);
@@ -310,13 +315,15 @@ export function ManualLab() {
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <Metric
             label="NIFTY spot"
-            value={formatNumber(Number(effectiveSpot) > 0 ? Number(effectiveSpot) : null, 2)}
+            value={formatNumber(summarySpot, 2)}
             detail={
-              spotText.trim()
-                ? "Entered"
-                : live?.spot.price
-                  ? `Kite quote${live.spot.change != null ? ` · ${formatSigned(live.spot.change, 2)} today` : ""}`
-                  : "Enter a spot or connect Zerodha"
+              live?.spot.price != null
+                ? `Kite quote${live.spot.change != null ? ` · ${formatSigned(live.spot.change, 2)} today` : ""}${live.fetchedAt ? ` · ${formatIst(live.fetchedAt)}` : ""}`
+                : spotText.trim()
+                  ? "Entered"
+                  : connected
+                    ? "Waiting for the NIFTY 50 quote"
+                    : "Enter a spot or connect Zerodha"
             }
           />
           <Metric

@@ -7,7 +7,7 @@ import {
   readInstrumentExpiry,
 } from "@/lib/kite/positions";
 import { INDIA_VIX_KEY, NIFTY_SPOT_KEY, type IndiaVixQuote, type InstrumentCache, type KiteReader, type NiftyFutureQuote } from "@/lib/kite/portfolio";
-import type { KiteInstrument, QuoteQuality } from "@/lib/kite/types";
+import type { KiteInstrument, KiteQuote, QuoteQuality } from "@/lib/kite/types";
 
 export interface ManualContractQuote {
   symbol: string;
@@ -57,8 +57,8 @@ export async function lookupContracts(
   }
 
   const quotes = await reader.getQuote(keys);
-  const spot = assessQuote(quotes[NIFTY_SPOT_KEY], now);
-  const vixQuote = assessQuote(quotes[INDIA_VIX_KEY], now);
+  const spot = indexPrint(quotes[NIFTY_SPOT_KEY], now);
+  const vixQuote = indexPrint(quotes[INDIA_VIX_KEY], now);
   if (spot.price === null) warnings.push("NIFTY 50 quote was not available.");
   const futurePrice = futureKey ? assessQuote(quotes[futureKey], now).price : null;
   const future: NiftyFutureQuote | null = futureInstrument
@@ -106,17 +106,28 @@ export async function lookupContracts(
   return {
     spot: {
       price: spot.price,
-      change: spotChange(spot.price, spot.previousClose, finiteNumber(quotes[NIFTY_SPOT_KEY]?.net_change)),
+      change: spot.change,
       quality: spot.quality,
     },
     vix: {
       price: vixQuote.price,
-      change: spotChange(vixQuote.price, vixQuote.previousClose, finiteNumber(quotes[INDIA_VIX_KEY]?.net_change)),
+      change: vixQuote.change,
     },
     contracts,
     future,
     warnings,
     fetchedAt: now.toISOString(),
+  };
+}
+
+/** Index quotes use the last price. A bid-ask mid on NIFTY 50 or India VIX is not the index print. */
+function indexPrint(quote: KiteQuote | undefined, now: Date): { price: number | null; change: number | null; quality: QuoteQuality } {
+  const assessed = assessQuote(quote, now);
+  const price = assessed.ltp ?? assessed.price;
+  return {
+    price,
+    change: spotChange(price, assessed.previousClose, finiteNumber(quote?.net_change)),
+    quality: assessed.quality,
   };
 }
 
