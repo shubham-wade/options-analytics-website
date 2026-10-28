@@ -1,6 +1,6 @@
 {
   "asOf": "2026-10-27",
-  "generatedAt": "2026-10-27T11:28:06.542Z",
+  "generatedAt": "2026-10-27T13:36:25.918Z",
   "nifty": {
     "name": "NIFTY 50",
     "open": 22708.8,
@@ -322,7 +322,10 @@
       ]
     }
   ],
-  "volatility": null,
+  "volatility": {
+    "daily": 0.0084098,
+    "note": "From the NSE futures volatility file for NIFTY. This is one day’s figure, not realised volatility over 5, 10 or 20 sessions."
+  },
   "portfolio": null,
   "evidence": {
     "supportive": [
@@ -340,7 +343,7 @@
     "FII and DII cash is not saved yet. It often appears between 5:30 and 6:30 PM IST."
   ],
   "settled": false,
-  "lastAttemptAt": "2026-10-27T11:28:05.028Z",
+  "lastAttemptAt": "2026-10-27T13:36:23.978Z",
   "sources": [
     {
       "name": "NSE index feed",
