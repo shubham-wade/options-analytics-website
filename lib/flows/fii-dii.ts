@@ -99,7 +99,7 @@ export function buildFlowSeries(entries: Record<string, FlowEntry>): FlowPoint[]
   return points;
 }
 
-export const FLOW_LOOKBACKS = [5, 20, 40] as const;
+export const FLOW_LOOKBACKS = [5, 10, 20, 40] as const;
 
 export interface FlowLookback {
   sessions: number;
@@ -111,7 +111,7 @@ export interface FlowLookback {
   dii: number;
 }
 
-/** Sums of the last 5, 20 and 40 trading sessions, ending at the newest saved day. */
+/** Sums of the last 5, 10, 20 and 40 trading sessions, ending at the newest saved day. */
 export function flowLookbacks(points: FlowPoint[], sizes: readonly number[] = FLOW_LOOKBACKS): FlowLookback[] {
   let end = -1;
   for (let index = points.length - 1; index >= 0; index -= 1) {

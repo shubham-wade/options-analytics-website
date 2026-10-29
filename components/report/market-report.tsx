@@ -78,6 +78,12 @@ export function MarketReportView() {
         <Button variant="outline" size="sm" asChild>
           <Link href="/">Dashboard</Link>
         </Button>
+        <Button variant="outline" size="sm" asChild>
+          <Link href="/stocks">Stocks</Link>
+        </Button>
+        <Button variant="outline" size="sm" asChild>
+          <Link href="/paper">Paper</Link>
+        </Button>
         <Button size="sm" variant="outline" disabled={loading} onClick={() => void load(true)}>
           {loading ? "Building" : "Refresh"}
         </Button>

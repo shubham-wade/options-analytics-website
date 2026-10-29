@@ -38,7 +38,7 @@ describe("FII/DII cash flows", () => {
     expect(series[framed.start + framed.count - 1]?.date).toBe("2026-10-16");
   });
 
-  it("sums the last 5, 20 and 40 sessions back from the newest saved day", () => {
+  it("sums the last 5, 10, 20 and 40 sessions back from the newest saved day", () => {
     const points = buildFlowSeries({
       "2026-10-12": { fii: 1, dii: 10 },
       "2026-10-13": { fii: 2, dii: 20 },
@@ -46,8 +46,9 @@ describe("FII/DII cash flows", () => {
       "2026-10-15": { fii: 4, dii: 40 },
       "2026-10-16": { fii: 5, dii: 50 },
     });
-    const [five, twenty, forty] = flowLookbacks(points);
+    const [five, ten, twenty, forty] = flowLookbacks(points);
     expect(five).toMatchObject({ sessions: 5, counted: 5, from: "2026-10-12", to: "2026-10-16", fii: 15, dii: 150 });
+    expect(ten).toMatchObject({ sessions: 10, counted: 5, from: "2026-10-05", to: "2026-10-16", fii: 15, dii: 150 });
     expect(twenty.to).toBe("2026-10-16");
     expect(twenty.counted).toBe(5);
     expect(forty.fii).toBe(15);

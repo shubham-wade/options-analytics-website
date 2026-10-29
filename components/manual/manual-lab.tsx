@@ -305,6 +305,12 @@ export function ManualLab() {
       <Button variant="outline" size="sm" asChild>
         <Link href="/">Zerodha book</Link>
       </Button>
+      <Button variant="outline" size="sm" asChild>
+        <Link href="/stocks">Stocks</Link>
+      </Button>
+      <Button variant="outline" size="sm" asChild>
+        <Link href="/paper">Paper</Link>
+      </Button>
     </LabHeader>
     <main className="mx-auto flex max-w-[1440px] flex-col gap-6 px-4 py-6 md:px-6">
       <p className="max-w-2xl text-sm text-muted-foreground">

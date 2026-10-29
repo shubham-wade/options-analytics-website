@@ -97,7 +97,7 @@ export function FiiDiiChart({ onNotices }: { onNotices: (notices: FlowNotice[]) 
       }
     >
       {lookbacks.length > 0 ? (
-        <div className="mb-3 grid gap-2 sm:grid-cols-3">
+        <div className="mb-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
           {lookbacks.map((window) => (
             <div key={window.sessions} className="rounded-md border border-border px-3 py-2 text-xs">
               <p className="text-muted-foreground">
@@ -156,7 +156,7 @@ export function FiiDiiChart({ onNotices }: { onNotices: (notices: FlowNotice[]) 
                   x1={window.from}
                   x2={window.to}
                   fill={colors.axis}
-                  fillOpacity={window.sessions === 5 ? 0.16 : window.sessions === 20 ? 0.08 : 0.04}
+                  fillOpacity={window.sessions === 5 ? 0.16 : window.sessions === 10 ? 0.12 : window.sessions === 20 ? 0.08 : 0.04}
                   ifOverflow="hidden"
                 />
               ))}
@@ -167,7 +167,7 @@ export function FiiDiiChart({ onNotices }: { onNotices: (notices: FlowNotice[]) 
         </div>
       </div>
       <p className="mt-3 text-xs text-muted-foreground">
-        Net cash flow in ₹ crore. Blue is FII and amber is DII. The shaded bands are the last 5, 20 and 40 trading sessions back from the newest saved day, and the figures above are those sums. NSE publishes the provisional print between 5:30 and 6:30 PM IST. The frame opens on the last 90 days. Scroll sideways for July through March.
+        Net cash flow in ₹ crore. Blue is FII and amber is DII. The shaded bands are the last 5, 10, 20 and 40 trading sessions back from the newest saved day, and the figures above are those sums. NSE publishes the provisional print between 5:30 and 6:30 PM IST. The frame opens on the last 90 days. Scroll sideways for July through March.
         {note ? ` ${note}` : ""}
       </p>
     </Section>

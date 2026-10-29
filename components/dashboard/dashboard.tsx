@@ -324,6 +324,12 @@ export function Dashboard() {
       <LabHeader kicker="Zerodha" live={portfolio?.spot.quality === "live"} refreshing={refreshing}>
         <ThemeToggle />
         <Button variant="outline" size="sm" asChild>
+          <Link href="/stocks">Stocks</Link>
+        </Button>
+        <Button variant="outline" size="sm" asChild>
+          <Link href="/paper">Paper</Link>
+        </Button>
+        <Button variant="outline" size="sm" asChild>
           <Link href="/report">Report</Link>
         </Button>
         <Button variant="outline" size="sm" asChild>

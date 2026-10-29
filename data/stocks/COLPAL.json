@@ -1,0 +1,151 @@
+{
+  "symbol": "COLPAL",
+  "name": "Colgate-Palmolive (India)",
+  "isin": "INE259A01022",
+  "industry": "FMCG",
+  "exchange": "NSE",
+  "searchId": "colgatepalmolive-india-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-29",
+      "savedAt": "2026-10-29T13:39:18.835Z",
+      "price": {
+        "last": 1629.8,
+        "change": 28.2,
+        "changePercent": 1.76,
+        "open": 1611,
+        "high": 1640.7,
+        "low": 1588.6,
+        "previousClose": 1601.6,
+        "volume": 512948,
+        "average": 1619,
+        "averageSource": "bars",
+        "yearHigh": 2301.6,
+        "yearLow": 1576.8,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 43572,
+        "pe": 32,
+        "industryPe": 34.8,
+        "eps": 50.07,
+        "pb": 26.94,
+        "roe": 84.19,
+        "debtToEquity": 0.03,
+        "bookValue": 59.48,
+        "dividendYield": 3.62,
+        "faceValue": 1
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 51,
+        "mutualFunds": 7.38,
+        "insurance": 8.07,
+        "foreignInstitutions": 13.71,
+        "retailAndOthers": 19.83
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 51,
+          "mutualFunds": 5.46,
+          "insurance": 6.77,
+          "foreignInstitutions": 17.16,
+          "retailAndOthers": 19.6
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 51,
+          "mutualFunds": 6.11,
+          "insurance": 7.67,
+          "foreignInstitutions": 15.18,
+          "retailAndOthers": 20.04
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 51,
+          "mutualFunds": 7.45,
+          "insurance": 8.08,
+          "foreignInstitutions": 13.6,
+          "retailAndOthers": 19.87
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 51,
+          "mutualFunds": 7.23,
+          "insurance": 8.59,
+          "foreignInstitutions": 13.59,
+          "retailAndOthers": 19.58
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 51,
+          "mutualFunds": 7.38,
+          "insurance": 8.07,
+          "foreignInstitutions": 13.71,
+          "retailAndOthers": 19.83
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 5126.0449,
+          "profit": 1078.3187,
+          "netWorth": 1734.6776
+        },
+        {
+          "year": "2023",
+          "revenue": 5279.773,
+          "profit": 1047.1465,
+          "netWorth": 1716.3843
+        },
+        {
+          "year": "2024",
+          "revenue": 5756.95,
+          "profit": 1323.66,
+          "netWorth": 1874.36
+        },
+        {
+          "year": "2025",
+          "revenue": 6179.01,
+          "profit": 1436.81,
+          "netWorth": 1664.47
+        },
+        {
+          "year": "2026",
+          "revenue": 6124.16,
+          "profit": 1325.31,
+          "netWorth": 1584.11
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 1534.53,
+          "profit": 327.51
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 1525.41,
+          "profit": 323.86
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 1612.22,
+          "profit": 353.32
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 1626.1,
+          "profit": 343.08
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 1727.5,
+          "profit": 341.57
+        }
+      ],
+      "accounts": "standalone"
+    }
+  ]
+}

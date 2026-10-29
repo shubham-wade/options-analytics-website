@@ -1,0 +1,10 @@
+---
+description: Read and maintain the NIFTY Risk Lab agent guide
+alwaysApply: true
+---
+
+# Project guide
+
+Before changing this app, read `AGENTS.md`. It is the map of pages, the two Zerodha logins, sessions, quotes, orders, FII/DII cash, the post-market report, and the seeded P&L chart.
+
+After a considerable change — a new page or API, an environment variable, or a change to how sessions, quotes, orders, cash, reports, or P&L are stored or calculated — update `AGENTS.md` in the same change. Do not put secrets or `.env.local` values in that file.

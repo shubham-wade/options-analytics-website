@@ -1,0 +1,150 @@
+{
+  "symbol": "SUZLON",
+  "name": "Suzlon Energy",
+  "isin": "INE040H01021",
+  "industry": "Electrical Equipment",
+  "exchange": "NSE",
+  "searchId": "suzlon-energy-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-29",
+      "savedAt": "2026-10-29T07:23:10.527Z",
+      "price": {
+        "last": 36.5,
+        "change": -0.8,
+        "changePercent": -2.14,
+        "open": 37.6,
+        "high": 37.87,
+        "low": 36.33,
+        "previousClose": 37.3,
+        "volume": 63236522,
+        "average": 37.1,
+        "averageSource": "bars",
+        "yearHigh": 61.5,
+        "yearLow": 36.31,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 50905,
+        "pe": 16.16,
+        "industryPe": 41.42,
+        "eps": 2.31,
+        "pb": 5.39,
+        "roe": 33.43,
+        "debtToEquity": 0.06,
+        "bookValue": 6.93,
+        "dividendYield": 0,
+        "faceValue": 2
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 11.7,
+        "mutualFunds": 6.54,
+        "insurance": 3.71,
+        "foreignInstitutions": 25.48,
+        "retailAndOthers": 52.57
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 11.73,
+          "mutualFunds": 4.91,
+          "insurance": 5.25,
+          "foreignInstitutions": 24.57,
+          "retailAndOthers": 53.54
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 11.73,
+          "mutualFunds": 4.82,
+          "insurance": 4.42,
+          "foreignInstitutions": 25.59,
+          "retailAndOthers": 53.44
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 11.73,
+          "mutualFunds": 4.87,
+          "insurance": 4.31,
+          "foreignInstitutions": 25.71,
+          "retailAndOthers": 53.37
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 11.71,
+          "mutualFunds": 6.47,
+          "insurance": 4.64,
+          "foreignInstitutions": 26.01,
+          "retailAndOthers": 51.18
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 11.7,
+          "mutualFunds": 6.54,
+          "insurance": 3.71,
+          "foreignInstitutions": 25.48,
+          "retailAndOthers": 52.57
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 6603.97,
+          "profit": -166.19,
+          "netWorth": -3561.81
+        },
+        {
+          "year": "2023",
+          "revenue": 5990.16,
+          "profit": 2887.29,
+          "netWorth": 1099.14
+        },
+        {
+          "year": "2024",
+          "revenue": 6567.51,
+          "profit": 660.35,
+          "netWorth": 3920.31
+        },
+        {
+          "year": "2025",
+          "revenue": 10993.13,
+          "profit": 2071.63,
+          "netWorth": 6105.72
+        },
+        {
+          "year": "2026",
+          "revenue": 16841.78,
+          "profit": 3163.39,
+          "netWorth": 9463.52
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Jun '25",
+          "revenue": 3165.19,
+          "profit": 324.32
+        },
+        {
+          "quarter": "Sep '25",
+          "revenue": 3897.33,
+          "profit": 1279.44
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 4258.61,
+          "profit": 445.28
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 5520.65,
+          "profit": 1114.35
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 3862.53,
+          "profit": 305.22
+        }
+      ]
+    }
+  ]
+}
