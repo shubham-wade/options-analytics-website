@@ -1,0 +1,351 @@
+{
+  "symbol": "ICICIAMC",
+  "name": "ICICI Prudential Asset Management Company",
+  "isin": "INE346A01027",
+  "industry": "Financial Services",
+  "exchange": "NSE",
+  "searchId": "icici-prudential-asset-management-company-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:16:54.109Z",
+      "price": {
+        "last": 2706.9,
+        "change": -35,
+        "changePercent": -1.28,
+        "open": 2765,
+        "high": 2765,
+        "low": 2687,
+        "previousClose": 2741.9,
+        "volume": 307257,
+        "average": 2716.49,
+        "averageSource": "bars",
+        "yearHigh": 3611,
+        "yearLow": 2530,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 135484,
+        "pe": 38.28,
+        "industryPe": 19.62,
+        "eps": 71.61,
+        "pb": 25.37,
+        "roe": 66.27,
+        "debtToEquity": 0,
+        "bookValue": 108.05,
+        "dividendYield": 3.73,
+        "faceValue": 1
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 85.6,
+        "mutualFunds": 5.81,
+        "insurance": 2.61,
+        "foreignInstitutions": 3.86,
+        "retailAndOthers": 2.13
+      },
+      "holdings": [
+        {
+          "quarter": "Jul '25",
+          "promoter": 100,
+          "mutualFunds": 0,
+          "insurance": 0,
+          "foreignInstitutions": 0,
+          "retailAndOthers": 0
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 87.59,
+          "mutualFunds": 4.54,
+          "insurance": 1.99,
+          "foreignInstitutions": 3.39,
+          "retailAndOthers": 2.49
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 87.59,
+          "mutualFunds": 5.13,
+          "insurance": 2.06,
+          "foreignInstitutions": 3.14,
+          "retailAndOthers": 2.09
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 87.6,
+          "mutualFunds": 4.8,
+          "insurance": 2.01,
+          "foreignInstitutions": 3.55,
+          "retailAndOthers": 2.04
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 85.6,
+          "mutualFunds": 5.81,
+          "insurance": 2.61,
+          "foreignInstitutions": 3.86,
+          "retailAndOthers": 2.13
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 2635.29,
+          "profit": 1454.09,
+          "netWorth": 2017.42
+        },
+        {
+          "year": "2023",
+          "revenue": 2838.18,
+          "profit": 1515.78,
+          "netWorth": 2313.06
+        },
+        {
+          "year": "2024",
+          "revenue": 3761.21,
+          "profit": 2049.73,
+          "netWorth": 2882.84
+        },
+        {
+          "year": "2025",
+          "revenue": 4979.67,
+          "profit": 2650.66,
+          "netWorth": 3516.94
+        },
+        {
+          "year": "2026",
+          "revenue": 6000.92,
+          "profit": 3298.26,
+          "netWorth": 4171.17
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 1510.92,
+          "profit": 837.99
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 1623.58,
+          "profit": 917.09
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 1452.05,
+          "profit": 768.58
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 1745.02,
+          "profit": 964.63
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 1690.7,
+          "profit": 888.96
+        }
+      ],
+      "accounts": "standalone",
+      "profile": {
+        "foundedYear": 1993,
+        "businessSummary": "ICICI Prudential Asset Management Company Limited is one of the largest asset management companies in India, managing mutual funds."
+      },
+      "growth": {
+        "revenueOneYear": 12,
+        "revenueThreeYear": 28,
+        "profitOneYear": 6,
+        "profitThreeYear": 30
+      },
+      "peers": [
+        {
+          "symbol": "HDFCAMC",
+          "name": "HDFC Asset Management Company",
+          "marketCapCrore": 99450.51,
+          "pe": 33.4,
+          "pb": 11.54
+        },
+        {
+          "symbol": "SBIFUNDS",
+          "name": "SBI Funds Management",
+          "marketCapCrore": 95394.82,
+          "pe": 31.24,
+          "pb": 12.62
+        },
+        {
+          "symbol": "NAM-INDIA",
+          "name": "Nippon Life India Asset Management",
+          "marketCapCrore": 59175.08,
+          "pe": 36.6,
+          "pb": 12.41
+        },
+        {
+          "symbol": "360ONE",
+          "name": "360 One Wam",
+          "marketCapCrore": 43741.39,
+          "pe": 35.09,
+          "pb": 3.51
+        },
+        {
+          "symbol": "ABSLAMC",
+          "name": "Aditya Birla Sun Life AMC",
+          "marketCapCrore": 24456.53,
+          "pe": 24.77,
+          "pb": 6.3
+        },
+        {
+          "symbol": "CAMS",
+          "name": "Computer Age Management Services",
+          "marketCapCrore": 17279.3,
+          "pe": 35.19,
+          "pb": 13.08
+        },
+        {
+          "symbol": "UTIAMC",
+          "name": "UTI Asset Management Company",
+          "marketCapCrore": 10574.36,
+          "pe": 20.63,
+          "pb": 2.4
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-30T19:12:46",
+          "source": "BSE",
+          "title": "ICICI Prudential AMC approved the appointment of Chockalingam Narayanan as Senior Management Personnel, effective November 13, 2026. He serves as Head – Equities Alternates and brings over 21 years of fund management and investment research experience.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d32432e8-5b4f-4d70-be8f-701dd13ae8ea.pdf"
+        },
+        {
+          "publishedAt": "2026-10-16T17:07:55",
+          "source": "The Economic Times",
+          "title": "Tata, HDFC, and ICICI Prudential Mutual Funds halted fresh investments in their gold fund of funds. The asset management companies issued notices halting the investments on Thursday, ahead of the festive season.",
+          "url": "https://economictimes.indiatimes.com/wealth/invest/tata-hdfc-icici-prudential-mutual-funds-halt-fresh-gold-fof-investments-what-it-means-for-existing-and-new-investors/articleshow/134993379.cms"
+        },
+        {
+          "publishedAt": "2026-10-13T06:04:26",
+          "source": "ScoutQuest",
+          "title": "Board approved acquiring ICICI Securities' PMS business of approximately Rs 3,000 crore AUM, pending regulatory approvals. The company launched new fund offers, expanded in B30 towns, and invested in AI-driven digital modernization.",
+          "url": "https://sqst.in/68vUf"
+        },
+        {
+          "publishedAt": "2026-10-12T17:52:39",
+          "source": "ScoutQuest",
+          "title": "ICICI Prudential AMC H1 FY27 revenue rose 16.9% to ₹32,380.1 mn, while profit increased 14.3% to ₹18,535.9 mn. Total MF QAAUM grew 14.4% YoY to ₹11,608.2 bn, as customer base expanded to 17.8 mn.",
+          "url": "https://sqst.in/NPTOY"
+        },
+        {
+          "publishedAt": "2026-10-12T17:45:13",
+          "source": "Livesquawk",
+          "title": "ICICI AMC reported a Q2 standalone net profit of ₹8.9B, up from ₹8.4B year-on-year. Net profit grew approximately 6.6% YoY, perfectly matching market estimates of ₹8.9B.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-12T17:44:18",
+          "source": "BSE",
+          "title": "ICICI Prudential AMC approved an interim dividend of ₹30 per share, setting October 21, 2026 as the record date. Quarterly net profit reached ₹8,889.6 million, with revenue from operations standing at ₹16,737.9 million.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=94a9d9d9-73ff-4e6b-9dfb-3baba4648461.pdf"
+        },
+        {
+          "publishedAt": "2026-10-12T10:11:28",
+          "source": "Business Today",
+          "title": "HCL Technologies, RBL Bank, and ICICI Prudential AMC are scheduled to report their Q2 earnings results on Monday. HCL Tech is seen reporting 2% sequential constant currency revenue growth and margin expansion, with FY27 guidance in focus.",
+          "url": "https://www.businesstoday.in/markets/stocks/story/hcl-tech-rbl-bank-icici-pru-amc-q2-results-today-earnings-preview-560909-2026-10-12"
+        },
+        {
+          "publishedAt": "2026-10-05T22:16:00",
+          "source": "BSE",
+          "title": "ICICI Prudential AMC accepted the resignation of Non-Executive Director Sidharatha Mishra effective October 5, 2026, and approved appointing Anindya Banerjee as Non-Executive (Additional) Director effective October 6, 2026, subject to shareholders' approval. Anindya Banerjee, who has been with ICICI Group since 1998 and serves as the Group Chief Financial Officer of ICICI Bank, is affirmed not debarred from holding the office of Director by SEBI or any other authority.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7a3a8d01-1237-4632-92e5-b0cfc8eba6e3.pdf"
+        },
+        {
+          "publishedAt": "2026-09-28T10:49:59",
+          "source": "BSE",
+          "title": "ICICI AMC board meeting on Oct 12, 2026, to review Q2 & H1 results. Interim dividend declaration and trading window closure from Oct 1-14, 2026.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=0004c0a1-7ddb-4455-ba82-035d296f1280.pdf"
+        },
+        {
+          "publishedAt": "2026-09-10T16:37:46",
+          "source": "BSE",
+          "title": "ICICI Prudential AMC schedules investor/analyst meet on Sept 16, 2026. No sensitive info to be shared; details available on company's website.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=6d1074ba-6de0-47ef-bf39-12d3e34f91bb.pdf"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-10-21",
+          "amount": 30,
+          "kind": "Interim"
+        },
+        {
+          "exDate": "2026-06-12",
+          "amount": 12.4,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2026-01-21",
+          "amount": 14.85,
+          "kind": "Interim"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-10-12",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-13",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-04-13",
+          "title": "Quarterly & Annual Result"
+        },
+        {
+          "date": "2026-01-14",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +6.99% from the 52-week low and −25.04% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹1,691 crore and profit is ₹889 crore, a net margin of 52.6%. In Sep '25 those figures were ₹1,511 crore, ₹838 crore, and 55.5%. The latest full year, 2026, has revenue of ₹6,001 crore and profit of ₹3,298 crore. The year before, revenue was ₹4,980 crore and profit was ₹2,651 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 12.00%, three-year revenue CAGR is 28.00%, trailing one-year profit growth is 6.00%, three-year profit CAGR is 30.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 38.28 and the industry P/E is 19.62. Dividend yield is 3.73%. Debt to equity is 0.00. ROE is 66.27%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Jul '25 to Sep '26, foreign institutions went from 0.00% to 3.86% and mutual funds went from 0.00% to 5.81%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 20.63 (UTI Asset Management Company) to 36.60 (Nippon Life India Asset Management). This company’s P/E is 38.28. The industry P/E is 19.62."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹30.00 a share (Interim), ex date 21 Oct 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 12 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from BSE on 30 Oct 2026, reads: ICICI Prudential AMC approved the appointment of Chockalingam Narayanan as Senior Management Personnel, effective November 13, 2026. He serves as Head – Equities Alternates and brings over 21 years of fund management and investment research experience."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 31.77,
+    "high": 43.8,
+    "samples": 213,
+    "asOf": "2026-10-30"
+  }
+}

@@ -8,17 +8,17 @@
   "snapshots": [
     {
       "date": "2026-10-29",
-      "savedAt": "2026-10-29T07:23:10.527Z",
+      "savedAt": "2026-10-29T17:38:59.983Z",
       "price": {
-        "last": 36.5,
-        "change": -0.8,
-        "changePercent": -2.14,
+        "last": 36.79,
+        "change": -0.51,
+        "changePercent": -1.37,
         "open": 37.6,
         "high": 37.87,
         "low": 36.33,
         "previousClose": 37.3,
-        "volume": 63236522,
-        "average": 37.1,
+        "volume": 92594159,
+        "average": 37.01,
         "averageSource": "bars",
         "yearHigh": 61.5,
         "yearLow": 36.31,
@@ -120,10 +120,326 @@
       ],
       "quarters": [
         {
-          "quarter": "Jun '25",
-          "revenue": 3165.19,
-          "profit": 324.32
+          "quarter": "Sep '25",
+          "revenue": 3897.33,
+          "profit": 1279.44
         },
+        {
+          "quarter": "Dec '25",
+          "revenue": 4258.61,
+          "profit": 445.28
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 5520.65,
+          "profit": 1114.35
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 3862.53,
+          "profit": 305.22
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 4908.04,
+          "profit": 394.15
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 1995,
+        "businessSummary": "The Suzlon Group is a leading global renewable energy solutions provider, with approximately 20.8 GW of wind energy capacity installed across 17 countries. It is focused on reducing mankind's carbon footprint by prioritising action today to build climate resilience and undoing the damage of the past and present. As a vertically integrated company, it has in-house R&D centers in Germany, the Netherlands, Denmark, and India, alongside world-class manufacturing facilities spread across India. The company's comprehensive product portfolio is primarily led by its 2 MW and 3 MW series of advanced wind turbines designed for various wind conditions. Suzlon is also India's number one wind energy service company, managing the country's largest service portfolio of over 14.8 GW in wind energy assets. These global wind installations have helped reduce 53.37 million tonnes of CO2 emissions annually, which is equivalent to 4.45 billion trees absorbing CO2."
+      },
+      "growth": {
+        "revenueOneYear": 26,
+        "revenueThreeYear": 41,
+        "profitOneYear": -69,
+        "profitThreeYear": 3
+      },
+      "peers": [
+        {
+          "symbol": "WAAREEENER",
+          "name": "Waaree Energies",
+          "marketCapCrore": 64433.9,
+          "pe": 16.61,
+          "pb": 4.02
+        },
+        {
+          "symbol": "PREMIERENE",
+          "name": "Premier Energies",
+          "marketCapCrore": 38449.69,
+          "pe": 22.97,
+          "pb": 8.93
+        },
+        {
+          "symbol": "BHEL",
+          "name": "Bharat Heavy Electricals",
+          "marketCapCrore": 141023.57,
+          "pe": 48.97,
+          "pb": 5.27
+        },
+        {
+          "symbol": "ABB",
+          "name": "ABB India",
+          "marketCapCrore": 139668.81,
+          "pe": 46.74,
+          "pb": 14.95
+        },
+        {
+          "symbol": "CGPOWER",
+          "name": "CG Power and Industrial Solutions",
+          "marketCapCrore": 131221.23,
+          "pe": 96.18,
+          "pb": 15.01
+        },
+        {
+          "symbol": "POWERINDIA",
+          "name": "Hitachi Energy India",
+          "marketCapCrore": 126585.96,
+          "pe": 110.04,
+          "pb": 24.46
+        },
+        {
+          "symbol": "SIEMENS",
+          "name": "Siemens",
+          "marketCapCrore": 120012.61,
+          "pe": 36.63,
+          "pb": 8.67
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-29T21:33:35",
+          "source": "ScoutQuest",
+          "title": "Suzlon Energy's 'Suzlon 2.0 Strategy' targets 40% domestic market share by FY31 through expanded product lines. It commissioned 5 MW and 6 MW turbines, pursuing Europe-Australia certification and 50% EPC order mix by FY28.",
+          "url": "https://sqst.in/zWRLs"
+        },
+        {
+          "publishedAt": "2026-10-29T18:19:04",
+          "source": "CNBC TV 18",
+          "title": "Suzlon, Trent, and Vedanta Power posted strong quarterly performances, while IndiGo reported its third consecutive quarterly net loss. Blue Star beat profit estimates, Vedanta Oil saw profit dip, and Trent announced Noel Tata's upcoming retirement as chairman.",
+          "url": "https://www.cnbctv18.com/photos/market/stocks-to-watch-for-october-30-coal-india-suzlon-energy-indigo-trent-vedanta-power-and-more-20022609.htm"
+        },
+        {
+          "publishedAt": "2026-10-29T16:17:33",
+          "source": "ET NOW",
+          "title": "Suzlon Energy reported a 69.2% YoY drop in Q2 net profit. The company's Q2 revenue increased by 27% YoY.",
+          "url": "https://www.etnownews.com/markets/suzlon-energy-q2-net-profit-falls-692-revenue-up-27-yoy-article-156428809"
+        },
+        {
+          "publishedAt": "2026-10-29T16:15:58",
+          "source": "Livesquawk",
+          "title": "Suzlon's Q2 EBITDA stood at ₹7.2B, broadly flat compared to ₹7.2B year-on-year. Q2 EBITDA margin contracted to 14.8% from 18.7% year-on-year.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-28T09:36:57",
+          "source": "BSE",
+          "title": "CRISIL upgraded Suzlon Energy's long-term rating to 'CRISIL AA-/Stable' from 'CRISIL A+/Stable'. Short-term rating was upgraded to 'CRISIL A1+' from 'CRISIL A1' for bank facilities totaling Rs 5,685 crore.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=88b907cb-25c9-42b2-bd1d-ef7a22ea957b.pdf"
+        },
+        {
+          "publishedAt": "2026-10-12T15:17:20",
+          "source": "CNBC-AWAAZ",
+          "title": "Suzlon Energy shares surged over 5% following a report released by Motilal Oswal. The rally positioned the stock among the top gainers in futures trading.",
+          "url": "https://x.com/CNBC_Awaaz/status/2109581677588857086"
+        },
+        {
+          "publishedAt": "2026-10-12T11:08:19",
+          "source": "Financial Express",
+          "title": "Suzlon share price has dropped 31% over the past three months. Motilal Oswal projects a potential upside of 73% for the stock.",
+          "url": "https://t.co/tX3FHSHVMn"
+        },
+        {
+          "publishedAt": "2026-10-12T06:40:04",
+          "source": "CNBC TV 18",
+          "title": "Motilal Oswal maintained a 'buy' on Suzlon Energy with a target of ₹65, implying a 73% upside on attractive valuations. Growth is backed by a 5.9 GW order book, favorable peak power demand, and expanding export and repowering opportunities.",
+          "url": "https://www.cnbctv18.com/market/suzlon-energy-share-price-motilal-oswal-buy-upside-73-percent-target-key-reasons-tailwinds-devco-exports-orders-outlook-20009540.htm"
+        },
+        {
+          "publishedAt": "2026-10-11T12:13:41",
+          "source": "CNBC-AWAAZ",
+          "title": "Suzlon Energy plans to set up three new AI-powered factories with an investment of Rs 550 crore.",
+          "url": "https://t.co/lBnjjSgLYO"
+        },
+        {
+          "publishedAt": "2026-10-09T20:46:48",
+          "source": "CNBC-AWAAZ",
+          "title": "Suzlon Energy issued a new corporate update via an exchange filing after market hours.",
+          "url": "https://t.co/czwm8kWqli"
+        }
+      ],
+      "dividends": [],
+      "results": [
+        {
+          "date": "2026-10-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-28",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-25",
+          "title": "Quarterly & Annual Result"
+        },
+        {
+          "date": "2026-02-05",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-11-04",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-08-12",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +1.32% from the 52-week low and −40.18% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹4,908 crore and profit is ₹394 crore, a net margin of 8.0%. In Sep '25 those figures were ₹3,897 crore, ₹1,279 crore, and 32.8%. The latest full year, 2026, has revenue of ₹16,842 crore and profit of ₹3,163 crore. The year before, revenue was ₹10,993 crore and profit was ₹2,072 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 26.00%, three-year revenue CAGR is 41.00%, trailing one-year profit growth is −69.00%, three-year profit CAGR is 3.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 16.16 and the industry P/E is 41.42. Dividend yield is 0.00%. Debt to equity is 0.06. ROE is 33.43%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 24.57% to 25.48% and mutual funds went from 4.91% to 6.54%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 16.61 (Waaree Energies) to 110.04 (Hitachi Energy India). This company’s P/E is 16.16. The industry P/E is 41.42."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 29 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from ScoutQuest on 29 Oct 2026, reads: Suzlon Energy's 'Suzlon 2.0 Strategy' targets 40% domestic market share by FY31 through expanded product lines. It commissioned 5 MW and 6 MW turbines, pursuing Europe-Australia certification and 50% EPC order mix by FY28."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:17:04.110Z",
+      "price": {
+        "last": 33.9,
+        "change": -2.89,
+        "changePercent": -7.86,
+        "open": 36.26,
+        "high": 36.58,
+        "low": 33.15,
+        "previousClose": 36.79,
+        "volume": 331296731,
+        "average": 34.08,
+        "averageSource": "bars",
+        "yearHigh": 61.5,
+        "yearLow": 36.31,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 50168,
+        "pe": 15.93,
+        "industryPe": 41.74,
+        "eps": 2.31,
+        "pb": 5.31,
+        "roe": 33.43,
+        "debtToEquity": 0.06,
+        "bookValue": 6.93,
+        "dividendYield": 0,
+        "faceValue": 2
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 11.7,
+        "mutualFunds": 6.54,
+        "insurance": 3.71,
+        "foreignInstitutions": 25.48,
+        "retailAndOthers": 52.57
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 11.73,
+          "mutualFunds": 4.91,
+          "insurance": 5.25,
+          "foreignInstitutions": 24.57,
+          "retailAndOthers": 53.54
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 11.73,
+          "mutualFunds": 4.82,
+          "insurance": 4.42,
+          "foreignInstitutions": 25.59,
+          "retailAndOthers": 53.44
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 11.73,
+          "mutualFunds": 4.87,
+          "insurance": 4.31,
+          "foreignInstitutions": 25.71,
+          "retailAndOthers": 53.37
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 11.71,
+          "mutualFunds": 6.47,
+          "insurance": 4.64,
+          "foreignInstitutions": 26.01,
+          "retailAndOthers": 51.18
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 11.7,
+          "mutualFunds": 6.54,
+          "insurance": 3.71,
+          "foreignInstitutions": 25.48,
+          "retailAndOthers": 52.57
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 6603.97,
+          "profit": -166.19,
+          "netWorth": -3561.81
+        },
+        {
+          "year": "2023",
+          "revenue": 5990.16,
+          "profit": 2887.29,
+          "netWorth": 1099.14
+        },
+        {
+          "year": "2024",
+          "revenue": 6567.51,
+          "profit": 660.35,
+          "netWorth": 3920.31
+        },
+        {
+          "year": "2025",
+          "revenue": 10993.13,
+          "profit": 2071.63,
+          "netWorth": 6105.72
+        },
+        {
+          "year": "2026",
+          "revenue": 16841.78,
+          "profit": 3163.39,
+          "netWorth": 9463.52
+        }
+      ],
+      "quarters": [
         {
           "quarter": "Sep '25",
           "revenue": 3897.33,
@@ -143,8 +459,202 @@
           "quarter": "Jun '26",
           "revenue": 3862.53,
           "profit": 305.22
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 4908.04,
+          "profit": 394.15
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 1995,
+        "businessSummary": "The Suzlon Group is a leading global renewable energy solutions provider, with approximately 20.8 GW of wind energy capacity installed across 17 countries. It is focused on reducing mankind's carbon footprint by prioritising action today to build climate resilience and undoing the damage of the past and present. As a vertically integrated company, it has in-house R&D centers in Germany, the Netherlands, Denmark, and India, alongside world-class manufacturing facilities spread across India. The company's comprehensive product portfolio is primarily led by its 2 MW and 3 MW series of advanced wind turbines designed for various wind conditions. Suzlon is also India's number one wind energy service company, managing the country's largest service portfolio of over 14.8 GW in wind energy assets. These global wind installations have helped reduce 53.37 million tonnes of CO2 emissions annually, which is equivalent to 4.45 billion trees absorbing CO2."
+      },
+      "growth": {
+        "revenueOneYear": 26,
+        "revenueThreeYear": 41,
+        "profitOneYear": -69,
+        "profitThreeYear": 3
+      },
+      "peers": [
+        {
+          "symbol": "WAAREEENER",
+          "name": "Waaree Energies",
+          "marketCapCrore": 66792.64,
+          "pe": 17.22,
+          "pb": 4.17
+        },
+        {
+          "symbol": "PREMIERENE",
+          "name": "Premier Energies",
+          "marketCapCrore": 39130.62,
+          "pe": 23.38,
+          "pb": 9.08
+        },
+        {
+          "symbol": "BHEL",
+          "name": "Bharat Heavy Electricals",
+          "marketCapCrore": 139961.54,
+          "pe": 48.6,
+          "pb": 5.23
+        },
+        {
+          "symbol": "ABB",
+          "name": "ABB India",
+          "marketCapCrore": 138376.17,
+          "pe": 46.31,
+          "pb": 14.82
+        },
+        {
+          "symbol": "CGPOWER",
+          "name": "CG Power and Industrial Solutions",
+          "marketCapCrore": 130606.8,
+          "pe": 95.73,
+          "pb": 14.94
+        },
+        {
+          "symbol": "POWERINDIA",
+          "name": "Hitachi Energy India",
+          "marketCapCrore": 125136.91,
+          "pe": 108.78,
+          "pb": 24.18
+        },
+        {
+          "symbol": "SIEMENS",
+          "name": "Siemens",
+          "marketCapCrore": 120500.5,
+          "pe": 36.78,
+          "pb": 8.71
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-30T15:40:33",
+          "source": "ScoutQuest",
+          "title": "Suzlon Energy shares dropped 8% in trade today. The Street did not like the company's reported numbers.",
+          "url": "https://sqst.in/OGIWu"
+        },
+        {
+          "publishedAt": "2026-10-30T09:47:19",
+          "source": "ET NOW",
+          "title": "Suzlon faces margin pressure despite revenue growth, primarily due to changes in its business mix. CEO Ajay Kapur cited higher technology, branding investments, and commodity and currency costs for the pressure.",
+          "url": "https://x.com/ETNOWlive/status/2116021607886200957"
+        },
+        {
+          "publishedAt": "2026-10-30T09:33:19",
+          "source": "The Economic Times",
+          "title": "Suzlon Energy shares fell 4% after disappointing Q2 margins triggered target price cuts. Nuvama and other brokerages slashed target prices for the stock following weak quarterly margins.",
+          "url": "https://economictimes.indiatimes.com/markets/stocks/news/suzlon-energy-shares-fall-4-as-nuvama-others-slash-target-prices-after-q2-margins-disappoint-what-lies-ahead/articleshow/135342553.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst"
+        },
+        {
+          "publishedAt": "2026-10-30T08:59:15",
+          "source": "NDTV Profit",
+          "title": "Suzlon Energy's Q2 revenue rose 26% to Rs 4,869 crore, while EBITDA margin contracted to 14.8% on profitability pressure. UBS maintained its Buy rating on Suzlon Energy, lowering its target price to Rs 58, implying 58% upside.",
+          "url": "https://www.ndtvprofit.com/markets/suzlon-energy-q2-results-review-deliveries-jump-26-percent-margins-slide-ubs-sees-58-percent-upside-suzlon-share-price-history-sensex-today-12256831#publisher=newsstand"
+        },
+        {
+          "publishedAt": "2026-10-29T21:33:35",
+          "source": "ScoutQuest",
+          "title": "Suzlon Energy's 'Suzlon 2.0 Strategy' targets 40% domestic market share by FY31 through expanded product lines. It commissioned 5 MW and 6 MW turbines, pursuing Europe-Australia certification and 50% EPC order mix by FY28.",
+          "url": "https://sqst.in/zWRLs"
+        },
+        {
+          "publishedAt": "2026-10-29T18:19:04",
+          "source": "CNBC TV 18",
+          "title": "Suzlon, Trent, and Vedanta Power posted strong quarterly performances, while IndiGo reported its third consecutive quarterly net loss. Blue Star beat profit estimates, Vedanta Oil saw profit dip, and Trent announced Noel Tata's upcoming retirement as chairman.",
+          "url": "https://www.cnbctv18.com/photos/market/stocks-to-watch-for-october-30-coal-india-suzlon-energy-indigo-trent-vedanta-power-and-more-20022609.htm"
+        },
+        {
+          "publishedAt": "2026-10-29T16:17:33",
+          "source": "ET NOW",
+          "title": "Suzlon Energy reported a 69.2% YoY drop in Q2 net profit. The company's Q2 revenue increased by 27% YoY.",
+          "url": "https://www.etnownews.com/markets/suzlon-energy-q2-net-profit-falls-692-revenue-up-27-yoy-article-156428809"
+        },
+        {
+          "publishedAt": "2026-10-29T16:15:58",
+          "source": "Livesquawk",
+          "title": "Suzlon's Q2 EBITDA stood at ₹7.2B, broadly flat compared to ₹7.2B year-on-year. Q2 EBITDA margin contracted to 14.8% from 18.7% year-on-year.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-28T09:36:57",
+          "source": "BSE",
+          "title": "CRISIL upgraded Suzlon Energy's long-term rating to 'CRISIL AA-/Stable' from 'CRISIL A+/Stable'. Short-term rating was upgraded to 'CRISIL A1+' from 'CRISIL A1' for bank facilities totaling Rs 5,685 crore.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=88b907cb-25c9-42b2-bd1d-ef7a22ea957b.pdf"
+        },
+        {
+          "publishedAt": "2026-10-12T15:17:20",
+          "source": "CNBC-AWAAZ",
+          "title": "Suzlon Energy shares surged over 5% following a report released by Motilal Oswal. The rally positioned the stock among the top gainers in futures trading.",
+          "url": "https://x.com/CNBC_Awaaz/status/2109581677588857086"
+        }
+      ],
+      "dividends": [],
+      "results": [
+        {
+          "date": "2026-10-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-28",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-25",
+          "title": "Quarterly & Annual Result"
+        },
+        {
+          "date": "2026-02-05",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-11-04",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-08-12",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is −6.64% from the 52-week low and −44.88% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹4,908 crore and profit is ₹394 crore, a net margin of 8.0%. In Sep '25 those figures were ₹3,897 crore, ₹1,279 crore, and 32.8%. The latest full year, 2026, has revenue of ₹16,842 crore and profit of ₹3,163 crore. The year before, revenue was ₹10,993 crore and profit was ₹2,072 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 26.00%, three-year revenue CAGR is 41.00%, trailing one-year profit growth is −69.00%, three-year profit CAGR is 3.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 15.93 and the industry P/E is 41.74. Dividend yield is 0.00%. Debt to equity is 0.06. ROE is 33.43%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 24.57% to 25.48% and mutual funds went from 4.91% to 6.54%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 17.22 (Waaree Energies) to 108.78 (Hitachi Energy India). This company’s P/E is 15.93. The industry P/E is 41.74."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 29 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from ScoutQuest on 30 Oct 2026, reads: Suzlon Energy shares dropped 8% in trade today. The Street did not like the company's reported numbers."
         }
       ]
     }
-  ]
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 23.72,
+    "high": 103.96,
+    "samples": 62,
+    "asOf": "2026-10-30"
+  }
 }

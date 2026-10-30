@@ -8,7 +8,7 @@
   "snapshots": [
     {
       "date": "2026-10-29",
-      "savedAt": "2026-10-29T13:39:18.835Z",
+      "savedAt": "2026-10-29T14:43:59.970Z",
       "price": {
         "last": 1629.8,
         "change": 28.2,
@@ -145,7 +145,566 @@
           "profit": 341.57
         }
       ],
-      "accounts": "standalone"
+      "accounts": "standalone",
+      "profile": {
+        "foundedYear": 1937,
+        "businessSummary": "Colgate-Palmolive (India) Limited is a caring, innovative growth company committed to reimagining a healthier future for all people and the planet. Its mission involves building good oral habits for life, leveraging a legacy of innovation and science-backed solutions that have earned the trust of millions. The company champions healthy smiles by providing essential oral health knowledge and developing a comprehensive range of oral care solutions for every need. Its diverse portfolio includes everyday essentials like toothpastes and toothbrushes, alongside specialized offerings such as mouthwashes and professional-grade products. Strategically, the company is accelerating premiumization through science-led innovation, elevating the level of care and overall user experience for its customers. This commitment has made it the most penetrated FMCG brand in India, with its products reaching an impressive nine out of ten households."
+      },
+      "growth": {
+        "revenueOneYear": 13,
+        "revenueThreeYear": 5,
+        "profitOneYear": 4,
+        "profitThreeYear": 8
+      },
+      "peers": [
+        {
+          "symbol": "GODREJCP",
+          "name": "Godrej Consumer Products",
+          "marketCapCrore": 83872.72,
+          "pe": 43.82,
+          "pb": 6.63
+        },
+        {
+          "symbol": "DABUR",
+          "name": "Dabur India",
+          "marketCapCrore": 64039.85,
+          "pe": 32.91,
+          "pb": 5.61
+        },
+        {
+          "symbol": "CUPID",
+          "name": "Cupid",
+          "marketCapCrore": 42276.13,
+          "pe": 308.24,
+          "pb": 93.78
+        },
+        {
+          "symbol": "GILLETTE",
+          "name": "Gillette India",
+          "marketCapCrore": 23665.23,
+          "pe": 35.42,
+          "pb": 25
+        },
+        {
+          "symbol": "PGHH",
+          "name": "Procter & Gamble Hygiene and Health Care",
+          "marketCapCrore": 22336.56,
+          "pe": 28.25,
+          "pb": 29.64
+        },
+        {
+          "symbol": "EMAMILTD",
+          "name": "Emami",
+          "marketCapCrore": 16272.72,
+          "pe": 21.7,
+          "pb": 5.57
+        },
+        {
+          "symbol": "ZYDUSWELL",
+          "name": "Zydus Wellness",
+          "marketCapCrore": 14757.89,
+          "pe": 78.35,
+          "pb": 2.53
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-23T10:40:00",
+          "source": "Zee Business",
+          "title": "Colgate-Palmolive shares hit a 52-week low following the announcement of its Q2 results. Six brokerages cut their target prices for Colgate-Palmolive following the quarterly earnings."
+        },
+        {
+          "publishedAt": "2026-10-23T09:01:05",
+          "source": "Zee Business",
+          "title": "Swiggy posted weaker-than-expected results with support at 200-204, while Sagility reported mixed numbers but raised margin guidance. Colgate delivered operationally weak results, with the stock falling 10% over the past month."
+        },
+        {
+          "publishedAt": "2026-10-23T08:51:39",
+          "source": "Livesquawk",
+          "title": "HSBC maintains Hold on Colgate-Palmolive India with a target of ₹1,840 after Q2 sales missed estimates despite 12% YoY growth. A 40% YoY surge in advertising spend caused an 8–10% earnings miss, keeping two-year sales CAGR modest at 2.6%."
+        },
+        {
+          "publishedAt": "2026-10-23T08:26:13",
+          "source": "NDTV Profit",
+          "title": "Systematix cut Colgate-Palmolive India's target to Rs 1,870 with a Hold rating after operating margin fell to 27.8%. Margin contraction stemmed from a 40% YoY surge in advertising spending to 18.5% of sales amid rising competition."
+        },
+        {
+          "publishedAt": "2026-10-23T07:49:57",
+          "source": "ScoutQuest",
+          "title": "Jefferies maintains a Buy rating on Colgate but cuts its target price to ₹2,000 per share. Ad expenses rose to 19% of revenue, hitting margins, while FY27-29 EPS estimates were cut by 3-4%."
+        },
+        {
+          "publishedAt": "2026-10-22T16:45:55",
+          "source": "ScoutQuest",
+          "title": "Colgate Palmolive launched Harry Potter and Bluey themed oral care ranges and partnered with Kaun Banega Crorepati. In Q2 FY27, advertising expenses jumped to Rs. 31,482 lakhs, while employee benefit costs grew to Rs. 13,592 lakhs."
+        },
+        {
+          "publishedAt": "2026-10-22T16:42:19",
+          "source": "ScoutQuest",
+          "title": "Colgate's Q2 net profit stood at ₹341.5 Cr on revenue of ₹1,705.7 Cr, missing market estimates. EBITDA reached ₹474 Cr with an EBITDA margin of 28%, also falling below expectations."
+        },
+        {
+          "publishedAt": "2026-10-22T16:38:56",
+          "source": "Livesquawk",
+          "title": "Colgate-Palmolive (India) declared a first interim dividend of ₹24 per equity share for FY2026-27."
+        },
+        {
+          "publishedAt": "2026-10-22T16:38:27",
+          "source": "Livesquawk",
+          "title": "COLPAL reported Q2 standalone net profit of ₹3.5B, up from ₹3.3B year-on-year. The reported profit was against an estimated ₹3.7B by a smaller-than-forecast margin."
+        },
+        {
+          "publishedAt": "2026-10-22T12:00:00",
+          "source": "Capital Market",
+          "title": "Colgate-Palmolive India announced a first interim dividend of Rs 24 per equity share for FY 2026-27. The company fixed 02 November 2026 as the record date for the interim dividend payment."
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-11-02",
+          "amount": 24,
+          "kind": "Interim 1"
+        },
+        {
+          "exDate": "2026-06-01",
+          "amount": 24,
+          "kind": "Interim 2"
+        },
+        {
+          "exDate": "2025-11-03",
+          "amount": 24,
+          "kind": "Interim 1"
+        },
+        {
+          "exDate": "2025-05-28",
+          "amount": 27,
+          "kind": "Interim 2"
+        },
+        {
+          "exDate": "2024-11-04",
+          "amount": 24,
+          "kind": "Interim 1"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-10-22",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-22",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2026-01-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-10-23",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-07-22",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +3.36% from the 52-week low and −29.19% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹1,728 crore and profit is ₹342 crore, a net margin of 19.8%. In Sep '25 those figures were ₹1,535 crore, ₹328 crore, and 21.3%. The latest full year, 2026, has revenue of ₹6,124 crore and profit of ₹1,325 crore. The year before, revenue was ₹6,179 crore and profit was ₹1,437 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 13.00%, three-year revenue CAGR is 5.00%, trailing one-year profit growth is 4.00%, three-year profit CAGR is 8.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 32.00 and the industry P/E is 34.80. Dividend yield is 3.62%. Debt to equity is 0.03. ROE is 84.19%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 17.16% to 13.71% and mutual funds went from 5.46% to 7.38%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 21.70 (Emami) to 308.24 (Cupid). This company’s P/E is 32.00. The industry P/E is 34.80."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The next dividend on file is ₹24.00 a share (Interim 1), ex date 2 Nov 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 22 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from Zee Business on 23 Oct 2026, reads: Colgate-Palmolive shares hit a 52-week low following the announcement of its Q2 results. Six brokerages cut their target prices for Colgate-Palmolive following the quarterly earnings."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:16:53.115Z",
+      "price": {
+        "last": 1596.5,
+        "change": -33.3,
+        "changePercent": -2.04,
+        "open": 1628,
+        "high": 1628,
+        "low": 1581.1,
+        "previousClose": 1629.8,
+        "volume": 542644,
+        "average": 1592.75,
+        "averageSource": "bars",
+        "yearHigh": 2301.6,
+        "yearLow": 1576.8,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 44331,
+        "pe": 32.55,
+        "industryPe": 34.59,
+        "eps": 50.07,
+        "pb": 27.4,
+        "roe": 84.19,
+        "debtToEquity": 0.03,
+        "bookValue": 59.48,
+        "dividendYield": 3.56,
+        "faceValue": 1
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 51,
+        "mutualFunds": 7.38,
+        "insurance": 8.07,
+        "foreignInstitutions": 13.71,
+        "retailAndOthers": 19.83
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 51,
+          "mutualFunds": 5.46,
+          "insurance": 6.77,
+          "foreignInstitutions": 17.16,
+          "retailAndOthers": 19.6
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 51,
+          "mutualFunds": 6.11,
+          "insurance": 7.67,
+          "foreignInstitutions": 15.18,
+          "retailAndOthers": 20.04
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 51,
+          "mutualFunds": 7.45,
+          "insurance": 8.08,
+          "foreignInstitutions": 13.6,
+          "retailAndOthers": 19.87
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 51,
+          "mutualFunds": 7.23,
+          "insurance": 8.59,
+          "foreignInstitutions": 13.59,
+          "retailAndOthers": 19.58
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 51,
+          "mutualFunds": 7.38,
+          "insurance": 8.07,
+          "foreignInstitutions": 13.71,
+          "retailAndOthers": 19.83
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 5126.0449,
+          "profit": 1078.3187,
+          "netWorth": 1734.6776
+        },
+        {
+          "year": "2023",
+          "revenue": 5279.773,
+          "profit": 1047.1465,
+          "netWorth": 1716.3843
+        },
+        {
+          "year": "2024",
+          "revenue": 5756.95,
+          "profit": 1323.66,
+          "netWorth": 1874.36
+        },
+        {
+          "year": "2025",
+          "revenue": 6179.01,
+          "profit": 1436.81,
+          "netWorth": 1664.47
+        },
+        {
+          "year": "2026",
+          "revenue": 6124.16,
+          "profit": 1325.31,
+          "netWorth": 1584.11
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 1534.53,
+          "profit": 327.51
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 1525.41,
+          "profit": 323.86
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 1612.22,
+          "profit": 353.32
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 1626.1,
+          "profit": 343.08
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 1727.5,
+          "profit": 341.57
+        }
+      ],
+      "accounts": "standalone",
+      "profile": {
+        "foundedYear": 1937,
+        "businessSummary": "Colgate-Palmolive (India) Limited is a caring, innovative growth company committed to reimagining a healthier future for all people and the planet. Its mission involves building good oral habits for life, leveraging a legacy of innovation and science-backed solutions that have earned the trust of millions. The company champions healthy smiles by providing essential oral health knowledge and developing a comprehensive range of oral care solutions for every need. Its diverse portfolio includes everyday essentials like toothpastes and toothbrushes, alongside specialized offerings such as mouthwashes and professional-grade products. Strategically, the company is accelerating premiumization through science-led innovation, elevating the level of care and overall user experience for its customers. This commitment has made it the most penetrated FMCG brand in India, with its products reaching an impressive nine out of ten households."
+      },
+      "growth": {
+        "revenueOneYear": 13,
+        "revenueThreeYear": 5,
+        "profitOneYear": 4,
+        "profitThreeYear": 8
+      },
+      "peers": [
+        {
+          "symbol": "GODREJCP",
+          "name": "Godrej Consumer Products",
+          "marketCapCrore": 85356.74,
+          "pe": 44.6,
+          "pb": 6.75
+        },
+        {
+          "symbol": "DABUR",
+          "name": "Dabur India",
+          "marketCapCrore": 65485.62,
+          "pe": 33.65,
+          "pb": 5.73
+        },
+        {
+          "symbol": "CUPID",
+          "name": "Cupid",
+          "marketCapCrore": 43096.38,
+          "pe": 314.22,
+          "pb": 95.6
+        },
+        {
+          "symbol": "GILLETTE",
+          "name": "Gillette India",
+          "marketCapCrore": 23351.55,
+          "pe": 34.95,
+          "pb": 24.67
+        },
+        {
+          "symbol": "PGHH",
+          "name": "Procter & Gamble Hygiene and Health Care",
+          "marketCapCrore": 22479.71,
+          "pe": 28.43,
+          "pb": 29.83
+        },
+        {
+          "symbol": "EMAMILTD",
+          "name": "Emami",
+          "marketCapCrore": 16200.7,
+          "pe": 21.6,
+          "pb": 5.54
+        },
+        {
+          "symbol": "ZYDUSWELL",
+          "name": "Zydus Wellness",
+          "marketCapCrore": 15244.67,
+          "pe": 80.94,
+          "pb": 2.62
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-23T10:40:00",
+          "source": "Zee Business",
+          "title": "Colgate-Palmolive shares hit a 52-week low following the announcement of its Q2 results. Six brokerages cut their target prices for Colgate-Palmolive following the quarterly earnings.",
+          "url": "https://x.com/ZeeBusiness/status/2113498150761795663"
+        },
+        {
+          "publishedAt": "2026-10-23T09:01:05",
+          "source": "Zee Business",
+          "title": "Swiggy posted weaker-than-expected results with support at 200-204, while Sagility reported mixed numbers but raised margin guidance. Colgate delivered operationally weak results, with the stock falling 10% over the past month.",
+          "url": "https://x.com/ZeeBusiness/status/2113473256774873510"
+        },
+        {
+          "publishedAt": "2026-10-23T08:51:39",
+          "source": "Livesquawk",
+          "title": "HSBC maintains Hold on Colgate-Palmolive India with a target of ₹1,840 after Q2 sales missed estimates despite 12% YoY growth. A 40% YoY surge in advertising spend caused an 8–10% earnings miss, keeping two-year sales CAGR modest at 2.6%.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-23T08:26:13",
+          "source": "NDTV Profit",
+          "title": "Systematix cut Colgate-Palmolive India's target to Rs 1,870 with a Hold rating after operating margin fell to 27.8%. Margin contraction stemmed from a 40% YoY surge in advertising spending to 18.5% of sales amid rising competition.",
+          "url": "https://www.ndtvprofit.com/markets/colgate-q2-results-review-systematix-slashes-target-price-as-margins-hit-four-year-low-should-you-buy-sell-hold-12223210#publisher=newsstand"
+        },
+        {
+          "publishedAt": "2026-10-23T07:49:57",
+          "source": "ScoutQuest",
+          "title": "Jefferies maintains a Buy rating on Colgate but cuts its target price to ₹2,000 per share. Ad expenses rose to 19% of revenue, hitting margins, while FY27-29 EPS estimates were cut by 3-4%.",
+          "url": "https://sqst.in/shareMessage?msgId=901293843717405489"
+        },
+        {
+          "publishedAt": "2026-10-22T16:45:55",
+          "source": "ScoutQuest",
+          "title": "Colgate Palmolive launched Harry Potter and Bluey themed oral care ranges and partnered with Kaun Banega Crorepati. In Q2 FY27, advertising expenses jumped to Rs. 31,482 lakhs, while employee benefit costs grew to Rs. 13,592 lakhs.",
+          "url": "https://sqst.in/AmJDM"
+        },
+        {
+          "publishedAt": "2026-10-22T16:42:19",
+          "source": "ScoutQuest",
+          "title": "Colgate's Q2 net profit stood at ₹341.5 Cr on revenue of ₹1,705.7 Cr, missing market estimates. EBITDA reached ₹474 Cr with an EBITDA margin of 28%, also falling below expectations.",
+          "url": "https://sqst.in/shareMessage?msgId=901065430188536374"
+        },
+        {
+          "publishedAt": "2026-10-22T16:38:56",
+          "source": "Livesquawk",
+          "title": "Colgate-Palmolive (India) declared a first interim dividend of ₹24 per equity share for FY2026-27.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-22T16:38:27",
+          "source": "Livesquawk",
+          "title": "COLPAL reported Q2 standalone net profit of ₹3.5B, up from ₹3.3B year-on-year. The reported profit was against an estimated ₹3.7B by a smaller-than-forecast margin.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-22T12:00:00",
+          "source": "Capital Market",
+          "title": "Colgate-Palmolive India announced a first interim dividend of Rs 24 per equity share for FY 2026-27. The company fixed 02 November 2026 as the record date for the interim dividend payment.",
+          "url": "http://capitalmarket.com/markets/news/market-beat-news/colgate-palmolive-india-fixes-record-date-for-1st-interim-dividend/1738572"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-11-02",
+          "amount": 24,
+          "kind": "Interim 1"
+        },
+        {
+          "exDate": "2026-06-01",
+          "amount": 24,
+          "kind": "Interim 2"
+        },
+        {
+          "exDate": "2025-11-03",
+          "amount": 24,
+          "kind": "Interim 1"
+        },
+        {
+          "exDate": "2025-05-28",
+          "amount": 27,
+          "kind": "Interim 2"
+        },
+        {
+          "exDate": "2024-11-04",
+          "amount": 24,
+          "kind": "Interim 1"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-10-22",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-22",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2026-01-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-10-23",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-07-22",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +1.25% from the 52-week low and −30.64% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹1,728 crore and profit is ₹342 crore, a net margin of 19.8%. In Sep '25 those figures were ₹1,535 crore, ₹328 crore, and 21.3%. The latest full year, 2026, has revenue of ₹6,124 crore and profit of ₹1,325 crore. The year before, revenue was ₹6,179 crore and profit was ₹1,437 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 13.00%, three-year revenue CAGR is 5.00%, trailing one-year profit growth is 4.00%, three-year profit CAGR is 8.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 32.55 and the industry P/E is 34.59. Dividend yield is 3.56%. Debt to equity is 0.03. ROE is 84.19%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 17.16% to 13.71% and mutual funds went from 5.46% to 7.38%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 21.60 (Emami) to 314.22 (Cupid). This company’s P/E is 32.55. The industry P/E is 34.59."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The next dividend on file is ₹24.00 a share (Interim 1), ex date 2 Nov 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 22 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from Zee Business on 23 Oct 2026, reads: Colgate-Palmolive shares hit a 52-week low following the announcement of its Q2 results. Six brokerages cut their target prices for Colgate-Palmolive following the quarterly earnings."
+        }
+      ]
     }
-  ]
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 44.63,
+    "high": 73.19,
+    "samples": 110,
+    "asOf": "2026-10-30"
+  }
 }

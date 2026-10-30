@@ -1,0 +1,354 @@
+{
+  "symbol": "VGUARD",
+  "name": "V-Guard Industries",
+  "isin": "INE951I01027",
+  "industry": "Electrical Appliances",
+  "exchange": "NSE",
+  "searchId": "vguard-industries-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:17:08.145Z",
+      "price": {
+        "last": 280.2,
+        "change": -4.65,
+        "changePercent": -1.63,
+        "open": 284.85,
+        "high": 285.85,
+        "low": 265.65,
+        "previousClose": 284.85,
+        "volume": 9343756,
+        "average": 275.24,
+        "averageSource": "bars",
+        "yearHigh": 384,
+        "yearLow": 252.45,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 12459,
+        "pe": 30.3,
+        "industryPe": 41.74,
+        "eps": 9.41,
+        "pb": 4.86,
+        "roe": 12.99,
+        "debtToEquity": 0.07,
+        "bookValue": 58.66,
+        "dividendYield": 0.53,
+        "faceValue": 1
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 53.21,
+        "mutualFunds": 20.96,
+        "insurance": 0.66,
+        "foreignInstitutions": 13.02,
+        "retailAndOthers": 12.15
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 53.32,
+          "mutualFunds": 22.57,
+          "insurance": 0.29,
+          "foreignInstitutions": 12.45,
+          "retailAndOthers": 11.36
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 53.28,
+          "mutualFunds": 23.16,
+          "insurance": 0.16,
+          "foreignInstitutions": 12.13,
+          "retailAndOthers": 11.26
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 53.23,
+          "mutualFunds": 23.35,
+          "insurance": 0.04,
+          "foreignInstitutions": 12.07,
+          "retailAndOthers": 11.31
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 53.22,
+          "mutualFunds": 23.11,
+          "insurance": 0.13,
+          "foreignInstitutions": 12.01,
+          "retailAndOthers": 11.53
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 53.21,
+          "mutualFunds": 20.96,
+          "insurance": 0.66,
+          "foreignInstitutions": 13.02,
+          "retailAndOthers": 12.15
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 3510.9495,
+          "profit": 228.4375,
+          "netWorth": 1412.4266
+        },
+        {
+          "year": "2023",
+          "revenue": 4143.42,
+          "profit": 189.05,
+          "netWorth": 1607.62
+        },
+        {
+          "year": "2024",
+          "revenue": 4890.7,
+          "profit": 257.58,
+          "netWorth": 1814.22
+        },
+        {
+          "year": "2025",
+          "revenue": 5598.71,
+          "profit": 313.72,
+          "netWorth": 2097.83
+        },
+        {
+          "year": "2026",
+          "revenue": 5989.29,
+          "profit": 308.34,
+          "netWorth": 2373.05
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 1345.83,
+          "profit": 65.29
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 1409.24,
+          "profit": 57.06
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 1762.89,
+          "profit": 112.14
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 1822.33,
+          "profit": 130.25
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 1866.54,
+          "profit": 111.67
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 1977,
+        "businessSummary": "V-Guard is a trusted name in the Indian consumer goods industry, evolving since its start in 1977 to build a diversified presence. The company's core philosophy is that the vision it holds for the future directly shapes the actions it takes today for continuous growth. Its journey began with a simple belief that quality, reliability, and relevance could power not just homes but also progress. A key strength is blending engineering precision with practical design to deliver products that solve real needs in everyday life. It has constantly evolved with a changing India by staying in step with consumer expectations and expanding into new categories and technologies. This growth has resulted in a vast retail presence spanning over 1,00,000 outlets and a growing connection with digital-first consumers."
+      },
+      "growth": {
+        "revenueOneYear": 39,
+        "revenueThreeYear": 13,
+        "profitOneYear": 71,
+        "profitThreeYear": 18
+      },
+      "peers": [
+        {
+          "symbol": "AMBER",
+          "name": "Amber Enterprises India",
+          "marketCapCrore": 21989.45,
+          "pe": 177.94,
+          "pb": 5.03
+        },
+        {
+          "symbol": "EMMVEE",
+          "name": "Emmvee Photovoltaic Power",
+          "marketCapCrore": 16882.83,
+          "pe": 11.9,
+          "pb": 3.85
+        },
+        {
+          "symbol": "PGEL",
+          "name": "PG Electroplast",
+          "marketCapCrore": 15398.86,
+          "pe": 71.03,
+          "pb": 4.89
+        },
+        {
+          "symbol": "CROMPTON",
+          "name": "Crompton Greaves Consumer Electricals",
+          "marketCapCrore": 12884.74,
+          "pe": null,
+          "pb": 4.25
+        },
+        {
+          "symbol": "UTLSOLAR",
+          "name": "Fujiyama Power Systems",
+          "marketCapCrore": 11705.57,
+          "pe": 39.76,
+          "pb": 9.2
+        },
+        {
+          "symbol": "WHIRLPOOL",
+          "name": "Whirlpool Of India",
+          "marketCapCrore": 10449.8,
+          "pe": 41.45,
+          "pb": 2.51
+        },
+        {
+          "symbol": "TTKPRESTIG",
+          "name": "TTK Prestige",
+          "marketCapCrore": 7215.39,
+          "pe": 37.98,
+          "pb": 3.65
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-30T16:52:21",
+          "source": "ScoutQuest",
+          "title": "V Guard plans 2–3% price hikes, Rs 150 crore FY27 capex, and solar expansion into North and East India. The company targets 21–22% non-wire revenue from new products, despite input cost volatility and rooftop solar competition.",
+          "url": "https://sqst.in/vTMz7"
+        },
+        {
+          "publishedAt": "2026-10-29T13:56:39",
+          "source": "CNBC TV 18",
+          "title": "V-Guard shares surged up to 11% after Q2 consolidated net profit jumped 72.3% YoY to ₹112 crore. Revenue rose 38.2% YoY to ₹1,853 crore, driven by strong growth across Electricals, Electronics, and Consumer Durables segments.",
+          "url": "https://www.cnbctv18.com/market/v-guard-share-price-q2-results-profit-surges-72-pc-revenue-segment-performance-20022334.htm"
+        },
+        {
+          "publishedAt": "2026-10-29T13:36:38",
+          "source": "CNBC-AWAAZ",
+          "title": "V-Guard Industries reported a sharp 72% growth in profit for the second quarter. Following the Q2 results, the stock saw a strong recovery, surging 16% from lower levels.",
+          "url": "https://t.co/9WjWvLs332"
+        },
+        {
+          "publishedAt": "2026-10-29T13:09:09",
+          "source": "ScoutQuest",
+          "title": "V-Guard Industries approved Kurian Puthenpuraiyil John as Additional Independent Director for five years, subject to shareholder approval. The board also approved unaudited Q2/H1 results and allotted 1,63,183 shares to 36 employees under ESOS 2013.",
+          "url": "https://sqst.in/MoRzH"
+        },
+        {
+          "publishedAt": "2026-10-29T13:07:45",
+          "source": "BSE",
+          "title": "V-Guard Q2 consolidated net profit rose to ₹111.7 crore from ₹65.3 crore YoY, while revenue climbed to ₹1,852.9 crore. The board approved appointing Kurian Puthenpurayil John as Independent Director and allotted 1,63,183 equity shares under ESOP.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=fcebdea2-0d0c-4707-a784-832e6f40cd7d.pdf"
+        },
+        {
+          "publishedAt": "2026-10-29T13:01:56",
+          "source": "Livesquawk",
+          "title": "V-Guard reported Q2 EBITDA of ₹1.7B, increasing from ₹1.1B YoY. Q2 EBITDA margin expanded to 9.1% compared to 8.2% YoY.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-28T18:27:19",
+          "source": "ScoutQuest",
+          "title": "V-Guard Industries approved granting 16,747 employee stock options under ESOS 2013 at an exercise price of ₹1 each. The options vest over one to four years and are exercisable within six years from the vesting date.",
+          "url": "https://sqst.in/9sGnW"
+        },
+        {
+          "publishedAt": "2026-10-13T13:16:27",
+          "source": "BSE",
+          "title": "V-Guard Industries' board will meet on October 29, 2026, to approve Q2 and half-year financial results. The trading window for dealing in company securities remains closed until 48 hours after results announcement.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=018bbd40-1f7a-4336-9c37-7a7b40d4843a.pdf"
+        },
+        {
+          "publishedAt": "2026-09-26T18:33:16",
+          "source": "BSE",
+          "title": "V-Guard's Chairperson Radha Unni to retire on Sep 26, 2026, ending her second term. Mithun K Chittilappilly to assume Chairperson role from Sep 27, 2026; he is currently the MD.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=502e326a-0a93-4ac5-aab8-d4592972889c.pdf"
+        },
+        {
+          "publishedAt": "2026-09-01T11:40:52",
+          "source": "BSE",
+          "title": "V-Guard Industries Ltd will attend Axis Capital Consumer & Tech Conference 2026 in Mumbai. The meeting is scheduled for Sep 10, 2026, at 10:00 AM IST as per SEBI compliance.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=5bd96217-cfa0-49d8-81e5-15851c1744a2.pdf"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-07-31",
+          "amount": 1.5,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-07-31",
+          "amount": 1.5,
+          "kind": "Final"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-10-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-12",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2026-01-28",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-10-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-07-29",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +10.99% from the 52-week low and −27.03% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹1,867 crore and profit is ₹112 crore, a net margin of 6.0%. In Sep '25 those figures were ₹1,346 crore, ₹65 crore, and 4.9%. The latest full year, 2026, has revenue of ₹5,989 crore and profit of ₹308 crore. The year before, revenue was ₹5,599 crore and profit was ₹314 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 39.00%, three-year revenue CAGR is 13.00%, trailing one-year profit growth is 71.00%, three-year profit CAGR is 18.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 30.30 and the industry P/E is 41.74. Dividend yield is 0.53%. Debt to equity is 0.07. ROE is 12.99%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 12.45% to 13.02% and mutual funds went from 22.57% to 20.96%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 11.90 (Emmvee Photovoltaic Power) to 177.94 (Amber Enterprises India). This company’s P/E is 30.30. The industry P/E is 41.74."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹1.50 a share (Final), ex date 31 Jul 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 29 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from ScoutQuest on 30 Oct 2026, reads: V Guard plans 2–3% price hikes, Rs 150 crore FY27 capex, and solar expansion into North and East India. The company targets 21–22% non-wire revenue from new products, despite input cost volatility and rooftop solar competition."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 51.81,
+    "high": 73.07,
+    "samples": 92,
+    "asOf": "2026-10-30"
+  }
+}

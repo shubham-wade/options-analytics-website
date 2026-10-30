@@ -1,0 +1,325 @@
+{
+  "symbol": "PVRINOX",
+  "name": "PVR Inox",
+  "isin": "INE191H01014",
+  "industry": "Infrastructure",
+  "exchange": "NSE",
+  "searchId": "pvr-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:16:59.249Z",
+      "price": {
+        "last": 1495.1,
+        "change": 4.8,
+        "changePercent": 0.32,
+        "open": 1488.1,
+        "high": 1521.1,
+        "low": 1478.3,
+        "previousClose": 1490.3,
+        "volume": 662732,
+        "average": 1500.81,
+        "averageSource": "bars",
+        "yearHigh": 1518,
+        "yearLow": 907.4,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 14615,
+        "pe": 24.3,
+        "industryPe": 23.93,
+        "eps": 61.24,
+        "pb": 1.98,
+        "roe": 6.42,
+        "debtToEquity": 0.85,
+        "bookValue": 752.75,
+        "dividendYield": 0,
+        "faceValue": 10
+      },
+      "holding": {
+        "quarter": "Oct '26",
+        "promoter": 27.6,
+        "mutualFunds": 28.76,
+        "insurance": 5.4,
+        "foreignInstitutions": 19.65,
+        "retailAndOthers": 18.59
+      },
+      "holdings": [
+        {
+          "quarter": "Dec '25",
+          "promoter": 27.53,
+          "mutualFunds": 29.64,
+          "insurance": 4.87,
+          "foreignInstitutions": 21.16,
+          "retailAndOthers": 16.79
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 27.53,
+          "mutualFunds": 31.16,
+          "insurance": 5.27,
+          "foreignInstitutions": 17.86,
+          "retailAndOthers": 18.18
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 27.53,
+          "mutualFunds": 30.47,
+          "insurance": 5.25,
+          "foreignInstitutions": 18.08,
+          "retailAndOthers": 18.67
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 27.02,
+          "mutualFunds": 28.21,
+          "insurance": 5.35,
+          "foreignInstitutions": 19.12,
+          "retailAndOthers": 20.3
+        },
+        {
+          "quarter": "Oct '26",
+          "promoter": 27.6,
+          "mutualFunds": 28.76,
+          "insurance": 5.4,
+          "foreignInstitutions": 19.65,
+          "retailAndOthers": 18.59
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 1655.53,
+          "profit": -488.51,
+          "netWorth": 1370.11
+        },
+        {
+          "year": "2023",
+          "revenue": 3829.7,
+          "profit": -336.4,
+          "netWorth": 7329.5
+        },
+        {
+          "year": "2024",
+          "revenue": 6263.7,
+          "profit": -32.7,
+          "netWorth": 7323.2
+        },
+        {
+          "year": "2025",
+          "revenue": 5870.8,
+          "profit": -264.8,
+          "netWorth": 7053.4
+        },
+        {
+          "year": "2026",
+          "revenue": 6829.7,
+          "profit": 176.1,
+          "netWorth": 7378.7
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 1834.4,
+          "profit": 105.5
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 1889.7,
+          "profit": 95.4
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 1623.9,
+          "profit": 186.4
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 1648.3,
+          "profit": 56.5
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 2139.3,
+          "profit": 263.1
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 1995,
+        "businessSummary": "PVR INOX Limited was formed by the successful merger of PVR Ltd. and INOX Leisure Ltd., a major event that created the largest multiplex chain in the Indian entertainment industry. The company envisions a future where its business growth is thoughtfully aligned with the well-being of the communities it serves and the protection of the environment. Its primary strategy involves introducing innovative technologies and enhancing customer experiences to provide unmatched value, thereby reimagining the future of entertainment for its patrons. A key business activity is strategic expansion, exemplified by the opening of 130 new screens across 25 cinemas in the past financial year to grow its presence. The company's core financial objective is to restore pre-pandemic operating margins, improve the return on capital, and generate strong free cash flow for sustained growth. It operates an extensive network of 1,754 screens across 361 properties in 113 cities, making cinema an accessible and aspirational experience for audiences nationwide."
+      },
+      "growth": {
+        "revenueOneYear": 17,
+        "revenueThreeYear": 21,
+        "profitOneYear": 149,
+        "profitThreeYear": 36
+      },
+      "peers": [
+        {
+          "symbol": "CEMPRO",
+          "name": "Cemindia Projects",
+          "marketCapCrore": 23759.21,
+          "pe": 39.49,
+          "pb": 6.25
+        },
+        {
+          "symbol": "NCC",
+          "name": "NCC",
+          "marketCapCrore": 7421.15,
+          "pe": 9.92,
+          "pb": 0.94
+        },
+        {
+          "symbol": "NDRINVIT",
+          "name": "NDR INVIT Trust",
+          "marketCapCrore": 6778.98,
+          "pe": 60.91,
+          "pb": 1.13
+        },
+        {
+          "symbol": "HCC",
+          "name": "Hindustan Construction Company",
+          "marketCapCrore": 4686.23,
+          "pe": 28.4,
+          "pb": 2.2
+        },
+        {
+          "symbol": "VINDHYATEL",
+          "name": "Vindhya Telelinks",
+          "marketCapCrore": 3250.57,
+          "pe": 13.78,
+          "pb": 0.82
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-28T21:06:09",
+          "source": "The Hindu Business Line",
+          "title": "PVR INOX consolidated net profit more than doubled to ₹263.1 crore in Q2 FY27 on strong box office collections. Consolidated revenue from operations rose 17.0% to ₹2,105.1 crore from the year-ago period.",
+          "url": "https://www.thehindubusinessline.com/companies/pvr-inox-net-profit-surged-to-2631-crore-revenue-up-17-in-blockbuster-q2/article71636714.ece?utm_campaign=mrf-twitter-businessline&utm_source=twitter&utm_medium=social&mrfcid=202610286ae21668d435ed2a1bd9f381"
+        },
+        {
+          "publishedAt": "2026-10-28T14:57:08",
+          "source": "CNBC-AWAAZ",
+          "title": "PVR INOX posted strong Q2 results, with revenue growing 17% and profit surging 150%. Margins also expanded, while MD Ajay Bijli and CFO Gaurav Sharma shared insights on the outlook.",
+          "url": "https://x.com/CNBC_Awaaz/status/2115374797450289582"
+        },
+        {
+          "publishedAt": "2026-10-28T14:28:19",
+          "source": "ScoutQuest",
+          "title": "PVR INOX stock surged 50% this fiscal year, with EBIT margins expanding to 36.5% and EBITDA growing around 25%. Chairman Ajay Bijli noted reviving theater demand, driven by audiences returning for sleeper hits and big-screen releases.",
+          "url": "https://sqst.in/M2tbB"
+        },
+        {
+          "publishedAt": "2026-10-28T14:23:02",
+          "source": "ET NOW",
+          "title": "PVR Inox has reported its financial results for the second quarter.",
+          "url": "https://x.com/ETNOWlive/status/2115366217284559214"
+        },
+        {
+          "publishedAt": "2026-10-28T14:18:35",
+          "source": "BSE",
+          "title": "PVR INOX reported a Q2 standalone net profit of Rs 2,532 million, up from Rs 1,039 million year-on-year. Standalone revenue from operations rose to Rs 20,620 million, compared to Rs 17,577 million in the corresponding year-ago period.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7820dc05-4af0-4901-9188-78c41d3d3f6f.pdf"
+        },
+        {
+          "publishedAt": "2026-10-28T14:17:32",
+          "source": "Livesquawk",
+          "title": "PVR INOX reported Q2 consolidated net profit of ₹2.6B versus ₹1.1B YoY, beating estimates of ₹2B. The company's earnings delivered a strong beat versus street expectations.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-21T17:37:46",
+          "source": "BSE",
+          "title": "PVR INOX will host an earnings conference call for analysts and investors on October 28, 2026, at 4:00 PM IST. Senior management, including MD Ajay Bijli, ED Sanjeev Kumar, and CFO Gaurav Sharma, will discuss Q2 performance.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=66c22a72-6afd-4336-b619-6873de7000b4.pdf"
+        },
+        {
+          "publishedAt": "2026-10-07T14:59:19",
+          "source": "ScoutQuest",
+          "title": "PVRINOX shares jumped 10% following CLSA's projection of a 71% upside. The projected upside for the stock is driven by rising footfalls.",
+          "url": "https://sqst.in/shareMessage?msgId=895603689214308586"
+        },
+        {
+          "publishedAt": "2026-10-07T09:25:47",
+          "source": "ScoutQuest",
+          "title": "CLSA has maintained an outperformer call on PVR INOX, with expectations of at least 1,500 movie releases. PVR INOX shares gained about 4% in trade, helping push the Nifty Media index into the green.",
+          "url": "https://sqst.in/7OhAj"
+        },
+        {
+          "publishedAt": "2026-10-07T08:57:40",
+          "source": "Livesquawk",
+          "title": "CLSA maintains an Overweight rating on PVR Inox with a target price of ₹2,135, driven by growing footfalls supported by rising theatrical releases, noting that India releases around 1,500 movies annually. The brokerage highlighted that theatrical releases remain the best monetisation route, with long-term growth further supported by screen expansion and developer tie-ups.",
+          "url": null
+        }
+      ],
+      "dividends": [],
+      "results": [
+        {
+          "date": "2026-10-28",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-23",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-11",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2026-02-05",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-10-17",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-08-06",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +64.77% from the 52-week low and −1.51% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹2,139 crore and profit is ₹263 crore, a net margin of 12.3%. In Sep '25 those figures were ₹1,834 crore, ₹106 crore, and 5.8%. The latest full year, 2026, has revenue of ₹6,830 crore and profit of ₹176 crore. The year before, revenue was ₹5,871 crore and profit was ₹-265 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 17.00%, three-year revenue CAGR is 21.00%, trailing one-year profit growth is 149.00%, three-year profit CAGR is 36.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 24.30 and the industry P/E is 23.93. Dividend yield is 0.00%. Debt to equity is 0.85. ROE is 6.42%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Dec '25 to Oct '26, foreign institutions went from 21.16% to 19.65% and mutual funds went from 29.64% to 28.76%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 5 peers. P/E on that list runs from 9.92 (NCC) to 60.91 (NDR INVIT Trust). This company’s P/E is 24.30. The industry P/E is 23.93."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 28 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from The Hindu Business Line on 28 Oct 2026, reads: PVR INOX consolidated net profit more than doubled to ₹263.1 crore in Q2 FY27 on strong box office collections. Consolidated revenue from operations rose 17.0% to ₹2,105.1 crore from the year-ago period."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 49.18,
+    "high": 448.33,
+    "samples": 44,
+    "asOf": "2026-10-30"
+  }
+}

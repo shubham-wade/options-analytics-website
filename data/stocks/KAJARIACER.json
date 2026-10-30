@@ -1,0 +1,355 @@
+{
+  "symbol": "KAJARIACER",
+  "name": "Kajaria Ceramics",
+  "isin": "INE217B01036",
+  "industry": "Ceramic Products",
+  "exchange": "NSE",
+  "searchId": "kajaria-ceramics-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:16:55.875Z",
+      "price": {
+        "last": 1109.2,
+        "change": 7.1,
+        "changePercent": 0.64,
+        "open": 1104,
+        "high": 1130,
+        "low": 1094.9,
+        "previousClose": 1102.1,
+        "volume": 501219,
+        "average": 1112.1,
+        "averageSource": "bars",
+        "yearHigh": 1275,
+        "yearLow": 869.6,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 17320,
+        "pe": 28.65,
+        "industryPe": 25.83,
+        "eps": 38.47,
+        "pb": 5.78,
+        "roe": 20.1,
+        "debtToEquity": 0.14,
+        "bookValue": 190.75,
+        "dividendYield": 1.29,
+        "faceValue": 1
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 46.74,
+        "mutualFunds": 21.45,
+        "insurance": 4.64,
+        "foreignInstitutions": 12.04,
+        "retailAndOthers": 15.12
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 47.61,
+          "mutualFunds": 21.99,
+          "insurance": 4.01,
+          "foreignInstitutions": 11.57,
+          "retailAndOthers": 14.82
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 47.69,
+          "mutualFunds": 22.19,
+          "insurance": 4.11,
+          "foreignInstitutions": 11.66,
+          "retailAndOthers": 14.36
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 47.69,
+          "mutualFunds": 23.31,
+          "insurance": 4.16,
+          "foreignInstitutions": 10.23,
+          "retailAndOthers": 14.6
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 47.69,
+          "mutualFunds": 22.62,
+          "insurance": 3.63,
+          "foreignInstitutions": 11.58,
+          "retailAndOthers": 14.48
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 46.74,
+          "mutualFunds": 21.45,
+          "insurance": 4.64,
+          "foreignInstitutions": 12.04,
+          "retailAndOthers": 15.12
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 3732.76,
+          "profit": 382.74,
+          "netWorth": 2187.16
+        },
+        {
+          "year": "2023",
+          "revenue": 4415.55,
+          "profit": 346.2,
+          "netWorth": 2404.42
+        },
+        {
+          "year": "2024",
+          "revenue": 4520.23,
+          "profit": 443.5,
+          "netWorth": 2675.61
+        },
+        {
+          "year": "2025",
+          "revenue": 4677.81,
+          "profit": 348.31,
+          "netWorth": 2810.09
+        },
+        {
+          "year": "2026",
+          "revenue": 4883.22,
+          "profit": 490.06,
+          "netWorth": 3130.48
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 1201.48,
+          "profit": 133.98
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 1179.92,
+          "profit": 86.15
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 1385.84,
+          "profit": 156.56
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 1345.22,
+          "profit": 171.03
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 1484.02,
+          "profit": 190.72
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 1985,
+        "businessSummary": "Since its establishment in 1988, Kajaria has evolved from a tile manufacturer to an industry leader in aesthetic solutions. The company's growth strategy centers on differentiation and flawless execution to capitalize on the thriving real estate market. While business growth is a top priority, the company remains committed to protecting the environment and promoting sustainable economic growth for all stakeholders. After achieving leadership in the Indian tile market, the company diversified into related verticals like bathware, plywood, and adhesives. Through a pan-India manufacturing presence and an extensive distribution network, Kajaria makes its products readily available to aspiring Indians. As India's largest and the world's 8th largest tile manufacturer, it has a cumulative tile manufacturing capacity of 86.47 million square meters."
+      },
+      "growth": {
+        "revenueOneYear": 24,
+        "revenueThreeYear": 3,
+        "profitOneYear": 42,
+        "profitThreeYear": 12
+      },
+      "peers": [
+        {
+          "symbol": "SOMANYCERA",
+          "name": "Somany Ceramics",
+          "marketCapCrore": 2296.31,
+          "pe": 22.75,
+          "pb": 2.73
+        },
+        {
+          "symbol": "ORIENTBELL",
+          "name": "Orient Bell",
+          "marketCapCrore": 539.87,
+          "pe": 25.56,
+          "pb": 1.64
+        },
+        {
+          "symbol": "EXXARO",
+          "name": "Exxaro Tiles",
+          "marketCapCrore": 280.53,
+          "pe": 69.67,
+          "pb": 1
+        },
+        {
+          "symbol": "MURUDCERA",
+          "name": "Murudeshwar Ceramics",
+          "marketCapCrore": 162.75,
+          "pe": 16.8,
+          "pb": 0.43
+        },
+        {
+          "symbol": "REGENCERAM",
+          "name": "Regency Ceramics",
+          "marketCapCrore": 87.25,
+          "pe": null,
+          "pb": 0
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-30T16:09:44",
+          "source": "ScoutQuest",
+          "title": "Kajaria Ceramics acquired a 19.8% stake in Sunsure Solarpark Fourty Three for Rs 1.2 crore. The investment aims to secure solar and wind power supply for its Gailpur and Malootana plants.",
+          "url": "https://sqst.in/2TPTE"
+        },
+        {
+          "publishedAt": "2026-10-29T18:13:08",
+          "source": "BSE",
+          "title": "Kajaria Ceramics has subscribed to 4.5 crore preference shares of subsidiary Kerovit Global for Rs 45 crore cash. The investment aims to improve Kerovit Global's debt-equity ratio, with the preference shares redeemable after 10 years.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=0f122d04-a88b-461e-a95f-45e56972ec82.pdf"
+        },
+        {
+          "publishedAt": "2026-10-28T08:20:38",
+          "source": "ET NOW",
+          "title": "Last day to buy Shriram Finance, CRISIL, Kajaria Ceramics, and three other stocks ahead of October 29 ex-date. The corporate actions include an up to Rs 38 dividend payout and a stock split.",
+          "url": "https://www.etnownews.com/markets/rs-38-dividend-stock-split-last-day-to-buy-shriram-finance-crisil-kajaria-ceramics-and-3-other-stocks-ahead-of-october-29-ex-date-article-156419181"
+        },
+        {
+          "publishedAt": "2026-10-27T10:44:08",
+          "source": "NDTV Profit",
+          "title": "HDFC Securities reviewed 12 stocks post-Q2, upgrading Kajaria Ceramics to Buy and raising targets for APL Apollo and Bank of Maharashtra. Meanwhile, target prices were trimmed for BPCL, Mankind Pharma, Dalmia Bharat, and Eris Lifesciences despite maintaining positive ratings.",
+          "url": "https://www.ndtvprofit.com/markets/bpcl-mankind-pharma-dalmia-bharat-kajaria-ceramics-eris-lifesciences-apollo-micro-among-12-stocks-in-q2-results-review-by-hdfc-securities-check-target-12241013#publisher=newsstand"
+        },
+        {
+          "publishedAt": "2026-10-26T11:02:29",
+          "source": "ScoutQuest",
+          "title": "Kajaria Ceramics targets sustained double-digit volume growth, benefiting from a narrowing price gap with the unorganized Morbi market. Adhesive business targets INR 400 crores revenue next fiscal, alongside planned GVT and adhesive capacity expansions by 2027.",
+          "url": "https://sqst.in/i87zh"
+        },
+        {
+          "publishedAt": "2026-10-25T10:22:16",
+          "source": "ET NOW",
+          "title": "Kajaria Ceramics Q2 profit surged 42.9% YoY to ₹190 crore, while revenue rose 23.8% to ₹1,468 crore. EBITDA jumped 33.6% to ₹286 crore, with EBITDA margin expanding to 19.5% from 18% YoY.",
+          "url": "https://x.com/ETNOWlive/status/2114218461518090552"
+        },
+        {
+          "publishedAt": "2026-10-24T19:08:32",
+          "source": "ScoutQuest",
+          "title": "Kajaria Ceramics approved an interim dividend of Rs. 12 per equity share for FY 2026-27. The record date is fixed for October 29, 2026, with payment scheduled on or before November 22, 2026.",
+          "url": "https://sqst.in/exeAl"
+        },
+        {
+          "publishedAt": "2026-10-24T12:00:00",
+          "source": "MarketScreener India",
+          "title": "Kajaria Ceramics approved setting up a new tiles adhesive manufacturing facility in Durgapur, West Bengal. The proposed new manufacturing plant will have a capacity of 9,000 MT per month.",
+          "url": "https://www.marketscreener.com/news/kajaria-ceramics-limited-approves-to-set-up-a-new-manufacturing-facility-of-tiles-adhesive-in-durgap-ce785cdfde8ff02c"
+        },
+        {
+          "publishedAt": "2026-10-21T12:37:20",
+          "source": "BSE",
+          "title": "Kajaria Ceramics denied media reports regarding its potential acquisition of Asian Granito India Limited, clarifying no such plans exist. The company confirmed it is not in discussions or negotiations for the acquisition, remaining focused on core strategic growth.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=273a8931-dc3c-4b7b-b7b5-e206a5369477.pdf"
+        },
+        {
+          "publishedAt": "2026-10-08T21:00:22",
+          "source": "NSE Bulk Trades",
+          "title": "PI Opportunities AIF V LLP bought 11,28,464 shares of Kajaria Ceramics Ltd. The transaction was executed at an average trade price of Rs 1,211 per share.",
+          "url": "https://www.nseindia.com/report-detail/display-bulk-and-block-deals"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-10-29",
+          "amount": 12,
+          "kind": "Interim"
+        },
+        {
+          "exDate": "2026-09-21",
+          "amount": 6,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-10-24",
+          "amount": 8,
+          "kind": "Interim"
+        },
+        {
+          "exDate": "2025-09-12",
+          "amount": 4,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2024-11-04",
+          "amount": 5,
+          "kind": "Interim"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-10-24",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-04-30",
+          "title": "Quarterly & Annual Result"
+        },
+        {
+          "date": "2026-01-30",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-10-16",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-07-22",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +27.55% from the 52-week low and −13.00% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹1,484 crore and profit is ₹191 crore, a net margin of 12.9%. In Sep '25 those figures were ₹1,201 crore, ₹134 crore, and 11.2%. The latest full year, 2026, has revenue of ₹4,883 crore and profit of ₹490 crore. The year before, revenue was ₹4,678 crore and profit was ₹348 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 24.00%, three-year revenue CAGR is 3.00%, trailing one-year profit growth is 42.00%, three-year profit CAGR is 12.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 28.65 and the industry P/E is 25.83. Dividend yield is 1.29%. Debt to equity is 0.14. ROE is 20.10%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 11.57% to 12.04% and mutual funds went from 21.99% to 21.45%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 5 peers. P/E on that list runs from 16.80 (Murudeshwar Ceramics) to 69.67 (Exxaro Tiles). This company’s P/E is 28.65. The industry P/E is 25.83."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹12.00 a share (Interim), ex date 29 Oct 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 24 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from ScoutQuest on 30 Oct 2026, reads: Kajaria Ceramics acquired a 19.8% stake in Sunsure Solarpark Fourty Three for Rs 1.2 crore. The investment aims to secure solar and wind power supply for its Gailpur and Malootana plants."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 44.22,
+    "high": 65.27,
+    "samples": 110,
+    "asOf": "2026-10-30"
+  }
+}

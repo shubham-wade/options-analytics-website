@@ -1,17 +1,23 @@
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { istParts } from "@/lib/time";
 import {
   averageFromMinuteBars,
   companyIdentity,
+  sortByHighlight,
+  toStockSummary,
+  parseCompanyExtras,
   parseFundamentals,
+  parseGrowwPage,
   parseHolding,
   parseHoldings,
   parseLivePrice,
   parseStatements,
   publishedStatements,
 } from "@/lib/stocks/parse";
-import type { StockFile, StockPrice, StockSnapshot, StockSummary } from "@/lib/stocks/types";
+import { loadPeHistory } from "@/lib/stocks/pe";
+import { stockNotes } from "@/lib/stocks/reading";
+import type { StockFile, StockHighlight, StockPrice, StockSnapshot, StockSummary } from "@/lib/stocks/types";
 
 const GROWW = "https://groww.in";
 const UA =
@@ -81,6 +87,17 @@ export async function readStock(symbol: string): Promise<StockFile | null> {
   }
 }
 
+export async function removeStock(symbolInput: string): Promise<boolean> {
+  const symbol = stockSymbol(symbolInput);
+  try {
+    await unlink(stockPath(symbol));
+    return true;
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") return false;
+    throw error;
+  }
+}
+
 export async function listStocks(): Promise<StockSummary[]> {
   const dir = path.join(process.cwd(), "data", "stocks");
   let names: string[] = [];
@@ -95,21 +112,26 @@ export async function listStocks(): Promise<StockSummary[]> {
       .filter((name) => name.endsWith(".json"))
       .map(async (name) => readStock(name.replace(/\.json$/, ""))),
   );
-  return files
-    .filter((file): file is StockFile => file != null)
-    .map((file) => {
-      const latest = file.snapshots[file.snapshots.length - 1];
-      return {
-        symbol: file.symbol,
-        name: file.name,
-        industry: file.industry,
-        savedOn: latest?.date ?? null,
-        price: latest?.price.last ?? null,
-        changePercent: latest?.price.changePercent ?? null,
-        readings: file.snapshots.length,
-      };
-    })
-    .sort((a, b) => a.symbol.localeCompare(b.symbol));
+  return sortByHighlight(files.filter((file): file is StockFile => file != null).map(toStockSummary));
+}
+
+async function growwStockPage(searchId: string): Promise<unknown | null> {
+  try {
+    const response = await fetch(`${GROWW}/stocks/${encodeURIComponent(searchId)}`, {
+      headers: { Accept: "text/html", "User-Agent": UA },
+      cache: "no-store",
+    });
+    if (!response.ok) return null;
+    const html = await response.text();
+    const tag = html.indexOf('<script id="__NEXT_DATA__"');
+    if (tag < 0) return null;
+    const jsonStart = html.indexOf(">", tag);
+    const jsonEnd = html.indexOf("</script>", jsonStart);
+    if (jsonStart < 0 || jsonEnd < 0) return null;
+    return JSON.parse(html.slice(jsonStart + 1, jsonEnd)) as unknown;
+  } catch {
+    return null;
+  }
 }
 
 async function dayAverage(symbol: string): Promise<number | null> {
@@ -140,6 +162,8 @@ export async function refreshStock(
   priceOverride?: StockPrice | null,
 ): Promise<StockFile> {
   const symbol = stockSymbol(symbolInput);
+  const existingPromise = readStock(symbol);
+  const pePromise = loadPeHistory(symbol);
   const found = await findSearchId(symbol);
   const company = await growwJson(`${GROWW}/v1/api/stocks_data/v1/company/search_id/${encodeURIComponent(found.searchId)}`);
   const identity = companyIdentity(company);
@@ -149,6 +173,9 @@ export async function refreshStock(
   const holdings = parseHoldings(record.shareHoldingPattern);
   const published = publishedStatements(company);
   const statements = parseStatements(published.statements);
+  const extras = parseCompanyExtras(company);
+  const page = parseGrowwPage((await growwStockPage(found.searchId)) ?? {});
+  const savedOn = istDateStamp(now);
   const live = await growwJson(
     `${GROWW}/v1/api/stocks_data/v1/tr_live_prices/exchange/NSE/segment/CASH/${encodeURIComponent(symbol)}/latest`,
   );
@@ -174,8 +201,13 @@ export async function refreshStock(
         source: priceOverride.source,
       }
     : growwPrice;
+  const existing = await existingPromise;
+  let pe = (await pePromise) ?? existing?.pe ?? null;
+  if (pe && fundamentals.pe != null && (pe.high == null || fundamentals.pe > pe.high)) {
+    pe = { ...pe, high: fundamentals.pe };
+  }
   const snapshot: StockSnapshot = {
-    date: istDateStamp(now),
+    date: savedOn,
     savedAt: now.toISOString(),
     price,
     fundamentals,
@@ -184,8 +216,26 @@ export async function refreshStock(
     years: statements.years,
     quarters: statements.quarters,
     accounts: published.accounts,
+    profile: extras.profile,
+    growth: extras.growth,
+    peers: extras.peers,
+    news: page.news,
+    dividends: page.dividends,
+    results: page.results,
+    notes: stockNotes({
+      price,
+      fundamentals,
+      years: statements.years,
+      quarters: statements.quarters,
+      growth: extras.growth,
+      holdings,
+      peers: extras.peers,
+      dividends: page.dividends,
+      results: page.results,
+      news: page.news,
+      asOf: savedOn,
+    }),
   };
-  const existing = await readStock(symbol);
   const snapshots = existing ? [...existing.snapshots] : [];
   const sameDay = snapshots.findIndex((item) => item.date === snapshot.date);
   if (sameDay >= 0) snapshots[sameDay] = snapshot;
@@ -198,9 +248,29 @@ export async function refreshStock(
     exchange: "NSE",
     searchId: found.searchId,
     snapshots,
+    highlight: existing?.highlight ?? null,
+    comment: existing?.comment ?? null,
+    pe,
   };
   const dir = path.join(process.cwd(), "data", "stocks");
   await mkdir(dir, { recursive: true });
   await writeFile(stockPath(symbol), `${JSON.stringify(file, null, 2)}\n`, "utf8");
   return file;
+}
+
+export async function patchStockFile(
+  symbolInput: string,
+  patch: { highlight?: StockHighlight | null; comment?: string | null },
+): Promise<StockFile> {
+  const symbol = stockSymbol(symbolInput);
+  const file = await readStock(symbol);
+  if (!file) throw new StockError("not_found", "This stock is not saved yet.");
+  if ("highlight" in patch) file.highlight = patch.highlight ?? null;
+  if ("comment" in patch) file.comment = patch.comment ? patch.comment : null;
+  await writeFile(stockPath(symbol), `${JSON.stringify(file, null, 2)}\n`, "utf8");
+  return file;
+}
+
+export async function setStockHighlight(symbolInput: string, highlight: StockHighlight | null): Promise<StockFile> {
+  return patchStockFile(symbolInput, { highlight });
 }

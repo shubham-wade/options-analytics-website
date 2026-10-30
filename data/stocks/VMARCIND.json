@@ -1,0 +1,277 @@
+{
+  "symbol": "VMARCIND",
+  "name": "V-Marc India",
+  "isin": "INE0GXK01018",
+  "industry": "Electrical Equipment",
+  "exchange": "NSE",
+  "searchId": "vmarc-india-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:17:08.939Z",
+      "price": {
+        "last": 305.05,
+        "change": -13.8,
+        "changePercent": -4.33,
+        "open": 318.8,
+        "high": 318.85,
+        "low": 305,
+        "previousClose": 318.85,
+        "volume": 150000,
+        "average": null,
+        "averageSource": null,
+        "yearHigh": 406,
+        "yearLow": 87.67,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 4672,
+        "pe": 39.66,
+        "industryPe": 41,
+        "eps": 8.04,
+        "pb": 16.14,
+        "roe": 34.13,
+        "debtToEquity": 0.74,
+        "bookValue": 19.76,
+        "dividendYield": 0,
+        "faceValue": 10
+      },
+      "holding": {
+        "quarter": "Jul '26",
+        "promoter": 64.87,
+        "mutualFunds": 0,
+        "insurance": 0.02,
+        "foreignInstitutions": 0.25,
+        "retailAndOthers": 34.86
+      },
+      "holdings": [
+        {
+          "quarter": "Mar '25",
+          "promoter": 64.87,
+          "mutualFunds": 0,
+          "insurance": 0,
+          "foreignInstitutions": 0,
+          "retailAndOthers": 35.13
+        },
+        {
+          "quarter": "Sep '25",
+          "promoter": 64.87,
+          "mutualFunds": 0,
+          "insurance": 0,
+          "foreignInstitutions": 0,
+          "retailAndOthers": 35.13
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 64.87,
+          "mutualFunds": 0,
+          "insurance": 0,
+          "foreignInstitutions": 0,
+          "retailAndOthers": 35.13
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 64.87,
+          "mutualFunds": 0,
+          "insurance": 0.02,
+          "foreignInstitutions": 0.26,
+          "retailAndOthers": 34.85
+        },
+        {
+          "quarter": "Jul '26",
+          "promoter": 64.87,
+          "mutualFunds": 0,
+          "insurance": 0.02,
+          "foreignInstitutions": 0.25,
+          "retailAndOthers": 34.86
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 181.9707,
+          "profit": 4.9922,
+          "netWorth": 69.3206
+        },
+        {
+          "year": "2023",
+          "revenue": 249.8495,
+          "profit": 10.4455,
+          "netWorth": 79.6915
+        },
+        {
+          "year": "2024",
+          "revenue": 565.7888,
+          "profit": 26.853,
+          "netWorth": 106.5206
+        },
+        {
+          "year": "2025",
+          "revenue": 906.2414,
+          "profit": 36.0946,
+          "netWorth": 189.4481
+        },
+        {
+          "year": "2026",
+          "revenue": 1800.1966,
+          "profit": 100.0768,
+          "netWorth": 289.5249
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Dec '20",
+          "revenue": 65.24,
+          "profit": 2.31
+        },
+        {
+          "quarter": "Mar '21",
+          "revenue": 44.88,
+          "profit": 1.78
+        },
+        {
+          "quarter": "Jun '25",
+          "revenue": 274.85,
+          "profit": 10.83
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 667.09,
+          "profit": 43.53
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 556.63,
+          "profit": 28.55
+        }
+      ],
+      "accounts": "standalone",
+      "profile": {
+        "foundedYear": 2014,
+        "businessSummary": "V-Marc India Limited manufactures and markets wires and cables, including LT/HT cables and communication cables, serving power distribution, real estate, and industrial sectors."
+      },
+      "growth": {
+        "revenueOneYear": null,
+        "revenueThreeYear": 93,
+        "profitOneYear": null,
+        "profitThreeYear": 112
+      },
+      "peers": [
+        {
+          "symbol": "RRKABEL",
+          "name": "RR Kabel",
+          "marketCapCrore": 24059.24,
+          "pe": 35.8,
+          "pb": 7.92
+        },
+        {
+          "symbol": "DIACABS",
+          "name": "Diamond Power Infrastructure",
+          "marketCapCrore": 20412.17,
+          "pe": 105.99,
+          "pb": 20.21
+        },
+        {
+          "symbol": "FINCABLES",
+          "name": "Finolex Cables",
+          "marketCapCrore": 17849.55,
+          "pe": 22.31,
+          "pb": 2.93
+        },
+        {
+          "symbol": "PRECWIRE",
+          "name": "Precision Wires India",
+          "marketCapCrore": 7556.37,
+          "pe": 43.28,
+          "pb": 9.78
+        },
+        {
+          "symbol": "RAMRAT",
+          "name": "Ram Ratna Wires",
+          "marketCapCrore": 5188.34,
+          "pe": 40.6,
+          "pb": 8.95
+        },
+        {
+          "symbol": "UNIVCABLES",
+          "name": "Universal Cables",
+          "marketCapCrore": 4557.59,
+          "pe": 22.79,
+          "pb": 2.41
+        },
+        {
+          "symbol": "TEMPSENS",
+          "name": "Tempsens Instruments (India)",
+          "marketCapCrore": 4302.71,
+          "pe": 60.52,
+          "pb": 7.26
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-08-26T12:35:15",
+          "source": "Livesquawk",
+          "title": "V-Marc India transitions from NSE's SME platform to its main board. The company is also listed directly on BSE's main board, enhancing visibility.",
+          "url": null
+        }
+      ],
+      "dividends": [],
+      "results": [
+        {
+          "date": "2026-11-06",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-08-12",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-11",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2025-11-07",
+          "title": "Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +247.95% from the 52-week low and −24.86% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Jun '26, revenue is ₹557 crore and profit is ₹29 crore, a net margin of 5.1%. In Jun '25 those figures were ₹275 crore, ₹11 crore, and 3.9%. The latest full year, 2026, has revenue of ₹1,800 crore and profit of ₹100 crore. The year before, revenue was ₹906 crore and profit was ₹36 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Three-year revenue CAGR is 93.00%, three-year profit CAGR is 112.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 39.66 and the industry P/E is 41.00. Dividend yield is 0.00%. Debt to equity is 0.74. ROE is 34.13%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Mar '25 to Jul '26, foreign institutions went from 0.00% to 0.25% and mutual funds went from 0.00% to 0.00%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 22.31 (Finolex Cables) to 105.99 (Diamond Power Infrastructure). This company’s P/E is 39.66. The industry P/E is 41.00."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 6 Nov 2026, a quarterly result. 1 headlines are saved. The newest, from Livesquawk on 26 Aug 2026, reads: V-Marc India transitions from NSE's SME platform to its main board. The company is also listed directly on BSE's main board, enhancing visibility."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 91.89,
+    "high": 427.74,
+    "samples": 30,
+    "asOf": "2026-10-26"
+  }
+}

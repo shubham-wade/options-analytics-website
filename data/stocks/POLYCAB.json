@@ -1,0 +1,354 @@
+{
+  "symbol": "POLYCAB",
+  "name": "Polycab India",
+  "isin": "INE455K01017",
+  "industry": "Electrical Equipment",
+  "exchange": "NSE",
+  "searchId": "polycab-india-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:16:58.415Z",
+      "price": {
+        "last": 7787,
+        "change": 42,
+        "changePercent": 0.54,
+        "open": 7700,
+        "high": 7950,
+        "low": 7573.5,
+        "previousClose": 7745,
+        "volume": 346386,
+        "average": 7751.79,
+        "averageSource": "bars",
+        "yearHigh": 10126,
+        "yearLow": 6663,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 116722,
+        "pe": 36.45,
+        "industryPe": 38.66,
+        "eps": 212.49,
+        "pb": 8.91,
+        "roe": 24.1,
+        "debtToEquity": 0.02,
+        "bookValue": 868.85,
+        "dividendYield": 0.61,
+        "faceValue": 10
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 61.44,
+        "mutualFunds": 5.21,
+        "insurance": 2.69,
+        "foreignInstitutions": 18.06,
+        "retailAndOthers": 12.6
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 61.52,
+          "mutualFunds": 8.9,
+          "insurance": 2.79,
+          "foreignInstitutions": 13.97,
+          "retailAndOthers": 12.83
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 61.5,
+          "mutualFunds": 8.18,
+          "insurance": 2.95,
+          "foreignInstitutions": 14.82,
+          "retailAndOthers": 12.55
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 61.5,
+          "mutualFunds": 5.23,
+          "insurance": 2.73,
+          "foreignInstitutions": 18.21,
+          "retailAndOthers": 12.34
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 61.46,
+          "mutualFunds": 4.77,
+          "insurance": 2.85,
+          "foreignInstitutions": 19,
+          "retailAndOthers": 11.92
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 61.44,
+          "mutualFunds": 5.21,
+          "insurance": 2.69,
+          "foreignInstitutions": 18.06,
+          "retailAndOthers": 12.6
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 12293.684,
+          "profit": 845.231,
+          "netWorth": 5568.811
+        },
+        {
+          "year": "2023",
+          "revenue": 14241.104,
+          "profit": 1282.253,
+          "netWorth": 6668.514
+        },
+        {
+          "year": "2024",
+          "revenue": 18260.319,
+          "profit": 1802.917,
+          "netWorth": 8243.341
+        },
+        {
+          "year": "2025",
+          "revenue": 22615.949,
+          "profit": 2045.537,
+          "netWorth": 9906.794
+        },
+        {
+          "year": "2026",
+          "revenue": 29120.044,
+          "profit": 2708.427,
+          "netWorth": 12126.769
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 6522.64,
+          "profit": 692.96
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 7686.59,
+          "profit": 630.17
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 8924.9,
+          "profit": 785.6
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 8314.65,
+          "profit": 796.65
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 9987.27,
+          "profit": 990
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 1996,
+        "businessSummary": "Polycab India is India's largest integrated manufacturer of wires and cables and a prominent player in the fast-moving electrical goods industry. The company's core vision is to connect people to a brighter future through dependable solutions and forward-thinking innovation. It operates with a deep belief in its people and an obsession for serving customers to create delightful experiences. It manufactures and sells a wide range of wires and cables for both household and industrial use, serving a diverse customer base. Its FMEG business is a high-growth segment with a growing product mix that caters to a wide spectrum of customers. Polycab is the market leader, holding a 26-27% share of the domestic organised Wires & Cables market."
+      },
+      "growth": {
+        "revenueOneYear": 53,
+        "revenueThreeYear": 27,
+        "profitOneYear": 43,
+        "profitThreeYear": 28
+      },
+      "peers": [
+        {
+          "symbol": "APARINDS",
+          "name": "Apar Industries",
+          "marketCapCrore": 66290.82,
+          "pe": 48.14,
+          "pb": 7.78
+        },
+        {
+          "symbol": "KEI",
+          "name": "KEI Industries",
+          "marketCapCrore": 36632.26,
+          "pe": 34.7,
+          "pb": 5.09
+        },
+        {
+          "symbol": "RRKABEL",
+          "name": "RR Kabel",
+          "marketCapCrore": 24059.24,
+          "pe": 35.8,
+          "pb": 7.92
+        },
+        {
+          "symbol": "DIACABS",
+          "name": "Diamond Power Infrastructure",
+          "marketCapCrore": 20412.17,
+          "pe": 105.99,
+          "pb": 20.21
+        },
+        {
+          "symbol": "FINCABLES",
+          "name": "Finolex Cables",
+          "marketCapCrore": 17849.55,
+          "pe": 22.31,
+          "pb": 2.93
+        },
+        {
+          "symbol": "PRECWIRE",
+          "name": "Precision Wires India",
+          "marketCapCrore": 7556.37,
+          "pe": 43.28,
+          "pb": 9.78
+        },
+        {
+          "symbol": "RAMRAT",
+          "name": "Ram Ratna Wires",
+          "marketCapCrore": 5188.34,
+          "pe": 40.6,
+          "pb": 8.95
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-30T18:50:33",
+          "source": "NDTV Profit",
+          "title": "NCLAT set aside insolvency proceedings against Polycab India, citing a pre-existing dispute over operational dues. The matter involved alleged dues of Rs 2.8 crore claimed by creditor Asier Metals for aluminium ingots.",
+          "url": "https://www.ndtvprofit.com/business/relief-for-polycab-nclat-sets-aside-insolvency-proceedings-cites-pre-existing-dispute-over-dues-12259657#publisher=newsstand"
+        },
+        {
+          "publishedAt": "2026-10-30T11:17:15",
+          "source": "CNBC TV 18",
+          "title": "NCLAT set aside the insolvency petition against Polycab India, bringing relief following NCLT's earlier CIRP admission. MSCI deferred Polycab's index deletion, while markets watch for a possible reversal of its F&O exclusion.",
+          "url": "https://www.cnbctv18.com/market/polycab-india-share-price-nclat-sets-aside-insolvency-petition-asier-metals-fno-exclusion-reversal-criteria-impact-20023124.htm"
+        },
+        {
+          "publishedAt": "2026-10-30T10:48:51",
+          "source": "ScoutQuest",
+          "title": "NCLT has set aside insolvency proceedings against Polycab, marking a key technical development for the stock. The stock traded in the green on relief rally, with earlier F&O restrictions expected to be reversed.",
+          "url": "https://sqst.in/X4n6q"
+        },
+        {
+          "publishedAt": "2026-10-30T10:44:31",
+          "source": "ET NOW",
+          "title": "NCLAT has set aside insolvency proceedings against Polycab India.",
+          "url": "https://x.com/ETNOWlive/status/2116036000703209700"
+        },
+        {
+          "publishedAt": "2026-10-30T10:41:07",
+          "source": "Livesquawk",
+          "title": "NCLAT has set aside the insolvency proceedings involving Polycab India. The ruling effectively overturns the earlier insolvency process decision.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-29T09:28:24",
+          "source": "ScoutQuest",
+          "title": "Polycab's MSCI exclusion has been postponed, triggering an expected positive stock reaction. The stock had previously witnessed a sharp downtick following the initial exclusion report.",
+          "url": "https://sqst.in/XCLaJ"
+        },
+        {
+          "publishedAt": "2026-10-28T10:21:03",
+          "source": "BSE",
+          "title": "NCLAT directed MSCI not to delist Polycab India from the MSCI Index until it pronounces its final order. The directive was issued during the hearing of an appeal involving Asier Metals Private Limited against Polycab.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=ead5c0dc-e464-4e53-8006-b861205174a9.pdf"
+        },
+        {
+          "publishedAt": "2026-10-23T14:33:06",
+          "source": "ScoutQuest",
+          "title": "Polycab India has scheduled seven institutional investor and analyst meetings between October 28 and December 1, 2026. The sessions include one-on-ones, group meets, and conferences, sharing only publicly available corporate and earnings information.",
+          "url": "https://sqst.in/LXgSU"
+        },
+        {
+          "publishedAt": "2026-10-19T16:44:45",
+          "source": "Livesquawk",
+          "title": "Polycab India reiterated FY30 EBITDA margin targets of 11-13% for W&C and 8-10% for FMEG. The company expects operations at its EHV plant to commence in FY28.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-16T15:09:16",
+          "source": "Financial Express",
+          "title": "Jefferies suggests Polycab stock could rally 33% despite facing emerging market competition.",
+          "url": "https://t.co/6VfHCYE398"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-06-19",
+          "amount": 47,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-06-24",
+          "amount": 35,
+          "kind": "Final"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-10-15",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-16",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Quarterly & Annual Result"
+        },
+        {
+          "date": "2026-01-16",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-10-17",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-07-17",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +16.87% from the 52-week low and −23.10% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹9,987 crore and profit is ₹990 crore, a net margin of 9.9%. In Sep '25 those figures were ₹6,523 crore, ₹693 crore, and 10.6%. The latest full year, 2026, has revenue of ₹29,120 crore and profit of ₹2,708 crore. The year before, revenue was ₹22,616 crore and profit was ₹2,046 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 53.00%, three-year revenue CAGR is 27.00%, trailing one-year profit growth is 43.00%, three-year profit CAGR is 28.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 36.45 and the industry P/E is 38.66. Dividend yield is 0.61%. Debt to equity is 0.02. ROE is 24.10%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 13.97% to 18.06% and mutual funds went from 8.90% to 5.21%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 22.31 (Finolex Cables) to 105.99 (Diamond Power Infrastructure). This company’s P/E is 36.45. The industry P/E is 38.66."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹47.00 a share (Final), ex date 19 Jun 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 15 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from NDTV Profit on 30 Oct 2026, reads: NCLAT set aside insolvency proceedings against Polycab India, citing a pre-existing dispute over operational dues. The matter involved alleged dues of Rs 2.8 crore claimed by creditor Asier Metals for aluminium ingots."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 40.16,
+    "high": 62.96,
+    "samples": 395,
+    "asOf": "2026-10-30"
+  }
+}

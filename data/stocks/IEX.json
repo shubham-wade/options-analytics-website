@@ -1,0 +1,357 @@
+{
+  "symbol": "IEX",
+  "name": "Indian Energy Exchange",
+  "isin": "INE022Q01020",
+  "industry": "Financial Services",
+  "exchange": "NSE",
+  "searchId": "indian-energy-exchange-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:16:55.325Z",
+      "price": {
+        "last": 100.9,
+        "change": -4.45,
+        "changePercent": -4.22,
+        "open": 104.9,
+        "high": 104.9,
+        "low": 100.9,
+        "previousClose": 105.35,
+        "volume": 5008331,
+        "average": 101.97,
+        "averageSource": "bars",
+        "yearHigh": 160.27,
+        "yearLow": 99.5,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 9398,
+        "pe": 18.52,
+        "industryPe": 42.66,
+        "eps": 5.69,
+        "pb": 6.98,
+        "roe": 36.12,
+        "debtToEquity": 0.01,
+        "bookValue": 15.09,
+        "dividendYield": 3.32,
+        "faceValue": 1
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 0,
+        "mutualFunds": 24.47,
+        "insurance": 7.32,
+        "foreignInstitutions": 12.02,
+        "retailAndOthers": 56.19
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 0,
+          "mutualFunds": 29.42,
+          "insurance": 7,
+          "foreignInstitutions": 13.19,
+          "retailAndOthers": 50.38
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 0,
+          "mutualFunds": 27.12,
+          "insurance": 7.83,
+          "foreignInstitutions": 11.41,
+          "retailAndOthers": 53.64
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 0,
+          "mutualFunds": 22.09,
+          "insurance": 8.17,
+          "foreignInstitutions": 14.16,
+          "retailAndOthers": 55.58
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 0,
+          "mutualFunds": 24.21,
+          "insurance": 7.26,
+          "foreignInstitutions": 12.63,
+          "retailAndOthers": 55.91
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 0,
+          "mutualFunds": 24.47,
+          "insurance": 7.32,
+          "foreignInstitutions": 12.02,
+          "retailAndOthers": 56.19
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 484.4018,
+          "profit": 308.6358,
+          "netWorth": 703.4099
+        },
+        {
+          "year": "2023",
+          "revenue": 474.1018,
+          "profit": 305.8863,
+          "netWorth": 799.096
+        },
+        {
+          "year": "2024",
+          "revenue": 550.8484,
+          "profit": 350.7826,
+          "netWorth": 972.1713
+        },
+        {
+          "year": "2025",
+          "revenue": 657.3669,
+          "profit": 429.1691,
+          "netWorth": 1136.3031
+        },
+        {
+          "year": "2026",
+          "revenue": 746.9517,
+          "profit": 492.9212,
+          "netWorth": 1364.5628
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 183.26,
+          "profit": 123.35
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 183.07,
+          "profit": 119.11
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 196.44,
+          "profit": 129.77
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 202.81,
+          "profit": 134.76
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 202.96,
+          "profit": 139.24
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 2007,
+        "businessSummary": "Indian Energy Exchange provides a nationwide, automated trading platform, facilitating the physical delivery of electricity, renewable energy, and valuable certificates across the country. Its guiding vision is to be the architect of next-generation solutions for sustainable energy, ensuring competitive, transparent, and reliable access for a developing nation. The company's core mission is to leverage technology and innovation to establish an efficient marketplace, delivering affordable and dependable energy to all consumers. Through its exchange platform, IEX enables efficient price discovery and increases the accessibility and transparency of the power market, enhancing trade execution speed. IEX has registered over 7,900 participants, including a diverse range of stakeholders like DISCOMs, energy generators, industries, and ESCerts entities, solidifying its position. Demonstrating robust growth, IEX achieved traded volumes of 110 billion units in FY'24, which is a significant 13.8% increase over the previous year."
+      },
+      "growth": {
+        "revenueOneYear": 11,
+        "revenueThreeYear": 16,
+        "profitOneYear": 13,
+        "profitThreeYear": 17
+      },
+      "peers": [
+        {
+          "symbol": "KFINTECH",
+          "name": "KFin Technologies",
+          "marketCapCrore": 14910.22,
+          "pe": 42.76,
+          "pb": 9.18
+        },
+        {
+          "symbol": "MCX",
+          "name": "Multi Commodity Exchange Of India",
+          "marketCapCrore": 82336.87,
+          "pe": 53.41,
+          "pb": 28.91
+        },
+        {
+          "symbol": "BSE",
+          "name": "BSE",
+          "marketCapCrore": 142841,
+          "pe": 50.62,
+          "pb": 21.41
+        },
+        {
+          "symbol": "TATAINVEST",
+          "name": "Tata Investment Corporation",
+          "marketCapCrore": 28993.63,
+          "pe": 67.26,
+          "pb": 0.99
+        },
+        {
+          "symbol": "LICHSGFIN",
+          "name": "LIC Housing Finance",
+          "marketCapCrore": 28289.74,
+          "pe": 4.93,
+          "pb": 0.68
+        },
+        {
+          "symbol": "CDSL",
+          "name": "Central Depository Services (India)",
+          "marketCapCrore": 26793.8,
+          "pe": 56.98,
+          "pb": 13.67
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-30T17:49:34",
+          "source": "NDTV Profit",
+          "title": "IEX is actively evaluating a share buyback to deploy surplus cash and enhance shareholder value amid investor scrutiny. Management is assessing capital allocation options following tax policy changes, though no definitive buyback timeline has been provided.",
+          "url": "https://www.ndtvprofit.com/markets/iex-buyback-back-on-the-table-board-evaluates-ways-to-reward-shareholders-12259284#publisher=newsstand"
+        },
+        {
+          "publishedAt": "2026-10-30T16:06:48",
+          "source": "ScoutQuest",
+          "title": "IEX expects power demand to hit 2,700 BU by 2032, while awaiting approvals for several new trading segments. The exchange plans coal and carbon trading diversification and reducing its IGX stake to 25% by December 2026.",
+          "url": "https://sqst.in/uSQSn"
+        },
+        {
+          "publishedAt": "2026-10-29T16:48:11",
+          "source": "BSE",
+          "title": "IEX reported a 12.9% YoY rise in consolidated net profit to ₹139.2 crore for the quarter ended September 2026. Consolidated revenue from operations grew 8.6% YoY to ₹167.1 crore, with total income reaching ₹203 crore.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=0bdb7483-6c23-4290-8f3a-78e5d627ec2a.pdf"
+        },
+        {
+          "publishedAt": "2026-10-22T14:47:30",
+          "source": "BSE",
+          "title": "IEX's board will meet on October 29, 2026, to consider and approve unaudited Q2 financial results. The trading window is closed and will reopen 48 hours after the declaration of financial results.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=dc0c05bf-52e1-4d08-9e92-ac94cbaa4804.pdf"
+        },
+        {
+          "publishedAt": "2026-10-16T20:23:58",
+          "source": "NDTV Profit",
+          "title": "SEBI approved four IPOs including Cult.fit, Sohan Lal Commodity Management, Eswari Global Metal Industries, and Indian Gas Exchange. Cult.fit plans a Rs 950 crore fresh issue, while IEX-promoted Indian Gas Exchange will conduct an OFS.",
+          "url": "https://www.ndtvprofit.com/markets/sebi-approves-four-ipos-including-cult-fit-sohan-lal-commodity-management-12196170#publisher=newsstand"
+        },
+        {
+          "publishedAt": "2026-10-12T19:26:34",
+          "source": "CNBC TV 18",
+          "title": "SEBI approved Indian Gas Exchange's IPO, comprising an offer for sale of up to 1.7 crore shares by promoter IEX. As a pure offer for sale, IGX receives no proceeds, helping IEX cut its stake from over 47% to 25%.",
+          "url": "https://www.cnbctv18.com/market/indian-gas-exchange-ipo-gets-sebi-nod-for-rs-1-67-crore-share-offer-by-promoter-iex-20010145.htm"
+        },
+        {
+          "publishedAt": "2026-10-08T10:55:01",
+          "source": "Financial Express",
+          "title": "Bernstein has upgraded IEX, expecting delayed market coupling to reduce near-term business pressures.",
+          "url": "https://t.co/pqFBIjW0Cj"
+        },
+        {
+          "publishedAt": "2026-10-07T19:05:50",
+          "source": "Financial Express",
+          "title": "IEX power prices doubled in September driven by a sharp surge in demand.",
+          "url": "https://t.co/UA8qsdjVcG"
+        },
+        {
+          "publishedAt": "2026-10-07T09:25:53",
+          "source": "ScoutQuest",
+          "title": "Bernstein has issued an upgrade on Indian Energy Exchange (IEX) on Live TV. Following the upgrade, IEX stock initially rose by about half a percent and was later reported trading up 1.5%.",
+          "url": "https://sqst.in/d4PHj"
+        },
+        {
+          "publishedAt": "2026-10-07T08:28:52",
+          "source": "ScoutQuest",
+          "title": "IEX shares have received an upgrade. Bernstein cautions about weak volume growth ahead.",
+          "url": "https://sqst.in/shareMessage?msgId=895505433055189900"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-05-15",
+          "amount": 2,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2026-02-04",
+          "amount": 1.5,
+          "kind": "Interim"
+        },
+        {
+          "exDate": "2025-05-16",
+          "amount": 1.5,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-01-31",
+          "amount": 1.5,
+          "kind": "Interim"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-10-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-23",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-04-23",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2026-01-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-10-30",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-07-24",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +1.41% from the 52-week low and −37.04% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹203 crore and profit is ₹139 crore, a net margin of 68.6%. In Sep '25 those figures were ₹183 crore, ₹123 crore, and 67.3%. The latest full year, 2026, has revenue of ₹747 crore and profit of ₹493 crore. The year before, revenue was ₹657 crore and profit was ₹429 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 11.00%, three-year revenue CAGR is 16.00%, trailing one-year profit growth is 13.00%, three-year profit CAGR is 17.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 18.52 and the industry P/E is 42.66. Dividend yield is 3.32%. Debt to equity is 0.01. ROE is 36.12%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 13.19% to 12.02% and mutual funds went from 29.42% to 24.47%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 6 peers. P/E on that list runs from 4.93 (LIC Housing Finance) to 67.26 (Tata Investment Corporation). This company’s P/E is 18.52. The industry P/E is 42.66."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹2.00 a share (Final), ex date 15 May 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 29 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from NDTV Profit on 30 Oct 2026, reads: IEX is actively evaluating a share buyback to deploy surplus cash and enhance shareholder value amid investor scrutiny. Management is assessing capital allocation options following tax policy changes, though no definitive buyback timeline has been provided."
+        }
+      ]
+    }
+  ],
+  "highlight": "orange",
+  "comment": "Analysis Video: https://www.youtube.com/watch?v=yw5OHVQVtvI&t=430s",
+  "pe": {
+    "median": 37.88,
+    "high": 101.81,
+    "samples": 371,
+    "asOf": "2026-10-30"
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "symbol": "UTLSOLAR",
+  "name": "Fujiyama Power Systems",
+  "isin": "INE12UR01024",
+  "industry": "Electrical Appliances",
+  "exchange": "NSE",
+  "searchId": "fujiyama-power-systems-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:17:07.358Z",
+      "price": {
+        "last": 365.2,
+        "change": -15.7,
+        "changePercent": -4.12,
+        "open": 383.2,
+        "high": 383.2,
+        "low": 361,
+        "previousClose": 380.9,
+        "volume": 134904,
+        "average": 367.99,
+        "averageSource": "bars",
+        "yearHigh": 494.25,
+        "yearLow": 172,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 11706,
+        "pe": 39.76,
+        "industryPe": 52.37,
+        "eps": 9.58,
+        "pb": 9.2,
+        "roe": 23.88,
+        "debtToEquity": 0.41,
+        "bookValue": 41.4,
+        "dividendYield": 0,
+        "faceValue": 1
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 86.63,
+        "mutualFunds": 2.52,
+        "insurance": 2.86,
+        "foreignInstitutions": 1.49,
+        "retailAndOthers": 6.5
+      },
+      "holdings": [
+        {
+          "quarter": "Nov '25",
+          "promoter": 86.77,
+          "mutualFunds": 2.42,
+          "insurance": 1.88,
+          "foreignInstitutions": 2.87,
+          "retailAndOthers": 6.07
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 86.77,
+          "mutualFunds": 2.69,
+          "insurance": 2.03,
+          "foreignInstitutions": 2.86,
+          "retailAndOthers": 5.65
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 86.77,
+          "mutualFunds": 2.93,
+          "insurance": 2.67,
+          "foreignInstitutions": 2.29,
+          "retailAndOthers": 5.35
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 86.63,
+          "mutualFunds": 2.97,
+          "insurance": 3.01,
+          "foreignInstitutions": 1.99,
+          "retailAndOthers": 5.4
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 86.63,
+          "mutualFunds": 2.52,
+          "insurance": 2.86,
+          "foreignInstitutions": 1.49,
+          "retailAndOthers": 6.5
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 508.126,
+          "profit": 28.543,
+          "netWorth": 181.062
+        },
+        {
+          "year": "2023",
+          "revenue": 665.327,
+          "profit": 24.366,
+          "netWorth": 193.083
+        },
+        {
+          "year": "2024",
+          "revenue": 927.198,
+          "profit": 45.303,
+          "netWorth": 239.541
+        },
+        {
+          "year": "2025",
+          "revenue": 1550.092,
+          "profit": 156.335,
+          "netWorth": 396.824
+        },
+        {
+          "year": "2026",
+          "revenue": 2660.027,
+          "profit": 304.125,
+          "netWorth": 1273.356
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Jun '25",
+          "revenue": 597.79,
+          "profit": 67.59
+        },
+        {
+          "quarter": "Sep '25",
+          "revenue": 569.77,
+          "profit": 62.9
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 588.87,
+          "profit": 67.31
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 903.6,
+          "profit": 106.32
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 1348.04,
+          "profit": 57.8
+        }
+      ],
+      "accounts": "standalone",
+      "profile": {
+        "foundedYear": 2017,
+        "businessSummary": "Fujiyama Power Systems Limited manufactures power backup solutions, including UPS systems, inverters, and solar products."
+      },
+      "growth": {
+        "revenueOneYear": null,
+        "revenueThreeYear": 59,
+        "profitOneYear": null,
+        "profitThreeYear": 132
+      },
+      "peers": [
+        {
+          "symbol": "AMBER",
+          "name": "Amber Enterprises India",
+          "marketCapCrore": 21989.45,
+          "pe": 177.94,
+          "pb": 5.03
+        },
+        {
+          "symbol": "EMMVEE",
+          "name": "Emmvee Photovoltaic Power",
+          "marketCapCrore": 16882.83,
+          "pe": 11.9,
+          "pb": 3.85
+        },
+        {
+          "symbol": "PGEL",
+          "name": "PG Electroplast",
+          "marketCapCrore": 15398.86,
+          "pe": 71.03,
+          "pb": 4.89
+        },
+        {
+          "symbol": "CROMPTON",
+          "name": "Crompton Greaves Consumer Electricals",
+          "marketCapCrore": 12884.74,
+          "pe": null,
+          "pb": 4.25
+        },
+        {
+          "symbol": "VGUARD",
+          "name": "V-Guard Industries",
+          "marketCapCrore": 12458.63,
+          "pe": 30.3,
+          "pb": 4.86
+        },
+        {
+          "symbol": "WHIRLPOOL",
+          "name": "Whirlpool Of India",
+          "marketCapCrore": 10449.8,
+          "pe": 41.45,
+          "pb": 2.51
+        },
+        {
+          "symbol": "TTKPRESTIG",
+          "name": "TTK Prestige",
+          "marketCapCrore": 7215.39,
+          "pe": 37.98,
+          "pb": 3.65
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-21T18:07:43",
+          "source": "ScoutQuest",
+          "title": "Fujiyama Power Systems received machinery for its announced 1.2 GW DCR solar cell plant in Ratlam, Madhya Pradesh. China's proposed export curbs will not impact capex or timeline, with commissioning on track for Q1 FY2027-28.",
+          "url": "https://sqst.in/0ORfL"
+        },
+        {
+          "publishedAt": "2026-10-16T10:46:39",
+          "source": "ScoutQuest",
+          "title": "Fujiyama Power Systems' board approved an enabling resolution to raise funds via the QIP route. Specific details regarding the proposed equity fundraise were being discussed.",
+          "url": "https://sqst.in/DqdLY"
+        },
+        {
+          "publishedAt": "2026-10-15T18:11:35",
+          "source": "Livesquawk",
+          "title": "Fujiyama Power Systems board approved fundraising of up to ₹1,200 crore via QIP. The board also approved the allocation of 4.2 lakh ESOP shares.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-15T18:10:31",
+          "source": "ScoutQuest",
+          "title": "Fujiyama Power Systems approved raising up to Rs 1,200 crore via QIP to meet minimum public shareholding requirements. The company allotted 4,11,587 shares under ESOP 2023 at Rs 398.4 each, raising paid-up capital to Rs 30.8 crore.",
+          "url": "https://sqst.in/UAhLG"
+        },
+        {
+          "publishedAt": "2026-10-14T15:38:34",
+          "source": "ScoutQuest",
+          "title": "Fujiyama Power Systems and its executives paid a total penalty of INR 9,00,000 in a BIS seizure case. Seized goods worth INR 2.6 crores will be released, with no material impact on company financials or operations.",
+          "url": "https://sqst.in/Cbk5L"
+        },
+        {
+          "publishedAt": "2026-10-12T16:55:44",
+          "source": "BSE",
+          "title": "Fujiyama Power Systems' Board will meet on October 15, 2026, to consider and approve a fund-raising proposal. The capital raise aims to meet minimum public shareholding requirements via equity issuance, including a potential QIP.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=bfb4003d-9e1c-4dde-b0e7-0485c300cdf2.pdf"
+        },
+        {
+          "publishedAt": "2026-09-23T18:07:13",
+          "source": "BSE",
+          "title": "Fujiyama Power Systems Ltd announces Analyst/Investor meetings from Sept 28 to Oct 2, 2026 in Singapore. No sensitive information will be shared; details available at utlsolarfujiyama.com/investor-relations.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=a0955f63-081a-40da-863a-c4bfd46a305e.pdf"
+        },
+        {
+          "publishedAt": "2026-09-04T17:35:36",
+          "source": "BSE",
+          "title": "Fujiyama Power Systems invests Rs. 5.0 cr in ZEPL via 833 CCDs for backward integration. ZEPL manufactures solar panel components; acquisition aims to enhance value chain synergies.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=ba583d8c-2389-4ad2-873d-81986474aec3.pdf"
+        },
+        {
+          "publishedAt": "2026-09-02T17:15:00",
+          "source": "BSE",
+          "title": "Fujiyama Power Systems Ltd's 9th AGM is scheduled for Sep 25, 2026 at 4:30 PM via VC/OAVM. Key agenda includes adoption of financial statements, director reappointment, and auditor appointments.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e0521477-165e-42b9-8e5c-acf08950443e.pdf"
+        },
+        {
+          "publishedAt": "2026-08-24T19:50:19",
+          "source": "ScoutQuest",
+          "title": "Fujiyama Power Systems approved director rotation flexibility and re-appointed Mr. Sunil Kumar as director. Board approved ₹5 crore lithium battery capacity hike at Ratlam and ₹20 crore tubular facility at Hathras.",
+          "url": "https://sqst.in/SHSWe"
+        }
+      ],
+      "dividends": [],
+      "results": [
+        {
+          "date": "2026-08-13",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-14",
+          "title": "Quarterly & Annual Result"
+        },
+        {
+          "date": "2026-01-31",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-12-08",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +112.33% from the 52-week low and −26.11% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Jun '26, revenue is ₹1,348 crore and profit is ₹58 crore, a net margin of 4.3%. In Jun '25 those figures were ₹598 crore, ₹68 crore, and 11.3%. The latest full year, 2026, has revenue of ₹2,660 crore and profit of ₹304 crore. The year before, revenue was ₹1,550 crore and profit was ₹156 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Three-year revenue CAGR is 59.00%, three-year profit CAGR is 132.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 39.76 and the industry P/E is 52.37. Dividend yield is 0.00%. Debt to equity is 0.41. ROE is 23.88%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Nov '25 to Sep '26, foreign institutions went from 2.87% to 1.49% and mutual funds went from 2.42% to 2.52%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 11.90 (Emmvee Photovoltaic Power) to 177.94 (Amber Enterprises India). This company’s P/E is 39.76. The industry P/E is 52.37."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 13 Aug 2026, a quarterly result. 10 headlines are saved. The newest, from ScoutQuest on 21 Oct 2026, reads: Fujiyama Power Systems received machinery for its announced 1.2 GW DCR solar cell plant in Ratlam, Madhya Pradesh. China's proposed export curbs will not impact capex or timeline, with commissioning on track for Q1 FY2027-28."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": null
+}

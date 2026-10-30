@@ -1,0 +1,700 @@
+{
+  "symbol": "REDTAPE",
+  "name": "Redtape",
+  "isin": "INE0LXT01019",
+  "industry": "Footwear",
+  "exchange": "NSE",
+  "searchId": "redtape-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-29",
+      "savedAt": "2026-10-29T17:58:46.119Z",
+      "price": {
+        "last": 105.21,
+        "change": 0.17,
+        "changePercent": 0.16,
+        "open": 105,
+        "high": 106,
+        "low": 103.11,
+        "previousClose": 105.04,
+        "volume": 133091,
+        "average": 104.84,
+        "averageSource": "bars",
+        "yearHigh": 158.99,
+        "yearLow": 102.85,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 5793,
+        "pe": 23.5,
+        "industryPe": 61.17,
+        "eps": 4.46,
+        "pb": 5.67,
+        "roe": 23.55,
+        "debtToEquity": 0.7,
+        "bookValue": 18.48,
+        "dividendYield": 1.91,
+        "faceValue": 2
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 71.83,
+        "mutualFunds": 11.83,
+        "insurance": 0.01,
+        "foreignInstitutions": 3.02,
+        "retailAndOthers": 13.31
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 71.8,
+          "mutualFunds": 10.76,
+          "insurance": 0.01,
+          "foreignInstitutions": 3.84,
+          "retailAndOthers": 13.6
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 71.79,
+          "mutualFunds": 10.87,
+          "insurance": 0.01,
+          "foreignInstitutions": 3.88,
+          "retailAndOthers": 13.44
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 71.83,
+          "mutualFunds": 11,
+          "insurance": 0.01,
+          "foreignInstitutions": 3.81,
+          "retailAndOthers": 13.36
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 71.83,
+          "mutualFunds": 11.73,
+          "insurance": 0.01,
+          "foreignInstitutions": 3.21,
+          "retailAndOthers": 13.22
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 71.83,
+          "mutualFunds": 11.83,
+          "insurance": 0.01,
+          "foreignInstitutions": 3.02,
+          "retailAndOthers": 13.31
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 303.28,
+          "profit": 29.04,
+          "netWorth": 335.88
+        },
+        {
+          "year": "2023",
+          "revenue": 1474.83,
+          "profit": 142.15,
+          "netWorth": 476.75
+        },
+        {
+          "year": "2024",
+          "revenue": 1855.97,
+          "profit": 176.24,
+          "netWorth": 648.43
+        },
+        {
+          "year": "2025",
+          "revenue": 2171.9,
+          "profit": 170,
+          "netWorth": 788.84
+        },
+        {
+          "year": "2026",
+          "revenue": 2551.61,
+          "profit": 240.55,
+          "netWorth": 1021.38
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Jun '25",
+          "revenue": 473.47,
+          "profit": 38.6
+        },
+        {
+          "quarter": "Sep '25",
+          "revenue": 501.94,
+          "profit": 27.54
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 817.93,
+          "profit": 104.53
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 697.83,
+          "profit": 69.88
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 496.42,
+          "profit": 44.48
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 2021,
+        "businessSummary": "Redtape Limited, demerged from Mirza International, is a leading fashion and lifestyle brand offering footwear, apparel, and accessories, known for its quality and trendy designs."
+      },
+      "growth": {
+        "revenueOneYear": 5,
+        "revenueThreeYear": 20,
+        "profitOneYear": 15,
+        "profitThreeYear": 19
+      },
+      "peers": [
+        {
+          "symbol": "BATAINDIA",
+          "name": "Bata India",
+          "marketCapCrore": 8491.17,
+          "pe": 58.1,
+          "pb": 5.32
+        },
+        {
+          "symbol": "RELAXO",
+          "name": "Relaxo Footwears",
+          "marketCapCrore": 6964.06,
+          "pe": 37.6,
+          "pb": 3.16
+        },
+        {
+          "symbol": "CAMPUS",
+          "name": "Campus Activewear",
+          "marketCapCrore": 5757.48,
+          "pe": 37.37,
+          "pb": 6.35
+        },
+        {
+          "symbol": "KOTIC",
+          "name": "Kothari Industrial Corporation",
+          "marketCapCrore": 1173.12,
+          "pe": null,
+          "pb": 5.61
+        },
+        {
+          "symbol": "SREEL",
+          "name": "Sreeleathers",
+          "marketCapCrore": 588.14,
+          "pe": 17.94,
+          "pb": 1.18
+        },
+        {
+          "symbol": "MIRZAINT",
+          "name": "Mirza International",
+          "marketCapCrore": 368.17,
+          "pe": null,
+          "pb": 0.72
+        },
+        {
+          "symbol": "LIBERTSHOE",
+          "name": "Liberty Shoes",
+          "marketCapCrore": 332.02,
+          "pe": 38.81,
+          "pb": 1.42
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-27T16:38:18",
+          "source": "BSE",
+          "title": "Redtape's Board of Directors will meet on November 4, 2026, to consider and approve Q2 and half-year financial results. The trading window for designated persons remains closed until 48 hours after the declaration of the financial results.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=4c0483a1-2a0e-4d3a-9b49-680bb392009d.pdf"
+        },
+        {
+          "publishedAt": "2026-09-16T12:24:15",
+          "source": "BSE",
+          "title": "Redtape Ltd clarified no undisclosed info impacting share price/volume was withheld. The volume change in Redtape shares attributed to market conditions and factors.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e3203175-d64b-4008-9157-4ed434dce29b.pdf"
+        },
+        {
+          "publishedAt": "2026-08-27T12:00:00",
+          "source": "Capital Market",
+          "title": "Redtape gains as shareholders approve Shuja Mirza's reappointment as MD, driving diversification and growth. Q1 FY27 net profit rose 15.2% YoY but fell 36.3% QoQ to Rs 44.5 crore; sales rose 3.7% YoY but dropped 28.8% QoQ.",
+          "url": "http://capitalmarket.com/markets/news/live-news/redtape-gains-after-shareholders-approve-shuja-mirzas-re-appointment-as-md/1727281"
+        },
+        {
+          "publishedAt": "2026-08-26T17:21:51",
+          "source": "ScoutQuest",
+          "title": "Redtape shareholders reappoint Rashid Ahmed Mirza as Director and Shuja Mirza as MD for 5 years from April 2027. Rashid Mirza remains Executive Chairman post age 70; both are father-son duo.",
+          "url": "https://sqst.in/EoYnL"
+        },
+        {
+          "publishedAt": "2026-08-25T15:37:20",
+          "source": "BSE",
+          "title": "Redtape Ltd held its 5th AGM on August 25, 2026, via video conferencing, chaired by Mr. Rashid Ahmed Mirza. Resolutions, including financial statements and appointments, were approved; e-voting results will be disclosed post-scrutinizer's report.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=120302e3-de75-4d83-b0cf-185dd0c07680.pdf"
+        },
+        {
+          "publishedAt": "2026-08-11T00:00:00",
+          "source": "Investing.com",
+          "title": "RedTape's Q1 FY27 revenue stands at Rs 480 crore, PAT at Rs 47 crore. Investor deck highlights focus on profitability over volume; stock weakness persists despite record profit.",
+          "url": "https://www.investing.com/news/company-news/redtape-q1-fy27-slides-margin-expansion-drives-record-profit-93CH-4850785"
+        },
+        {
+          "publishedAt": "2026-08-10T14:16:51",
+          "source": "ScoutQuest",
+          "title": "Redtape Ltd's board approved unaudited Q1 FY26 results, reviewed by the Audit Committee. Impact of Sept 2025 income tax searches on Q1 results remains unclear; financials on website.",
+          "url": "https://sqst.in/XulIc"
+        },
+        {
+          "publishedAt": "2026-08-10T14:15:40",
+          "source": "ScoutQuest",
+          "title": "Redtape's Q1 net profit rose 15.3% to ₹44.5 crore; revenue grew 4% to ₹481.3 crore. EBITDA surged 94% to ₹83.6 crore with margin improving to 17.36% from 9.28% YoY.",
+          "url": "https://sqst.in/shareMessage?msgId=874574211657951885"
+        },
+        {
+          "publishedAt": "2026-08-10T14:05:13",
+          "source": "Livesquawk",
+          "title": "Redtape Limited's Q1 EBITDA rose to 735M rupees from 431M YoY. EBITDA margin expanded significantly to 15.3% from 9.3% YoY.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-08-10T14:04:59",
+          "source": "Livesquawk",
+          "title": "RedTape's Q1 revenue rises to 4.8B INR from 4.64B INR YoY. Growth indicates improved top-line performance for RedTape.",
+          "url": null
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-07-31",
+          "amount": 2,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-08-01",
+          "amount": 0.25,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-01-03",
+          "amount": 2,
+          "kind": "Interim"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-11-04",
+          "title": "Result"
+        },
+        {
+          "date": "2026-08-10",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-26",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2026-02-12",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-11-14",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-08-14",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +2.29% from the 52-week low and −33.83% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Jun '26, revenue is ₹496 crore and profit is ₹44 crore, a net margin of 9.0%. In Jun '25 those figures were ₹473 crore, ₹39 crore, and 8.2%. The latest full year, 2026, has revenue of ₹2,552 crore and profit of ₹241 crore. The year before, revenue was ₹2,172 crore and profit was ₹170 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 5.00%, three-year revenue CAGR is 20.00%, trailing one-year profit growth is 15.00%, three-year profit CAGR is 19.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 23.50 and the industry P/E is 61.17. Dividend yield is 1.91%. Debt to equity is 0.70. ROE is 23.55%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 3.84% to 3.02% and mutual funds went from 10.76% to 11.83%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 17.94 (Sreeleathers) to 58.10 (Bata India). This company’s P/E is 23.50. The industry P/E is 61.17."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹2.00 a share (Final), ex date 31 Jul 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 4 Nov 2026, Result. 10 headlines are saved. The newest, from BSE on 27 Oct 2026, reads: Redtape's Board of Directors will meet on November 4, 2026, to consider and approve Q2 and half-year financial results. The trading window for designated persons remains closed until 48 hours after the declaration of the financial results."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:17:02.672Z",
+      "price": {
+        "last": 103.54,
+        "change": -1.67,
+        "changePercent": -1.59,
+        "open": 105.52,
+        "high": 105.9,
+        "low": 103,
+        "previousClose": 105.21,
+        "volume": 100718,
+        "average": 103.57,
+        "averageSource": "bars",
+        "yearHigh": 158.99,
+        "yearLow": 102.85,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 5821,
+        "pe": 23.61,
+        "industryPe": 60.81,
+        "eps": 4.46,
+        "pb": 5.7,
+        "roe": 23.55,
+        "debtToEquity": 0.7,
+        "bookValue": 18.48,
+        "dividendYield": 1.9,
+        "faceValue": 2
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 71.83,
+        "mutualFunds": 11.83,
+        "insurance": 0.01,
+        "foreignInstitutions": 3.02,
+        "retailAndOthers": 13.31
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 71.8,
+          "mutualFunds": 10.76,
+          "insurance": 0.01,
+          "foreignInstitutions": 3.84,
+          "retailAndOthers": 13.6
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 71.79,
+          "mutualFunds": 10.87,
+          "insurance": 0.01,
+          "foreignInstitutions": 3.88,
+          "retailAndOthers": 13.44
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 71.83,
+          "mutualFunds": 11,
+          "insurance": 0.01,
+          "foreignInstitutions": 3.81,
+          "retailAndOthers": 13.36
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 71.83,
+          "mutualFunds": 11.73,
+          "insurance": 0.01,
+          "foreignInstitutions": 3.21,
+          "retailAndOthers": 13.22
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 71.83,
+          "mutualFunds": 11.83,
+          "insurance": 0.01,
+          "foreignInstitutions": 3.02,
+          "retailAndOthers": 13.31
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 303.28,
+          "profit": 29.04,
+          "netWorth": 335.88
+        },
+        {
+          "year": "2023",
+          "revenue": 1474.83,
+          "profit": 142.15,
+          "netWorth": 476.75
+        },
+        {
+          "year": "2024",
+          "revenue": 1855.97,
+          "profit": 176.24,
+          "netWorth": 648.43
+        },
+        {
+          "year": "2025",
+          "revenue": 2171.9,
+          "profit": 170,
+          "netWorth": 788.84
+        },
+        {
+          "year": "2026",
+          "revenue": 2551.61,
+          "profit": 240.55,
+          "netWorth": 1021.38
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Jun '25",
+          "revenue": 473.47,
+          "profit": 38.6
+        },
+        {
+          "quarter": "Sep '25",
+          "revenue": 501.94,
+          "profit": 27.54
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 817.93,
+          "profit": 104.53
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 697.83,
+          "profit": 69.88
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 496.42,
+          "profit": 44.48
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 2021,
+        "businessSummary": "Redtape Limited, demerged from Mirza International, is a leading fashion and lifestyle brand offering footwear, apparel, and accessories, known for its quality and trendy designs."
+      },
+      "growth": {
+        "revenueOneYear": 5,
+        "revenueThreeYear": 20,
+        "profitOneYear": 15,
+        "profitThreeYear": 19
+      },
+      "peers": [
+        {
+          "symbol": "BATAINDIA",
+          "name": "Bata India",
+          "marketCapCrore": 8362.64,
+          "pe": 57.23,
+          "pb": 5.24
+        },
+        {
+          "symbol": "RELAXO",
+          "name": "Relaxo Footwears",
+          "marketCapCrore": 7022.56,
+          "pe": 37.92,
+          "pb": 3.18
+        },
+        {
+          "symbol": "CAMPUS",
+          "name": "Campus Activewear",
+          "marketCapCrore": 5847.65,
+          "pe": 37.96,
+          "pb": 6.45
+        },
+        {
+          "symbol": "KOTIC",
+          "name": "Kothari Industrial Corporation",
+          "marketCapCrore": 1173.66,
+          "pe": null,
+          "pb": 5.61
+        },
+        {
+          "symbol": "SREEL",
+          "name": "Sreeleathers",
+          "marketCapCrore": 612.33,
+          "pe": 18.68,
+          "pb": 1.23
+        },
+        {
+          "symbol": "MIRZAINT",
+          "name": "Mirza International",
+          "marketCapCrore": 370.24,
+          "pe": null,
+          "pb": 0.73
+        },
+        {
+          "symbol": "LIBERTSHOE",
+          "name": "Liberty Shoes",
+          "marketCapCrore": 331.77,
+          "pe": 38.78,
+          "pb": 1.42
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-27T16:38:18",
+          "source": "BSE",
+          "title": "Redtape's Board of Directors will meet on November 4, 2026, to consider and approve Q2 and half-year financial results. The trading window for designated persons remains closed until 48 hours after the declaration of the financial results.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=4c0483a1-2a0e-4d3a-9b49-680bb392009d.pdf"
+        },
+        {
+          "publishedAt": "2026-09-16T12:24:15",
+          "source": "BSE",
+          "title": "Redtape Ltd clarified no undisclosed info impacting share price/volume was withheld. The volume change in Redtape shares attributed to market conditions and factors.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e3203175-d64b-4008-9157-4ed434dce29b.pdf"
+        },
+        {
+          "publishedAt": "2026-08-27T12:00:00",
+          "source": "Capital Market",
+          "title": "Redtape gains as shareholders approve Shuja Mirza's reappointment as MD, driving diversification and growth. Q1 FY27 net profit rose 15.2% YoY but fell 36.3% QoQ to Rs 44.5 crore; sales rose 3.7% YoY but dropped 28.8% QoQ.",
+          "url": "http://capitalmarket.com/markets/news/live-news/redtape-gains-after-shareholders-approve-shuja-mirzas-re-appointment-as-md/1727281"
+        },
+        {
+          "publishedAt": "2026-08-26T17:21:51",
+          "source": "ScoutQuest",
+          "title": "Redtape shareholders reappoint Rashid Ahmed Mirza as Director and Shuja Mirza as MD for 5 years from April 2027. Rashid Mirza remains Executive Chairman post age 70; both are father-son duo.",
+          "url": "https://sqst.in/EoYnL"
+        },
+        {
+          "publishedAt": "2026-08-25T15:37:20",
+          "source": "BSE",
+          "title": "Redtape Ltd held its 5th AGM on August 25, 2026, via video conferencing, chaired by Mr. Rashid Ahmed Mirza. Resolutions, including financial statements and appointments, were approved; e-voting results will be disclosed post-scrutinizer's report.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=120302e3-de75-4d83-b0cf-185dd0c07680.pdf"
+        },
+        {
+          "publishedAt": "2026-08-11T00:00:00",
+          "source": "Investing.com",
+          "title": "RedTape's Q1 FY27 revenue stands at Rs 480 crore, PAT at Rs 47 crore. Investor deck highlights focus on profitability over volume; stock weakness persists despite record profit.",
+          "url": "https://www.investing.com/news/company-news/redtape-q1-fy27-slides-margin-expansion-drives-record-profit-93CH-4850785"
+        },
+        {
+          "publishedAt": "2026-08-10T14:16:51",
+          "source": "ScoutQuest",
+          "title": "Redtape Ltd's board approved unaudited Q1 FY26 results, reviewed by the Audit Committee. Impact of Sept 2025 income tax searches on Q1 results remains unclear; financials on website.",
+          "url": "https://sqst.in/XulIc"
+        },
+        {
+          "publishedAt": "2026-08-10T14:15:40",
+          "source": "ScoutQuest",
+          "title": "Redtape's Q1 net profit rose 15.3% to ₹44.5 crore; revenue grew 4% to ₹481.3 crore. EBITDA surged 94% to ₹83.6 crore with margin improving to 17.36% from 9.28% YoY.",
+          "url": "https://sqst.in/shareMessage?msgId=874574211657951885"
+        },
+        {
+          "publishedAt": "2026-08-10T14:05:13",
+          "source": "Livesquawk",
+          "title": "Redtape Limited's Q1 EBITDA rose to 735M rupees from 431M YoY. EBITDA margin expanded significantly to 15.3% from 9.3% YoY.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-08-10T14:04:59",
+          "source": "Livesquawk",
+          "title": "RedTape's Q1 revenue rises to 4.8B INR from 4.64B INR YoY. Growth indicates improved top-line performance for RedTape.",
+          "url": null
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-07-31",
+          "amount": 2,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-08-01",
+          "amount": 0.25,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-01-03",
+          "amount": 2,
+          "kind": "Interim"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-11-04",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-08-10",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-26",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2026-02-12",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-11-14",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-08-14",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +0.67% from the 52-week low and −34.88% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Jun '26, revenue is ₹496 crore and profit is ₹44 crore, a net margin of 9.0%. In Jun '25 those figures were ₹473 crore, ₹39 crore, and 8.2%. The latest full year, 2026, has revenue of ₹2,552 crore and profit of ₹241 crore. The year before, revenue was ₹2,172 crore and profit was ₹170 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 5.00%, three-year revenue CAGR is 20.00%, trailing one-year profit growth is 15.00%, three-year profit CAGR is 19.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 23.61 and the industry P/E is 60.81. Dividend yield is 1.90%. Debt to equity is 0.70. ROE is 23.55%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 3.84% to 3.02% and mutual funds went from 10.76% to 11.83%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 18.68 (Sreeleathers) to 57.23 (Bata India). This company’s P/E is 23.61. The industry P/E is 60.81."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹2.00 a share (Final), ex date 31 Jul 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 4 Nov 2026, a quarterly result. 10 headlines are saved. The newest, from BSE on 27 Oct 2026, reads: Redtape's Board of Directors will meet on November 4, 2026, to consider and approve Q2 and half-year financial results. The trading window for designated persons remains closed until 48 hours after the declaration of the financial results."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 70.35,
+    "high": 383.49,
+    "samples": 170,
+    "asOf": "2026-10-30"
+  }
+}

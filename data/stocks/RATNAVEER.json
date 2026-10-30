@@ -1,0 +1,321 @@
+{
+  "symbol": "RATNAVEER",
+  "name": "Ratnaveer Precision Engineering",
+  "isin": "INE05CZ01011",
+  "industry": "Metals & Mining",
+  "exchange": "NSE",
+  "searchId": "ratnaveer-precision-engineering-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:17:01.729Z",
+      "price": {
+        "last": 360.25,
+        "change": 7.4,
+        "changePercent": 2.1,
+        "open": 354.2,
+        "high": 365.8,
+        "low": 342.05,
+        "previousClose": 352.85,
+        "volume": 6256212,
+        "average": 356.25,
+        "averageSource": "bars",
+        "yearHigh": 358.8,
+        "yearLow": 129.98,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 2963,
+        "pe": 43.86,
+        "industryPe": 19.82,
+        "eps": 8.05,
+        "pb": 2.89,
+        "roe": 9.61,
+        "debtToEquity": 0.5,
+        "bookValue": 122.12,
+        "dividendYield": 0,
+        "faceValue": 10
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 38.71,
+        "mutualFunds": 0,
+        "insurance": 1.15,
+        "foreignInstitutions": 3.25,
+        "retailAndOthers": 56.88
+      },
+      "holdings": [
+        {
+          "quarter": "Feb '26",
+          "promoter": 42.63,
+          "mutualFunds": 0,
+          "insurance": 2.55,
+          "foreignInstitutions": 8.17,
+          "retailAndOthers": 46.66
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 42.74,
+          "mutualFunds": 0,
+          "insurance": 2.54,
+          "foreignInstitutions": 7.28,
+          "retailAndOthers": 47.45
+        },
+        {
+          "quarter": "May '26",
+          "promoter": 45.49,
+          "mutualFunds": 0,
+          "insurance": 2.42,
+          "foreignInstitutions": 6.93,
+          "retailAndOthers": 45.17
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 45.49,
+          "mutualFunds": 1.16,
+          "insurance": 0.84,
+          "foreignInstitutions": 3.53,
+          "retailAndOthers": 48.98
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 38.71,
+          "mutualFunds": 0,
+          "insurance": 1.15,
+          "foreignInstitutions": 3.25,
+          "retailAndOthers": 56.88
+        }
+      ],
+      "years": [
+        {
+          "year": "2025",
+          "revenue": 895.91,
+          "profit": 46.815,
+          "netWorth": 370.921
+        },
+        {
+          "year": "2026",
+          "revenue": 1078.41,
+          "profit": 64.305,
+          "netWorth": 669.241
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 287.91,
+          "profit": 15.43
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 269.31,
+          "profit": 16.89
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 256.29,
+          "profit": 17.03
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 318.43,
+          "profit": 18.24
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 392.84,
+          "profit": 24.07
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 2002,
+        "businessSummary": "Ratnaveer Precision Engineering Limited manufactures stainless steel finished sheets, washers, solar roofing hooks, pipes, and tubes, serving automotive, solar, and pharmaceutical industries."
+      },
+      "growth": {
+        "revenueOneYear": 36,
+        "revenueThreeYear": null,
+        "profitOneYear": 56,
+        "profitThreeYear": null
+      },
+      "peers": [
+        {
+          "symbol": "KIOCL",
+          "name": "KIOCL",
+          "marketCapCrore": 20222.92,
+          "pe": 519.92,
+          "pb": 11.65
+        },
+        {
+          "symbol": "SARDAEN",
+          "name": "Sarda Energy & Minerals",
+          "marketCapCrore": 16105.59,
+          "pe": 13.99,
+          "pb": 2.19
+        },
+        {
+          "symbol": "GALLANTT",
+          "name": "Gallantt Ispat",
+          "marketCapCrore": 13819.37,
+          "pe": 33.91,
+          "pb": 3.96
+        },
+        {
+          "symbol": "GPIL",
+          "name": "Godawari Power And Ispat",
+          "marketCapCrore": 13109.89,
+          "pe": 16.23,
+          "pb": 2.29
+        },
+        {
+          "symbol": "JAYNECOIND",
+          "name": "Jayaswal Neco Industries",
+          "marketCapCrore": 8705.97,
+          "pe": 12.65,
+          "pb": 2.63
+        },
+        {
+          "symbol": "SANDUMA",
+          "name": "Sandur Manganese & Iron Ores",
+          "marketCapCrore": 8166.56,
+          "pe": 11.36,
+          "pb": 2.51
+        },
+        {
+          "symbol": "SUNFLAG",
+          "name": "Sunflag Iron And Steel Company",
+          "marketCapCrore": 7329.52,
+          "pe": 35.61,
+          "pb": 0.86
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-30T19:45:34",
+          "source": "ScoutQuest",
+          "title": "Ratnaveer Precision Q2 FY27 PBT rose 37.0% YoY to ₹275.4 million, while interest costs rose 100.9% to ₹77.9 million. The company allotted 1,24,99,669 shares at ₹264 via rights issue; CCL Phase 1 capacity reaches 15.9 lakh sheets annually.",
+          "url": "https://sqst.in/W668R"
+        },
+        {
+          "publishedAt": "2026-10-30T18:24:14",
+          "source": "ScoutQuest",
+          "title": "TIRTH GEMS bought 1,175,000 shares of Ratnaveer Precision Eng L at ₹358.2 per share. The total transaction value stood at ₹42.1 crores on October 30, 2026.",
+          "url": "https://sqst.in/shareMessage?msgId=903990181535853335"
+        },
+        {
+          "publishedAt": "2026-10-07T21:00:17",
+          "source": "NSE Bulk Trades",
+          "title": "Thakkar Nileshkumar Farshuram HUF sold 8,00,000 shares of Ratnaveer Precision Engineering. The shares were offloaded at a weighted average price of 340.8 per share.",
+          "url": "https://www.nseindia.com/report-detail/display-bulk-and-block-deals"
+        },
+        {
+          "publishedAt": "2026-10-05T21:00:12",
+          "source": "NSE Bulk Trades",
+          "title": "Arihant Capital Markets Limited sold 534,266 shares of Ratnaveer Precision Engineering Limited on October 5, 2026. The transaction was executed at a weighted average trade price of 347.4.",
+          "url": "https://www.nseindia.com/report-detail/display-bulk-and-block-deals"
+        },
+        {
+          "publishedAt": "2026-09-28T21:00:12",
+          "source": "NSE Bulk Trades",
+          "title": "Crabel Vintrade Private Limited sold 677,746 shares of Ratnaveer Precision Engineering at a weighted average price of 331.9 per share. The transaction was executed on September 28, 2026 under the NSE/BSE symbol RATNAVEER.",
+          "url": "https://www.nseindia.com/report-detail/display-bulk-and-block-deals"
+        },
+        {
+          "publishedAt": "2026-09-28T21:00:12",
+          "source": "NSE Bulk Trades",
+          "title": "Golden Goenka Management Consultancy Services LLP sold 620,000 shares of Ratnaveer Precision Eng L at an average price of 330.1. The bulk transaction was executed on September 28, 2026.",
+          "url": "https://www.nseindia.com/report-detail/display-bulk-and-block-deals"
+        },
+        {
+          "publishedAt": "2026-09-27T21:00:13",
+          "source": "NSE Bulk Trades",
+          "title": "Ratnaveer Precision Eng L shares bought by Arihant Capital: 1,244,789 at avg price Rs. 333.5.",
+          "url": "https://www.nseindia.com/report-detail/display-bulk-and-block-deals"
+        },
+        {
+          "publishedAt": "2026-09-23T21:00:13",
+          "source": "NSE Bulk Trades",
+          "title": "Bloomcrest Trade Pvt Ltd sold 500,000 shares of Ratnaveer Precision Eng L at ₹330.02.",
+          "url": "https://www.nseindia.com/report-detail/display-bulk-and-block-deals"
+        },
+        {
+          "publishedAt": "2026-09-17T21:00:16",
+          "source": "NSE Bulk Trades",
+          "title": "JUNOMONETA FINSOL bought 606,324 shares of Ratnaveer Precision at ₹306.8.",
+          "url": "https://www.nseindia.com/report-detail/display-bulk-and-block-deals"
+        },
+        {
+          "publishedAt": "2026-09-17T21:00:16",
+          "source": "NSE Bulk Trades",
+          "title": "MICROCURVES sold 600,909 shares of Ratnaveer Precision at ₹310.7. Trade was executed on 17-SEP-2026 with no additional remarks.",
+          "url": "https://www.nseindia.com/report-detail/display-bulk-and-block-deals"
+        }
+      ],
+      "dividends": [],
+      "results": [
+        {
+          "date": "2026-10-30",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-24",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-12",
+          "title": "Quarterly & Annual Result"
+        },
+        {
+          "date": "2026-01-31",
+          "title": "Result"
+        },
+        {
+          "date": "2025-11-03",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-07-28",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +177.16% from the 52-week low and +0.40% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹393 crore and profit is ₹24 crore, a net margin of 6.1%. In Sep '25 those figures were ₹288 crore, ₹15 crore, and 5.4%. The latest full year, 2026, has revenue of ₹1,078 crore and profit of ₹64 crore. The year before, revenue was ₹896 crore and profit was ₹47 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 36.00%, trailing one-year profit growth is 56.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 43.86 and the industry P/E is 19.82. Dividend yield is 0.00%. Debt to equity is 0.50. ROE is 9.61%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Feb '26 to Sep '26, foreign institutions went from 8.17% to 3.25% and mutual funds went from 0.00% to 0.00%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 11.36 (Sandur Manganese & Iron Ores) to 519.92 (KIOCL). This company’s P/E is 43.86. The industry P/E is 19.82."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 30 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from ScoutQuest on 30 Oct 2026, reads: Ratnaveer Precision Q2 FY27 PBT rose 37.0% YoY to ₹275.4 million, while interest costs rose 100.9% to ₹77.9 million. The company allotted 1,24,99,669 shares at ₹264 via rights issue; CCL Phase 1 capacity reaches 15.9 lakh sheets annually."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 14.69,
+    "high": 30.45,
+    "samples": 44,
+    "asOf": "2026-10-30"
+  }
+}

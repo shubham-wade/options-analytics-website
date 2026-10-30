@@ -1,0 +1,347 @@
+{
+  "symbol": "TARIL",
+  "name": "Transformers & Rectifiers (India)",
+  "isin": "INE763I01026",
+  "industry": "Electrical Equipment",
+  "exchange": "NSE",
+  "searchId": "transformers-rectifiers-india-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:17:06.374Z",
+      "price": {
+        "last": 298.3,
+        "change": -17.5,
+        "changePercent": -5.54,
+        "open": 316.5,
+        "high": 316.5,
+        "low": 296,
+        "previousClose": 315.8,
+        "volume": 2198841,
+        "average": 302.77,
+        "averageSource": "bars",
+        "yearHigh": 478.9,
+        "yearLow": 224.05,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 9484,
+        "pe": 30.29,
+        "industryPe": 41.74,
+        "eps": 10.43,
+        "pb": 5.74,
+        "roe": 18.42,
+        "debtToEquity": 0.35,
+        "bookValue": 55.06,
+        "dividendYield": 0.08,
+        "faceValue": 1
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 64.36,
+        "mutualFunds": 1.12,
+        "insurance": 0.07,
+        "foreignInstitutions": 6.99,
+        "retailAndOthers": 27.46
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 64.36,
+          "mutualFunds": 5.76,
+          "insurance": 0.19,
+          "foreignInstitutions": 11.21,
+          "retailAndOthers": 18.47
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 64.36,
+          "mutualFunds": 3.93,
+          "insurance": 0.26,
+          "foreignInstitutions": 7.01,
+          "retailAndOthers": 24.43
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 64.36,
+          "mutualFunds": 1.72,
+          "insurance": 0.05,
+          "foreignInstitutions": 8.33,
+          "retailAndOthers": 25.54
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 64.36,
+          "mutualFunds": 1.28,
+          "insurance": 0.25,
+          "foreignInstitutions": 7.8,
+          "retailAndOthers": 26.31
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 64.36,
+          "mutualFunds": 1.12,
+          "insurance": 0.07,
+          "foreignInstitutions": 6.99,
+          "retailAndOthers": 27.46
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 1171.5545,
+          "profit": 14.2799,
+          "netWorth": 363.2716
+        },
+        {
+          "year": "2023",
+          "revenue": 1404.6569,
+          "profit": 42.3452,
+          "netWorth": 400.866
+        },
+        {
+          "year": "2024",
+          "revenue": 1300.4921,
+          "profit": 47.0053,
+          "netWorth": 562.9351
+        },
+        {
+          "year": "2025",
+          "revenue": 2051.09,
+          "profit": 216.43,
+          "netWorth": 1272.36
+        },
+        {
+          "year": "2026",
+          "revenue": 2569.65,
+          "profit": 272.17,
+          "netWorth": 1542.99
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 473.95,
+          "profit": 37.35
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 741.02,
+          "profit": 75.97
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 805.04,
+          "profit": 91.39
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 588.65,
+          "profit": 64.29
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 742.16,
+          "profit": 81.38
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 1994,
+        "businessSummary": "Headquartered in Ahmedabad, Transformers and Rectifiers (India) Limited (TARIL) is a key manufacturer of transformers and reactors for the Indian and international markets. The company's vision is to strengthen its national and international presence as a top manufacturer of Power, Furnace, and Rectifier Transformers in the T&D industry. Its mission is to become a preferred provider of quality transformers, operating with a team of ethical and value-driven professionals to build excellent customer relationships. TARIL produces a diverse range of products, including Power, Furnace, Rectifier, and specialty transformers for applications like railways and renewable energy. Operating three state-of-the-art manufacturing facilities, the company has established itself as a preferred partner for high-voltage power transformers and reactors for consumers worldwide. Since its establishment in 1981, TARIL has grown to become India's largest private sector facility for producing the widest range of transformers."
+      },
+      "growth": {
+        "revenueOneYear": 57,
+        "revenueThreeYear": 22,
+        "profitOneYear": 118,
+        "profitThreeYear": 86
+      },
+      "peers": [
+        {
+          "symbol": "VOLTAMP",
+          "name": "Voltamp Transformers",
+          "marketCapCrore": 10286.53,
+          "pe": 31.82,
+          "pb": 5.51
+        },
+        {
+          "symbol": "KANOHAR",
+          "name": "Kanohar Electricals",
+          "marketCapCrore": 7765.85,
+          "pe": 53.33,
+          "pb": 11.54
+        },
+        {
+          "symbol": "SHILCTECH",
+          "name": "Shilchar Technologies",
+          "marketCapCrore": 4174.7,
+          "pe": 33.51,
+          "pb": 7.87
+        },
+        {
+          "symbol": "INDOTECH",
+          "name": "Indo Tech Transformers",
+          "marketCapCrore": 3014.01,
+          "pe": 30.35,
+          "pb": 8.07
+        },
+        {
+          "symbol": "BBL",
+          "name": "Bharat Bijlee",
+          "marketCapCrore": 2767.23,
+          "pe": 21.34,
+          "pb": 1.2
+        },
+        {
+          "symbol": "MARSONS",
+          "name": "Marsons",
+          "marketCapCrore": 2139.2,
+          "pe": 48.37,
+          "pb": 12.75
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-27T12:47:02",
+          "source": "CNBC TV 18",
+          "title": "Transformers and Rectifiers shares gained over 6% after announcing a ₹1,250 crore investment for three greenfield plants in Gujarat. The facilities carry an annual revenue potential of ₹2,000 crore, with commercial operations starting in Q1 next fiscal year.",
+          "url": "https://www.cnbctv18.com/market/transformers-and-rectifiers-share-price-breaks-7-day-losing-streak-1250-crore-rupees-investment-gujarat-manufacturing-plants-20020129.htm"
+        },
+        {
+          "publishedAt": "2026-10-27T11:25:43",
+          "source": "ScoutQuest",
+          "title": "TARIL will invest Rs 1,250 crore to set up three greenfield manufacturing plants in Gujarat. Commercial operations start in Q1 FY28, targeting Rs 2,000 crore annual revenue and creating over 1,000 jobs.",
+          "url": "https://sqst.in/wDb8C"
+        },
+        {
+          "publishedAt": "2026-10-18T18:17:01",
+          "source": "The Hindu Business Line",
+          "title": "Transformers and Rectifiers (India) plans a UK manufacturing base to tap European utility and grid demand. Sustained order flows remain a prerequisite for the company before committing to local production.",
+          "url": "https://www.thehindubusinessline.com/companies/gujarat-based-transformers-and-rectifiers-weighs-setting-up-of-a-transformer-factory-in-uk/article71599657.ece?utm_campaign=mrf-twitter-businessline&utm_source=twitter&utm_medium=social&mrfcid=202610186ad4b4448016142dfa4262c3"
+        },
+        {
+          "publishedAt": "2026-10-14T15:02:20",
+          "source": "ScoutQuest",
+          "title": "Management guides 25% revenue growth this year, supported by a Rs 7,200 crore order book and Rs 21,000 crore pipeline. Company raised Rs 500 crore via QIP for capacity expansion while entering the high-potential nuclear power transformer segment.",
+          "url": "https://sqst.in/TtbUn"
+        },
+        {
+          "publishedAt": "2026-10-14T09:59:59",
+          "source": "Business Standard",
+          "title": "TRIL shares surged 14% after Q2 PAT jumped 117.9% YoY to ₹81.4 crore and revenue rose 60.7% to ₹739.4 crore. Quarterly order inflows rose 97% to ₹1,169 crore, expanding the total order book to ₹7,237 crore.",
+          "url": "https://www.business-standard.com/markets/news/transformers-and-rectifiers-soars-14-on-strong-q2-stock-up-28-in-october-126101400202_1.html"
+        },
+        {
+          "publishedAt": "2026-10-14T09:18:50",
+          "source": "ET NOW",
+          "title": "Transformers and Rectifiers shares surged around 11% at market open following strong Q2 performance.",
+          "url": "https://x.com/ETNOWlive/status/2110216233740296668"
+        },
+        {
+          "publishedAt": "2026-10-14T08:56:17",
+          "source": "Livesquawk",
+          "title": "Transformers & Rectifiers' uncompleted orders rose 32% YoY to INR 7,237 crores as of September 30. The company is negotiating INR 21,000 crores in inquiries, comprising 80% domestic and 20% export orders.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-14T08:53:57",
+          "source": "Livesquawk",
+          "title": "Transformers & Rectifiers targets $1 billion revenue by late FY29 or early 2030 without additional capex. New backward integration units are expected to boost margins by 200 to 300 basis points by FY29.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-14T08:52:46",
+          "source": "Livesquawk",
+          "title": "Transformers & Rectifiers remains confident about meeting its FY27 goals. The company maintains guidance for around 25% revenue growth and a 9% to 10% PAT margin.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-10-14T08:26:25",
+          "source": "ScoutQuest",
+          "title": "Transformers and Rectifiers saw across-the-board profitability improvement, driven by higher utilization of its Changodar and Moraiya plants. Order inflow was also noted as a key point to watch.",
+          "url": "https://sqst.in/nthFb"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-09-18",
+          "amount": 0.25,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-05-09",
+          "amount": 0.2,
+          "kind": "Final"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-10-13",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-20",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-04-21",
+          "title": "Quarterly & Annual Result"
+        },
+        {
+          "date": "2026-01-08",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-11-08",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-08-01",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +33.14% from the 52-week low and −37.71% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹742 crore and profit is ₹81 crore, a net margin of 11.0%. In Sep '25 those figures were ₹474 crore, ₹37 crore, and 7.9%. The latest full year, 2026, has revenue of ₹2,570 crore and profit of ₹272 crore. The year before, revenue was ₹2,051 crore and profit was ₹216 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 57.00%, three-year revenue CAGR is 22.00%, trailing one-year profit growth is 118.00%, three-year profit CAGR is 86.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 30.29 and the industry P/E is 41.74. Dividend yield is 0.08%. Debt to equity is 0.35. ROE is 18.42%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 11.21% to 6.99% and mutual funds went from 5.76% to 1.12%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 6 peers. P/E on that list runs from 21.34 (Bharat Bijlee) to 53.33 (Kanohar Electricals). This company’s P/E is 30.29. The industry P/E is 41.74."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹0.25 a share (Final), ex date 18 Sept 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 13 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from CNBC TV 18 on 27 Oct 2026, reads: Transformers and Rectifiers shares gained over 6% after announcing a ₹1,250 crore investment for three greenfield plants in Gujarat. The facilities carry an annual revenue potential of ₹2,000 crore, with commercial operations starting in Q1 next fiscal year."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 35.86,
+    "high": 662.5,
+    "samples": 83,
+    "asOf": "2026-10-30"
+  }
+}

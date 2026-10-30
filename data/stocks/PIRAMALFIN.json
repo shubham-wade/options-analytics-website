@@ -1,0 +1,334 @@
+{
+  "symbol": "PIRAMALFIN",
+  "name": "Piramal Finance Ltd.",
+  "isin": "INE202B01038",
+  "industry": "Financial Services",
+  "exchange": "NSE",
+  "searchId": "dewan-housing-finance-corporation-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:16:57.649Z",
+      "price": {
+        "last": 1817,
+        "change": -47.8,
+        "changePercent": -2.56,
+        "open": 1851.3,
+        "high": 1864.8,
+        "low": 1800.5,
+        "previousClose": 1864.8,
+        "volume": 170841,
+        "average": 1825.88,
+        "averageSource": "bars",
+        "yearHigh": 2326.4,
+        "yearLow": 1260,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 44090,
+        "pe": 23.09,
+        "industryPe": 16.15,
+        "eps": 80.68,
+        "pb": 1.42,
+        "roe": 1.87,
+        "debtToEquity": 2.77,
+        "bookValue": 1307.6,
+        "dividendYield": 0.57,
+        "faceValue": 2
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 44.22,
+        "mutualFunds": 17.18,
+        "insurance": 4.57,
+        "foreignInstitutions": 15.61,
+        "retailAndOthers": 18.42
+      },
+      "holdings": [
+        {
+          "quarter": "Dec '25",
+          "promoter": 46.16,
+          "mutualFunds": 9.02,
+          "insurance": 7.24,
+          "foreignInstitutions": 15.58,
+          "retailAndOthers": 22.01
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 46.16,
+          "mutualFunds": 11.52,
+          "insurance": 7.29,
+          "foreignInstitutions": 14.63,
+          "retailAndOthers": 20.4
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 46.16,
+          "mutualFunds": 12.77,
+          "insurance": 5.87,
+          "foreignInstitutions": 15.45,
+          "retailAndOthers": 19.76
+        },
+        {
+          "quarter": "Aug '26",
+          "promoter": 44.22,
+          "mutualFunds": 16.33,
+          "insurance": 4.89,
+          "foreignInstitutions": 15.72,
+          "retailAndOthers": 18.85
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 44.22,
+          "mutualFunds": 17.18,
+          "insurance": 4.57,
+          "foreignInstitutions": 15.61,
+          "retailAndOthers": 18.42
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 6104.75,
+          "profit": 540.15,
+          "netWorth": 22187.67
+        },
+        {
+          "year": "2023",
+          "revenue": 6669.15,
+          "profit": -7401.36,
+          "netWorth": 14781.04
+        },
+        {
+          "year": "2024",
+          "revenue": 6769.26,
+          "profit": -1975.28,
+          "netWorth": 14894.7
+        },
+        {
+          "year": "2025",
+          "revenue": 10611.86,
+          "profit": 485.45,
+          "netWorth": 27095.94
+        },
+        {
+          "year": "2026",
+          "revenue": 12031.6,
+          "profit": 1506.14,
+          "netWorth": 28191.47
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 2900.27,
+          "profit": 326.99
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 2975.09,
+          "profit": 401.01
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 3466.13,
+          "profit": 501.77
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 3417.19,
+          "profit": 460.98
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 3717.16,
+          "profit": 545.42
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 1984,
+        "businessSummary": "Piramal Finance Limited is a technology-led, retail-focused Non-Banking Financial Company (NBFC) specializing in housing finance, personal loans, and business loans for the Bharat segment (middle and lower-income markets)."
+      },
+      "growth": {
+        "revenueOneYear": 28,
+        "revenueThreeYear": 22,
+        "profitOneYear": 67,
+        "profitThreeYear": 30
+      },
+      "peers": [
+        {
+          "symbol": "BAJFINANCE",
+          "name": "Bajaj Finance",
+          "marketCapCrore": 585675.52,
+          "pe": 26.54,
+          "pb": 4.75
+        },
+        {
+          "symbol": "BAJAJHLDNG",
+          "name": "Bajaj Holdings & Investment",
+          "marketCapCrore": 112959.35,
+          "pe": 12.56,
+          "pb": 1.54
+        },
+        {
+          "symbol": "TATAINVEST",
+          "name": "Tata Investment Corporation",
+          "marketCapCrore": 28993.63,
+          "pe": 67.26,
+          "pb": 0.99
+        },
+        {
+          "symbol": "LICHSGFIN",
+          "name": "LIC Housing Finance",
+          "marketCapCrore": 28289.74,
+          "pe": 4.93,
+          "pb": 0.68
+        },
+        {
+          "symbol": "CHOLAHLDNG",
+          "name": "Cholamandalam Financial Holdings",
+          "marketCapCrore": 25645.71,
+          "pe": 4.26,
+          "pb": 1.66
+        },
+        {
+          "symbol": "IFCI",
+          "name": "IFCI",
+          "marketCapCrore": 15705.16,
+          "pe": 36.2,
+          "pb": 1.76
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-30T15:05:25",
+          "source": "ScoutQuest",
+          "title": "Piramal Finance Q2 consolidated PAT surged 67% YoY as total AUM grew 24%, led by 86% retail loan share. Management targets 25% AUM and 50% PAT growth in FY27, while incremental debt cost fell to 8.5%.",
+          "url": "https://sqst.in/Uf4MZ"
+        },
+        {
+          "publishedAt": "2026-10-21T11:46:32",
+          "source": "BSE",
+          "title": "Piramal Finance fixed December 3, 2026, as record date for partial redemption of NCDs payable on December 18, 2026. NCD face value reduces to Rs 6,66,000 from Rs 10,00,000; interest payments are due on December 21, 2026.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=0a558d19-2229-4ab1-a2dd-de91b5dbd951.pdf"
+        },
+        {
+          "publishedAt": "2026-10-19T18:48:14",
+          "source": "BSE",
+          "title": "Piramal Finance amended its PFL Employee ESOP Trust deed to reflect changes in the composition of its trustees. Arvind Agarwal stepped down as trustee, while Kuttikrishnan Krishna Pisharody was appointed as a new trustee.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8dc75849-f64f-470b-b125-b35ae9c5f6a0.pdf"
+        },
+        {
+          "publishedAt": "2026-10-19T15:33:20",
+          "source": "BSE",
+          "title": "Piramal Finance posted a standalone net profit of Rs 529.3 crore for Q2, up from Rs 277.7 crore YoY. Total income grew to Rs 3,683.1 crore from Rs 2,869.9 crore in the same period last year.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=070c9067-f3bf-42b1-b6c8-52a52d5e2d50.pdf"
+        },
+        {
+          "publishedAt": "2026-10-13T10:32:56",
+          "source": "ScoutQuest",
+          "title": "Piramal Finance retail AUM rose 32% YoY to USD 9.6 Bn, with mortgages comprising 67% of the book. Consolidated PAT hit $159 Mn in FY26, while opex to AUM declined to 3.5% with 0.7% 90+ DPD.",
+          "url": "https://sqst.in/YS9cu"
+        },
+        {
+          "publishedAt": "2026-10-12T16:54:26",
+          "source": "BSE",
+          "title": "Piramal Finance will hold a board meeting on October 19, 2026, to approve Q2 and half-year financial results. The trading window for dealing in company securities remains closed for all designated persons.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=6c6fc476-8f71-4643-b9f2-1160655023d3.pdf"
+        },
+        {
+          "publishedAt": "2026-10-08T11:58:37",
+          "source": "BSE",
+          "title": "Piramal Finance approved the allotment of secured, rated, redeemable NCDs worth Rs 525 crore on a private placement basis. The 52,500 debentures will be listed on the Wholesale Debt Market segments of NSE and BSE.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=18668be4-e0dc-4540-a579-1d60596e6b4f.pdf"
+        },
+        {
+          "publishedAt": "2026-10-05T11:58:59",
+          "source": "ScoutQuest",
+          "title": "Piramal Finance has allotted 82,94,000 warrants on a preferential basis to Promoter Group entity Nithyam Realty Private Limited. The total aggregate consideration is Rs. 1750,03,40,000, with 25% amounting to Rs. 437,50,85,000 received on allotment.",
+          "url": "https://sqst.in/ssmVC"
+        },
+        {
+          "publishedAt": "2026-09-28T18:24:47",
+          "source": "Livesquawk",
+          "title": "Piramal Finance approves ₹2,000 crore NCD issuance via private placement.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-09-24T21:55:12",
+          "source": "ScoutQuest",
+          "title": "Piramal Finance projects Rs. 200 crore FY26 insurance commission income, split Rs. 140 crore life, Rs. 60 crore non-life. FY27 net profit growth guidance ~50% YoY; IRDAI policies may impact FY28 RoA by 18-24bps.",
+          "url": "https://sqst.in/gi1n5"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-06-12",
+          "amount": 11,
+          "kind": "Final"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-10-19",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-16",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-04-27",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2026-01-23",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +44.21% from the 52-week low and −21.90% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹3,717 crore and profit is ₹545 crore, a net margin of 14.7%. In Sep '25 those figures were ₹2,900 crore, ₹327 crore, and 11.3%. The latest full year, 2026, has revenue of ₹12,032 crore and profit of ₹1,506 crore. The year before, revenue was ₹10,612 crore and profit was ₹485 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 28.00%, three-year revenue CAGR is 22.00%, trailing one-year profit growth is 67.00%, three-year profit CAGR is 30.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 23.09 and the industry P/E is 16.15. Dividend yield is 0.57%. Debt to equity is 2.77. ROE is 1.87%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Dec '25 to Sep '26, foreign institutions went from 15.58% to 15.61% and mutual funds went from 9.02% to 17.18%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 6 peers. P/E on that list runs from 4.26 (Cholamandalam Financial Holdings) to 67.26 (Tata Investment Corporation). This company’s P/E is 23.09. The industry P/E is 16.15."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹11.00 a share (Final), ex date 12 Jun 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 19 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from ScoutQuest on 30 Oct 2026, reads: Piramal Finance Q2 consolidated PAT surged 67% YoY as total AUM grew 24%, led by 86% retail loan share. Management targets 25% AUM and 50% PAT growth in FY27, while incremental debt cost fell to 8.5%."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 30.06,
+    "high": 51.52,
+    "samples": 243,
+    "asOf": "2026-10-30"
+  }
+}

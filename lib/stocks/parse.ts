@@ -1,11 +1,22 @@
-import type {
-  StockChange,
-  StockFundamentals,
-  StockHolding,
-  StockPrice,
-  StockQuarter,
-  StockSnapshot,
-  StockYear,
+import {
+  HIGHLIGHT_HEX,
+  STOCK_HIGHLIGHTS,
+  type StockChange,
+  type StockDividend,
+  type StockFundamentals,
+  type StockGrowth,
+  type StockHighlight,
+  type StockHolding,
+  type StockNewsItem,
+  type StockPeer,
+  type StockPrice,
+  type StockProfile,
+  type StockQuarter,
+  type StockResultDate,
+  type StockFile,
+  type StockSnapshot,
+  type StockSummary,
+  type StockYear,
 } from "@/lib/stocks/types";
 
 const MONTHS: Record<string, number> = {
@@ -332,12 +343,151 @@ function statementsHaveNumbers(statements: unknown): boolean {
   });
 }
 
-/** Consolidated figures when that series has numbers. Otherwise the standalone series. */
+function newestStatementYear(statements: unknown): number {
+  const years = parseStatements(statements).years;
+  const last = years.at(-1)?.year;
+  const year = last ? Number(last) : 0;
+  return Number.isFinite(year) ? year : 0;
+}
+
+function cagrPercent(value: unknown): number | null {
+  const parsed = publishedNumber(value);
+  if (parsed == null) return null;
+  return round2(Math.abs(parsed) <= 1.5 ? parsed * 100 : parsed);
+}
+
+function growthFromStatements(statements: unknown): StockGrowth | null {
+  if (!Array.isArray(statements)) return null;
+  const growth: StockGrowth = {
+    revenueOneYear: null,
+    revenueThreeYear: null,
+    profitOneYear: null,
+    profitThreeYear: null,
+  };
+  for (const item of statements) {
+    const record = asRecord(item);
+    const cagr = asRecord(record?.cagr);
+    if (!record || !cagr || typeof record.title !== "string") continue;
+    if (record.title === "Revenue") {
+      growth.revenueOneYear = cagrPercent(cagr.oneYearTtm);
+      growth.revenueThreeYear = cagrPercent(cagr.threeYearCagr);
+    }
+    if (record.title === "Profit") {
+      growth.profitOneYear = cagrPercent(cagr.oneYearTtm);
+      growth.profitThreeYear = cagrPercent(cagr.threeYearCagr);
+    }
+  }
+  const present = Object.values(growth).some((value) => value != null);
+  return present ? growth : null;
+}
+
+export function parseCompanyExtras(body: unknown): { profile: StockProfile; growth: StockGrowth | null; peers: StockPeer[] } {
+  const record = asRecord(body) ?? {};
+  const details = asRecord(record.details);
+  const summary = typeof details?.businessSummary === "string" ? details.businessSummary.replace(/\s+/g, " ").trim() : "";
+  const peers: StockPeer[] = [];
+  const peerList = asRecord(record.similarAssets)?.peerList;
+  if (Array.isArray(peerList)) {
+    for (const item of peerList) {
+      const row = asRecord(item);
+      const header = asRecord(row?.companyHeader);
+      const symbol = typeof header?.nseScriptCode === "string" ? header.nseScriptCode.trim().toUpperCase() : "";
+      if (!row || !symbol) continue;
+      peers.push({
+        symbol,
+        name: typeof header?.displayName === "string" ? header.displayName : symbol,
+        marketCapCrore: publishedNumber(row.marketCap),
+        pe: publishedNumber(row.peRatio),
+        pb: publishedNumber(row.pbRatio),
+      });
+    }
+  }
+  return {
+    profile: {
+      foundedYear: publishedNumber(details?.foundedYear),
+      businessSummary: summary || null,
+    },
+    growth: growthFromStatements(record.financialStatement),
+    peers,
+  };
+}
+
+function httpUrl(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const url = value.trim();
+  if (!/^https?:\/\//i.test(url)) return null;
+  return url;
+}
+
+function isoDate(value: unknown): string | null {
+  if (typeof value !== "string" || value.length < 10) return null;
+  const date = value.slice(0, 10);
+  return /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : null;
+}
+
+/** Headlines, dividend ex-dates, and results dates from the Groww stock page payload. */
+export function parseGrowwPage(body: unknown): { news: StockNewsItem[]; dividends: StockDividend[]; results: StockResultDate[] } {
+  const root = asRecord(body);
+  const pageProps = asRecord(asRecord(root?.props)?.pageProps) ?? root;
+  const news: StockNewsItem[] = [];
+  if (Array.isArray(pageProps?.newsData)) {
+    for (const item of pageProps.newsData) {
+      const row = asRecord(item);
+      const title = typeof row?.title === "string" ? row.title.replace(/\s+/g, " ").trim() : "";
+      const publishedAt = typeof row?.pubDate === "string" ? row.pubDate : "";
+      if (!row || !title || !publishedAt) continue;
+      news.push({
+        publishedAt,
+        source: typeof row.source === "string" && row.source.trim() ? row.source.trim() : "Unknown",
+        title,
+        url: httpUrl(row.url),
+      });
+    }
+  }
+  news.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+  const dividends: StockDividend[] = [];
+  const results: StockResultDate[] = [];
+  if (Array.isArray(pageProps?.eventsData)) {
+    for (const item of pageProps.eventsData) {
+      const row = asRecord(item);
+      if (!row) continue;
+      const filter = row.corporateEventFilter;
+      if (filter === "DIVIDEND" && row.eventType === "Ex date") {
+        const meta = asRecord(row.eventMetadata);
+        const exDate = isoDate(meta?.dividendDate) ?? isoDate(row.exDate) ?? isoDate(row.primaryDate);
+        const amount = publishedNumber(meta?.dividendAmount);
+        if (!exDate || amount == null) continue;
+        dividends.push({
+          exDate,
+          amount,
+          kind: typeof meta?.dividendType === "string" ? meta.dividendType : null,
+        });
+      }
+      if (filter === "RESULTS") {
+        const date = isoDate(row.primaryDate);
+        const title = typeof row.eventTitle === "string" ? row.eventTitle : "Results";
+        if (date) results.push({ date, title });
+      }
+    }
+  }
+  dividends.sort((a, b) => b.exDate.localeCompare(a.exDate));
+  const seen = new Set<string>();
+  const uniqueDividends = dividends.filter((row) => (seen.has(row.exDate) ? false : (seen.add(row.exDate), true)));
+  results.sort((a, b) => b.date.localeCompare(a.date));
+  return { news: news.slice(0, 10), dividends: uniqueDividends, results };
+}
+
+/** The series with the newest year. Consolidated wins a tie. */
 export function publishedStatements(body: unknown): { accounts: "consolidated" | "standalone"; statements: unknown } {
   const book = asRecord(asRecord(body)?.financialStatementV2);
   const consolidated = book?.CONSOLIDATED ?? null;
+  const standalone = book?.STANDALONE ?? null;
+  const consolidatedYear = newestStatementYear(consolidated);
+  const standaloneYear = newestStatementYear(standalone);
+  if (consolidatedYear >= standaloneYear && consolidatedYear > 0) return { accounts: "consolidated", statements: consolidated };
+  if (standaloneYear > 0) return { accounts: "standalone", statements: standalone };
   if (statementsHaveNumbers(consolidated)) return { accounts: "consolidated", statements: consolidated };
-  return { accounts: "standalone", statements: book?.STANDALONE ?? null };
+  return { accounts: "standalone", statements: standalone };
 }
 
 function signed(value: number, digits: number): string {
@@ -388,4 +538,100 @@ export function compareSnapshots(older: StockSnapshot, newer: StockSnapshot): St
     );
   }
   return changes.filter((item): item is StockChange => item != null);
+}
+
+/** Public Screener page for an NSE symbol. This app does not scrape that site. */
+export function screenerUrl(symbol: string): string {
+  return `https://www.screener.in/company/${encodeURIComponent(symbol.trim().toUpperCase())}/`;
+}
+
+export const STOCK_COMMENT_MAX = 8000;
+
+export function parseComment(value: unknown): string {
+  if (value == null) return "";
+  if (typeof value !== "string") throw new Error("Comment has to be text.");
+  const text = value.replace(/\r\n/g, "\n");
+  if (text.length > STOCK_COMMENT_MAX) throw new Error("Comment is too long.");
+  return text;
+}
+
+export function parseHighlight(value: unknown): StockHighlight | null {
+  if (value == null || value === "") return null;
+  if (typeof value === "string" && (STOCK_HIGHLIGHTS as readonly string[]).includes(value)) {
+    return value as StockHighlight;
+  }
+  throw new Error("Highlight must be green, lime, amber, orange, red, or empty.");
+}
+
+/** Next colour on the green-to-red cycle. An empty mark starts at green. */
+export function nextHighlight(current: StockHighlight | null | undefined): StockHighlight {
+  const index = current ? STOCK_HIGHLIGHTS.indexOf(current) : -1;
+  return STOCK_HIGHLIGHTS[(index + 1) % STOCK_HIGHLIGHTS.length];
+}
+
+/** Green first, then lime, amber, orange, red. Unmarked last. */
+export function highlightRank(highlight: StockHighlight | null | undefined): number {
+  if (!highlight) return STOCK_HIGHLIGHTS.length;
+  const index = STOCK_HIGHLIGHTS.indexOf(highlight);
+  return index < 0 ? STOCK_HIGHLIGHTS.length : index;
+}
+
+export function sortByHighlight<T extends { symbol: string; highlight?: StockHighlight | null }>(rows: T[]): T[] {
+  return [...rows].sort((a, b) => {
+    const byTone = highlightRank(a.highlight) - highlightRank(b.highlight);
+    if (byTone !== 0) return byTone;
+    return a.symbol.localeCompare(b.symbol);
+  });
+}
+
+/** Last versus the 52-week high. Negative when the print is below that high. */
+export function percentFromHigh(last: number | null | undefined, high: number | null | undefined): number | null {
+  if (last == null || high == null || !Number.isFinite(last) || !Number.isFinite(high) || high === 0) return null;
+  return round2(((last - high) / high) * 100);
+}
+
+export function peStats(snapshots: StockSnapshot[]): { pe: number | null; peHigh: number | null; peMedian: number | null } {
+  const values = snapshots
+    .map((row) => row.fundamentals?.pe)
+    .filter((value): value is number => value != null && Number.isFinite(value));
+  const pe = snapshots.at(-1)?.fundamentals.pe ?? null;
+  if (values.length === 0) return { pe, peHigh: null, peMedian: null };
+  const sorted = [...values].sort((left, right) => left - right);
+  const mid = Math.floor(sorted.length / 2);
+  const peMedian = sorted.length % 2 === 1 ? sorted[mid] : round2((sorted[mid - 1] + sorted[mid]) / 2);
+  return { pe, peHigh: sorted[sorted.length - 1], peMedian };
+}
+
+export function toStockSummary(file: StockFile): StockSummary {
+  const latest = file.snapshots[file.snapshots.length - 1];
+  const snapshotPe = peStats(file.snapshots);
+  const highs = [file.pe?.high, snapshotPe.pe].filter((value): value is number => value != null && Number.isFinite(value));
+  return {
+    symbol: file.symbol,
+    name: file.name,
+    industry: file.industry,
+    savedOn: latest?.date ?? null,
+    price: latest?.price.last ?? null,
+    changePercent: latest?.price.changePercent ?? null,
+    fromHighPercent: percentFromHigh(latest?.price.last, latest?.price.yearHigh),
+    pe: snapshotPe.pe,
+    peMedian: file.pe ? file.pe.median : snapshotPe.peMedian,
+    peHigh: highs.length ? round2(Math.max(...highs)) : snapshotPe.peHigh,
+    readings: file.snapshots.length,
+    highlight: file.highlight ?? null,
+  };
+}
+
+export function highlightFrameClass(highlight: StockHighlight | null | undefined): string {
+  if (highlight === "green") return "nrl-highlight-frame border-emerald-500";
+  if (highlight === "lime") return "nrl-highlight-frame border-lime-400";
+  if (highlight === "amber") return "nrl-highlight-frame border-amber-400";
+  if (highlight === "orange") return "nrl-highlight-frame border-orange-500";
+  if (highlight === "red") return "nrl-highlight-frame border-rose-500";
+  return "border-border shadow-none";
+}
+
+export function highlightToneStyle(highlight: StockHighlight | null | undefined): { "--nrl-highlight": string } | undefined {
+  if (!highlight) return undefined;
+  return { "--nrl-highlight": HIGHLIGHT_HEX[highlight] };
 }

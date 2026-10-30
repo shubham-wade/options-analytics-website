@@ -51,6 +51,53 @@ export interface StockQuarter {
   profit: number | null;
 }
 
+export interface StockProfile {
+  foundedYear: number | null;
+  businessSummary: string | null;
+}
+
+export interface StockGrowth {
+  /** Trailing one-year growth, in percent. */
+  revenueOneYear: number | null;
+  /** Three-year compound growth, in percent. */
+  revenueThreeYear: number | null;
+  profitOneYear: number | null;
+  profitThreeYear: number | null;
+}
+
+export interface StockPeer {
+  symbol: string;
+  name: string;
+  marketCapCrore: number | null;
+  pe: number | null;
+  pb: number | null;
+}
+
+export interface StockNewsItem {
+  publishedAt: string;
+  source: string;
+  title: string;
+  /** Article or filing URL from the Groww headline, when present. */
+  url: string | null;
+}
+
+export interface StockDividend {
+  /** Ex date, YYYY-MM-DD. */
+  exDate: string;
+  amount: number;
+  kind: string | null;
+}
+
+export interface StockResultDate {
+  date: string;
+  title: string;
+}
+
+export interface StockNote {
+  heading: string;
+  text: string;
+}
+
 export interface StockSnapshot {
   /** Asia/Kolkata calendar day this reading was saved. One reading per day. */
   date: string;
@@ -65,12 +112,39 @@ export interface StockSnapshot {
   quarters: StockQuarter[];
   /** Which Groww series supplied revenue, profit, and net worth. Older files omit this and were consolidated. */
   accounts?: "consolidated" | "standalone";
+  profile?: StockProfile | null;
+  growth?: StockGrowth | null;
+  peers?: StockPeer[];
+  news?: StockNewsItem[];
+  dividends?: StockDividend[];
+  results?: StockResultDate[];
+  /** Sentences drawn from this snapshot. Not a buy or sell call. */
+  notes?: StockNote[];
 }
 
 export interface StockChange {
   label: string;
   direction: "up" | "down" | "flat";
   text: string;
+}
+
+/** User highlight on a saved file. Green to red. Not a buy or sell call. */
+export const STOCK_HIGHLIGHTS = ["green", "lime", "amber", "orange", "red"] as const;
+export type StockHighlight = (typeof STOCK_HIGHLIGHTS)[number];
+export const HIGHLIGHT_HEX: Record<StockHighlight, string> = {
+  green: "#10b981",
+  lime: "#a3e635",
+  amber: "#fbbf24",
+  orange: "#f97316",
+  red: "#f43f5e",
+};
+
+/** Trailing P/E across listed history. Current P/E stays on the latest snapshot. */
+export interface StockPeHistory {
+  median: number | null;
+  high: number | null;
+  samples: number;
+  asOf: string | null;
 }
 
 export interface StockFile {
@@ -82,6 +156,11 @@ export interface StockFile {
   searchId: string;
   /** Newest reading last. */
   snapshots: StockSnapshot[];
+  highlight?: StockHighlight | null;
+  /** Owner notes on this file. Kept across snapshot saves. Not a buy or sell call. */
+  comment?: string | null;
+  /** Median and all-time high trailing P/E from listed history. Kept across snapshot saves. */
+  pe?: StockPeHistory | null;
 }
 
 export interface StockSummary {
@@ -91,5 +170,11 @@ export interface StockSummary {
   savedOn: string | null;
   price: number | null;
   changePercent: number | null;
+  /** Last versus the 52-week high. Negative when the print is below that high. */
+  fromHighPercent: number | null;
+  pe: number | null;
+  peHigh: number | null;
+  peMedian: number | null;
   readings: number;
+  highlight?: StockHighlight | null;
 }

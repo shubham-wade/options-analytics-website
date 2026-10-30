@@ -1,0 +1,692 @@
+{
+  "symbol": "CAMPUS",
+  "name": "Campus Activewear",
+  "isin": "INE278Y01022",
+  "industry": "Footwear",
+  "exchange": "NSE",
+  "searchId": "campus-activewear-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-29",
+      "savedAt": "2026-10-29T17:38:59.038Z",
+      "price": {
+        "last": 191.26,
+        "change": 2.77,
+        "changePercent": 1.47,
+        "open": 188.99,
+        "high": 192.48,
+        "low": 186.61,
+        "previousClose": 188.49,
+        "volume": 241858,
+        "average": 190.93,
+        "averageSource": "bars",
+        "yearHigh": 286.55,
+        "yearLow": 182.15,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 5757,
+        "pe": 37.37,
+        "industryPe": 40.04,
+        "eps": 5.04,
+        "pb": 6.35,
+        "roe": 16.56,
+        "debtToEquity": 0.26,
+        "bookValue": 29.65,
+        "dividendYield": 0.8,
+        "faceValue": 5
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 72.07,
+        "mutualFunds": 9.62,
+        "insurance": 1.17,
+        "foreignInstitutions": 5.84,
+        "retailAndOthers": 11.31
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 72.12,
+          "mutualFunds": 10.88,
+          "insurance": 0.94,
+          "foreignInstitutions": 5.99,
+          "retailAndOthers": 10.06
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 72.11,
+          "mutualFunds": 10.59,
+          "insurance": 1.12,
+          "foreignInstitutions": 6.15,
+          "retailAndOthers": 10.03
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 72.1,
+          "mutualFunds": 10.43,
+          "insurance": 1.17,
+          "foreignInstitutions": 6.07,
+          "retailAndOthers": 10.24
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 72.08,
+          "mutualFunds": 10.19,
+          "insurance": 1.2,
+          "foreignInstitutions": 6.03,
+          "retailAndOthers": 10.5
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 72.07,
+          "mutualFunds": 9.62,
+          "insurance": 1.17,
+          "foreignInstitutions": 5.84,
+          "retailAndOthers": 11.31
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 1196.577,
+          "profit": 108.538,
+          "netWorth": 427.587
+        },
+        {
+          "year": "2023",
+          "revenue": 1487,
+          "profit": 117.12,
+          "netWorth": 552.12
+        },
+        {
+          "year": "2024",
+          "revenue": 1452.83,
+          "profit": 89.44,
+          "netWorth": 651.66
+        },
+        {
+          "year": "2025",
+          "revenue": 1607.65,
+          "profit": 121.18,
+          "netWorth": 756.51
+        },
+        {
+          "year": "2026",
+          "revenue": 1796.96,
+          "profit": 150.09,
+          "netWorth": 906.25
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Jun '25",
+          "revenue": 349.41,
+          "profit": 22.2
+        },
+        {
+          "quarter": "Sep '25",
+          "revenue": 391.76,
+          "profit": 20.07
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 594.11,
+          "profit": 63.68
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 461.68,
+          "profit": 44.14
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 393.24,
+          "profit": 26.14
+        }
+      ],
+      "accounts": "standalone",
+      "profile": {
+        "foundedYear": 2008,
+        "businessSummary": "Campus Activewear Limited is one of India's largest sports and athleisure footwear brands, manufacturing and distributing a wide variety of shoes for men, women, and children."
+      },
+      "growth": {
+        "revenueOneYear": 13,
+        "revenueThreeYear": 7,
+        "profitOneYear": 18,
+        "profitThreeYear": 9
+      },
+      "peers": [
+        {
+          "symbol": "BATAINDIA",
+          "name": "Bata India",
+          "marketCapCrore": 8491.17,
+          "pe": 58.1,
+          "pb": 5.32
+        },
+        {
+          "symbol": "RELAXO",
+          "name": "Relaxo Footwears",
+          "marketCapCrore": 6964.06,
+          "pe": 37.6,
+          "pb": 3.16
+        },
+        {
+          "symbol": "REDTAPE",
+          "name": "Redtape",
+          "marketCapCrore": 5793.42,
+          "pe": 23.5,
+          "pb": 5.67
+        },
+        {
+          "symbol": "KOTIC",
+          "name": "Kothari Industrial Corporation",
+          "marketCapCrore": 1173.12,
+          "pe": null,
+          "pb": 5.61
+        },
+        {
+          "symbol": "SREEL",
+          "name": "Sreeleathers",
+          "marketCapCrore": 588.14,
+          "pe": 17.94,
+          "pb": 1.18
+        },
+        {
+          "symbol": "MIRZAINT",
+          "name": "Mirza International",
+          "marketCapCrore": 368.17,
+          "pe": null,
+          "pb": 0.72
+        },
+        {
+          "symbol": "LIBERTSHOE",
+          "name": "Liberty Shoes",
+          "marketCapCrore": 332.02,
+          "pe": 38.81,
+          "pb": 1.42
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-07T18:10:54",
+          "source": "ScoutQuest",
+          "title": "Campus Activewear Limited has informed the exchange regarding the grant of options under the Company's ESOP Scheme.",
+          "url": "https://sqst.in/mYPsK"
+        },
+        {
+          "publishedAt": "2026-10-07T18:10:34",
+          "source": "BSE",
+          "title": "Campus Activewear's Nomination and Remuneration Committee has approved the grant of 4,57,700 stock options to eligible employees on October 7, 2026. The options have been granted under the company's Campus Activewear Limited Employee Stock Option Plan 2021 - Vision Pool.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7e6fa46f-5696-442f-add5-1f1c4bf3a063.pdf"
+        },
+        {
+          "publishedAt": "2026-09-30T17:33:52",
+          "source": "BSE",
+          "title": "Campus Activewear promoter Hari Krishan Agarwal transferred 10,00,000 equity shares, representing a 0.4% stake, to promoter group member Prerna Aggarwal through an off-market inter-se gift. Following the transfer, Hari Krishan Agarwal's stake decreased to 55.6% from 55.9%, while Prerna Aggarwal acquired 0.4%, keeping the overall promoter and promoter group shareholding unchanged at 72.1%.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=2FFB8E4A_F597_4332_8271_AA9DD726FDCB_173347.pdf"
+        },
+        {
+          "publishedAt": "2026-09-07T16:29:40",
+          "source": "BSE",
+          "title": "Campus Activewear to participate in UBS India Summit on 10th Sep 2026 in Mumbai. No unpublished price-sensitive information will be discussed during the analyst/investor meet.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=603a8a36-c243-4f04-8d32-7e086988dfe5.pdf"
+        },
+        {
+          "publishedAt": "2026-08-22T11:08:05",
+          "source": "BSE",
+          "title": "Campus Activewear Ltd's 18th AGM resolutions passed with requisite majority. Voting results and scrutinizer's report submitted to BSE and NSE per SEBI regulations.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d1813d1a-3d8a-48ad-b2fb-a51d43768b85.pdf"
+        },
+        {
+          "publishedAt": "2026-08-17T14:32:18",
+          "source": "BSE",
+          "title": "Campus Activewear appoints Mr. Rakesh Thakur as CFO & KMP effective 17th Aug 2026. Thakur, a CA with 22+ yrs experience, held key roles at boAt, Unilever, GSK, Samsung, and PepsiCo.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=01ae4f13-034e-4456-985e-96f8e3566fe2.pdf"
+        },
+        {
+          "publishedAt": "2026-08-07T08:40:47",
+          "source": "Livesquawk",
+          "title": "Campus Activewear targets mid-double-digit revenue growth, aided by volume and higher ASP. Volume growth is forecasted to be in high single digits for the year, not double digits.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-08-06T14:37:35",
+          "source": "ScoutQuest",
+          "title": "Campus Activewear's Q1 FY27 revenue rose 12.2% YoY to INR 385.2 Cr. EBITDA steady at 15.9% margin; PAT improved to INR 26.1 Cr from INR 22.2 Cr.",
+          "url": "https://sqst.in/eVtO9"
+        },
+        {
+          "publishedAt": "2026-08-06T14:34:23",
+          "source": "Zee Business",
+          "title": "Campus Activewear Q1 revenue rose YoY from ₹343 Cr to ₹385 Cr. Margins improved slightly from 14.26% to 14.39% YoY in Q1.",
+          "url": "https://x.com/ZeeBusiness/status/2085290879624073500"
+        },
+        {
+          "publishedAt": "2026-08-06T13:13:25",
+          "source": "BSE",
+          "title": "Campus Activewear approved unaudited quarterly financial results for June 30, 2026, with revenue at ₹385.2 crore. Profit for the period stood at ₹26.1 crore; auditors issued an unmodified review report on the financials.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=64279bcf-6812-4366-a273-220c2e6badf9.pdf"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-07-31",
+          "amount": 1.5,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-09-10",
+          "amount": 0.3,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-02-17",
+          "amount": 0.7,
+          "kind": "Interim"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-08-06",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-25",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2026-02-02",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-11-12",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-08-13",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +5.00% from the 52-week low and −33.25% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Jun '26, revenue is ₹393 crore and profit is ₹26 crore, a net margin of 6.6%. In Jun '25 those figures were ₹349 crore, ₹22 crore, and 6.4%. The latest full year, 2026, has revenue of ₹1,797 crore and profit of ₹150 crore. The year before, revenue was ₹1,608 crore and profit was ₹121 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 13.00%, three-year revenue CAGR is 7.00%, trailing one-year profit growth is 18.00%, three-year profit CAGR is 9.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 37.37 and the industry P/E is 40.04. Dividend yield is 0.80%. Debt to equity is 0.26. ROE is 16.56%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 5.99% to 5.84% and mutual funds went from 10.88% to 9.62%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 17.94 (Sreeleathers) to 58.10 (Bata India). This company’s P/E is 37.37. The industry P/E is 40.04."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹1.50 a share (Final), ex date 31 Jul 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 6 Aug 2026, a quarterly result. 10 headlines are saved. The newest, from ScoutQuest on 7 Oct 2026, reads: Campus Activewear Limited has informed the exchange regarding the grant of options under the Company's ESOP Scheme."
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:16:52.472Z",
+      "price": {
+        "last": 190.85,
+        "change": -0.41,
+        "changePercent": -0.21,
+        "open": 190.01,
+        "high": 192.99,
+        "low": 188.25,
+        "previousClose": 191.26,
+        "volume": 242972,
+        "average": 190.49,
+        "averageSource": "bars",
+        "yearHigh": 286.55,
+        "yearLow": 182.15,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 5848,
+        "pe": 37.96,
+        "industryPe": 39.83,
+        "eps": 5.04,
+        "pb": 6.45,
+        "roe": 16.56,
+        "debtToEquity": 0.26,
+        "bookValue": 29.65,
+        "dividendYield": 0.78,
+        "faceValue": 5
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 72.07,
+        "mutualFunds": 9.62,
+        "insurance": 1.17,
+        "foreignInstitutions": 5.84,
+        "retailAndOthers": 11.31
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 72.12,
+          "mutualFunds": 10.88,
+          "insurance": 0.94,
+          "foreignInstitutions": 5.99,
+          "retailAndOthers": 10.06
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 72.11,
+          "mutualFunds": 10.59,
+          "insurance": 1.12,
+          "foreignInstitutions": 6.15,
+          "retailAndOthers": 10.03
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 72.1,
+          "mutualFunds": 10.43,
+          "insurance": 1.17,
+          "foreignInstitutions": 6.07,
+          "retailAndOthers": 10.24
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 72.08,
+          "mutualFunds": 10.19,
+          "insurance": 1.2,
+          "foreignInstitutions": 6.03,
+          "retailAndOthers": 10.5
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 72.07,
+          "mutualFunds": 9.62,
+          "insurance": 1.17,
+          "foreignInstitutions": 5.84,
+          "retailAndOthers": 11.31
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 1196.577,
+          "profit": 108.538,
+          "netWorth": 427.587
+        },
+        {
+          "year": "2023",
+          "revenue": 1487,
+          "profit": 117.12,
+          "netWorth": 552.12
+        },
+        {
+          "year": "2024",
+          "revenue": 1452.83,
+          "profit": 89.44,
+          "netWorth": 651.66
+        },
+        {
+          "year": "2025",
+          "revenue": 1607.65,
+          "profit": 121.18,
+          "netWorth": 756.51
+        },
+        {
+          "year": "2026",
+          "revenue": 1796.96,
+          "profit": 150.09,
+          "netWorth": 906.25
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Jun '25",
+          "revenue": 349.41,
+          "profit": 22.2
+        },
+        {
+          "quarter": "Sep '25",
+          "revenue": 391.76,
+          "profit": 20.07
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 594.11,
+          "profit": 63.68
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 461.68,
+          "profit": 44.14
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 393.24,
+          "profit": 26.14
+        }
+      ],
+      "accounts": "standalone",
+      "profile": {
+        "foundedYear": 2008,
+        "businessSummary": "Campus Activewear Limited is one of India's largest sports and athleisure footwear brands, manufacturing and distributing a wide variety of shoes for men, women, and children."
+      },
+      "growth": {
+        "revenueOneYear": 13,
+        "revenueThreeYear": 7,
+        "profitOneYear": 18,
+        "profitThreeYear": 9
+      },
+      "peers": [
+        {
+          "symbol": "BATAINDIA",
+          "name": "Bata India",
+          "marketCapCrore": 8362.64,
+          "pe": 57.23,
+          "pb": 5.24
+        },
+        {
+          "symbol": "RELAXO",
+          "name": "Relaxo Footwears",
+          "marketCapCrore": 7022.56,
+          "pe": 37.92,
+          "pb": 3.18
+        },
+        {
+          "symbol": "REDTAPE",
+          "name": "Redtape",
+          "marketCapCrore": 5821.06,
+          "pe": 23.61,
+          "pb": 5.7
+        },
+        {
+          "symbol": "KOTIC",
+          "name": "Kothari Industrial Corporation",
+          "marketCapCrore": 1173.66,
+          "pe": null,
+          "pb": 5.61
+        },
+        {
+          "symbol": "SREEL",
+          "name": "Sreeleathers",
+          "marketCapCrore": 612.33,
+          "pe": 18.68,
+          "pb": 1.23
+        },
+        {
+          "symbol": "MIRZAINT",
+          "name": "Mirza International",
+          "marketCapCrore": 370.24,
+          "pe": null,
+          "pb": 0.73
+        },
+        {
+          "symbol": "LIBERTSHOE",
+          "name": "Liberty Shoes",
+          "marketCapCrore": 331.77,
+          "pe": 38.78,
+          "pb": 1.42
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-07T18:10:54",
+          "source": "ScoutQuest",
+          "title": "Campus Activewear Limited has informed the exchange regarding the grant of options under the Company's ESOP Scheme.",
+          "url": "https://sqst.in/mYPsK"
+        },
+        {
+          "publishedAt": "2026-10-07T18:10:34",
+          "source": "BSE",
+          "title": "Campus Activewear's Nomination and Remuneration Committee has approved the grant of 4,57,700 stock options to eligible employees on October 7, 2026. The options have been granted under the company's Campus Activewear Limited Employee Stock Option Plan 2021 - Vision Pool.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7e6fa46f-5696-442f-add5-1f1c4bf3a063.pdf"
+        },
+        {
+          "publishedAt": "2026-09-30T17:33:52",
+          "source": "BSE",
+          "title": "Campus Activewear promoter Hari Krishan Agarwal transferred 10,00,000 equity shares, representing a 0.4% stake, to promoter group member Prerna Aggarwal through an off-market inter-se gift. Following the transfer, Hari Krishan Agarwal's stake decreased to 55.6% from 55.9%, while Prerna Aggarwal acquired 0.4%, keeping the overall promoter and promoter group shareholding unchanged at 72.1%.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=2FFB8E4A_F597_4332_8271_AA9DD726FDCB_173347.pdf"
+        },
+        {
+          "publishedAt": "2026-09-07T16:29:40",
+          "source": "BSE",
+          "title": "Campus Activewear to participate in UBS India Summit on 10th Sep 2026 in Mumbai. No unpublished price-sensitive information will be discussed during the analyst/investor meet.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=603a8a36-c243-4f04-8d32-7e086988dfe5.pdf"
+        },
+        {
+          "publishedAt": "2026-08-22T11:08:05",
+          "source": "BSE",
+          "title": "Campus Activewear Ltd's 18th AGM resolutions passed with requisite majority. Voting results and scrutinizer's report submitted to BSE and NSE per SEBI regulations.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d1813d1a-3d8a-48ad-b2fb-a51d43768b85.pdf"
+        },
+        {
+          "publishedAt": "2026-08-17T14:32:18",
+          "source": "BSE",
+          "title": "Campus Activewear appoints Mr. Rakesh Thakur as CFO & KMP effective 17th Aug 2026. Thakur, a CA with 22+ yrs experience, held key roles at boAt, Unilever, GSK, Samsung, and PepsiCo.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=01ae4f13-034e-4456-985e-96f8e3566fe2.pdf"
+        },
+        {
+          "publishedAt": "2026-08-07T08:40:47",
+          "source": "Livesquawk",
+          "title": "Campus Activewear targets mid-double-digit revenue growth, aided by volume and higher ASP. Volume growth is forecasted to be in high single digits for the year, not double digits.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-08-06T14:37:35",
+          "source": "ScoutQuest",
+          "title": "Campus Activewear's Q1 FY27 revenue rose 12.2% YoY to INR 385.2 Cr. EBITDA steady at 15.9% margin; PAT improved to INR 26.1 Cr from INR 22.2 Cr.",
+          "url": "https://sqst.in/eVtO9"
+        },
+        {
+          "publishedAt": "2026-08-06T14:34:23",
+          "source": "Zee Business",
+          "title": "Campus Activewear Q1 revenue rose YoY from ₹343 Cr to ₹385 Cr. Margins improved slightly from 14.26% to 14.39% YoY in Q1.",
+          "url": "https://x.com/ZeeBusiness/status/2085290879624073500"
+        },
+        {
+          "publishedAt": "2026-08-06T13:13:25",
+          "source": "BSE",
+          "title": "Campus Activewear approved unaudited quarterly financial results for June 30, 2026, with revenue at ₹385.2 crore. Profit for the period stood at ₹26.1 crore; auditors issued an unmodified review report on the financials.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=64279bcf-6812-4366-a273-220c2e6badf9.pdf"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-07-31",
+          "amount": 1.5,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-09-10",
+          "amount": 0.3,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-02-17",
+          "amount": 0.7,
+          "kind": "Interim"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-08-06",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-25",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2026-02-02",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-11-12",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-08-13",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +4.78% from the 52-week low and −33.40% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Jun '26, revenue is ₹393 crore and profit is ₹26 crore, a net margin of 6.6%. In Jun '25 those figures were ₹349 crore, ₹22 crore, and 6.4%. The latest full year, 2026, has revenue of ₹1,797 crore and profit of ₹150 crore. The year before, revenue was ₹1,608 crore and profit was ₹121 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 13.00%, three-year revenue CAGR is 7.00%, trailing one-year profit growth is 18.00%, three-year profit CAGR is 9.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 37.96 and the industry P/E is 39.83. Dividend yield is 0.78%. Debt to equity is 0.26. ROE is 16.56%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 5.99% to 5.84% and mutual funds went from 10.88% to 9.62%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 18.68 (Sreeleathers) to 57.23 (Bata India). This company’s P/E is 37.96. The industry P/E is 39.83."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹1.50 a share (Final), ex date 31 Jul 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 6 Aug 2026, a quarterly result. 10 headlines are saved. The newest, from ScoutQuest on 7 Oct 2026, reads: Campus Activewear Limited has informed the exchange regarding the grant of options under the Company's ESOP Scheme."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 80.99,
+    "high": 147.41,
+    "samples": 235,
+    "asOf": "2026-10-30"
+  }
+}

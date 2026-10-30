@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { formatInr, formatNumber, formatRupee, formatSigned, pnlClass } from "@/lib/format";
+import { screenerUrl } from "@/lib/stocks/parse";
 import type { OpenRow, PaperDesk as Desk, ResearchRow } from "@/lib/paper/view";
 
 function Metric({ label, value, className }: { label: string; value: string; className?: string }) {
@@ -294,7 +295,13 @@ function ResearchCard({ row, onUse }: { row: ResearchRow; onUse: () => void }) {
           </Link>
           <span className="text-base font-medium tabular-nums">{formatRupee(row.last)}</span>
         </CardTitle>
-        <p className="text-xs text-muted-foreground">{row.symbol}</p>
+        <p className="text-xs text-muted-foreground">
+          {row.symbol}
+          {" · "}
+          <a href={screenerUrl(row.symbol)} target="_blank" rel="noreferrer" className="underline-offset-2 hover:underline">
+            Screener
+          </a>
+        </p>
       </CardHeader>
       <CardContent className="flex flex-col gap-3">
         {row.lines.map((line) => (
@@ -331,6 +338,10 @@ function OpenLot({
         <Link href={`/stocks/${lot.symbol}`} className="hover:underline">
           {lot.symbol}
         </Link>
+        {" · "}
+        <a href={screenerUrl(lot.symbol)} target="_blank" rel="noreferrer" className="text-xs underline-offset-2 hover:underline">
+          Screener
+        </a>
         {lot.name ? <span className="ml-2 text-xs text-muted-foreground">{lot.name}</span> : null}
         <p className="text-xs text-muted-foreground">Opened {lot.openedOn}</p>
         {lot.lines.map((line) => (

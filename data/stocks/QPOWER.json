@@ -1,0 +1,359 @@
+{
+  "symbol": "QPOWER",
+  "name": "Quality Power Electrical Equipments",
+  "isin": "INE0SII01026",
+  "industry": "Electrical Equipment",
+  "exchange": "NSE",
+  "searchId": "quality-power-electrical-equipments-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:17:00.484Z",
+      "price": {
+        "last": 1395.3,
+        "change": -35.5,
+        "changePercent": -2.48,
+        "open": 1435,
+        "high": 1474,
+        "low": 1381,
+        "previousClose": 1430.8,
+        "volume": 378297,
+        "average": 1410.75,
+        "averageSource": "bars",
+        "yearHigh": 1681,
+        "yearLow": 581,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 11088,
+        "pe": 56.79,
+        "industryPe": 41.74,
+        "eps": 25.21,
+        "pb": 20.46,
+        "roe": 22.39,
+        "debtToEquity": 0.07,
+        "bookValue": 69.99,
+        "dividendYield": 0.07,
+        "faceValue": 10
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 73.91,
+        "mutualFunds": 4,
+        "insurance": 1.57,
+        "foreignInstitutions": 2.95,
+        "retailAndOthers": 17.57
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 73.91,
+          "mutualFunds": 3.84,
+          "insurance": 2.08,
+          "foreignInstitutions": 2.12,
+          "retailAndOthers": 18.05
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 73.91,
+          "mutualFunds": 4.23,
+          "insurance": 1.8,
+          "foreignInstitutions": 1.97,
+          "retailAndOthers": 18.1
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 73.91,
+          "mutualFunds": 4.01,
+          "insurance": 1.96,
+          "foreignInstitutions": 2.28,
+          "retailAndOthers": 17.84
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 73.91,
+          "mutualFunds": 4.17,
+          "insurance": 2.28,
+          "foreignInstitutions": 3.36,
+          "retailAndOthers": 16.28
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 73.91,
+          "mutualFunds": 4,
+          "insurance": 1.57,
+          "foreignInstitutions": 2.95,
+          "retailAndOthers": 17.57
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 211.733,
+          "profit": 42.227,
+          "netWorth": 160.293
+        },
+        {
+          "year": "2023",
+          "revenue": 273.551,
+          "profit": 39.892,
+          "netWorth": 175.657
+        },
+        {
+          "year": "2024",
+          "revenue": 331.591,
+          "profit": 55.476,
+          "netWorth": 190.325
+        },
+        {
+          "year": "2025",
+          "revenue": 391.93,
+          "profit": 100.149,
+          "netWorth": 593.715
+        },
+        {
+          "year": "2026",
+          "revenue": 1007.021,
+          "profit": 181.736,
+          "netWorth": 773.269
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Jun '25",
+          "revenue": 194.08,
+          "profit": 37.06
+        },
+        {
+          "quarter": "Sep '25",
+          "revenue": 218.88,
+          "profit": 35.2
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 284.29,
+          "profit": 62.86
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 309.78,
+          "profit": 46.62
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 256.38,
+          "profit": 45.63
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 2001,
+        "businessSummary": "Quality Power Electrical Equipments Limited manufactures high voltage electrical equipment and components."
+      },
+      "growth": {
+        "revenueOneYear": 32,
+        "revenueThreeYear": 54,
+        "profitOneYear": 23,
+        "profitThreeYear": 66
+      },
+      "peers": [
+        {
+          "symbol": "SCHNEIDER",
+          "name": "Schneider Electric Infrastructure",
+          "marketCapCrore": 27005.15,
+          "pe": 146.87,
+          "pb": 40.31
+        },
+        {
+          "symbol": "HONAUT",
+          "name": "Honeywell Automation India",
+          "marketCapCrore": 26963.9,
+          "pe": 47.7,
+          "pb": 5.78
+        },
+        {
+          "symbol": "TDPOWERSYS",
+          "name": "TD Power Systems",
+          "marketCapCrore": 23118.6,
+          "pe": 84.12,
+          "pb": 13.24
+        },
+        {
+          "symbol": "TRITURBINE",
+          "name": "Triveni Turbine",
+          "marketCapCrore": 14928.86,
+          "pe": 44.43,
+          "pb": 10.32
+        },
+        {
+          "symbol": "ATLANTAELE",
+          "name": "Atlanta Electricals",
+          "marketCapCrore": 12814.82,
+          "pe": 58.93,
+          "pb": 13.79
+        },
+        {
+          "symbol": "INOXWIND",
+          "name": "Inox Wind",
+          "marketCapCrore": 10206.97,
+          "pe": 24.51,
+          "pb": 1.6
+        },
+        {
+          "symbol": "SPECTRUM",
+          "name": "Spectrum Electrical Industries",
+          "marketCapCrore": 6877.36,
+          "pe": 132.53,
+          "pb": 27.77
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-28T19:40:31",
+          "source": "BSE",
+          "title": "Quality Power Electrical Equipments scheduled its Q2 FY27 earnings conference call on November 2, 2026, at 12:30 PM IST. The call will discuss unaudited financial results for the quarter and half-year ended September 30, 2026.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=8d1314d0-aed8-42f8-8708-b58b5695e1dc.pdf"
+        },
+        {
+          "publishedAt": "2026-10-23T15:55:11",
+          "source": "ScoutQuest",
+          "title": "Quality Power issued a valuation report addendum for its proposed share swap with WINWIN Specialty Insulators, keeping valuations unchanged. Quality Power is valued at Rs 1456.4 per share under SEBI ICDR, while WINWIN stands at Rs 141.9 per share.",
+          "url": "https://sqst.in/fSBGY"
+        },
+        {
+          "publishedAt": "2026-10-20T15:04:20",
+          "source": "ScoutQuest",
+          "title": "Quality Power started manufacturing at its new Global Coil Factory in Sangli, Maharashtra, effective 20 October 2026. The plant will manufacture high-voltage reactors and specialised coil products for HVAC, HVDC, FACTS, and renewable energy.",
+          "url": "https://sqst.in/xHyu5"
+        },
+        {
+          "publishedAt": "2026-10-19T19:46:51",
+          "source": "ScoutQuest",
+          "title": "Quality Power held an EGM approving a proposed ₹700 crore QIP and a preferential share issue. Management also proposed an unsecured promoter bridge loan of up to ₹175 crore at 9% per annum.",
+          "url": "https://sqst.in/jDu74"
+        },
+        {
+          "publishedAt": "2026-10-17T16:05:02",
+          "source": "ScoutQuest",
+          "title": "Quality Power subsidiary Endoks Energy started manufacturing at its new PCS plant in Niğde, Türkiye. The facility will produce converters and inverters for utility-scale BESS and grid applications with progressive ramp-up.",
+          "url": "https://sqst.in/WZDeL"
+        },
+        {
+          "publishedAt": "2026-10-09T21:13:02",
+          "source": "ScoutQuest",
+          "title": "Quality Power issued an EGM notice corrigendum, revising 90-day VWAP to Rs. 1,238.5 and maximum equity shares to 10,17,123. Floor price of Rs. 1,456.4 and issue price of Rs. 1,460 remain unchanged for allotment to Winwin Speciality Insulators shareholders.",
+          "url": "https://sqst.in/xAtAB"
+        },
+        {
+          "publishedAt": "2026-09-26T21:54:39",
+          "source": "BSE",
+          "title": "Quality Power Electrical Equipments Ltd will hold its 1st EGM for FY 2026-27 on October 19, 2026 via video conferencing to discuss special business matters. Key agenda includes issuance of equity shares for acquisition of Winwin Speciality Insulators and raising capital via QIP up to ₹700 crore.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f53856e5-4b95-4f1c-8c2f-e9ea0fc5a4b8.pdf"
+        },
+        {
+          "publishedAt": "2026-09-23T22:52:36",
+          "source": "ScoutQuest",
+          "title": "Quality Power plans to acquire 100% of Winwin Insulators for ₹272.34 Cr. Part payment via 10.2L shares at ₹1,460 each; EGM set for Oct 19, 2026.",
+          "url": "https://sqst.in/tfs8E"
+        },
+        {
+          "publishedAt": "2026-09-21T07:46:45",
+          "source": "Livesquawk",
+          "title": "Quality Power to discuss fundraising via preferential issue or QIP on Sept 23.",
+          "url": null
+        },
+        {
+          "publishedAt": "2026-09-20T21:11:08",
+          "source": "BSE",
+          "title": "Quality Power Electrical Equipments Ltd announces a board meeting on Sep 23, 2026, to discuss equity issuance and related matters. Trading window closure for insiders and relatives is effective immediately until 48 hours post-meeting outcome.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=c7d3aab1-a7f6-482a-a829-17fb42c6caa9.pdf"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-09-22",
+          "amount": 1,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2026-08-14",
+          "amount": 0.25,
+          "kind": "Interim"
+        },
+        {
+          "exDate": "2025-09-18",
+          "amount": 1,
+          "kind": "Final"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-10-31",
+          "title": "Result"
+        },
+        {
+          "date": "2026-08-09",
+          "title": "Result"
+        },
+        {
+          "date": "2026-05-13",
+          "title": "Quarterly & Annual Result"
+        },
+        {
+          "date": "2026-02-04",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-11-12",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-08-07",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +140.15% from the 52-week low and −17.00% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Jun '26, revenue is ₹256 crore and profit is ₹46 crore, a net margin of 17.8%. In Jun '25 those figures were ₹194 crore, ₹37 crore, and 19.1%. The latest full year, 2026, has revenue of ₹1,007 crore and profit of ₹182 crore. The year before, revenue was ₹392 crore and profit was ₹100 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 32.00%, three-year revenue CAGR is 54.00%, trailing one-year profit growth is 23.00%, three-year profit CAGR is 66.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 56.79 and the industry P/E is 41.74. Dividend yield is 0.07%. Debt to equity is 0.07. ROE is 22.39%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 2.12% to 2.95% and mutual funds went from 3.84% to 4.00%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 24.51 (Inox Wind) to 146.87 (Schneider Electric Infrastructure). This company’s P/E is 56.79. The industry P/E is 41.74."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹1.00 a share (Final), ex date 22 Sept 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 31 Oct 2026, Result. 10 headlines are saved. The newest, from BSE on 28 Oct 2026, reads: Quality Power Electrical Equipments scheduled its Q2 FY27 earnings conference call on November 2, 2026, at 12:30 PM IST. The call will discuss unaudited financial results for the quarter and half-year ended September 30, 2026."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 68.66,
+    "high": 113.32,
+    "samples": 415,
+    "asOf": "2026-10-30"
+  }
+}

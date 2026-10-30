@@ -1,0 +1,241 @@
+{
+  "symbol": "SYSTANGO",
+  "name": "Systango Technologies",
+  "isin": "INE0O7R01011",
+  "industry": "Information Technology",
+  "exchange": "NSE",
+  "searchId": "systango-technologies-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:17:05.471Z",
+      "price": {
+        "last": 209.45,
+        "change": -8.55,
+        "changePercent": -3.92,
+        "open": 218,
+        "high": 218,
+        "low": 208,
+        "previousClose": 218,
+        "volume": 12000,
+        "average": null,
+        "averageSource": null,
+        "yearHigh": 411,
+        "yearLow": 199.2,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 320,
+        "pe": 10.03,
+        "industryPe": 18.92,
+        "eps": 21.73,
+        "pb": 2.36,
+        "roe": 23.53,
+        "debtToEquity": 0,
+        "bookValue": 92.35,
+        "dividendYield": 3.21,
+        "faceValue": 10
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 72.17,
+        "mutualFunds": 0,
+        "insurance": 1.25,
+        "foreignInstitutions": 0.46,
+        "retailAndOthers": 26.12
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '24",
+          "promoter": 72.04,
+          "mutualFunds": 0,
+          "insurance": 0,
+          "foreignInstitutions": 0,
+          "retailAndOthers": 27.96
+        },
+        {
+          "quarter": "Mar '25",
+          "promoter": 72.07,
+          "mutualFunds": 0,
+          "insurance": 0,
+          "foreignInstitutions": 0,
+          "retailAndOthers": 27.93
+        },
+        {
+          "quarter": "Sep '25",
+          "promoter": 72.13,
+          "mutualFunds": 0,
+          "insurance": 0,
+          "foreignInstitutions": 0,
+          "retailAndOthers": 27.87
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 72.17,
+          "mutualFunds": 0,
+          "insurance": 1.69,
+          "foreignInstitutions": 0.47,
+          "retailAndOthers": 25.67
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 72.17,
+          "mutualFunds": 0,
+          "insurance": 1.25,
+          "foreignInstitutions": 0.46,
+          "retailAndOthers": 26.12
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 33.921,
+          "profit": 6.8398,
+          "netWorth": 17.5357
+        },
+        {
+          "year": "2023",
+          "revenue": 53.6973,
+          "profit": 13.9919,
+          "netWorth": 61.6448
+        },
+        {
+          "year": "2024",
+          "revenue": 60.7096,
+          "profit": 16.9264,
+          "netWorth": 78.4019
+        },
+        {
+          "year": "2025",
+          "revenue": 73.96,
+          "profit": 23.73,
+          "netWorth": 102.3
+        },
+        {
+          "year": "2026",
+          "revenue": 96.32,
+          "profit": 31.88,
+          "netWorth": 135.47
+        }
+      ],
+      "quarters": [],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 2004,
+        "businessSummary": "Systango Technologies Limited is a software development company offering web and mobile app development, cloud engineering, and data analytics services."
+      },
+      "growth": {
+        "revenueOneYear": null,
+        "revenueThreeYear": 22,
+        "profitOneYear": null,
+        "profitThreeYear": 32
+      },
+      "peers": [
+        {
+          "symbol": "TATAELXSI",
+          "name": "Tata Elxsi",
+          "marketCapCrore": 23677.11,
+          "pe": 35.33,
+          "pb": 8.13
+        },
+        {
+          "symbol": "INTELLECT",
+          "name": "Intellect Design Arena",
+          "marketCapCrore": 8475.01,
+          "pe": 24.12,
+          "pb": 2.67
+        },
+        {
+          "symbol": "TANLA",
+          "name": "Tanla Platforms",
+          "marketCapCrore": 8197.45,
+          "pe": 14.79,
+          "pb": 3.01
+        },
+        {
+          "symbol": "SONATSOFTW",
+          "name": "Sonata Software",
+          "marketCapCrore": 6449.77,
+          "pe": 13.92,
+          "pb": 3.39
+        },
+        {
+          "symbol": "MASTEK",
+          "name": "Mastek",
+          "marketCapCrore": 4575.03,
+          "pe": 10.74,
+          "pb": 1.43
+        },
+        {
+          "symbol": "63MOONS",
+          "name": "63 Moons Technologies",
+          "marketCapCrore": 4311.34,
+          "pe": null,
+          "pb": 1.21
+        },
+        {
+          "symbol": "AURIONPRO",
+          "name": "Aurionpro Solutions",
+          "marketCapCrore": 3220.93,
+          "pe": 15.62,
+          "pb": 1.85
+        }
+      ],
+      "news": [],
+      "dividends": [
+        {
+          "exDate": "2026-05-21",
+          "amount": 7,
+          "kind": "Interim 1"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-05-14",
+          "title": "Quarterly & Annual Result"
+        },
+        {
+          "date": "2025-11-07",
+          "title": "Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +5.15% from the 52-week low and −49.04% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "The latest full year, 2026, has revenue of ₹96 crore and profit of ₹32 crore. The year before, revenue was ₹74 crore and profit was ₹24 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Three-year revenue CAGR is 22.00%, three-year profit CAGR is 32.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 10.03 and the industry P/E is 18.92. Dividend yield is 3.21%. Debt to equity is 0.00. ROE is 23.53%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '24 to Sep '26, foreign institutions went from 0.00% to 0.46% and mutual funds went from 0.00% to 0.00%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 10.74 (Mastek) to 35.33 (Tata Elxsi). This company’s P/E is 10.03. The industry P/E is 18.92."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹7.00 a share (Interim 1), ex date 21 May 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 14 May 2026, Quarterly & Annual Result."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": null
+}

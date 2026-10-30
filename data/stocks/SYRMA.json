@@ -1,0 +1,354 @@
+{
+  "symbol": "SYRMA",
+  "name": "Syrma SGS Technology",
+  "isin": "INE0DYJ01015",
+  "industry": "Electronic Manufacturers",
+  "exchange": "NSE",
+  "searchId": "syrma-sgs-technology-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:17:04.692Z",
+      "price": {
+        "last": 1625.3,
+        "change": -43.7,
+        "changePercent": -2.62,
+        "open": 1675,
+        "high": 1686,
+        "low": 1622.3,
+        "previousClose": 1669,
+        "volume": 1509043,
+        "average": 1647.38,
+        "averageSource": "bars",
+        "yearHigh": 1822.6,
+        "yearLow": 634.5,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 32172,
+        "pe": 80.1,
+        "industryPe": 73.38,
+        "eps": 20.83,
+        "pb": 11.24,
+        "roe": 11.1,
+        "debtToEquity": 0.14,
+        "bookValue": 148.44,
+        "dividendYield": 0.09,
+        "faceValue": 10
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 41.63,
+        "mutualFunds": 8.85,
+        "insurance": 5.59,
+        "foreignInstitutions": 9.66,
+        "retailAndOthers": 34.27
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 42.97,
+          "mutualFunds": 10.65,
+          "insurance": 5.74,
+          "foreignInstitutions": 7.41,
+          "retailAndOthers": 33.23
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 42.72,
+          "mutualFunds": 10,
+          "insurance": 5.89,
+          "foreignInstitutions": 6.83,
+          "retailAndOthers": 34.57
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 42.28,
+          "mutualFunds": 9.74,
+          "insurance": 6.85,
+          "foreignInstitutions": 6.93,
+          "retailAndOthers": 34.2
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 42.28,
+          "mutualFunds": 9.55,
+          "insurance": 6.35,
+          "foreignInstitutions": 7.75,
+          "retailAndOthers": 34.07
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 41.63,
+          "mutualFunds": 8.85,
+          "insurance": 5.59,
+          "foreignInstitutions": 9.66,
+          "retailAndOthers": 34.27
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 1284.439,
+          "profit": 76.445,
+          "netWorth": 582.897
+        },
+        {
+          "year": "2023",
+          "revenue": 2092.137,
+          "profit": 123.109,
+          "netWorth": 1542.893
+        },
+        {
+          "year": "2024",
+          "revenue": 3212.445,
+          "profit": 124.34,
+          "netWorth": 1677.029
+        },
+        {
+          "year": "2025",
+          "revenue": 3836.115,
+          "profit": 184.45,
+          "netWorth": 1824.819
+        },
+        {
+          "year": "2026",
+          "revenue": 4856.866,
+          "profit": 345.806,
+          "netWorth": 3065.469
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Sep '25",
+          "revenue": 1154.63,
+          "profit": 66.34
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 1274.48,
+          "profit": 110.31
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 1476.84,
+          "profit": 119.23
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 1603.68,
+          "profit": 105.69
+        },
+        {
+          "quarter": "Sep '26",
+          "revenue": 1999.55,
+          "profit": 124.2
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 2004,
+        "businessSummary": "Syrma SGS Technology Limited is an electronics manufacturing services (EMS) company, providing product design, assembly, and manufacturing services for automotive, industrial, and medical sectors."
+      },
+      "growth": {
+        "revenueOneYear": 73,
+        "revenueThreeYear": 32,
+        "profitOneYear": 87,
+        "profitThreeYear": 41
+      },
+      "peers": [
+        {
+          "symbol": "DIXON",
+          "name": "Dixon Technologies (India)",
+          "marketCapCrore": 70309.47,
+          "pe": 33.77,
+          "pb": 15.03
+        },
+        {
+          "symbol": "CPPLUS",
+          "name": "Aditya Infotech",
+          "marketCapCrore": 48451.74,
+          "pe": 101.52,
+          "pb": 14.35
+        },
+        {
+          "symbol": "NETWEB",
+          "name": "Netweb Technologies India",
+          "marketCapCrore": 26087.37,
+          "pe": 71.3,
+          "pb": 12.4
+        },
+        {
+          "symbol": "KAYNES",
+          "name": "Kaynes Technology India",
+          "marketCapCrore": 21380.45,
+          "pe": 61.84,
+          "pb": 4.5
+        },
+        {
+          "symbol": "AVALON",
+          "name": "Avalon Technologies",
+          "marketCapCrore": 13787.12,
+          "pe": 103.17,
+          "pb": 19.1
+        },
+        {
+          "symbol": "EBGNG",
+          "name": "GNG Electronics",
+          "marketCapCrore": 7868.5,
+          "pe": 55.26,
+          "pb": 10.38
+        },
+        {
+          "symbol": "CELLO",
+          "name": "Cello World",
+          "marketCapCrore": 7724.69,
+          "pe": 23.82,
+          "pb": 3.37
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-30T19:21:49",
+          "source": "CNBC TV 18",
+          "title": "Syrma SGS Technology Q2 net profit jumped 83% YoY to ₹117 crore, with revenue rising 73.6% to ₹1,990 crore. EBITDA grew 67.8% to ₹193 crore, driven by automotive and consumer segments, while margins contracted slightly to 9.7%.",
+          "url": "https://www.cnbctv18.com/market/syrma-sgs-share-price-q2-results-profit-rs117-crore-revenue-20023631.htm"
+        },
+        {
+          "publishedAt": "2026-10-28T08:19:01",
+          "source": "CNBC-AWAAZ",
+          "title": "Six new stocks including Coromandel, Karur Vysya Bank, and Data Patterns enter the F&O segment today. Joined by CUB, Navin Fluorine, and Syrma SGS, the total count of F&O companies rises to 219.",
+          "url": "https://x.com/CNBC_Awaaz/status/2115274608731377983"
+        },
+        {
+          "publishedAt": "2026-10-27T13:30:33",
+          "source": "ScoutQuest",
+          "title": "Syrma SGS reported weak Q2 results as margins dropped 700 basis points due to consumer business headwinds and employee costs. Management plans lower FY27 capex than guided 660 crore rupees and will reassess its consumer business EBITDA breakeven timeline.",
+          "url": "https://sqst.in/PGyvs"
+        },
+        {
+          "publishedAt": "2026-10-26T13:56:47",
+          "source": "BSE",
+          "title": "Syrma SGS Technology will host an earnings conference call on November 2, 2026, at 10:30 AM IST. The call will discuss unaudited financial results for the quarter and half-year ended September 30, 2026.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=25503660-79d3-4706-a0f9-b0d0d89aac2c.pdf"
+        },
+        {
+          "publishedAt": "2026-10-20T13:44:42",
+          "source": "NDTV Profit",
+          "title": "JPMorgan rates Dixon Technologies and Amber Enterprises Overweight with targets of Rs 16,200 and Rs 8,350, favoring high ROCE and growth. The brokerage is Underweight on Syrma, Avalon, and Cyient DLM, urging investors to evaluate ROCE alongside earnings growth.",
+          "url": "https://www.ndtvprofit.com/markets/cyient-dlm-amber-dixon-technologies-jpmorgans-top-ems-picks-amid-growth-value-debate-12209961#publisher=newsstand"
+        },
+        {
+          "publishedAt": "2026-10-09T12:00:00",
+          "source": "The Economic Times",
+          "title": "Essencore has partnered with Syrma SGS to strengthen local manufacturing capabilities and expand presence in India. The tie-up is part of Hong Kong-based Essencore's strategy involving initiatives and collaborations with local manufacturers.",
+          "url": "https://economictimes.indiatimes.com/news/company/corporate-trends/essencore-partners-syrma-sgs-to-expand-local-manufacturing-in-india/articleshow/134834839.cms"
+        },
+        {
+          "publishedAt": "2026-10-01T12:08:11",
+          "source": "BSE",
+          "title": "Franklin Templeton Mutual Fund sold 110,190 equity shares, representing a 0.1% stake, in Syrma SGS Technology Ltd via an open market transaction on September 30, 2026. Following the sale, Franklin Templeton Mutual Fund's total holding in the company decreased from 5,918,313 shares (3.1%) to 5,808,123 shares (3.1%).",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=F04056AB_7A22_4A6B_A71B_B4240EB06F43_120808.pdf"
+        },
+        {
+          "publishedAt": "2026-09-29T10:11:00",
+          "source": "Financial Express",
+          "title": "JPMorgan has downgraded Syrma SGS Technology, Avalon Technologies, and Cyient DLM despite 47% EPS growth, arguing that strong earnings growth alone may not justify the premium valuations of the three EMS companies. The brokerage's comparison places revenue growth, earnings growth, return on capital employed (ROCE), and working capital at the centre of the valuation debate.",
+          "url": "https://www.financialexpress.com/market/syrma-cyient-avalon-jpmorgan-downgrades-all-3-despite-47-eps-growthheres-why-4349412/"
+        },
+        {
+          "publishedAt": "2026-09-22T15:16:46",
+          "source": "Business Standard",
+          "title": "RBL Bank, Engineers India, Syrma, and JSW Infra rallied up to 7%, hitting 52-week highs before paring gains. Syrma surged 146% YTD, supported by new MedTech facilities, while RBL Bank saw improved asset quality and analyst upgrades.",
+          "url": "https://www.business-standard.com/markets/news/rbl-bank-engineers-india-syrma-jsw-infra-rally-up-to-7-log-52-wk-highs-126092200692_1.html"
+        },
+        {
+          "publishedAt": "2026-09-22T11:03:53",
+          "source": "ScoutQuest",
+          "title": "Syrma SGS Technology plans $600M semiconductor capex, contingent on partner deal.",
+          "url": "https://sqst.in/orffr"
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-08-18",
+          "amount": 1.5,
+          "kind": "Final"
+        },
+        {
+          "exDate": "2025-09-19",
+          "amount": 1.5,
+          "kind": "Final"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-10-30",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-11",
+          "title": "Quarterly & Annual Result"
+        },
+        {
+          "date": "2026-01-29",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-11-10",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-07-23",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +156.15% from the 52-week low and −10.83% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Sep '26, revenue is ₹2,000 crore and profit is ₹124 crore, a net margin of 6.2%. In Sep '25 those figures were ₹1,155 crore, ₹66 crore, and 5.7%. The latest full year, 2026, has revenue of ₹4,857 crore and profit of ₹346 crore. The year before, revenue was ₹3,836 crore and profit was ₹184 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 73.00%, three-year revenue CAGR is 32.00%, trailing one-year profit growth is 87.00%, three-year profit CAGR is 41.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 80.10 and the industry P/E is 73.38. Dividend yield is 0.09%. Debt to equity is 0.14. ROE is 11.10%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 7.41% to 9.66% and mutual funds went from 10.65% to 8.85%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 23.82 (Cello World) to 103.17 (Avalon Technologies). This company’s P/E is 80.10. The industry P/E is 73.38."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹1.50 a share (Final), ex date 18 Aug 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 30 Oct 2026, a quarterly result. 10 headlines are saved. The newest, from CNBC TV 18 on 30 Oct 2026, reads: Syrma SGS Technology Q2 net profit jumped 83% YoY to ₹117 crore, with revenue rising 73.6% to ₹1,990 crore. EBITDA grew 67.8% to ₹193 crore, driven by automotive and consumer segments, while margins contracted slightly to 9.7%."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 65.09,
+    "high": 104.95,
+    "samples": 220,
+    "asOf": "2026-10-30"
+  }
+}

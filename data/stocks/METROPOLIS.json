@@ -1,0 +1,354 @@
+{
+  "symbol": "METROPOLIS",
+  "name": "Metropolis Healthcare",
+  "isin": "INE112L01020",
+  "industry": "Healthcare",
+  "exchange": "NSE",
+  "searchId": "metropolis-healthcare-ltd",
+  "snapshots": [
+    {
+      "date": "2026-10-30",
+      "savedAt": "2026-10-30T18:16:56.919Z",
+      "price": {
+        "last": 545.65,
+        "change": -8.2,
+        "changePercent": -1.48,
+        "open": 551.2,
+        "high": 556.7,
+        "low": 541.15,
+        "previousClose": 553.85,
+        "volume": 49775,
+        "average": 547.04,
+        "averageSource": "bars",
+        "yearHigh": 609.05,
+        "yearLow": 412.25,
+        "source": "groww"
+      },
+      "fundamentals": {
+        "marketCapCrore": 11493,
+        "pe": 56.65,
+        "industryPe": 61.5,
+        "eps": 9.78,
+        "pb": 7.65,
+        "roe": 12.56,
+        "debtToEquity": 0.15,
+        "bookValue": 72.41,
+        "dividendYield": 0.9,
+        "faceValue": 2
+      },
+      "holding": {
+        "quarter": "Sep '26",
+        "promoter": 47.82,
+        "mutualFunds": 33.09,
+        "insurance": 2.4,
+        "foreignInstitutions": 11.67,
+        "retailAndOthers": 5.02
+      },
+      "holdings": [
+        {
+          "quarter": "Sep '25",
+          "promoter": 48.89,
+          "mutualFunds": 30.69,
+          "insurance": 2.41,
+          "foreignInstitutions": 13.52,
+          "retailAndOthers": 4.49
+        },
+        {
+          "quarter": "Dec '25",
+          "promoter": 48.88,
+          "mutualFunds": 32.22,
+          "insurance": 2.51,
+          "foreignInstitutions": 11.69,
+          "retailAndOthers": 4.71
+        },
+        {
+          "quarter": "Mar '26",
+          "promoter": 48.87,
+          "mutualFunds": 33.28,
+          "insurance": 2.52,
+          "foreignInstitutions": 10.43,
+          "retailAndOthers": 4.91
+        },
+        {
+          "quarter": "Jun '26",
+          "promoter": 48.86,
+          "mutualFunds": 32.67,
+          "insurance": 2.45,
+          "foreignInstitutions": 11.03,
+          "retailAndOthers": 4.99
+        },
+        {
+          "quarter": "Sep '26",
+          "promoter": 47.82,
+          "mutualFunds": 33.09,
+          "insurance": 2.4,
+          "foreignInstitutions": 11.67,
+          "retailAndOthers": 5.02
+        }
+      ],
+      "years": [
+        {
+          "year": "2022",
+          "revenue": 1245.959,
+          "profit": 214.6861,
+          "netWorth": 888.1663
+        },
+        {
+          "year": "2023",
+          "revenue": 1163.4348,
+          "profit": 143.394,
+          "netWorth": 990.7108
+        },
+        {
+          "year": "2024",
+          "revenue": 1216.8258,
+          "profit": 128.4556,
+          "netWorth": 1099.2748
+        },
+        {
+          "year": "2025",
+          "revenue": 1346.316,
+          "profit": 145.5139,
+          "netWorth": 1334.6393
+        },
+        {
+          "year": "2026",
+          "revenue": 1671.4303,
+          "profit": 191.182,
+          "netWorth": 1524.555
+        }
+      ],
+      "quarters": [
+        {
+          "quarter": "Jun '25",
+          "revenue": 393.58,
+          "profit": 45.25
+        },
+        {
+          "quarter": "Sep '25",
+          "revenue": 430.08,
+          "profit": 52.89
+        },
+        {
+          "quarter": "Dec '25",
+          "revenue": 414.93,
+          "profit": 42.09
+        },
+        {
+          "quarter": "Mar '26",
+          "revenue": 432.84,
+          "profit": 50.96
+        },
+        {
+          "quarter": "Jun '26",
+          "revenue": 455.32,
+          "profit": 56.88
+        }
+      ],
+      "accounts": "consolidated",
+      "profile": {
+        "foundedYear": 2000,
+        "businessSummary": "Metropolis Healthcare Limited is a leading diagnostic chain in India, offering a comprehensive range of clinical laboratory tests and profiles."
+      },
+      "growth": {
+        "revenueOneYear": 16,
+        "revenueThreeYear": 13,
+        "profitOneYear": 26,
+        "profitThreeYear": 10
+      },
+      "peers": [
+        {
+          "symbol": "VIJAYA",
+          "name": "Vijaya Diagnostic Centre",
+          "marketCapCrore": 15085.56,
+          "pe": 80.48,
+          "pb": 15.76
+        },
+        {
+          "symbol": "MOLBIO",
+          "name": "Molbio Diagnostics",
+          "marketCapCrore": 15022.11,
+          "pe": 91.54,
+          "pb": 10.97
+        },
+        {
+          "symbol": "PARKHOSPS",
+          "name": "Park Medi World",
+          "marketCapCrore": 9558.63,
+          "pe": 32.21,
+          "pb": 4.76
+        },
+        {
+          "symbol": "THYROCARE",
+          "name": "Thyrocare Technologies",
+          "marketCapCrore": 8200.2,
+          "pe": 46.62,
+          "pb": 15.99
+        },
+        {
+          "symbol": "SURAKSHA",
+          "name": "Suraksha Diagnostic",
+          "marketCapCrore": 1664.5,
+          "pe": 47.49,
+          "pb": 6.8
+        },
+        {
+          "symbol": "KRSNAA",
+          "name": "Krsnaa Diagnostics",
+          "marketCapCrore": 1620.15,
+          "pe": 16.63,
+          "pb": 1.65
+        },
+        {
+          "symbol": "3BBLACKBIO",
+          "name": "3B Blackbio Dx",
+          "marketCapCrore": 1166.77,
+          "pe": 22.9,
+          "pb": 3.66
+        }
+      ],
+      "news": [
+        {
+          "publishedAt": "2026-10-28T21:08:10",
+          "source": "BSE",
+          "title": "Metropolis Healthcare's board will meet on November 3, 2026, to consider Q2 financial results and interim dividend declaration. The trading window for dealing in the company's securities is closed from October 1 to November 5, 2026.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=6b4b860a-9a91-48a8-9c7a-f30afb0470ff.pdf"
+        },
+        {
+          "publishedAt": "2026-10-14T16:46:15",
+          "source": "BSE",
+          "title": "Metropolis Healthcare allotted 9,516 equity shares under its RSU Plan 2020 at an exercise price of Rs 2 each. Fifty percent of the newly allotted shares are subject to a one-year lock-in period until October 13, 2027.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=3cc6d37e-ecde-4eab-9998-abd6f05bd500.pdf"
+        },
+        {
+          "publishedAt": "2026-10-05T18:13:08",
+          "source": "ScoutQuest",
+          "title": "Metropolis Healthcare reported ~15% YoY consolidated revenue growth in its Q2FY27 business update, driven by double-digit patient and test volume growth, along with improved realizations and product mix. TruHealth Wellness and Specialty emerged as the fastest-growing segments, while EBITDA margins improved meaningfully both YoY and QoQ due to operating leverage and efficiency gains.",
+          "url": "https://sqst.in/01eqO"
+        },
+        {
+          "publishedAt": "2026-09-23T11:17:32",
+          "source": "Business Standard",
+          "title": "Crisil revises Metropolis Healthcare's outlook to positive, reaffirms 'AA-' rating for long-term bank facilities and NCDs. Short-term bank facility rating reaffirmed at Crisil A1, reflecting strong financial stability of Metropolis Healthcare.",
+          "url": "https://www.business-standard.com/industry/news/crisil-revises-metropolis-outlook-to-positive-reaffirms-aa-rating-126092300320_1.html"
+        },
+        {
+          "publishedAt": "2026-09-09T18:08:24",
+          "source": "BSE",
+          "title": "Metropolis Healthcare approved allotment of 66,312 equity shares under MHL-RSU Plan, 2020 at INR 2/share. Shares will rank pari-passu with existing equity; 50% under 1-year lock-in till September 2027.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=d28c404f-a542-4cf9-8765-72323e95a61f.pdf"
+        },
+        {
+          "publishedAt": "2026-09-07T19:01:29",
+          "source": "BSE",
+          "title": "Metropolis Healthcare's subsidiary MQSPL restructures via agreements with Medsource and Dr. Puneet Nigam. Post-restructuring, MQSPL's shareholding will be MHL 54.9%, Medsource 30.6%, Dr. Puneet 14.5%.",
+          "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=029c7362-1512-474d-9779-3aa0cab5deee.pdf"
+        },
+        {
+          "publishedAt": "2026-09-07T15:34:38",
+          "source": "ScoutQuest",
+          "title": "Franklin Templeton Mutual Fund acquired 742,409 shares of Metropolis Healthcare Ltd. The shares, constituting 0.36% of share capital, were bought via open market.",
+          "url": "https://sqst.in/shareMessage?msgId=884740944199381112"
+        },
+        {
+          "publishedAt": "2026-08-28T12:11:52",
+          "source": "NDTV Profit",
+          "title": "ICICI Securities maintains 'Buy' on Metropolis Healthcare, citing 29% earnings CAGR FY26–28E, 15% revenue CAGR. Target price set at Rs 675; risks include competition, regulation, but growth driven by M&A, geographic expansion.",
+          "url": "https://www.ndtvprofit.com/markets/metropolis-share-price-gains-on-icici-securities-buy-call-check-target-price-11970070#publisher=newsstand"
+        },
+        {
+          "publishedAt": "2026-08-28T11:28:40",
+          "source": "ScoutQuest",
+          "title": "Metropolis projects a 14-15% revenue growth for FY27-29 in its roadmap.",
+          "url": "https://sqst.in/SFuij"
+        },
+        {
+          "publishedAt": "2026-08-28T09:03:49",
+          "source": "Livesquawk",
+          "title": "Kotak Institutional Equities rates Metropolis Healthcare 'Add' with a ₹655 target price. Steady 14–15% FY27E sales growth and +300 bps EBITDA margin rise expected by FY29.",
+          "url": null
+        }
+      ],
+      "dividends": [
+        {
+          "exDate": "2026-05-19",
+          "amount": 1,
+          "kind": "Interim 2"
+        },
+        {
+          "exDate": "2025-11-11",
+          "amount": 4,
+          "kind": "Interim"
+        }
+      ],
+      "results": [
+        {
+          "date": "2026-11-03",
+          "title": "Result"
+        },
+        {
+          "date": "2026-08-04",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2026-05-13",
+          "title": "Annual Result"
+        },
+        {
+          "date": "2026-02-04",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-11-04",
+          "title": "Quarterly Result"
+        },
+        {
+          "date": "2025-08-07",
+          "title": "Quarterly Result"
+        }
+      ],
+      "notes": [
+        {
+          "heading": "Price",
+          "text": "Last is +32.36% from the 52-week low and −10.41% from the 52-week high."
+        },
+        {
+          "heading": "Results",
+          "text": "In Jun '26, revenue is ₹455 crore and profit is ₹57 crore, a net margin of 12.5%. In Jun '25 those figures were ₹394 crore, ₹45 crore, and 11.5%. The latest full year, 2026, has revenue of ₹1,671 crore and profit of ₹191 crore. The year before, revenue was ₹1,346 crore and profit was ₹146 crore."
+        },
+        {
+          "heading": "Growth",
+          "text": "Trailing one-year revenue growth is 16.00%, three-year revenue CAGR is 13.00%, trailing one-year profit growth is 26.00%, three-year profit CAGR is 10.00%."
+        },
+        {
+          "heading": "Valuation",
+          "text": "P/E is 56.65 and the industry P/E is 61.50. Dividend yield is 0.90%. Debt to equity is 0.15. ROE is 12.56%."
+        },
+        {
+          "heading": "Shareholding",
+          "text": "From Sep '25 to Sep '26, foreign institutions went from 13.52% to 11.67% and mutual funds went from 30.69% to 33.09%."
+        },
+        {
+          "heading": "Peers",
+          "text": "Groww lists 7 peers. P/E on that list runs from 16.63 (Krsnaa Diagnostics) to 91.54 (Molbio Diagnostics). This company’s P/E is 56.65. The industry P/E is 61.50."
+        },
+        {
+          "heading": "Dividend",
+          "text": "The latest dividend on file is ₹1.00 a share (Interim 2), ex date 19 May 2026."
+        },
+        {
+          "heading": "Calendar",
+          "text": "The latest results date on file is 3 Nov 2026, Result. 10 headlines are saved. The newest, from BSE on 28 Oct 2026, reads: Metropolis Healthcare's board will meet on November 3, 2026, to consider Q2 financial results and interim dividend declaration. The trading window for dealing in the company's securities is closed from October 1 to November 5, 2026."
+        }
+      ]
+    }
+  ],
+  "highlight": "red",
+  "comment": null,
+  "pe": {
+    "median": 57.82,
+    "high": 93.41,
+    "samples": 395,
+    "asOf": "2026-10-30"
+  }
+}
